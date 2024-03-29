@@ -9,8 +9,8 @@ import * as core from "../../core";
 export const VerificationCloudSignalType: core.serialization.Schema<
     serializers.VerificationCloudSignalType.Raw,
     Hookdeck.VerificationCloudSignalType
-> = core.serialization.enum_(["cloudsignal", "CLOUDSIGNAL"]);
+> = core.serialization.enum_(["cloudsignal"]);
 
 export declare namespace VerificationCloudSignalType {
-    type Raw = "cloudsignal" | "CLOUDSIGNAL";
+    type Raw = "cloudsignal";
 }

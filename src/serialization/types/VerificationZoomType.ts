@@ -9,8 +9,8 @@ import * as core from "../../core";
 export const VerificationZoomType: core.serialization.Schema<
     serializers.VerificationZoomType.Raw,
     Hookdeck.VerificationZoomType
-> = core.serialization.enum_(["zoom", "ZOOM"]);
+> = core.serialization.enum_(["zoom"]);
 
 export declare namespace VerificationZoomType {
-    type Raw = "zoom" | "ZOOM";
+    type Raw = "zoom";
 }

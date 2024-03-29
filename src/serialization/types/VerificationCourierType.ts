@@ -9,8 +9,8 @@ import * as core from "../../core";
 export const VerificationCourierType: core.serialization.Schema<
     serializers.VerificationCourierType.Raw,
     Hookdeck.VerificationCourierType
-> = core.serialization.enum_(["courier", "COURIER"]);
+> = core.serialization.enum_(["courier"]);
 
 export declare namespace VerificationCourierType {
-    type Raw = "courier" | "COURIER";
+    type Raw = "courier";
 }

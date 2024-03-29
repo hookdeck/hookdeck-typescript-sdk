@@ -9,8 +9,8 @@ import * as core from "../../core";
 export const VerificationTrelloType: core.serialization.Schema<
     serializers.VerificationTrelloType.Raw,
     Hookdeck.VerificationTrelloType
-> = core.serialization.enum_(["trello", "TRELLO"]);
+> = core.serialization.enum_(["trello"]);
 
 export declare namespace VerificationTrelloType {
-    type Raw = "trello" | "TRELLO";
+    type Raw = "trello";
 }

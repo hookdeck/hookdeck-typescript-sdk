@@ -9,8 +9,8 @@ import * as core from "../../core";
 export const VerificationWixType: core.serialization.Schema<
     serializers.VerificationWixType.Raw,
     Hookdeck.VerificationWixType
-> = core.serialization.enum_(["wix", "WIX"]);
+> = core.serialization.enum_(["wix"]);
 
 export declare namespace VerificationWixType {
-    type Raw = "wix" | "WIX";
+    type Raw = "wix";
 }

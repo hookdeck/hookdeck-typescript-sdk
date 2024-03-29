@@ -9,8 +9,8 @@ import * as core from "../../core";
 export const VerificationPostmarkType: core.serialization.Schema<
     serializers.VerificationPostmarkType.Raw,
     Hookdeck.VerificationPostmarkType
-> = core.serialization.enum_(["postmark", "POSTMARK"]);
+> = core.serialization.enum_(["postmark"]);
 
 export declare namespace VerificationPostmarkType {
-    type Raw = "postmark" | "POSTMARK";
+    type Raw = "postmark";
 }

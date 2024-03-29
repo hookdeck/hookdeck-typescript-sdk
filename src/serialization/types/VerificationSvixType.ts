@@ -9,8 +9,8 @@ import * as core from "../../core";
 export const VerificationSvixType: core.serialization.Schema<
     serializers.VerificationSvixType.Raw,
     Hookdeck.VerificationSvixType
-> = core.serialization.enum_(["svix", "SVIX"]);
+> = core.serialization.enum_(["svix"]);
 
 export declare namespace VerificationSvixType {
-    type Raw = "svix" | "SVIX";
+    type Raw = "svix";
 }

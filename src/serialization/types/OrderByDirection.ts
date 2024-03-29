@@ -7,8 +7,8 @@ import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const OrderByDirection: core.serialization.Schema<serializers.OrderByDirection.Raw, Hookdeck.OrderByDirection> =
-    core.serialization.enum_(["asc", "desc", "ASC", "DESC"]);
+    core.serialization.enum_(["asc", "desc"]);
 
 export declare namespace OrderByDirection {
-    type Raw = "asc" | "desc" | "ASC" | "DESC";
+    type Raw = "asc" | "desc";
 }

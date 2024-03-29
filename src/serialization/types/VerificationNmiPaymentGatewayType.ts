@@ -9,8 +9,8 @@ import * as core from "../../core";
 export const VerificationNmiPaymentGatewayType: core.serialization.Schema<
     serializers.VerificationNmiPaymentGatewayType.Raw,
     Hookdeck.VerificationNmiPaymentGatewayType
-> = core.serialization.enum_(["nmi", "NMI"]);
+> = core.serialization.enum_(["nmi"]);
 
 export declare namespace VerificationNmiPaymentGatewayType {
-    type Raw = "nmi" | "NMI";
+    type Raw = "nmi";
 }

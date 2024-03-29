@@ -9,8 +9,8 @@ import * as core from "../../core";
 export const VerificationMailgunType: core.serialization.Schema<
     serializers.VerificationMailgunType.Raw,
     Hookdeck.VerificationMailgunType
-> = core.serialization.enum_(["mailgun", "MAILGUN"]);
+> = core.serialization.enum_(["mailgun"]);
 
 export declare namespace VerificationMailgunType {
-    type Raw = "mailgun" | "MAILGUN";
+    type Raw = "mailgun";
 }

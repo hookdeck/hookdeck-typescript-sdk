@@ -9,8 +9,8 @@ import * as core from "../../core";
 export const VerificationTwitchType: core.serialization.Schema<
     serializers.VerificationTwitchType.Raw,
     Hookdeck.VerificationTwitchType
-> = core.serialization.enum_(["twitch", "TWITCH"]);
+> = core.serialization.enum_(["twitch"]);
 
 export declare namespace VerificationTwitchType {
-    type Raw = "twitch" | "TWITCH";
+    type Raw = "twitch";
 }

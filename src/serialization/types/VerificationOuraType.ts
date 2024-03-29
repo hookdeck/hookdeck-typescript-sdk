@@ -9,8 +9,8 @@ import * as core from "../../core";
 export const VerificationOuraType: core.serialization.Schema<
     serializers.VerificationOuraType.Raw,
     Hookdeck.VerificationOuraType
-> = core.serialization.enum_(["oura", "OURA"]);
+> = core.serialization.enum_(["oura"]);
 
 export declare namespace VerificationOuraType {
-    type Raw = "oura" | "OURA";
+    type Raw = "oura";
 }

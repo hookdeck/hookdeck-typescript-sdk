@@ -9,8 +9,8 @@ import * as core from "../../core";
 export const VerificationStripeType: core.serialization.Schema<
     serializers.VerificationStripeType.Raw,
     Hookdeck.VerificationStripeType
-> = core.serialization.enum_(["stripe", "STRIPE"]);
+> = core.serialization.enum_(["stripe"]);
 
 export declare namespace VerificationStripeType {
-    type Raw = "stripe" | "STRIPE";
+    type Raw = "stripe";
 }

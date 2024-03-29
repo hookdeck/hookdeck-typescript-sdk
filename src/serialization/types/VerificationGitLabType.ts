@@ -9,8 +9,8 @@ import * as core from "../../core";
 export const VerificationGitLabType: core.serialization.Schema<
     serializers.VerificationGitLabType.Raw,
     Hookdeck.VerificationGitLabType
-> = core.serialization.enum_(["gitlab", "GITLAB"]);
+> = core.serialization.enum_(["gitlab"]);
 
 export declare namespace VerificationGitLabType {
-    type Raw = "gitlab" | "GITLAB";
+    type Raw = "gitlab";
 }

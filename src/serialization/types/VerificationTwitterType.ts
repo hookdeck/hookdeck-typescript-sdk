@@ -9,8 +9,8 @@ import * as core from "../../core";
 export const VerificationTwitterType: core.serialization.Schema<
     serializers.VerificationTwitterType.Raw,
     Hookdeck.VerificationTwitterType
-> = core.serialization.enum_(["twitter", "TWITTER"]);
+> = core.serialization.enum_(["twitter"]);
 
 export declare namespace VerificationTwitterType {
-    type Raw = "twitter" | "TWITTER";
+    type Raw = "twitter";
 }

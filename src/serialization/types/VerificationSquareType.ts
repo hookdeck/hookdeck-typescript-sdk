@@ -9,8 +9,8 @@ import * as core from "../../core";
 export const VerificationSquareType: core.serialization.Schema<
     serializers.VerificationSquareType.Raw,
     Hookdeck.VerificationSquareType
-> = core.serialization.enum_(["square", "SQUARE"]);
+> = core.serialization.enum_(["square"]);
 
 export declare namespace VerificationSquareType {
-    type Raw = "square" | "SQUARE";
+    type Raw = "square";
 }

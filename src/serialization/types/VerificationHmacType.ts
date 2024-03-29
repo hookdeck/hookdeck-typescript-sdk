@@ -9,8 +9,8 @@ import * as core from "../../core";
 export const VerificationHmacType: core.serialization.Schema<
     serializers.VerificationHmacType.Raw,
     Hookdeck.VerificationHmacType
-> = core.serialization.enum_(["hmac", "HMAC"]);
+> = core.serialization.enum_(["hmac"]);
 
 export declare namespace VerificationHmacType {
-    type Raw = "hmac" | "HMAC";
+    type Raw = "hmac";
 }

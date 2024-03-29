@@ -9,8 +9,8 @@ import * as core from "../../core";
 export const VerificationEnodeType: core.serialization.Schema<
     serializers.VerificationEnodeType.Raw,
     Hookdeck.VerificationEnodeType
-> = core.serialization.enum_(["enode", "ENODE"]);
+> = core.serialization.enum_(["enode"]);
 
 export declare namespace VerificationEnodeType {
-    type Raw = "enode" | "ENODE";
+    type Raw = "enode";
 }

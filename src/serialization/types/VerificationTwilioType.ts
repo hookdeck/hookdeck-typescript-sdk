@@ -9,8 +9,8 @@ import * as core from "../../core";
 export const VerificationTwilioType: core.serialization.Schema<
     serializers.VerificationTwilioType.Raw,
     Hookdeck.VerificationTwilioType
-> = core.serialization.enum_(["twilio", "TWILIO"]);
+> = core.serialization.enum_(["twilio"]);
 
 export declare namespace VerificationTwilioType {
-    type Raw = "twilio" | "TWILIO";
+    type Raw = "twilio";
 }

@@ -9,8 +9,8 @@ import * as core from "../../core";
 export const VerificationShoplineType: core.serialization.Schema<
     serializers.VerificationShoplineType.Raw,
     Hookdeck.VerificationShoplineType
-> = core.serialization.enum_(["shopline", "SHOPLINE"]);
+> = core.serialization.enum_(["shopline"]);
 
 export declare namespace VerificationShoplineType {
-    type Raw = "shopline" | "SHOPLINE";
+    type Raw = "shopline";
 }

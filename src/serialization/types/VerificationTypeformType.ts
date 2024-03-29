@@ -9,8 +9,8 @@ import * as core from "../../core";
 export const VerificationTypeformType: core.serialization.Schema<
     serializers.VerificationTypeformType.Raw,
     Hookdeck.VerificationTypeformType
-> = core.serialization.enum_(["typeform", "TYPEFORM"]);
+> = core.serialization.enum_(["typeform"]);
 
 export declare namespace VerificationTypeformType {
-    type Raw = "typeform" | "TYPEFORM";
+    type Raw = "typeform";
 }

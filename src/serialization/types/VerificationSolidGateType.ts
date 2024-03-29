@@ -9,8 +9,8 @@ import * as core from "../../core";
 export const VerificationSolidGateType: core.serialization.Schema<
     serializers.VerificationSolidGateType.Raw,
     Hookdeck.VerificationSolidGateType
-> = core.serialization.enum_(["solidgate", "SOLIDGATE"]);
+> = core.serialization.enum_(["solidgate"]);
 
 export declare namespace VerificationSolidGateType {
-    type Raw = "solidgate" | "SOLIDGATE";
+    type Raw = "solidgate";
 }

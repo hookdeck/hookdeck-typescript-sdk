@@ -9,8 +9,8 @@ import * as core from "../../core";
 export const VerificationWooCommerceType: core.serialization.Schema<
     serializers.VerificationWooCommerceType.Raw,
     Hookdeck.VerificationWooCommerceType
-> = core.serialization.enum_(["woocommerce", "WOOCOMMERCE"]);
+> = core.serialization.enum_(["woocommerce"]);
 
 export declare namespace VerificationWooCommerceType {
-    type Raw = "woocommerce" | "WOOCOMMERCE";
+    type Raw = "woocommerce";
 }

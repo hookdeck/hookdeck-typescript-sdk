@@ -9,8 +9,8 @@ import * as core from "../../core";
 export const VerificationFavroType: core.serialization.Schema<
     serializers.VerificationFavroType.Raw,
     Hookdeck.VerificationFavroType
-> = core.serialization.enum_(["favro", "FAVRO"]);
+> = core.serialization.enum_(["favro"]);
 
 export declare namespace VerificationFavroType {
-    type Raw = "favro" | "FAVRO";
+    type Raw = "favro";
 }

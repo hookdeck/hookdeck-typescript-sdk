@@ -9,8 +9,8 @@ import * as core from "../../core";
 export const VerificationPylonType: core.serialization.Schema<
     serializers.VerificationPylonType.Raw,
     Hookdeck.VerificationPylonType
-> = core.serialization.enum_(["pylon", "PYLON"]);
+> = core.serialization.enum_(["pylon"]);
 
 export declare namespace VerificationPylonType {
-    type Raw = "pylon" | "PYLON";
+    type Raw = "pylon";
 }

@@ -9,8 +9,8 @@ import * as core from "../../core";
 export const VerificationHubspotType: core.serialization.Schema<
     serializers.VerificationHubspotType.Raw,
     Hookdeck.VerificationHubspotType
-> = core.serialization.enum_(["hubspot", "HUBSPOT"]);
+> = core.serialization.enum_(["hubspot"]);
 
 export declare namespace VerificationHubspotType {
-    type Raw = "hubspot" | "HUBSPOT";
+    type Raw = "hubspot";
 }

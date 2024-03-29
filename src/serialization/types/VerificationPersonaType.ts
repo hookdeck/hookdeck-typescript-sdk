@@ -9,8 +9,8 @@ import * as core from "../../core";
 export const VerificationPersonaType: core.serialization.Schema<
     serializers.VerificationPersonaType.Raw,
     Hookdeck.VerificationPersonaType
-> = core.serialization.enum_(["persona", "PERSONA"]);
+> = core.serialization.enum_(["persona"]);
 
 export declare namespace VerificationPersonaType {
-    type Raw = "persona" | "PERSONA";
+    type Raw = "persona";
 }

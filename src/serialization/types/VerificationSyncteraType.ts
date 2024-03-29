@@ -9,8 +9,8 @@ import * as core from "../../core";
 export const VerificationSyncteraType: core.serialization.Schema<
     serializers.VerificationSyncteraType.Raw,
     Hookdeck.VerificationSyncteraType
-> = core.serialization.enum_(["synctera", "SYNCTERA"]);
+> = core.serialization.enum_(["synctera"]);
 
 export declare namespace VerificationSyncteraType {
-    type Raw = "synctera" | "SYNCTERA";
+    type Raw = "synctera";
 }

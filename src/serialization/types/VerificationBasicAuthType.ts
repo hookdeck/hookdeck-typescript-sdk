@@ -9,8 +9,8 @@ import * as core from "../../core";
 export const VerificationBasicAuthType: core.serialization.Schema<
     serializers.VerificationBasicAuthType.Raw,
     Hookdeck.VerificationBasicAuthType
-> = core.serialization.enum_(["basic_auth", "BASIC_AUTH"]);
+> = core.serialization.enum_(["basic_auth"]);
 
 export declare namespace VerificationBasicAuthType {
-    type Raw = "basic_auth" | "BASIC_AUTH";
+    type Raw = "basic_auth";
 }

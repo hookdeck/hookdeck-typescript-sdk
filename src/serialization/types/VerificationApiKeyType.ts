@@ -9,8 +9,8 @@ import * as core from "../../core";
 export const VerificationApiKeyType: core.serialization.Schema<
     serializers.VerificationApiKeyType.Raw,
     Hookdeck.VerificationApiKeyType
-> = core.serialization.enum_(["api_key", "API_KEY"]);
+> = core.serialization.enum_(["api_key"]);
 
 export declare namespace VerificationApiKeyType {
-    type Raw = "api_key" | "API_KEY";
+    type Raw = "api_key";
 }

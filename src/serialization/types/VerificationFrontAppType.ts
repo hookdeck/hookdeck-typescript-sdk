@@ -9,8 +9,8 @@ import * as core from "../../core";
 export const VerificationFrontAppType: core.serialization.Schema<
     serializers.VerificationFrontAppType.Raw,
     Hookdeck.VerificationFrontAppType
-> = core.serialization.enum_(["frontapp", "FRONTAPP"]);
+> = core.serialization.enum_(["frontapp"]);
 
 export declare namespace VerificationFrontAppType {
-    type Raw = "frontapp" | "FRONTAPP";
+    type Raw = "frontapp";
 }

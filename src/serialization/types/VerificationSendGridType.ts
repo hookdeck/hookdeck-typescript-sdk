@@ -9,8 +9,8 @@ import * as core from "../../core";
 export const VerificationSendGridType: core.serialization.Schema<
     serializers.VerificationSendGridType.Raw,
     Hookdeck.VerificationSendGridType
-> = core.serialization.enum_(["sendgrid", "SENDGRID"]);
+> = core.serialization.enum_(["sendgrid"]);
 
 export declare namespace VerificationSendGridType {
-    type Raw = "sendgrid" | "SENDGRID";
+    type Raw = "sendgrid";
 }

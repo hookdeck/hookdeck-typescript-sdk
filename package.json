@@ -1,6 +1,6 @@
 {
     "name": "",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "private": false,
     "repository": "https://github.com/hookdeck/hookdeck-node-sdk",
     "main": "./index.js",

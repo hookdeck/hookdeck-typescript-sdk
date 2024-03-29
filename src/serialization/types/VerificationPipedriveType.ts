@@ -9,8 +9,8 @@ import * as core from "../../core";
 export const VerificationPipedriveType: core.serialization.Schema<
     serializers.VerificationPipedriveType.Raw,
     Hookdeck.VerificationPipedriveType
-> = core.serialization.enum_(["pipedrive", "PIPEDRIVE"]);
+> = core.serialization.enum_(["pipedrive"]);
 
 export declare namespace VerificationPipedriveType {
-    type Raw = "pipedrive" | "PIPEDRIVE";
+    type Raw = "pipedrive";
 }

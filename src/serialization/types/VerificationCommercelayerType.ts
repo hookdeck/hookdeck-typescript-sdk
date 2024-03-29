@@ -9,8 +9,8 @@ import * as core from "../../core";
 export const VerificationCommercelayerType: core.serialization.Schema<
     serializers.VerificationCommercelayerType.Raw,
     Hookdeck.VerificationCommercelayerType
-> = core.serialization.enum_(["commercelayer", "COMMERCELAYER"]);
+> = core.serialization.enum_(["commercelayer"]);
 
 export declare namespace VerificationCommercelayerType {
-    type Raw = "commercelayer" | "COMMERCELAYER";
+    type Raw = "commercelayer";
 }

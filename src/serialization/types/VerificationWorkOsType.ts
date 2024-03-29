@@ -9,8 +9,8 @@ import * as core from "../../core";
 export const VerificationWorkOsType: core.serialization.Schema<
     serializers.VerificationWorkOsType.Raw,
     Hookdeck.VerificationWorkOsType
-> = core.serialization.enum_(["workos", "WORKOS"]);
+> = core.serialization.enum_(["workos"]);
 
 export declare namespace VerificationWorkOsType {
-    type Raw = "workos" | "WORKOS";
+    type Raw = "workos";
 }

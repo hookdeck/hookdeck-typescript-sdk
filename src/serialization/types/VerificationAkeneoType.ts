@@ -9,8 +9,8 @@ import * as core from "../../core";
 export const VerificationAkeneoType: core.serialization.Schema<
     serializers.VerificationAkeneoType.Raw,
     Hookdeck.VerificationAkeneoType
-> = core.serialization.enum_(["akeneo", "AKENEO"]);
+> = core.serialization.enum_(["akeneo"]);
 
 export declare namespace VerificationAkeneoType {
-    type Raw = "akeneo" | "AKENEO";
+    type Raw = "akeneo";
 }

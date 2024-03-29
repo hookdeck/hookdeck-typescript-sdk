@@ -9,8 +9,8 @@ import * as core from "../../core";
 export const VerificationLinearType: core.serialization.Schema<
     serializers.VerificationLinearType.Raw,
     Hookdeck.VerificationLinearType
-> = core.serialization.enum_(["linear", "LINEAR"]);
+> = core.serialization.enum_(["linear"]);
 
 export declare namespace VerificationLinearType {
-    type Raw = "linear" | "LINEAR";
+    type Raw = "linear";
 }

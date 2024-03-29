@@ -9,8 +9,8 @@ import * as core from "../../core";
 export const VerificationXeroType: core.serialization.Schema<
     serializers.VerificationXeroType.Raw,
     Hookdeck.VerificationXeroType
-> = core.serialization.enum_(["xero", "XERO"]);
+> = core.serialization.enum_(["xero"]);
 
 export declare namespace VerificationXeroType {
-    type Raw = "xero" | "XERO";
+    type Raw = "xero";
 }

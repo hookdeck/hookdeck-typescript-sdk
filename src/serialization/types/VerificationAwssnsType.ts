@@ -9,8 +9,8 @@ import * as core from "../../core";
 export const VerificationAwssnsType: core.serialization.Schema<
     serializers.VerificationAwssnsType.Raw,
     Hookdeck.VerificationAwssnsType
-> = core.serialization.enum_(["aws_sns", "AWS_SNS"]);
+> = core.serialization.enum_(["aws_sns"]);
 
 export declare namespace VerificationAwssnsType {
-    type Raw = "aws_sns" | "AWS_SNS";
+    type Raw = "aws_sns";
 }

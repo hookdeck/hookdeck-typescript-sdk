@@ -9,8 +9,8 @@ import * as core from "../../core";
 export const VerificationEbayType: core.serialization.Schema<
     serializers.VerificationEbayType.Raw,
     Hookdeck.VerificationEbayType
-> = core.serialization.enum_(["ebay", "EBAY"]);
+> = core.serialization.enum_(["ebay"]);
 
 export declare namespace VerificationEbayType {
-    type Raw = "ebay" | "EBAY";
+    type Raw = "ebay";
 }

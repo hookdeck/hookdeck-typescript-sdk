@@ -9,8 +9,8 @@ import * as core from "../../core";
 export const VerificationTokenIoType: core.serialization.Schema<
     serializers.VerificationTokenIoType.Raw,
     Hookdeck.VerificationTokenIoType
-> = core.serialization.enum_(["tokenio", "TOKENIO"]);
+> = core.serialization.enum_(["tokenio"]);
 
 export declare namespace VerificationTokenIoType {
-    type Raw = "tokenio" | "TOKENIO";
+    type Raw = "tokenio";
 }
