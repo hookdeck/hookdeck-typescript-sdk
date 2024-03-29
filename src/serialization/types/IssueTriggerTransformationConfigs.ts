@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { TransformationExecutionLogLevel } from "./TransformationExecutionLogLevel";
 import { IssueTriggerTransformationConfigsTransformations } from "./IssueTriggerTransformationConfigsTransformations";
 
 export const IssueTriggerTransformationConfigs: core.serialization.ObjectSchema<
     serializers.IssueTriggerTransformationConfigs.Raw,
-    Intercom.IssueTriggerTransformationConfigs
+    Hookdeck.IssueTriggerTransformationConfigs
 > = core.serialization.object({
     logLevel: core.serialization.property("log_level", TransformationExecutionLogLevel),
     transformations: IssueTriggerTransformationConfigsTransformations,

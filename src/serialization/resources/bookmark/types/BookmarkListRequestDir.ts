@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../..";
-import * as Intercom from "../../../../api";
+import * as Hookdeck from "../../../../api";
 import * as core from "../../../../core";
 
 export const BookmarkListRequestDir: core.serialization.Schema<
     serializers.BookmarkListRequestDir.Raw,
-    Intercom.BookmarkListRequestDir
+    Hookdeck.BookmarkListRequestDir
 > = core.serialization.enum_(["asc", "desc"]);
 
 export declare namespace BookmarkListRequestDir {

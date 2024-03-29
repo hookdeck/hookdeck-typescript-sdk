@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../..";
-import * as Intercom from "../../../../api";
+import * as Hookdeck from "../../../../api";
 import * as core from "../../../../core";
 
 export const RequestListIgnoredEventRequestDir: core.serialization.Schema<
     serializers.RequestListIgnoredEventRequestDir.Raw,
-    Intercom.RequestListIgnoredEventRequestDir
+    Hookdeck.RequestListIgnoredEventRequestDir
 > = core.serialization.enum_(["asc", "desc"]);
 
 export declare namespace RequestListIgnoredEventRequestDir {

@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationSanityType: core.serialization.Schema<
     serializers.VerificationSanityType.Raw,
-    Intercom.VerificationSanityType
+    Hookdeck.VerificationSanityType
 > = core.serialization.enum_(["sanity", "SANITY"]);
 
 export declare namespace VerificationSanityType {

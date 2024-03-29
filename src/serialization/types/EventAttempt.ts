@@ -3,7 +3,7 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { AttemptTrigger } from "./AttemptTrigger";
 import { AttemptErrorCodes } from "./AttemptErrorCodes";
@@ -12,7 +12,7 @@ import { EventAttemptHttpMethod } from "./EventAttemptHttpMethod";
 import { AttemptStatus } from "./AttemptStatus";
 import { AttemptState } from "./AttemptState";
 
-export const EventAttempt: core.serialization.ObjectSchema<serializers.EventAttempt.Raw, Intercom.EventAttempt> =
+export const EventAttempt: core.serialization.ObjectSchema<serializers.EventAttempt.Raw, Hookdeck.EventAttempt> =
     core.serialization.object({
         id: core.serialization.string(),
         teamId: core.serialization.property("team_id", core.serialization.string()),

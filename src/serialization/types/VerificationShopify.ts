@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { VerificationShopifyType } from "./VerificationShopifyType";
 import { VerificationShopifyConfigs } from "./VerificationShopifyConfigs";
 
 export const VerificationShopify: core.serialization.ObjectSchema<
     serializers.VerificationShopify.Raw,
-    Intercom.VerificationShopify
+    Hookdeck.VerificationShopify
 > = core.serialization.object({
     type: VerificationShopifyType,
     configs: VerificationShopifyConfigs.optional(),

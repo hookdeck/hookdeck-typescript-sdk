@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { Destination } from "./Destination";
 import { Source } from "./Source";
 import { Rule } from "./Rule";
 
-export const Connection: core.serialization.ObjectSchema<serializers.Connection.Raw, Intercom.Connection> =
+export const Connection: core.serialization.ObjectSchema<serializers.Connection.Raw, Hookdeck.Connection> =
     core.serialization.object({
         id: core.serialization.string(),
         name: core.serialization.string().optional(),

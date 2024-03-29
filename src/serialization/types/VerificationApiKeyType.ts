@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationApiKeyType: core.serialization.Schema<
     serializers.VerificationApiKeyType.Raw,
-    Intercom.VerificationApiKeyType
+    Hookdeck.VerificationApiKeyType
 > = core.serialization.enum_(["api_key", "API_KEY"]);
 
 export declare namespace VerificationApiKeyType {

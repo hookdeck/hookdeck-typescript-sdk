@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const IssueTriggerIntegrationChannel: core.serialization.ObjectSchema<
     serializers.IssueTriggerIntegrationChannel.Raw,
-    Intercom.IssueTriggerIntegrationChannel
+    Hookdeck.IssueTriggerIntegrationChannel
 > = core.serialization.object({});
 
 export declare namespace IssueTriggerIntegrationChannel {

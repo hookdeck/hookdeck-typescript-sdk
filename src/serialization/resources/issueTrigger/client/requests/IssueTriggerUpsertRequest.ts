@@ -3,7 +3,7 @@
  */
 
 import * as serializers from "../../../..";
-import * as Intercom from "../../../../../api";
+import * as Hookdeck from "../../../../../api";
 import * as core from "../../../../../core";
 import { IssueType } from "../../../../types/IssueType";
 import { IssueTriggerUpsertRequestConfigs } from "../../types/IssueTriggerUpsertRequestConfigs";
@@ -11,7 +11,7 @@ import { IssueTriggerChannels } from "../../../../types/IssueTriggerChannels";
 
 export const IssueTriggerUpsertRequest: core.serialization.Schema<
     serializers.IssueTriggerUpsertRequest.Raw,
-    Intercom.IssueTriggerUpsertRequest
+    Hookdeck.IssueTriggerUpsertRequest
 > = core.serialization.object({
     type: IssueType,
     configs: IssueTriggerUpsertRequestConfigs.optional(),

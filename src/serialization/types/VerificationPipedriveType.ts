@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationPipedriveType: core.serialization.Schema<
     serializers.VerificationPipedriveType.Raw,
-    Intercom.VerificationPipedriveType
+    Hookdeck.VerificationPipedriveType
 > = core.serialization.enum_(["pipedrive", "PIPEDRIVE"]);
 
 export declare namespace VerificationPipedriveType {

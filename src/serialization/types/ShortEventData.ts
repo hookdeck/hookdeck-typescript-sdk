@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { ShortEventDataParsedQuery } from "./ShortEventDataParsedQuery";
 import { ShortEventDataHeaders } from "./ShortEventDataHeaders";
 import { ShortEventDataBody } from "./ShortEventDataBody";
 
-export const ShortEventData: core.serialization.ObjectSchema<serializers.ShortEventData.Raw, Intercom.ShortEventData> =
+export const ShortEventData: core.serialization.ObjectSchema<serializers.ShortEventData.Raw, Hookdeck.ShortEventData> =
     core.serialization.object({
         path: core.serialization.string(),
         query: core.serialization.string().optional(),

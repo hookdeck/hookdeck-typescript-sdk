@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const SourceCustomResponseContentType: core.serialization.Schema<
     serializers.SourceCustomResponseContentType.Raw,
-    Intercom.SourceCustomResponseContentType
+    Hookdeck.SourceCustomResponseContentType
 > = core.serialization.enum_(["json", "text", "xml"]);
 
 export declare namespace SourceCustomResponseContentType {

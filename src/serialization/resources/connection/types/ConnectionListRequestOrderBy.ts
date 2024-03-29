@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../..";
-import * as Intercom from "../../../../api";
+import * as Hookdeck from "../../../../api";
 import * as core from "../../../../core";
 
 export const ConnectionListRequestOrderBy: core.serialization.Schema<
     serializers.ConnectionListRequestOrderBy.Raw,
-    Intercom.ConnectionListRequestOrderBy
+    Hookdeck.ConnectionListRequestOrderBy
 > = core.serialization.enum_([
     "created_at",
     "updated_at",

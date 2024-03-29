@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationNmiPaymentGatewayConfigs: core.serialization.ObjectSchema<
     serializers.VerificationNmiPaymentGatewayConfigs.Raw,
-    Intercom.VerificationNmiPaymentGatewayConfigs
+    Hookdeck.VerificationNmiPaymentGatewayConfigs
 > = core.serialization.object({
     webhookSecretKey: core.serialization.property("webhook_secret_key", core.serialization.string()),
 });

@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { AttemptErrorCodes } from "./AttemptErrorCodes";
 import { EventStatus } from "./EventStatus";
 import { ShortEventData } from "./ShortEventData";
 
-export const Event: core.serialization.ObjectSchema<serializers.Event.Raw, Intercom.Event> = core.serialization.object({
+export const Event: core.serialization.ObjectSchema<serializers.Event.Raw, Hookdeck.Event> = core.serialization.object({
     id: core.serialization.string(),
     teamId: core.serialization.property("team_id", core.serialization.string()),
     webhookId: core.serialization.property("webhook_id", core.serialization.string()),

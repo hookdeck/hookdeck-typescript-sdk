@@ -4,14 +4,14 @@
 
 import * as environments from "../../../../environments";
 import * as core from "../../../../core";
-import * as Intercom from "../../..";
+import * as Hookdeck from "../../..";
 import urlJoin from "url-join";
 import * as serializers from "../../../../serialization";
 import * as errors from "../../../../errors";
 
 export declare namespace IgnoredEventBulkRetry {
     interface Options {
-        environment?: core.Supplier<environments.IntercomEnvironment | string>;
+        environment?: core.Supplier<environments.HookdeckEnvironment | string>;
         token: core.Supplier<core.BearerToken>;
         fetcher?: core.FetchFunction;
     }
@@ -27,16 +27,16 @@ export class IgnoredEventBulkRetry {
 
     /**
      *
-     * @throws {@link Intercom.BadRequestError}
-     * @throws {@link Intercom.UnprocessableEntityError}
+     * @throws {@link Hookdeck.BadRequestError}
+     * @throws {@link Hookdeck.UnprocessableEntityError}
      *
      * @example
-     *     await intercom.ignoredEventBulkRetry.list()
+     *     await hookdeck.ignoredEventBulkRetry.list()
      */
     public async list(
-        request: Intercom.IgnoredEventBulkRetryListRequest = {},
+        request: Hookdeck.IgnoredEventBulkRetryListRequest = {},
         requestOptions?: IgnoredEventBulkRetry.RequestOptions
-    ): Promise<Intercom.BatchOperationPaginatedResult> {
+    ): Promise<Hookdeck.BatchOperationPaginatedResult> {
         const {
             cancelledAt,
             completedAt,
@@ -97,7 +97,7 @@ export class IgnoredEventBulkRetry {
 
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.IntercomEnvironment.Default,
+                (await core.Supplier.get(this._options.environment)) ?? environments.HookdeckEnvironment.Default,
                 "bulk/ignored-events/retry"
             ),
             method: "GET",
@@ -127,7 +127,7 @@ export class IgnoredEventBulkRetry {
         if (_response.error.reason === "status-code") {
             switch (_response.error.statusCode) {
                 case 400:
-                    throw new Intercom.BadRequestError(
+                    throw new Hookdeck.BadRequestError(
                         await serializers.ApiErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -137,7 +137,7 @@ export class IgnoredEventBulkRetry {
                         })
                     );
                 case 422:
-                    throw new Intercom.UnprocessableEntityError(
+                    throw new Hookdeck.UnprocessableEntityError(
                         await serializers.ApiErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -147,7 +147,7 @@ export class IgnoredEventBulkRetry {
                         })
                     );
                 default:
-                    throw new errors.IntercomError({
+                    throw new errors.HookdeckError({
                         statusCode: _response.error.statusCode,
                         body: _response.error.body,
                     });
@@ -156,14 +156,14 @@ export class IgnoredEventBulkRetry {
 
         switch (_response.error.reason) {
             case "non-json":
-                throw new errors.IntercomError({
+                throw new errors.HookdeckError({
                     statusCode: _response.error.statusCode,
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.IntercomTimeoutError();
+                throw new errors.HookdeckTimeoutError();
             case "unknown":
-                throw new errors.IntercomError({
+                throw new errors.HookdeckError({
                     message: _response.error.errorMessage,
                 });
         }
@@ -171,19 +171,19 @@ export class IgnoredEventBulkRetry {
 
     /**
      *
-     * @throws {@link Intercom.BadRequestError}
-     * @throws {@link Intercom.UnprocessableEntityError}
+     * @throws {@link Hookdeck.BadRequestError}
+     * @throws {@link Hookdeck.UnprocessableEntityError}
      *
      * @example
-     *     await intercom.ignoredEventBulkRetry.create()
+     *     await hookdeck.ignoredEventBulkRetry.create()
      */
     public async create(
-        request: Intercom.IgnoredEventBulkRetryCreateRequest = {},
+        request: Hookdeck.IgnoredEventBulkRetryCreateRequest = {},
         requestOptions?: IgnoredEventBulkRetry.RequestOptions
-    ): Promise<Intercom.BatchOperation> {
+    ): Promise<Hookdeck.BatchOperation> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.IntercomEnvironment.Default,
+                (await core.Supplier.get(this._options.environment)) ?? environments.HookdeckEnvironment.Default,
                 "bulk/ignored-events/retry"
             ),
             method: "POST",
@@ -215,7 +215,7 @@ export class IgnoredEventBulkRetry {
         if (_response.error.reason === "status-code") {
             switch (_response.error.statusCode) {
                 case 400:
-                    throw new Intercom.BadRequestError(
+                    throw new Hookdeck.BadRequestError(
                         await serializers.ApiErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -225,7 +225,7 @@ export class IgnoredEventBulkRetry {
                         })
                     );
                 case 422:
-                    throw new Intercom.UnprocessableEntityError(
+                    throw new Hookdeck.UnprocessableEntityError(
                         await serializers.ApiErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -235,7 +235,7 @@ export class IgnoredEventBulkRetry {
                         })
                     );
                 default:
-                    throw new errors.IntercomError({
+                    throw new errors.HookdeckError({
                         statusCode: _response.error.statusCode,
                         body: _response.error.body,
                     });
@@ -244,14 +244,14 @@ export class IgnoredEventBulkRetry {
 
         switch (_response.error.reason) {
             case "non-json":
-                throw new errors.IntercomError({
+                throw new errors.HookdeckError({
                     statusCode: _response.error.statusCode,
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.IntercomTimeoutError();
+                throw new errors.HookdeckTimeoutError();
             case "unknown":
-                throw new errors.IntercomError({
+                throw new errors.HookdeckError({
                     message: _response.error.errorMessage,
                 });
         }
@@ -259,18 +259,18 @@ export class IgnoredEventBulkRetry {
 
     /**
      *
-     * @throws {@link Intercom.BadRequestError}
-     * @throws {@link Intercom.UnprocessableEntityError}
+     * @throws {@link Hookdeck.BadRequestError}
+     * @throws {@link Hookdeck.UnprocessableEntityError}
      *
      * @example
-     *     await intercom.ignoredEventBulkRetry.plan()
+     *     await hookdeck.ignoredEventBulkRetry.plan()
      */
     public async plan(
         requestOptions?: IgnoredEventBulkRetry.RequestOptions
-    ): Promise<Intercom.IgnoredEventBulkRetryPlanResponse> {
+    ): Promise<Hookdeck.IgnoredEventBulkRetryPlanResponse> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.IntercomEnvironment.Default,
+                (await core.Supplier.get(this._options.environment)) ?? environments.HookdeckEnvironment.Default,
                 "bulk/ignored-events/retry/plan"
             ),
             method: "GET",
@@ -299,7 +299,7 @@ export class IgnoredEventBulkRetry {
         if (_response.error.reason === "status-code") {
             switch (_response.error.statusCode) {
                 case 400:
-                    throw new Intercom.BadRequestError(
+                    throw new Hookdeck.BadRequestError(
                         await serializers.ApiErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -309,7 +309,7 @@ export class IgnoredEventBulkRetry {
                         })
                     );
                 case 422:
-                    throw new Intercom.UnprocessableEntityError(
+                    throw new Hookdeck.UnprocessableEntityError(
                         await serializers.ApiErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -319,7 +319,7 @@ export class IgnoredEventBulkRetry {
                         })
                     );
                 default:
-                    throw new errors.IntercomError({
+                    throw new errors.HookdeckError({
                         statusCode: _response.error.statusCode,
                         body: _response.error.body,
                     });
@@ -328,14 +328,14 @@ export class IgnoredEventBulkRetry {
 
         switch (_response.error.reason) {
             case "non-json":
-                throw new errors.IntercomError({
+                throw new errors.HookdeckError({
                     statusCode: _response.error.statusCode,
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.IntercomTimeoutError();
+                throw new errors.HookdeckTimeoutError();
             case "unknown":
-                throw new errors.IntercomError({
+                throw new errors.HookdeckError({
                     message: _response.error.errorMessage,
                 });
         }
@@ -343,18 +343,18 @@ export class IgnoredEventBulkRetry {
 
     /**
      *
-     * @throws {@link Intercom.NotFoundError}
+     * @throws {@link Hookdeck.NotFoundError}
      *
      * @example
-     *     await intercom.ignoredEventBulkRetry.retrieve("id")
+     *     await hookdeck.ignoredEventBulkRetry.retrieve("id")
      */
     public async retrieve(
         id: string,
         requestOptions?: IgnoredEventBulkRetry.RequestOptions
-    ): Promise<Intercom.BatchOperation> {
+    ): Promise<Hookdeck.BatchOperation> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.IntercomEnvironment.Default,
+                (await core.Supplier.get(this._options.environment)) ?? environments.HookdeckEnvironment.Default,
                 `bulk/ignored-events/retry/${id}`
             ),
             method: "GET",
@@ -383,7 +383,7 @@ export class IgnoredEventBulkRetry {
         if (_response.error.reason === "status-code") {
             switch (_response.error.statusCode) {
                 case 404:
-                    throw new Intercom.NotFoundError(
+                    throw new Hookdeck.NotFoundError(
                         await serializers.ApiErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -393,7 +393,7 @@ export class IgnoredEventBulkRetry {
                         })
                     );
                 default:
-                    throw new errors.IntercomError({
+                    throw new errors.HookdeckError({
                         statusCode: _response.error.statusCode,
                         body: _response.error.body,
                     });
@@ -402,14 +402,14 @@ export class IgnoredEventBulkRetry {
 
         switch (_response.error.reason) {
             case "non-json":
-                throw new errors.IntercomError({
+                throw new errors.HookdeckError({
                     statusCode: _response.error.statusCode,
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.IntercomTimeoutError();
+                throw new errors.HookdeckTimeoutError();
             case "unknown":
-                throw new errors.IntercomError({
+                throw new errors.HookdeckError({
                     message: _response.error.errorMessage,
                 });
         }
@@ -417,18 +417,18 @@ export class IgnoredEventBulkRetry {
 
     /**
      *
-     * @throws {@link Intercom.NotFoundError}
+     * @throws {@link Hookdeck.NotFoundError}
      *
      * @example
-     *     await intercom.ignoredEventBulkRetry.cancel("id")
+     *     await hookdeck.ignoredEventBulkRetry.cancel("id")
      */
     public async cancel(
         id: string,
         requestOptions?: IgnoredEventBulkRetry.RequestOptions
-    ): Promise<Intercom.BatchOperation> {
+    ): Promise<Hookdeck.BatchOperation> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.IntercomEnvironment.Default,
+                (await core.Supplier.get(this._options.environment)) ?? environments.HookdeckEnvironment.Default,
                 `bulk/ignored-events/retry/${id}/cancel`
             ),
             method: "POST",
@@ -457,7 +457,7 @@ export class IgnoredEventBulkRetry {
         if (_response.error.reason === "status-code") {
             switch (_response.error.statusCode) {
                 case 404:
-                    throw new Intercom.NotFoundError(
+                    throw new Hookdeck.NotFoundError(
                         await serializers.ApiErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -467,7 +467,7 @@ export class IgnoredEventBulkRetry {
                         })
                     );
                 default:
-                    throw new errors.IntercomError({
+                    throw new errors.HookdeckError({
                         statusCode: _response.error.statusCode,
                         body: _response.error.body,
                     });
@@ -476,14 +476,14 @@ export class IgnoredEventBulkRetry {
 
         switch (_response.error.reason) {
             case "non-json":
-                throw new errors.IntercomError({
+                throw new errors.HookdeckError({
                     statusCode: _response.error.statusCode,
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.IntercomTimeoutError();
+                throw new errors.HookdeckTimeoutError();
             case "unknown":
-                throw new errors.IntercomError({
+                throw new errors.HookdeckError({
                     message: _response.error.errorMessage,
                 });
         }

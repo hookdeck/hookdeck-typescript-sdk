@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationTwitterType: core.serialization.Schema<
     serializers.VerificationTwitterType.Raw,
-    Intercom.VerificationTwitterType
+    Hookdeck.VerificationTwitterType
 > = core.serialization.enum_(["twitter", "TWITTER"]);
 
 export declare namespace VerificationTwitterType {

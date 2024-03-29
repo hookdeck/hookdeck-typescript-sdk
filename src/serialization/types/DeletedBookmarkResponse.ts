@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const DeletedBookmarkResponse: core.serialization.ObjectSchema<
     serializers.DeletedBookmarkResponse.Raw,
-    Intercom.DeletedBookmarkResponse
+    Hookdeck.DeletedBookmarkResponse
 > = core.serialization.object({
     id: core.serialization.string(),
 });

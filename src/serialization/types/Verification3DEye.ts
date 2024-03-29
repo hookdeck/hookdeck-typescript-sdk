@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { Verification3DEyeType } from "./Verification3DEyeType";
 import { Verification3DEyeConfigs } from "./Verification3DEyeConfigs";
 
 export const Verification3DEye: core.serialization.ObjectSchema<
     serializers.Verification3DEye.Raw,
-    Intercom.Verification3DEye
+    Hookdeck.Verification3DEye
 > = core.serialization.object({
     type: Verification3DEyeType,
     configs: Verification3DEyeConfigs.optional(),

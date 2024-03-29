@@ -3,7 +3,7 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { ListCustomDomainSchemaItemSslValidationRecordsItem } from "./ListCustomDomainSchemaItemSslValidationRecordsItem";
 import { ListCustomDomainSchemaItemSslDcvDelegationRecordsItem } from "./ListCustomDomainSchemaItemSslDcvDelegationRecordsItem";
@@ -11,7 +11,7 @@ import { ListCustomDomainSchemaItemSslSettings } from "./ListCustomDomainSchemaI
 
 export const ListCustomDomainSchemaItemSsl: core.serialization.ObjectSchema<
     serializers.ListCustomDomainSchemaItemSsl.Raw,
-    Intercom.ListCustomDomainSchemaItemSsl
+    Hookdeck.ListCustomDomainSchemaItemSsl
 > = core.serialization.object({
     id: core.serialization.string().optional(),
     type: core.serialization.string().optional(),

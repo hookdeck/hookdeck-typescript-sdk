@@ -3,7 +3,7 @@
  */
 
 import * as serializers from "../../..";
-import * as Intercom from "../../../../api";
+import * as Hookdeck from "../../../../api";
 import * as core from "../../../../core";
 import { IssueTriggerDeliveryConfigs } from "../../../types/IssueTriggerDeliveryConfigs";
 import { IssueTriggerTransformationConfigs } from "../../../types/IssueTriggerTransformationConfigs";
@@ -11,7 +11,7 @@ import { IssueTriggerBackpressureConfigs } from "../../../types/IssueTriggerBack
 
 export const IssueTriggerUpsertRequestConfigs: core.serialization.Schema<
     serializers.IssueTriggerUpsertRequestConfigs.Raw,
-    Intercom.IssueTriggerUpsertRequestConfigs
+    Hookdeck.IssueTriggerUpsertRequestConfigs
 > = core.serialization.undiscriminatedUnion([
     IssueTriggerDeliveryConfigs,
     IssueTriggerTransformationConfigs,

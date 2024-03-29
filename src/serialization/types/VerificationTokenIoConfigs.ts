@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationTokenIoConfigs: core.serialization.ObjectSchema<
     serializers.VerificationTokenIoConfigs.Raw,
-    Intercom.VerificationTokenIoConfigs
+    Hookdeck.VerificationTokenIoConfigs
 > = core.serialization.object({
     publicKey: core.serialization.property("public_key", core.serialization.string()),
 });

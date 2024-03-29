@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const IntegrationFeature: core.serialization.Schema<
     serializers.IntegrationFeature.Raw,
-    Intercom.IntegrationFeature
+    Hookdeck.IntegrationFeature
 > = core.serialization.enum_(["VERIFICATION", "HANDSHAKE"]);
 
 export declare namespace IntegrationFeature {

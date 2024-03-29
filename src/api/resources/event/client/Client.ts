@@ -4,14 +4,14 @@
 
 import * as environments from "../../../../environments";
 import * as core from "../../../../core";
-import * as Intercom from "../../..";
+import * as Hookdeck from "../../..";
 import urlJoin from "url-join";
 import * as serializers from "../../../../serialization";
 import * as errors from "../../../../errors";
 
 export declare namespace Event {
     interface Options {
-        environment?: core.Supplier<environments.IntercomEnvironment | string>;
+        environment?: core.Supplier<environments.HookdeckEnvironment | string>;
         token: core.Supplier<core.BearerToken>;
         fetcher?: core.FetchFunction;
     }
@@ -27,16 +27,16 @@ export class Event {
 
     /**
      *
-     * @throws {@link Intercom.BadRequestError}
-     * @throws {@link Intercom.UnprocessableEntityError}
+     * @throws {@link Hookdeck.BadRequestError}
+     * @throws {@link Hookdeck.UnprocessableEntityError}
      *
      * @example
-     *     await intercom.event.list()
+     *     await hookdeck.event.list()
      */
     public async list(
-        request: Intercom.EventListRequest = {},
+        request: Hookdeck.EventListRequest = {},
         requestOptions?: Event.RequestOptions
-    ): Promise<Intercom.EventPaginatedResult> {
+    ): Promise<Hookdeck.EventPaginatedResult> {
         const {
             id,
             status,
@@ -177,7 +177,7 @@ export class Event {
 
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.IntercomEnvironment.Default,
+                (await core.Supplier.get(this._options.environment)) ?? environments.HookdeckEnvironment.Default,
                 "events"
             ),
             method: "GET",
@@ -207,7 +207,7 @@ export class Event {
         if (_response.error.reason === "status-code") {
             switch (_response.error.statusCode) {
                 case 400:
-                    throw new Intercom.BadRequestError(
+                    throw new Hookdeck.BadRequestError(
                         await serializers.ApiErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -217,7 +217,7 @@ export class Event {
                         })
                     );
                 case 422:
-                    throw new Intercom.UnprocessableEntityError(
+                    throw new Hookdeck.UnprocessableEntityError(
                         await serializers.ApiErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -227,7 +227,7 @@ export class Event {
                         })
                     );
                 default:
-                    throw new errors.IntercomError({
+                    throw new errors.HookdeckError({
                         statusCode: _response.error.statusCode,
                         body: _response.error.body,
                     });
@@ -236,14 +236,14 @@ export class Event {
 
         switch (_response.error.reason) {
             case "non-json":
-                throw new errors.IntercomError({
+                throw new errors.HookdeckError({
                     statusCode: _response.error.statusCode,
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.IntercomTimeoutError();
+                throw new errors.HookdeckTimeoutError();
             case "unknown":
-                throw new errors.IntercomError({
+                throw new errors.HookdeckError({
                     message: _response.error.errorMessage,
                 });
         }
@@ -251,15 +251,15 @@ export class Event {
 
     /**
      *
-     * @throws {@link Intercom.NotFoundError}
+     * @throws {@link Hookdeck.NotFoundError}
      *
      * @example
-     *     await intercom.event.retrieve("id")
+     *     await hookdeck.event.retrieve("id")
      */
-    public async retrieve(id: string, requestOptions?: Event.RequestOptions): Promise<Intercom.Event> {
+    public async retrieve(id: string, requestOptions?: Event.RequestOptions): Promise<Hookdeck.Event> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.IntercomEnvironment.Default,
+                (await core.Supplier.get(this._options.environment)) ?? environments.HookdeckEnvironment.Default,
                 `events/${id}`
             ),
             method: "GET",
@@ -288,7 +288,7 @@ export class Event {
         if (_response.error.reason === "status-code") {
             switch (_response.error.statusCode) {
                 case 404:
-                    throw new Intercom.NotFoundError(
+                    throw new Hookdeck.NotFoundError(
                         await serializers.ApiErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -298,7 +298,7 @@ export class Event {
                         })
                     );
                 default:
-                    throw new errors.IntercomError({
+                    throw new errors.HookdeckError({
                         statusCode: _response.error.statusCode,
                         body: _response.error.body,
                     });
@@ -307,14 +307,14 @@ export class Event {
 
         switch (_response.error.reason) {
             case "non-json":
-                throw new errors.IntercomError({
+                throw new errors.HookdeckError({
                     statusCode: _response.error.statusCode,
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.IntercomTimeoutError();
+                throw new errors.HookdeckTimeoutError();
             case "unknown":
-                throw new errors.IntercomError({
+                throw new errors.HookdeckError({
                     message: _response.error.errorMessage,
                 });
         }
@@ -322,15 +322,15 @@ export class Event {
 
     /**
      *
-     * @throws {@link Intercom.NotFoundError}
+     * @throws {@link Hookdeck.NotFoundError}
      *
      * @example
-     *     await intercom.event.retrieveBody("id")
+     *     await hookdeck.event.retrieveBody("id")
      */
-    public async retrieveBody(id: string, requestOptions?: Event.RequestOptions): Promise<Intercom.RawBody> {
+    public async retrieveBody(id: string, requestOptions?: Event.RequestOptions): Promise<Hookdeck.RawBody> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.IntercomEnvironment.Default,
+                (await core.Supplier.get(this._options.environment)) ?? environments.HookdeckEnvironment.Default,
                 `events/${id}/raw_body`
             ),
             method: "GET",
@@ -359,7 +359,7 @@ export class Event {
         if (_response.error.reason === "status-code") {
             switch (_response.error.statusCode) {
                 case 404:
-                    throw new Intercom.NotFoundError(
+                    throw new Hookdeck.NotFoundError(
                         await serializers.ApiErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -369,7 +369,7 @@ export class Event {
                         })
                     );
                 default:
-                    throw new errors.IntercomError({
+                    throw new errors.HookdeckError({
                         statusCode: _response.error.statusCode,
                         body: _response.error.body,
                     });
@@ -378,14 +378,14 @@ export class Event {
 
         switch (_response.error.reason) {
             case "non-json":
-                throw new errors.IntercomError({
+                throw new errors.HookdeckError({
                     statusCode: _response.error.statusCode,
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.IntercomTimeoutError();
+                throw new errors.HookdeckTimeoutError();
             case "unknown":
-                throw new errors.IntercomError({
+                throw new errors.HookdeckError({
                     message: _response.error.errorMessage,
                 });
         }
@@ -393,15 +393,15 @@ export class Event {
 
     /**
      *
-     * @throws {@link Intercom.NotFoundError}
+     * @throws {@link Hookdeck.NotFoundError}
      *
      * @example
-     *     await intercom.event.retry("id")
+     *     await hookdeck.event.retry("id")
      */
-    public async retry(id: string, requestOptions?: Event.RequestOptions): Promise<Intercom.RetriedEvent> {
+    public async retry(id: string, requestOptions?: Event.RequestOptions): Promise<Hookdeck.RetriedEvent> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.IntercomEnvironment.Default,
+                (await core.Supplier.get(this._options.environment)) ?? environments.HookdeckEnvironment.Default,
                 `events/${id}/retry`
             ),
             method: "POST",
@@ -430,7 +430,7 @@ export class Event {
         if (_response.error.reason === "status-code") {
             switch (_response.error.statusCode) {
                 case 404:
-                    throw new Intercom.NotFoundError(
+                    throw new Hookdeck.NotFoundError(
                         await serializers.ApiErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -440,7 +440,7 @@ export class Event {
                         })
                     );
                 default:
-                    throw new errors.IntercomError({
+                    throw new errors.HookdeckError({
                         statusCode: _response.error.statusCode,
                         body: _response.error.body,
                     });
@@ -449,14 +449,14 @@ export class Event {
 
         switch (_response.error.reason) {
             case "non-json":
-                throw new errors.IntercomError({
+                throw new errors.HookdeckError({
                     statusCode: _response.error.statusCode,
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.IntercomTimeoutError();
+                throw new errors.HookdeckTimeoutError();
             case "unknown":
-                throw new errors.IntercomError({
+                throw new errors.HookdeckError({
                     message: _response.error.errorMessage,
                 });
         }
@@ -464,15 +464,15 @@ export class Event {
 
     /**
      *
-     * @throws {@link Intercom.NotFoundError}
+     * @throws {@link Hookdeck.NotFoundError}
      *
      * @example
-     *     await intercom.event.mute("id")
+     *     await hookdeck.event.mute("id")
      */
-    public async mute(id: string, requestOptions?: Event.RequestOptions): Promise<Intercom.Event> {
+    public async mute(id: string, requestOptions?: Event.RequestOptions): Promise<Hookdeck.Event> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.IntercomEnvironment.Default,
+                (await core.Supplier.get(this._options.environment)) ?? environments.HookdeckEnvironment.Default,
                 `events/${id}/mute`
             ),
             method: "PUT",
@@ -501,7 +501,7 @@ export class Event {
         if (_response.error.reason === "status-code") {
             switch (_response.error.statusCode) {
                 case 404:
-                    throw new Intercom.NotFoundError(
+                    throw new Hookdeck.NotFoundError(
                         await serializers.ApiErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -511,7 +511,7 @@ export class Event {
                         })
                     );
                 default:
-                    throw new errors.IntercomError({
+                    throw new errors.HookdeckError({
                         statusCode: _response.error.statusCode,
                         body: _response.error.body,
                     });
@@ -520,14 +520,14 @@ export class Event {
 
         switch (_response.error.reason) {
             case "non-json":
-                throw new errors.IntercomError({
+                throw new errors.HookdeckError({
                     statusCode: _response.error.statusCode,
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.IntercomTimeoutError();
+                throw new errors.HookdeckTimeoutError();
             case "unknown":
-                throw new errors.IntercomError({
+                throw new errors.HookdeckError({
                     message: _response.error.errorMessage,
                 });
         }

@@ -4,14 +4,14 @@
 
 import * as environments from "../../../../environments";
 import * as core from "../../../../core";
-import * as Intercom from "../../..";
+import * as Hookdeck from "../../..";
 import urlJoin from "url-join";
 import * as serializers from "../../../../serialization";
 import * as errors from "../../../../errors";
 
 export declare namespace Transformation {
     interface Options {
-        environment?: core.Supplier<environments.IntercomEnvironment | string>;
+        environment?: core.Supplier<environments.HookdeckEnvironment | string>;
         token: core.Supplier<core.BearerToken>;
         fetcher?: core.FetchFunction;
     }
@@ -27,16 +27,16 @@ export class Transformation {
 
     /**
      *
-     * @throws {@link Intercom.BadRequestError}
-     * @throws {@link Intercom.UnprocessableEntityError}
+     * @throws {@link Hookdeck.BadRequestError}
+     * @throws {@link Hookdeck.UnprocessableEntityError}
      *
      * @example
-     *     await intercom.transformation.list()
+     *     await hookdeck.transformation.list()
      */
     public async list(
-        request: Intercom.TransformationListRequest = {},
+        request: Hookdeck.TransformationListRequest = {},
         requestOptions?: Transformation.RequestOptions
-    ): Promise<Intercom.TransformationPaginatedResult> {
+    ): Promise<Hookdeck.TransformationPaginatedResult> {
         const { id, name, orderBy, dir, limit, next, prev } = request;
         const _queryParams: Record<string, string | string[] | object | object[]> = {};
         if (id != null) {
@@ -69,7 +69,7 @@ export class Transformation {
 
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.IntercomEnvironment.Default,
+                (await core.Supplier.get(this._options.environment)) ?? environments.HookdeckEnvironment.Default,
                 "transformations"
             ),
             method: "GET",
@@ -99,7 +99,7 @@ export class Transformation {
         if (_response.error.reason === "status-code") {
             switch (_response.error.statusCode) {
                 case 400:
-                    throw new Intercom.BadRequestError(
+                    throw new Hookdeck.BadRequestError(
                         await serializers.ApiErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -109,7 +109,7 @@ export class Transformation {
                         })
                     );
                 case 422:
-                    throw new Intercom.UnprocessableEntityError(
+                    throw new Hookdeck.UnprocessableEntityError(
                         await serializers.ApiErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -119,7 +119,7 @@ export class Transformation {
                         })
                     );
                 default:
-                    throw new errors.IntercomError({
+                    throw new errors.HookdeckError({
                         statusCode: _response.error.statusCode,
                         body: _response.error.body,
                     });
@@ -128,14 +128,14 @@ export class Transformation {
 
         switch (_response.error.reason) {
             case "non-json":
-                throw new errors.IntercomError({
+                throw new errors.HookdeckError({
                     statusCode: _response.error.statusCode,
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.IntercomTimeoutError();
+                throw new errors.HookdeckTimeoutError();
             case "unknown":
-                throw new errors.IntercomError({
+                throw new errors.HookdeckError({
                     message: _response.error.errorMessage,
                 });
         }
@@ -143,22 +143,22 @@ export class Transformation {
 
     /**
      *
-     * @throws {@link Intercom.BadRequestError}
-     * @throws {@link Intercom.UnprocessableEntityError}
+     * @throws {@link Hookdeck.BadRequestError}
+     * @throws {@link Hookdeck.UnprocessableEntityError}
      *
      * @example
-     *     await intercom.transformation.create({
+     *     await hookdeck.transformation.create({
      *         name: "name",
      *         code: "code"
      *     })
      */
     public async create(
-        request: Intercom.TransformationCreateRequest,
+        request: Hookdeck.TransformationCreateRequest,
         requestOptions?: Transformation.RequestOptions
-    ): Promise<Intercom.Transformation> {
+    ): Promise<Hookdeck.Transformation> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.IntercomEnvironment.Default,
+                (await core.Supplier.get(this._options.environment)) ?? environments.HookdeckEnvironment.Default,
                 "transformations"
             ),
             method: "POST",
@@ -190,7 +190,7 @@ export class Transformation {
         if (_response.error.reason === "status-code") {
             switch (_response.error.statusCode) {
                 case 400:
-                    throw new Intercom.BadRequestError(
+                    throw new Hookdeck.BadRequestError(
                         await serializers.ApiErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -200,7 +200,7 @@ export class Transformation {
                         })
                     );
                 case 422:
-                    throw new Intercom.UnprocessableEntityError(
+                    throw new Hookdeck.UnprocessableEntityError(
                         await serializers.ApiErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -210,7 +210,7 @@ export class Transformation {
                         })
                     );
                 default:
-                    throw new errors.IntercomError({
+                    throw new errors.HookdeckError({
                         statusCode: _response.error.statusCode,
                         body: _response.error.body,
                     });
@@ -219,14 +219,14 @@ export class Transformation {
 
         switch (_response.error.reason) {
             case "non-json":
-                throw new errors.IntercomError({
+                throw new errors.HookdeckError({
                     statusCode: _response.error.statusCode,
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.IntercomTimeoutError();
+                throw new errors.HookdeckTimeoutError();
             case "unknown":
-                throw new errors.IntercomError({
+                throw new errors.HookdeckError({
                     message: _response.error.errorMessage,
                 });
         }
@@ -234,22 +234,22 @@ export class Transformation {
 
     /**
      *
-     * @throws {@link Intercom.BadRequestError}
-     * @throws {@link Intercom.UnprocessableEntityError}
+     * @throws {@link Hookdeck.BadRequestError}
+     * @throws {@link Hookdeck.UnprocessableEntityError}
      *
      * @example
-     *     await intercom.transformation.upsert({
+     *     await hookdeck.transformation.upsert({
      *         name: "name",
      *         code: "code"
      *     })
      */
     public async upsert(
-        request: Intercom.TransformationUpsertRequest,
+        request: Hookdeck.TransformationUpsertRequest,
         requestOptions?: Transformation.RequestOptions
-    ): Promise<Intercom.Transformation> {
+    ): Promise<Hookdeck.Transformation> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.IntercomEnvironment.Default,
+                (await core.Supplier.get(this._options.environment)) ?? environments.HookdeckEnvironment.Default,
                 "transformations"
             ),
             method: "PUT",
@@ -281,7 +281,7 @@ export class Transformation {
         if (_response.error.reason === "status-code") {
             switch (_response.error.statusCode) {
                 case 400:
-                    throw new Intercom.BadRequestError(
+                    throw new Hookdeck.BadRequestError(
                         await serializers.ApiErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -291,7 +291,7 @@ export class Transformation {
                         })
                     );
                 case 422:
-                    throw new Intercom.UnprocessableEntityError(
+                    throw new Hookdeck.UnprocessableEntityError(
                         await serializers.ApiErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -301,7 +301,7 @@ export class Transformation {
                         })
                     );
                 default:
-                    throw new errors.IntercomError({
+                    throw new errors.HookdeckError({
                         statusCode: _response.error.statusCode,
                         body: _response.error.body,
                     });
@@ -310,14 +310,14 @@ export class Transformation {
 
         switch (_response.error.reason) {
             case "non-json":
-                throw new errors.IntercomError({
+                throw new errors.HookdeckError({
                     statusCode: _response.error.statusCode,
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.IntercomTimeoutError();
+                throw new errors.HookdeckTimeoutError();
             case "unknown":
-                throw new errors.IntercomError({
+                throw new errors.HookdeckError({
                     message: _response.error.errorMessage,
                 });
         }
@@ -325,18 +325,18 @@ export class Transformation {
 
     /**
      *
-     * @throws {@link Intercom.NotFoundError}
+     * @throws {@link Hookdeck.NotFoundError}
      *
      * @example
-     *     await intercom.transformation.retrieve("id")
+     *     await hookdeck.transformation.retrieve("id")
      */
     public async retrieve(
         id: string,
         requestOptions?: Transformation.RequestOptions
-    ): Promise<Intercom.Transformation> {
+    ): Promise<Hookdeck.Transformation> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.IntercomEnvironment.Default,
+                (await core.Supplier.get(this._options.environment)) ?? environments.HookdeckEnvironment.Default,
                 `transformations/${id}`
             ),
             method: "GET",
@@ -365,7 +365,7 @@ export class Transformation {
         if (_response.error.reason === "status-code") {
             switch (_response.error.statusCode) {
                 case 404:
-                    throw new Intercom.NotFoundError(
+                    throw new Hookdeck.NotFoundError(
                         await serializers.ApiErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -375,7 +375,7 @@ export class Transformation {
                         })
                     );
                 default:
-                    throw new errors.IntercomError({
+                    throw new errors.HookdeckError({
                         statusCode: _response.error.statusCode,
                         body: _response.error.body,
                     });
@@ -384,14 +384,14 @@ export class Transformation {
 
         switch (_response.error.reason) {
             case "non-json":
-                throw new errors.IntercomError({
+                throw new errors.HookdeckError({
                     statusCode: _response.error.statusCode,
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.IntercomTimeoutError();
+                throw new errors.HookdeckTimeoutError();
             case "unknown":
-                throw new errors.IntercomError({
+                throw new errors.HookdeckError({
                     message: _response.error.errorMessage,
                 });
         }
@@ -399,21 +399,21 @@ export class Transformation {
 
     /**
      *
-     * @throws {@link Intercom.BadRequestError}
-     * @throws {@link Intercom.NotFoundError}
-     * @throws {@link Intercom.UnprocessableEntityError}
+     * @throws {@link Hookdeck.BadRequestError}
+     * @throws {@link Hookdeck.NotFoundError}
+     * @throws {@link Hookdeck.UnprocessableEntityError}
      *
      * @example
-     *     await intercom.transformation.update("id")
+     *     await hookdeck.transformation.update("id")
      */
     public async update(
         id: string,
-        request: Intercom.TransformationUpdateRequest = {},
+        request: Hookdeck.TransformationUpdateRequest = {},
         requestOptions?: Transformation.RequestOptions
-    ): Promise<Intercom.Transformation> {
+    ): Promise<Hookdeck.Transformation> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.IntercomEnvironment.Default,
+                (await core.Supplier.get(this._options.environment)) ?? environments.HookdeckEnvironment.Default,
                 `transformations/${id}`
             ),
             method: "PUT",
@@ -445,7 +445,7 @@ export class Transformation {
         if (_response.error.reason === "status-code") {
             switch (_response.error.statusCode) {
                 case 400:
-                    throw new Intercom.BadRequestError(
+                    throw new Hookdeck.BadRequestError(
                         await serializers.ApiErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -455,7 +455,7 @@ export class Transformation {
                         })
                     );
                 case 404:
-                    throw new Intercom.NotFoundError(
+                    throw new Hookdeck.NotFoundError(
                         await serializers.ApiErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -465,7 +465,7 @@ export class Transformation {
                         })
                     );
                 case 422:
-                    throw new Intercom.UnprocessableEntityError(
+                    throw new Hookdeck.UnprocessableEntityError(
                         await serializers.ApiErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -475,7 +475,7 @@ export class Transformation {
                         })
                     );
                 default:
-                    throw new errors.IntercomError({
+                    throw new errors.HookdeckError({
                         statusCode: _response.error.statusCode,
                         body: _response.error.body,
                     });
@@ -484,14 +484,14 @@ export class Transformation {
 
         switch (_response.error.reason) {
             case "non-json":
-                throw new errors.IntercomError({
+                throw new errors.HookdeckError({
                     statusCode: _response.error.statusCode,
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.IntercomTimeoutError();
+                throw new errors.HookdeckTimeoutError();
             case "unknown":
-                throw new errors.IntercomError({
+                throw new errors.HookdeckError({
                     message: _response.error.errorMessage,
                 });
         }
@@ -499,19 +499,19 @@ export class Transformation {
 
     /**
      *
-     * @throws {@link Intercom.BadRequestError}
-     * @throws {@link Intercom.UnprocessableEntityError}
+     * @throws {@link Hookdeck.BadRequestError}
+     * @throws {@link Hookdeck.UnprocessableEntityError}
      *
      * @example
-     *     await intercom.transformation.run()
+     *     await hookdeck.transformation.run()
      */
     public async run(
-        request: Intercom.TransformationRunRequest = {},
+        request: Hookdeck.TransformationRunRequest = {},
         requestOptions?: Transformation.RequestOptions
-    ): Promise<Intercom.TransformationExecutorOutput> {
+    ): Promise<Hookdeck.TransformationExecutorOutput> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.IntercomEnvironment.Default,
+                (await core.Supplier.get(this._options.environment)) ?? environments.HookdeckEnvironment.Default,
                 "transformations/run"
             ),
             method: "PUT",
@@ -541,7 +541,7 @@ export class Transformation {
         if (_response.error.reason === "status-code") {
             switch (_response.error.statusCode) {
                 case 400:
-                    throw new Intercom.BadRequestError(
+                    throw new Hookdeck.BadRequestError(
                         await serializers.ApiErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -551,7 +551,7 @@ export class Transformation {
                         })
                     );
                 case 422:
-                    throw new Intercom.UnprocessableEntityError(
+                    throw new Hookdeck.UnprocessableEntityError(
                         await serializers.ApiErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -561,7 +561,7 @@ export class Transformation {
                         })
                     );
                 default:
-                    throw new errors.IntercomError({
+                    throw new errors.HookdeckError({
                         statusCode: _response.error.statusCode,
                         body: _response.error.body,
                     });
@@ -570,14 +570,14 @@ export class Transformation {
 
         switch (_response.error.reason) {
             case "non-json":
-                throw new errors.IntercomError({
+                throw new errors.HookdeckError({
                     statusCode: _response.error.statusCode,
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.IntercomTimeoutError();
+                throw new errors.HookdeckTimeoutError();
             case "unknown":
-                throw new errors.IntercomError({
+                throw new errors.HookdeckError({
                     message: _response.error.errorMessage,
                 });
         }
@@ -585,17 +585,17 @@ export class Transformation {
 
     /**
      *
-     * @throws {@link Intercom.BadRequestError}
-     * @throws {@link Intercom.UnprocessableEntityError}
+     * @throws {@link Hookdeck.BadRequestError}
+     * @throws {@link Hookdeck.UnprocessableEntityError}
      *
      * @example
-     *     await intercom.transformation.listExecution("id")
+     *     await hookdeck.transformation.listExecution("id")
      */
     public async listExecution(
         id: string,
-        request: Intercom.TransformationListExecutionRequest = {},
+        request: Hookdeck.TransformationListExecutionRequest = {},
         requestOptions?: Transformation.RequestOptions
-    ): Promise<Intercom.TransformationExecutionPaginatedResult> {
+    ): Promise<Hookdeck.TransformationExecutionPaginatedResult> {
         const { logLevel, webhookId, issueId, createdAt, orderBy, dir, limit, next, prev } = request;
         const _queryParams: Record<string, string | string[] | object | object[]> = {};
         if (logLevel != null) {
@@ -636,7 +636,7 @@ export class Transformation {
 
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.IntercomEnvironment.Default,
+                (await core.Supplier.get(this._options.environment)) ?? environments.HookdeckEnvironment.Default,
                 `transformations/${id}/executions`
             ),
             method: "GET",
@@ -666,7 +666,7 @@ export class Transformation {
         if (_response.error.reason === "status-code") {
             switch (_response.error.statusCode) {
                 case 400:
-                    throw new Intercom.BadRequestError(
+                    throw new Hookdeck.BadRequestError(
                         await serializers.ApiErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -676,7 +676,7 @@ export class Transformation {
                         })
                     );
                 case 422:
-                    throw new Intercom.UnprocessableEntityError(
+                    throw new Hookdeck.UnprocessableEntityError(
                         await serializers.ApiErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -686,7 +686,7 @@ export class Transformation {
                         })
                     );
                 default:
-                    throw new errors.IntercomError({
+                    throw new errors.HookdeckError({
                         statusCode: _response.error.statusCode,
                         body: _response.error.body,
                     });
@@ -695,14 +695,14 @@ export class Transformation {
 
         switch (_response.error.reason) {
             case "non-json":
-                throw new errors.IntercomError({
+                throw new errors.HookdeckError({
                     statusCode: _response.error.statusCode,
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.IntercomTimeoutError();
+                throw new errors.HookdeckTimeoutError();
             case "unknown":
-                throw new errors.IntercomError({
+                throw new errors.HookdeckError({
                     message: _response.error.errorMessage,
                 });
         }
@@ -710,19 +710,19 @@ export class Transformation {
 
     /**
      *
-     * @throws {@link Intercom.NotFoundError}
+     * @throws {@link Hookdeck.NotFoundError}
      *
      * @example
-     *     await intercom.transformation.retrieveExecution("id", "execution_id")
+     *     await hookdeck.transformation.retrieveExecution("id", "execution_id")
      */
     public async retrieveExecution(
         id: string,
         executionId: string,
         requestOptions?: Transformation.RequestOptions
-    ): Promise<Intercom.TransformationExecution> {
+    ): Promise<Hookdeck.TransformationExecution> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.IntercomEnvironment.Default,
+                (await core.Supplier.get(this._options.environment)) ?? environments.HookdeckEnvironment.Default,
                 `transformations/${id}/executions/${executionId}`
             ),
             method: "GET",
@@ -751,7 +751,7 @@ export class Transformation {
         if (_response.error.reason === "status-code") {
             switch (_response.error.statusCode) {
                 case 404:
-                    throw new Intercom.NotFoundError(
+                    throw new Hookdeck.NotFoundError(
                         await serializers.ApiErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -761,7 +761,7 @@ export class Transformation {
                         })
                     );
                 default:
-                    throw new errors.IntercomError({
+                    throw new errors.HookdeckError({
                         statusCode: _response.error.statusCode,
                         body: _response.error.body,
                     });
@@ -770,14 +770,14 @@ export class Transformation {
 
         switch (_response.error.reason) {
             case "non-json":
-                throw new errors.IntercomError({
+                throw new errors.HookdeckError({
                     statusCode: _response.error.statusCode,
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.IntercomTimeoutError();
+                throw new errors.HookdeckTimeoutError();
             case "unknown":
-                throw new errors.IntercomError({
+                throw new errors.HookdeckError({
                     message: _response.error.errorMessage,
                 });
         }

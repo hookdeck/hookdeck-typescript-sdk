@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { VerificationSquareType } from "./VerificationSquareType";
 import { VerificationSquareConfigs } from "./VerificationSquareConfigs";
 
 export const VerificationSquare: core.serialization.ObjectSchema<
     serializers.VerificationSquare.Raw,
-    Intercom.VerificationSquare
+    Hookdeck.VerificationSquare
 > = core.serialization.object({
     type: VerificationSquareType,
     configs: VerificationSquareConfigs.optional(),

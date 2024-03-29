@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "../../../..";
-import * as Intercom from "../../../../../api";
+import * as Hookdeck from "../../../../../api";
 import * as core from "../../../../../core";
 import { RequestBulkRetryCreateRequestQuery } from "../../types/RequestBulkRetryCreateRequestQuery";
 
 export const RequestBulkRetryCreateRequest: core.serialization.Schema<
     serializers.RequestBulkRetryCreateRequest.Raw,
-    Intercom.RequestBulkRetryCreateRequest
+    Hookdeck.RequestBulkRetryCreateRequest
 > = core.serialization.object({
     query: RequestBulkRetryCreateRequestQuery.optional(),
 });

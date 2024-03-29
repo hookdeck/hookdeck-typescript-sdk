@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "../../..";
-import * as Intercom from "../../../../api";
+import * as Hookdeck from "../../../../api";
 import * as core from "../../../../core";
 import { TransformationRunRequestRequestBody } from "./TransformationRunRequestRequestBody";
 import { TransformationRunRequestRequestParsedQuery } from "./TransformationRunRequestRequestParsedQuery";
 
 export const TransformationRunRequestRequest: core.serialization.ObjectSchema<
     serializers.TransformationRunRequestRequest.Raw,
-    Intercom.TransformationRunRequestRequest
+    Hookdeck.TransformationRunRequestRequest
 > = core.serialization.object({
     headers: core.serialization.record(core.serialization.string(), core.serialization.string()),
     body: TransformationRunRequestRequestBody.optional(),

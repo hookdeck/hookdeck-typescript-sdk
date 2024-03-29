@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationTypeformType: core.serialization.Schema<
     serializers.VerificationTypeformType.Raw,
-    Intercom.VerificationTypeformType
+    Hookdeck.VerificationTypeformType
 > = core.serialization.enum_(["typeform", "TYPEFORM"]);
 
 export declare namespace VerificationTypeformType {

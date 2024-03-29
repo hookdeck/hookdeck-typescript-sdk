@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { SourceAllowedHttpMethodItem } from "./SourceAllowedHttpMethodItem";
 
 export const SourceAllowedHttpMethod: core.serialization.Schema<
     serializers.SourceAllowedHttpMethod.Raw,
-    Intercom.SourceAllowedHttpMethod
+    Hookdeck.SourceAllowedHttpMethod
 > = core.serialization.list(SourceAllowedHttpMethodItem).optional();
 
 export declare namespace SourceAllowedHttpMethod {

@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationPylonType: core.serialization.Schema<
     serializers.VerificationPylonType.Raw,
-    Intercom.VerificationPylonType
+    Hookdeck.VerificationPylonType
 > = core.serialization.enum_(["pylon", "PYLON"]);
 
 export declare namespace VerificationPylonType {

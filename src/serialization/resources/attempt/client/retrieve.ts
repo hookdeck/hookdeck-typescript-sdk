@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "../../..";
-import * as Intercom from "../../../../api";
+import * as Hookdeck from "../../../../api";
 import * as core from "../../../../core";
 import { EventAttempt } from "../../../types/EventAttempt";
 
 export const Response: core.serialization.Schema<
     serializers.attempt.retrieve.Response.Raw,
-    Intercom.EventAttempt | undefined
+    Hookdeck.EventAttempt | undefined
 > = EventAttempt.optional();
 
 export declare namespace Response {

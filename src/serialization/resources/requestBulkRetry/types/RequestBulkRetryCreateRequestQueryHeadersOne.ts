@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../..";
-import * as Intercom from "../../../../api";
+import * as Hookdeck from "../../../../api";
 import * as core from "../../../../core";
 
 export const RequestBulkRetryCreateRequestQueryHeadersOne: core.serialization.ObjectSchema<
     serializers.RequestBulkRetryCreateRequestQueryHeadersOne.Raw,
-    Intercom.RequestBulkRetryCreateRequestQueryHeadersOne
+    Hookdeck.RequestBulkRetryCreateRequestQueryHeadersOne
 > = core.serialization.object({});
 
 export declare namespace RequestBulkRetryCreateRequestQueryHeadersOne {

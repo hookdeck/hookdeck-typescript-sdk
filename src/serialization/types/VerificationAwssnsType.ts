@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationAwssnsType: core.serialization.Schema<
     serializers.VerificationAwssnsType.Raw,
-    Intercom.VerificationAwssnsType
+    Hookdeck.VerificationAwssnsType
 > = core.serialization.enum_(["aws_sns", "AWS_SNS"]);
 
 export declare namespace VerificationAwssnsType {

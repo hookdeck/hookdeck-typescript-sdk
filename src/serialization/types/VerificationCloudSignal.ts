@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { VerificationCloudSignalType } from "./VerificationCloudSignalType";
 import { VerificationCloudSignalConfigs } from "./VerificationCloudSignalConfigs";
 
 export const VerificationCloudSignal: core.serialization.ObjectSchema<
     serializers.VerificationCloudSignal.Raw,
-    Intercom.VerificationCloudSignal
+    Hookdeck.VerificationCloudSignal
 > = core.serialization.object({
     type: VerificationCloudSignalType,
     configs: VerificationCloudSignalConfigs.optional(),

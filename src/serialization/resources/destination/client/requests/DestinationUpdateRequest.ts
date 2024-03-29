@@ -3,7 +3,7 @@
  */
 
 import * as serializers from "../../../..";
-import * as Intercom from "../../../../../api";
+import * as Hookdeck from "../../../../../api";
 import * as core from "../../../../../core";
 import { DestinationUpdateRequestRateLimitPeriod } from "../../types/DestinationUpdateRequestRateLimitPeriod";
 import { DestinationHttpMethod } from "../../../../types/DestinationHttpMethod";
@@ -11,7 +11,7 @@ import { DestinationAuthMethodConfig } from "../../../../types/DestinationAuthMe
 
 export const DestinationUpdateRequest: core.serialization.Schema<
     serializers.DestinationUpdateRequest.Raw,
-    Intercom.DestinationUpdateRequest
+    Hookdeck.DestinationUpdateRequest
 > = core.serialization.object({
     name: core.serialization.string().optional(),
     description: core.serialization.string().optional(),

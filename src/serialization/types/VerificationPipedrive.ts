@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { VerificationPipedriveType } from "./VerificationPipedriveType";
 import { VerificationPipedriveConfigs } from "./VerificationPipedriveConfigs";
 
 export const VerificationPipedrive: core.serialization.ObjectSchema<
     serializers.VerificationPipedrive.Raw,
-    Intercom.VerificationPipedrive
+    Hookdeck.VerificationPipedrive
 > = core.serialization.object({
     type: VerificationPipedriveType,
     configs: VerificationPipedriveConfigs.optional(),

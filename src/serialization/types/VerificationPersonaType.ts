@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationPersonaType: core.serialization.Schema<
     serializers.VerificationPersonaType.Raw,
-    Intercom.VerificationPersonaType
+    Hookdeck.VerificationPersonaType
 > = core.serialization.enum_(["persona", "PERSONA"]);
 
 export declare namespace VerificationPersonaType {

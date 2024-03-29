@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { VerificationWorkOsType } from "./VerificationWorkOsType";
 import { VerificationWorkOsConfigs } from "./VerificationWorkOsConfigs";
 
 export const VerificationWorkOs: core.serialization.ObjectSchema<
     serializers.VerificationWorkOs.Raw,
-    Intercom.VerificationWorkOs
+    Hookdeck.VerificationWorkOs
 > = core.serialization.object({
     type: VerificationWorkOsType,
     configs: VerificationWorkOsConfigs.optional(),

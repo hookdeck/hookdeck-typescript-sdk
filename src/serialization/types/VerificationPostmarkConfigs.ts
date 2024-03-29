@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationPostmarkConfigs: core.serialization.ObjectSchema<
     serializers.VerificationPostmarkConfigs.Raw,
-    Intercom.VerificationPostmarkConfigs
+    Hookdeck.VerificationPostmarkConfigs
 > = core.serialization.object({
     username: core.serialization.string(),
     password: core.serialization.string(),

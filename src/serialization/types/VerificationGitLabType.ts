@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationGitLabType: core.serialization.Schema<
     serializers.VerificationGitLabType.Raw,
-    Intercom.VerificationGitLabType
+    Hookdeck.VerificationGitLabType
 > = core.serialization.enum_(["gitlab", "GITLAB"]);
 
 export declare namespace VerificationGitLabType {

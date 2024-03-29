@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationSquareType: core.serialization.Schema<
     serializers.VerificationSquareType.Raw,
-    Intercom.VerificationSquareType
+    Hookdeck.VerificationSquareType
 > = core.serialization.enum_(["square", "SQUARE"]);
 
 export declare namespace VerificationSquareType {

@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const EventAttemptHttpMethod: core.serialization.Schema<
     serializers.EventAttemptHttpMethod.Raw,
-    Intercom.EventAttemptHttpMethod
+    Hookdeck.EventAttemptHttpMethod
 > = core.serialization.enum_(["GET", "POST", "PUT", "PATCH", "DELETE"]);
 
 export declare namespace EventAttemptHttpMethod {

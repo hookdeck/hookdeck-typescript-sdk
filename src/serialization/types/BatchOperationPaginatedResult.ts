@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { SeekPagination } from "./SeekPagination";
 import { BatchOperation } from "./BatchOperation";
 
 export const BatchOperationPaginatedResult: core.serialization.ObjectSchema<
     serializers.BatchOperationPaginatedResult.Raw,
-    Intercom.BatchOperationPaginatedResult
+    Hookdeck.BatchOperationPaginatedResult
 > = core.serialization.object({
     pagination: SeekPagination.optional(),
     count: core.serialization.number().optional(),

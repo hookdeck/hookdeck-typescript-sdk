@@ -4,14 +4,14 @@
 
 import * as environments from "../../../../environments";
 import * as core from "../../../../core";
-import * as Intercom from "../../..";
+import * as Hookdeck from "../../..";
 import urlJoin from "url-join";
 import * as serializers from "../../../../serialization";
 import * as errors from "../../../../errors";
 
 export declare namespace CustomDomain {
     interface Options {
-        environment?: core.Supplier<environments.IntercomEnvironment | string>;
+        environment?: core.Supplier<environments.HookdeckEnvironment | string>;
         token: core.Supplier<core.BearerToken>;
         fetcher?: core.FetchFunction;
     }
@@ -29,12 +29,12 @@ export class CustomDomain {
      *
      *
      * @example
-     *     await intercom.customDomain.list()
+     *     await hookdeck.customDomain.list()
      */
-    public async list(requestOptions?: CustomDomain.RequestOptions): Promise<Intercom.ListCustomDomainSchema> {
+    public async list(requestOptions?: CustomDomain.RequestOptions): Promise<Hookdeck.ListCustomDomainSchema> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.IntercomEnvironment.Default,
+                (await core.Supplier.get(this._options.environment)) ?? environments.HookdeckEnvironment.Default,
                 "teams/current/custom_domains"
             ),
             method: "GET",
@@ -61,7 +61,7 @@ export class CustomDomain {
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.IntercomError({
+            throw new errors.HookdeckError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
             });
@@ -69,14 +69,14 @@ export class CustomDomain {
 
         switch (_response.error.reason) {
             case "non-json":
-                throw new errors.IntercomError({
+                throw new errors.HookdeckError({
                     statusCode: _response.error.statusCode,
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.IntercomTimeoutError();
+                throw new errors.HookdeckTimeoutError();
             case "unknown":
-                throw new errors.IntercomError({
+                throw new errors.HookdeckError({
                     message: _response.error.errorMessage,
                 });
         }
@@ -86,17 +86,17 @@ export class CustomDomain {
      *
      *
      * @example
-     *     await intercom.customDomain.create({
+     *     await hookdeck.customDomain.create({
      *         hostname: "hostname"
      *     })
      */
     public async create(
-        request: Intercom.AddCustomHostname,
+        request: Hookdeck.AddCustomHostname,
         requestOptions?: CustomDomain.RequestOptions
-    ): Promise<Intercom.AddCustomHostname> {
+    ): Promise<Hookdeck.AddCustomHostname> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.IntercomEnvironment.Default,
+                (await core.Supplier.get(this._options.environment)) ?? environments.HookdeckEnvironment.Default,
                 "teams/current/custom_domains"
             ),
             method: "POST",
@@ -124,7 +124,7 @@ export class CustomDomain {
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.IntercomError({
+            throw new errors.HookdeckError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
             });
@@ -132,14 +132,14 @@ export class CustomDomain {
 
         switch (_response.error.reason) {
             case "non-json":
-                throw new errors.IntercomError({
+                throw new errors.HookdeckError({
                     statusCode: _response.error.statusCode,
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.IntercomTimeoutError();
+                throw new errors.HookdeckTimeoutError();
             case "unknown":
-                throw new errors.IntercomError({
+                throw new errors.HookdeckError({
                     message: _response.error.errorMessage,
                 });
         }
@@ -149,15 +149,15 @@ export class CustomDomain {
      *
      *
      * @example
-     *     await intercom.customDomain.delete("domain_id")
+     *     await hookdeck.customDomain.delete("domain_id")
      */
     public async delete(
         domainId: string,
         requestOptions?: CustomDomain.RequestOptions
-    ): Promise<Intercom.DeleteCustomDomainSchema> {
+    ): Promise<Hookdeck.DeleteCustomDomainSchema> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.IntercomEnvironment.Default,
+                (await core.Supplier.get(this._options.environment)) ?? environments.HookdeckEnvironment.Default,
                 `teams/current/custom_domains/${domainId}`
             ),
             method: "DELETE",
@@ -184,7 +184,7 @@ export class CustomDomain {
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.IntercomError({
+            throw new errors.HookdeckError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
             });
@@ -192,14 +192,14 @@ export class CustomDomain {
 
         switch (_response.error.reason) {
             case "non-json":
-                throw new errors.IntercomError({
+                throw new errors.HookdeckError({
                     statusCode: _response.error.statusCode,
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.IntercomTimeoutError();
+                throw new errors.HookdeckTimeoutError();
             case "unknown":
-                throw new errors.IntercomError({
+                throw new errors.HookdeckError({
                     message: _response.error.errorMessage,
                 });
         }

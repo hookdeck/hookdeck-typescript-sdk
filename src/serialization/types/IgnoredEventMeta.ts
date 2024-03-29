@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { FilteredMeta } from "./FilteredMeta";
 import { TransformationFailedMeta } from "./TransformationFailedMeta";
 
-export const IgnoredEventMeta: core.serialization.Schema<serializers.IgnoredEventMeta.Raw, Intercom.IgnoredEventMeta> =
+export const IgnoredEventMeta: core.serialization.Schema<serializers.IgnoredEventMeta.Raw, Hookdeck.IgnoredEventMeta> =
     core.serialization.undiscriminatedUnion([FilteredMeta, TransformationFailedMeta]);
 
 export declare namespace IgnoredEventMeta {

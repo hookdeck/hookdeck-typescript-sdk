@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../../..";
-import * as Intercom from "../../../../../api";
+import * as Hookdeck from "../../../../../api";
 import * as core from "../../../../../core";
 
 export const TransformationUpdateRequest: core.serialization.Schema<
     serializers.TransformationUpdateRequest.Raw,
-    Intercom.TransformationUpdateRequest
+    Hookdeck.TransformationUpdateRequest
 > = core.serialization.object({
     name: core.serialization.string().optional(),
     code: core.serialization.string().optional(),

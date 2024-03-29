@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const DeleteCustomDomainSchema: core.serialization.ObjectSchema<
     serializers.DeleteCustomDomainSchema.Raw,
-    Intercom.DeleteCustomDomainSchema
+    Hookdeck.DeleteCustomDomainSchema
 > = core.serialization.object({
     id: core.serialization.string(),
 });

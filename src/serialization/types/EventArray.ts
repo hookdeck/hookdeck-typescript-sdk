@@ -3,11 +3,11 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { Event } from "./Event";
 
-export const EventArray: core.serialization.Schema<serializers.EventArray.Raw, Intercom.EventArray> =
+export const EventArray: core.serialization.Schema<serializers.EventArray.Raw, Hookdeck.EventArray> =
     core.serialization.list(Event);
 
 export declare namespace EventArray {

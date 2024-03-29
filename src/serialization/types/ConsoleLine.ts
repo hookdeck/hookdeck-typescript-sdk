@@ -3,11 +3,11 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { ConsoleLineType } from "./ConsoleLineType";
 
-export const ConsoleLine: core.serialization.ObjectSchema<serializers.ConsoleLine.Raw, Intercom.ConsoleLine> =
+export const ConsoleLine: core.serialization.ObjectSchema<serializers.ConsoleLine.Raw, Hookdeck.ConsoleLine> =
     core.serialization.object({
         type: ConsoleLineType,
         message: core.serialization.string(),

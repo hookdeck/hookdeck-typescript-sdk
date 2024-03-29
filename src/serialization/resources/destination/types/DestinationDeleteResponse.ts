@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../..";
-import * as Intercom from "../../../../api";
+import * as Hookdeck from "../../../../api";
 import * as core from "../../../../core";
 
 export const DestinationDeleteResponse: core.serialization.ObjectSchema<
     serializers.DestinationDeleteResponse.Raw,
-    Intercom.DestinationDeleteResponse
+    Hookdeck.DestinationDeleteResponse
 > = core.serialization.object({
     id: core.serialization.string(),
 });

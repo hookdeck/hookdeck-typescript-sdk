@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const TransformFullTransformation: core.serialization.ObjectSchema<
     serializers.TransformFullTransformation.Raw,
-    Intercom.TransformFullTransformation
+    Hookdeck.TransformFullTransformation
 > = core.serialization.object({
     name: core.serialization.string(),
     code: core.serialization.string(),

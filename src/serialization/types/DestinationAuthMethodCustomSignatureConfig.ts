@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const DestinationAuthMethodCustomSignatureConfig: core.serialization.ObjectSchema<
     serializers.DestinationAuthMethodCustomSignatureConfig.Raw,
-    Intercom.DestinationAuthMethodCustomSignatureConfig
+    Hookdeck.DestinationAuthMethodCustomSignatureConfig
 > = core.serialization.object({
     key: core.serialization.string(),
     signingSecret: core.serialization.property("signing_secret", core.serialization.string().optional()),

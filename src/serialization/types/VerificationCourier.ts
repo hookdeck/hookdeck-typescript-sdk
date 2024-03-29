@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { VerificationCourierType } from "./VerificationCourierType";
 import { VerificationCourierConfigs } from "./VerificationCourierConfigs";
 
 export const VerificationCourier: core.serialization.ObjectSchema<
     serializers.VerificationCourier.Raw,
-    Intercom.VerificationCourier
+    Hookdeck.VerificationCourier
 > = core.serialization.object({
     type: VerificationCourierType,
     configs: VerificationCourierConfigs.optional(),

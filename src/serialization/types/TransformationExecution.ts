@@ -3,7 +3,7 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { TransformationExecutionLogLevel } from "./TransformationExecutionLogLevel";
 import { ConsoleLine } from "./ConsoleLine";
@@ -11,7 +11,7 @@ import { ShortEventData } from "./ShortEventData";
 
 export const TransformationExecution: core.serialization.ObjectSchema<
     serializers.TransformationExecution.Raw,
-    Intercom.TransformationExecution
+    Hookdeck.TransformationExecution
 > = core.serialization.object({
     id: core.serialization.string(),
     transformedEventDataId: core.serialization.property("transformed_event_data_id", core.serialization.string()),

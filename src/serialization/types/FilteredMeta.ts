@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
-export const FilteredMeta: core.serialization.Schema<serializers.FilteredMeta.Raw, Intercom.FilteredMeta> =
+export const FilteredMeta: core.serialization.Schema<serializers.FilteredMeta.Raw, Hookdeck.FilteredMeta> =
     core.serialization.enum_(["body", "headers", "path", "query"]);
 
 export declare namespace FilteredMeta {

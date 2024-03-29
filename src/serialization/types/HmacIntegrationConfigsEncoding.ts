@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const HmacIntegrationConfigsEncoding: core.serialization.Schema<
     serializers.HmacIntegrationConfigsEncoding.Raw,
-    Intercom.HmacIntegrationConfigsEncoding
+    Hookdeck.HmacIntegrationConfigsEncoding
 > = core.serialization.enum_(["base64", "hex"]);
 
 export declare namespace HmacIntegrationConfigsEncoding {

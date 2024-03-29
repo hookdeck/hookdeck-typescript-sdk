@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationWooCommerceType: core.serialization.Schema<
     serializers.VerificationWooCommerceType.Raw,
-    Intercom.VerificationWooCommerceType
+    Hookdeck.VerificationWooCommerceType
 > = core.serialization.enum_(["woocommerce", "WOOCOMMERCE"]);
 
 export declare namespace VerificationWooCommerceType {

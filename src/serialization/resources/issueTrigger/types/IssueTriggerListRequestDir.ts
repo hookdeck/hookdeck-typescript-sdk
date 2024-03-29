@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../..";
-import * as Intercom from "../../../../api";
+import * as Hookdeck from "../../../../api";
 import * as core from "../../../../core";
 
 export const IssueTriggerListRequestDir: core.serialization.Schema<
     serializers.IssueTriggerListRequestDir.Raw,
-    Intercom.IssueTriggerListRequestDir
+    Hookdeck.IssueTriggerListRequestDir
 > = core.serialization.enum_(["asc", "desc"]);
 
 export declare namespace IssueTriggerListRequestDir {

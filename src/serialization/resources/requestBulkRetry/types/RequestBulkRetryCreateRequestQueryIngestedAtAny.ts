@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../..";
-import * as Intercom from "../../../../api";
+import * as Hookdeck from "../../../../api";
 import * as core from "../../../../core";
 
 export const RequestBulkRetryCreateRequestQueryIngestedAtAny: core.serialization.ObjectSchema<
     serializers.RequestBulkRetryCreateRequestQueryIngestedAtAny.Raw,
-    Intercom.RequestBulkRetryCreateRequestQueryIngestedAtAny
+    Hookdeck.RequestBulkRetryCreateRequestQueryIngestedAtAny
 > = core.serialization.object({
     gt: core.serialization.date().optional(),
     gte: core.serialization.date().optional(),

@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { VerificationOuraType } from "./VerificationOuraType";
 import { VerificationOuraConfigs } from "./VerificationOuraConfigs";
 
 export const VerificationOura: core.serialization.ObjectSchema<
     serializers.VerificationOura.Raw,
-    Intercom.VerificationOura
+    Hookdeck.VerificationOura
 > = core.serialization.object({
     type: VerificationOuraType,
     configs: VerificationOuraConfigs.optional(),

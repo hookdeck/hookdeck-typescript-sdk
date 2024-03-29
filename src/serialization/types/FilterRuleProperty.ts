@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const FilterRuleProperty: core.serialization.Schema<
     serializers.FilterRuleProperty.Raw,
-    Intercom.FilterRuleProperty
+    Hookdeck.FilterRuleProperty
 > = core.serialization.undiscriminatedUnion([
     core.serialization.string().optional(),
     core.serialization.number().optional(),

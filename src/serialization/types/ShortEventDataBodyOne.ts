@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const ShortEventDataBodyOne: core.serialization.ObjectSchema<
     serializers.ShortEventDataBodyOne.Raw,
-    Intercom.ShortEventDataBodyOne
+    Hookdeck.ShortEventDataBodyOne
 > = core.serialization.object({});
 
 export declare namespace ShortEventDataBodyOne {

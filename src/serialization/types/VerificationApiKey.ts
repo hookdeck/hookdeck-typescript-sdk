@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { VerificationApiKeyType } from "./VerificationApiKeyType";
 import { VerificationApiKeyConfigs } from "./VerificationApiKeyConfigs";
 
 export const VerificationApiKey: core.serialization.ObjectSchema<
     serializers.VerificationApiKey.Raw,
-    Intercom.VerificationApiKey
+    Hookdeck.VerificationApiKey
 > = core.serialization.object({
     type: VerificationApiKeyType,
     configs: VerificationApiKeyConfigs.optional(),

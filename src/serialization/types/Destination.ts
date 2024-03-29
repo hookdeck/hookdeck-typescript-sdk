@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { DestinationRateLimitPeriod } from "./DestinationRateLimitPeriod";
 import { DestinationHttpMethod } from "./DestinationHttpMethod";
 import { DestinationAuthMethodConfig } from "./DestinationAuthMethodConfig";
 
-export const Destination: core.serialization.ObjectSchema<serializers.Destination.Raw, Intercom.Destination> =
+export const Destination: core.serialization.ObjectSchema<serializers.Destination.Raw, Hookdeck.Destination> =
     core.serialization.object({
         id: core.serialization.string(),
         name: core.serialization.string(),

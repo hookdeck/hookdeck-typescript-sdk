@@ -3,11 +3,11 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { BatchOperationQuery } from "./BatchOperationQuery";
 
-export const BatchOperation: core.serialization.ObjectSchema<serializers.BatchOperation.Raw, Intercom.BatchOperation> =
+export const BatchOperation: core.serialization.ObjectSchema<serializers.BatchOperation.Raw, Hookdeck.BatchOperation> =
     core.serialization.object({
         id: core.serialization.string(),
         teamId: core.serialization.property("team_id", core.serialization.string()),

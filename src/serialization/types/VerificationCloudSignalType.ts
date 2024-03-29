@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationCloudSignalType: core.serialization.Schema<
     serializers.VerificationCloudSignalType.Raw,
-    Intercom.VerificationCloudSignalType
+    Hookdeck.VerificationCloudSignalType
 > = core.serialization.enum_(["cloudsignal", "CLOUDSIGNAL"]);
 
 export declare namespace VerificationCloudSignalType {

@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { VerificationSanityType } from "./VerificationSanityType";
 import { VerificationSanityConfigs } from "./VerificationSanityConfigs";
 
 export const VerificationSanity: core.serialization.ObjectSchema<
     serializers.VerificationSanity.Raw,
-    Intercom.VerificationSanity
+    Hookdeck.VerificationSanity
 > = core.serialization.object({
     type: VerificationSanityType,
     configs: VerificationSanityConfigs.optional(),

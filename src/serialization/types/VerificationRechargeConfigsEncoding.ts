@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationRechargeConfigsEncoding: core.serialization.Schema<
     serializers.VerificationRechargeConfigsEncoding.Raw,
-    Intercom.VerificationRechargeConfigsEncoding
+    Hookdeck.VerificationRechargeConfigsEncoding
 > = core.serialization.enum_(["base64", "base64url", "hex"]);
 
 export declare namespace VerificationRechargeConfigsEncoding {

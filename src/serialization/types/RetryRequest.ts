@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { Request } from "./Request";
 import { Event } from "./Event";
 
-export const RetryRequest: core.serialization.ObjectSchema<serializers.RetryRequest.Raw, Intercom.RetryRequest> =
+export const RetryRequest: core.serialization.ObjectSchema<serializers.RetryRequest.Raw, Hookdeck.RetryRequest> =
     core.serialization.object({
         request: Request,
         events: core.serialization.list(Event).optional(),

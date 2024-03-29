@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { VerificationFrontAppType } from "./VerificationFrontAppType";
 import { VerificationFrontAppConfigs } from "./VerificationFrontAppConfigs";
 
 export const VerificationFrontApp: core.serialization.ObjectSchema<
     serializers.VerificationFrontApp.Raw,
-    Intercom.VerificationFrontApp
+    Hookdeck.VerificationFrontApp
 > = core.serialization.object({
     type: VerificationFrontAppType,
     configs: VerificationFrontAppConfigs.optional(),

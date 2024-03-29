@@ -3,7 +3,7 @@
  */
 
 import * as serializers from "../../..";
-import * as Intercom from "../../../../api";
+import * as Hookdeck from "../../../../api";
 import * as core from "../../../../core";
 import { SourceAllowedHttpMethod } from "../../../types/SourceAllowedHttpMethod";
 import { SourceCustomResponse } from "../../../types/SourceCustomResponse";
@@ -12,7 +12,7 @@ import { SourceAllowedHttpMethodItem } from "../../../types/SourceAllowedHttpMet
 
 export const ConnectionUpsertRequestSource: core.serialization.ObjectSchema<
     serializers.ConnectionUpsertRequestSource.Raw,
-    Intercom.ConnectionUpsertRequestSource
+    Hookdeck.ConnectionUpsertRequestSource
 > = core.serialization.object({
     name: core.serialization.string(),
     description: core.serialization.string().optional(),

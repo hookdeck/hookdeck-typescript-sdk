@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { VerificationShopifyConfigsRateLimitPeriod } from "./VerificationShopifyConfigsRateLimitPeriod";
 
 export const VerificationShopifyConfigs: core.serialization.ObjectSchema<
     serializers.VerificationShopifyConfigs.Raw,
-    Intercom.VerificationShopifyConfigs
+    Hookdeck.VerificationShopifyConfigs
 > = core.serialization.object({
     webhookSecretKey: core.serialization.property("webhook_secret_key", core.serialization.string()),
     rateLimitPeriod: core.serialization.property(

@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../..";
-import * as Intercom from "../../../../api";
+import * as Hookdeck from "../../../../api";
 import * as core from "../../../../core";
 
 export const TransformationRunRequestRequestParsedQuery: core.serialization.ObjectSchema<
     serializers.TransformationRunRequestRequestParsedQuery.Raw,
-    Intercom.TransformationRunRequestRequestParsedQuery
+    Hookdeck.TransformationRunRequestRequestParsedQuery
 > = core.serialization.object({});
 
 export declare namespace TransformationRunRequestRequestParsedQuery {

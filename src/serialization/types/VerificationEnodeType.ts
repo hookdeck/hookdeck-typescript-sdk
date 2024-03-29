@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationEnodeType: core.serialization.Schema<
     serializers.VerificationEnodeType.Raw,
-    Intercom.VerificationEnodeType
+    Hookdeck.VerificationEnodeType
 > = core.serialization.enum_(["enode", "ENODE"]);
 
 export declare namespace VerificationEnodeType {

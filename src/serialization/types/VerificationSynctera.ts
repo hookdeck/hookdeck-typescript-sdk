@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { VerificationSyncteraType } from "./VerificationSyncteraType";
 import { VerificationSyncteraConfigs } from "./VerificationSyncteraConfigs";
 
 export const VerificationSynctera: core.serialization.ObjectSchema<
     serializers.VerificationSynctera.Raw,
-    Intercom.VerificationSynctera
+    Hookdeck.VerificationSynctera
 > = core.serialization.object({
     type: VerificationSyncteraType,
     configs: VerificationSyncteraConfigs.optional(),

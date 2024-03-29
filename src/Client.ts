@@ -20,9 +20,9 @@ import { CustomDomain } from "./api/resources/customDomain/client/Client";
 import { Transformation } from "./api/resources/transformation/client/Client";
 import { Connection } from "./api/resources/connection/client/Client";
 
-export declare namespace IntercomClient {
+export declare namespace HookdeckClient {
     interface Options {
-        environment?: core.Supplier<environments.IntercomEnvironment | string>;
+        environment?: core.Supplier<environments.HookdeckEnvironment | string>;
         token: core.Supplier<core.BearerToken>;
         fetcher?: core.FetchFunction;
     }
@@ -33,8 +33,8 @@ export declare namespace IntercomClient {
     }
 }
 
-export class IntercomClient {
-    constructor(protected readonly _options: IntercomClient.Options) {}
+export class HookdeckClient {
+    constructor(protected readonly _options: HookdeckClient.Options) {}
 
     protected _issueTrigger: IssueTrigger | undefined;
 

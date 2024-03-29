@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { VerificationGitHubType } from "./VerificationGitHubType";
 import { VerificationGitHubConfigs } from "./VerificationGitHubConfigs";
 
 export const VerificationGitHub: core.serialization.ObjectSchema<
     serializers.VerificationGitHub.Raw,
-    Intercom.VerificationGitHub
+    Hookdeck.VerificationGitHub
 > = core.serialization.object({
     type: VerificationGitHubType,
     configs: VerificationGitHubConfigs.optional(),

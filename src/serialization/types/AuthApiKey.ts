@@ -3,11 +3,11 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { DestinationAuthMethodApiKeyConfig } from "./DestinationAuthMethodApiKeyConfig";
 
-export const AuthApiKey: core.serialization.ObjectSchema<serializers.AuthApiKey.Raw, Intercom.AuthApiKey> =
+export const AuthApiKey: core.serialization.ObjectSchema<serializers.AuthApiKey.Raw, Hookdeck.AuthApiKey> =
     core.serialization.object({
         config: DestinationAuthMethodApiKeyConfig.optional(),
     });

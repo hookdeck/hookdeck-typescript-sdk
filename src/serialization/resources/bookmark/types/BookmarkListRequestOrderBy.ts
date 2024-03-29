@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../..";
-import * as Intercom from "../../../../api";
+import * as Hookdeck from "../../../../api";
 import * as core from "../../../../core";
 
 export const BookmarkListRequestOrderBy: core.serialization.Schema<
     serializers.BookmarkListRequestOrderBy.Raw,
-    Intercom.BookmarkListRequestOrderBy
+    Hookdeck.BookmarkListRequestOrderBy
 > = core.serialization.enum_(["created_at"]);
 
 export declare namespace BookmarkListRequestOrderBy {

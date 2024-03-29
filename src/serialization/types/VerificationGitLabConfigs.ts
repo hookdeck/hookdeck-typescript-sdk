@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationGitLabConfigs: core.serialization.ObjectSchema<
     serializers.VerificationGitLabConfigs.Raw,
-    Intercom.VerificationGitLabConfigs
+    Hookdeck.VerificationGitLabConfigs
 > = core.serialization.object({
     apiKey: core.serialization.property("api_key", core.serialization.string()),
 });

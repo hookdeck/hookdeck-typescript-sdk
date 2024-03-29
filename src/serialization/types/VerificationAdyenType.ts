@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationAdyenType: core.serialization.Schema<
     serializers.VerificationAdyenType.Raw,
-    Intercom.VerificationAdyenType
+    Hookdeck.VerificationAdyenType
 > = core.serialization.enum_(["adyen", "ADYEN"]);
 
 export declare namespace VerificationAdyenType {

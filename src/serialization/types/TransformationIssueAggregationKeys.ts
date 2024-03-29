@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { TransformationExecutionLogLevel } from "./TransformationExecutionLogLevel";
 
 export const TransformationIssueAggregationKeys: core.serialization.ObjectSchema<
     serializers.TransformationIssueAggregationKeys.Raw,
-    Intercom.TransformationIssueAggregationKeys
+    Hookdeck.TransformationIssueAggregationKeys
 > = core.serialization.object({
     transformationId: core.serialization.property(
         "transformation_id",

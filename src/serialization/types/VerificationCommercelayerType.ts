@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationCommercelayerType: core.serialization.Schema<
     serializers.VerificationCommercelayerType.Raw,
-    Intercom.VerificationCommercelayerType
+    Hookdeck.VerificationCommercelayerType
 > = core.serialization.enum_(["commercelayer", "COMMERCELAYER"]);
 
 export declare namespace VerificationCommercelayerType {

@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { SourceVerification } from "./SourceVerification";
 import { SourceAllowedHttpMethod } from "./SourceAllowedHttpMethod";
 import { SourceCustomResponse } from "./SourceCustomResponse";
 import { SourceAllowedHttpMethodItem } from "./SourceAllowedHttpMethodItem";
 
-export const Source: core.serialization.ObjectSchema<serializers.Source.Raw, Intercom.Source> =
+export const Source: core.serialization.ObjectSchema<serializers.Source.Raw, Hookdeck.Source> =
     core.serialization.object({
         id: core.serialization.string(),
         name: core.serialization.string(),

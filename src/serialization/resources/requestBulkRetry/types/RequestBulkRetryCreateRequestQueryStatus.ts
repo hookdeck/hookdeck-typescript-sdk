@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../..";
-import * as Intercom from "../../../../api";
+import * as Hookdeck from "../../../../api";
 import * as core from "../../../../core";
 
 export const RequestBulkRetryCreateRequestQueryStatus: core.serialization.Schema<
     serializers.RequestBulkRetryCreateRequestQueryStatus.Raw,
-    Intercom.RequestBulkRetryCreateRequestQueryStatus
+    Hookdeck.RequestBulkRetryCreateRequestQueryStatus
 > = core.serialization.enum_(["accepted", "rejected"]);
 
 export declare namespace RequestBulkRetryCreateRequestQueryStatus {

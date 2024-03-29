@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../../..";
-import * as Intercom from "../../../../../api";
+import * as Hookdeck from "../../../../../api";
 import * as core from "../../../../../core";
 
 export const RequestRetryRequest: core.serialization.Schema<
     serializers.RequestRetryRequest.Raw,
-    Intercom.RequestRetryRequest
+    Hookdeck.RequestRetryRequest
 > = core.serialization.object({
     webhookIds: core.serialization.property("webhook_ids", core.serialization.list(core.serialization.string())),
 });

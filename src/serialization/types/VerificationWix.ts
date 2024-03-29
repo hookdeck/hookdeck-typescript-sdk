@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { VerificationWixType } from "./VerificationWixType";
 import { VerificationWixConfigs } from "./VerificationWixConfigs";
 
 export const VerificationWix: core.serialization.ObjectSchema<
     serializers.VerificationWix.Raw,
-    Intercom.VerificationWix
+    Hookdeck.VerificationWix
 > = core.serialization.object({
     type: VerificationWixType,
     configs: VerificationWixConfigs.optional(),

@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "../../../..";
-import * as Intercom from "../../../../../api";
+import * as Hookdeck from "../../../../../api";
 import * as core from "../../../../../core";
 import { BookmarkTriggerRequestTarget } from "../../types/BookmarkTriggerRequestTarget";
 
 export const BookmarkTriggerRequest: core.serialization.Schema<
     serializers.BookmarkTriggerRequest.Raw,
-    Intercom.BookmarkTriggerRequest
+    Hookdeck.BookmarkTriggerRequest
 > = core.serialization.object({
     target: BookmarkTriggerRequestTarget.optional(),
 });

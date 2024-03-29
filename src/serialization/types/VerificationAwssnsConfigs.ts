@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationAwssnsConfigs: core.serialization.ObjectSchema<
     serializers.VerificationAwssnsConfigs.Raw,
-    Intercom.VerificationAwssnsConfigs
+    Hookdeck.VerificationAwssnsConfigs
 > = core.serialization.object({});
 
 export declare namespace VerificationAwssnsConfigs {

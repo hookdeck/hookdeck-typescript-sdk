@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { ListCustomDomainSchemaItem } from "./ListCustomDomainSchemaItem";
 
 export const ListCustomDomainSchema: core.serialization.Schema<
     serializers.ListCustomDomainSchema.Raw,
-    Intercom.ListCustomDomainSchema
+    Hookdeck.ListCustomDomainSchema
 > = core.serialization.list(ListCustomDomainSchemaItem);
 
 export declare namespace ListCustomDomainSchema {

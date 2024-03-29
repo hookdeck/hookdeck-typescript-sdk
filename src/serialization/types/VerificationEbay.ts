@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { VerificationEbayType } from "./VerificationEbayType";
 import { VerificationEbayConfigs } from "./VerificationEbayConfigs";
 
 export const VerificationEbay: core.serialization.ObjectSchema<
     serializers.VerificationEbay.Raw,
-    Intercom.VerificationEbay
+    Hookdeck.VerificationEbay
 > = core.serialization.object({
     type: VerificationEbayType,
     configs: VerificationEbayConfigs.optional(),

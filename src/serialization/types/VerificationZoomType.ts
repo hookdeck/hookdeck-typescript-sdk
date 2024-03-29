@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationZoomType: core.serialization.Schema<
     serializers.VerificationZoomType.Raw,
-    Intercom.VerificationZoomType
+    Hookdeck.VerificationZoomType
 > = core.serialization.enum_(["zoom", "ZOOM"]);
 
 export declare namespace VerificationZoomType {

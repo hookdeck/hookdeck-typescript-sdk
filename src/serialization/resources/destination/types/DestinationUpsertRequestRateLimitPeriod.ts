@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../..";
-import * as Intercom from "../../../../api";
+import * as Hookdeck from "../../../../api";
 import * as core from "../../../../core";
 
 export const DestinationUpsertRequestRateLimitPeriod: core.serialization.Schema<
     serializers.DestinationUpsertRequestRateLimitPeriod.Raw,
-    Intercom.DestinationUpsertRequestRateLimitPeriod
+    Hookdeck.DestinationUpsertRequestRateLimitPeriod
 > = core.serialization.enum_(["second", "minute", "hour"]);
 
 export declare namespace DestinationUpsertRequestRateLimitPeriod {

@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { VerificationConfig } from "./VerificationConfig";
 import { SourceVerificationOne } from "./SourceVerificationOne";
 
 export const SourceVerification: core.serialization.Schema<
     serializers.SourceVerification.Raw,
-    Intercom.SourceVerification
+    Hookdeck.SourceVerification
 > = core.serialization.undiscriminatedUnion([VerificationConfig, SourceVerificationOne]);
 
 export declare namespace SourceVerification {

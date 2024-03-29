@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationTwilioConfigs: core.serialization.ObjectSchema<
     serializers.VerificationTwilioConfigs.Raw,
-    Intercom.VerificationTwilioConfigs
+    Hookdeck.VerificationTwilioConfigs
 > = core.serialization.object({
     webhookSecretKey: core.serialization.property("webhook_secret_key", core.serialization.string()),
 });

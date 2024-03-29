@@ -3,7 +3,7 @@
  */
 
 import * as serializers from "../../../..";
-import * as Intercom from "../../../../../api";
+import * as Hookdeck from "../../../../../api";
 import * as core from "../../../../../core";
 import { ConnectionUpsertRequestDestination } from "../../types/ConnectionUpsertRequestDestination";
 import { ConnectionUpsertRequestSource } from "../../types/ConnectionUpsertRequestSource";
@@ -11,7 +11,7 @@ import { Rule } from "../../../../types/Rule";
 
 export const ConnectionUpsertRequest: core.serialization.Schema<
     serializers.ConnectionUpsertRequest.Raw,
-    Intercom.ConnectionUpsertRequest
+    Hookdeck.ConnectionUpsertRequest
 > = core.serialization.object({
     name: core.serialization.string().optional(),
     description: core.serialization.string().optional(),

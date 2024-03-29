@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { VerificationPostmarkType } from "./VerificationPostmarkType";
 import { VerificationPostmarkConfigs } from "./VerificationPostmarkConfigs";
 
 export const VerificationPostmark: core.serialization.ObjectSchema<
     serializers.VerificationPostmark.Raw,
-    Intercom.VerificationPostmark
+    Hookdeck.VerificationPostmark
 > = core.serialization.object({
     type: VerificationPostmarkType,
     configs: VerificationPostmarkConfigs.optional(),

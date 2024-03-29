@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const ListCustomDomainSchemaItemSslDcvDelegationRecordsItem: core.serialization.ObjectSchema<
     serializers.ListCustomDomainSchemaItemSslDcvDelegationRecordsItem.Raw,
-    Intercom.ListCustomDomainSchemaItemSslDcvDelegationRecordsItem
+    Hookdeck.ListCustomDomainSchemaItemSslDcvDelegationRecordsItem
 > = core.serialization.object({
     cname: core.serialization.string().optional(),
     cnameTarget: core.serialization.property("cname_target", core.serialization.string().optional()),

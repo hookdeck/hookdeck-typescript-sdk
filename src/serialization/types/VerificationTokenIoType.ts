@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationTokenIoType: core.serialization.Schema<
     serializers.VerificationTokenIoType.Raw,
-    Intercom.VerificationTokenIoType
+    Hookdeck.VerificationTokenIoType
 > = core.serialization.enum_(["tokenio", "TOKENIO"]);
 
 export declare namespace VerificationTokenIoType {

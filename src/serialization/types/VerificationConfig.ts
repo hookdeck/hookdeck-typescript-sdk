@@ -3,7 +3,7 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { VerificationHmac } from "./VerificationHmac";
 import { VerificationBasicAuth } from "./VerificationBasicAuth";
@@ -57,7 +57,7 @@ import { VerificationTokenIo } from "./VerificationTokenIo";
 
 export const VerificationConfig: core.serialization.Schema<
     serializers.VerificationConfig.Raw,
-    Intercom.VerificationConfig
+    Hookdeck.VerificationConfig
 > = core.serialization.undiscriminatedUnion([
     VerificationHmac,
     VerificationBasicAuth,

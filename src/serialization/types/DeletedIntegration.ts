@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const DeletedIntegration: core.serialization.ObjectSchema<
     serializers.DeletedIntegration.Raw,
-    Intercom.DeletedIntegration
+    Hookdeck.DeletedIntegration
 > = core.serialization.object({
     id: core.serialization.string(),
 });

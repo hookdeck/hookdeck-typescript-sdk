@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationWixType: core.serialization.Schema<
     serializers.VerificationWixType.Raw,
-    Intercom.VerificationWixType
+    Hookdeck.VerificationWixType
 > = core.serialization.enum_(["wix", "WIX"]);
 
 export declare namespace VerificationWixType {

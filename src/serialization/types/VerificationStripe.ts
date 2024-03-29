@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { VerificationStripeType } from "./VerificationStripeType";
 import { VerificationStripeConfigs } from "./VerificationStripeConfigs";
 
 export const VerificationStripe: core.serialization.ObjectSchema<
     serializers.VerificationStripe.Raw,
-    Intercom.VerificationStripe
+    Hookdeck.VerificationStripe
 > = core.serialization.object({
     type: VerificationStripeType,
     configs: VerificationStripeConfigs.optional(),

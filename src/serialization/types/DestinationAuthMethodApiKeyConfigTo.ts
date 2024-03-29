@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const DestinationAuthMethodApiKeyConfigTo: core.serialization.Schema<
     serializers.DestinationAuthMethodApiKeyConfigTo.Raw,
-    Intercom.DestinationAuthMethodApiKeyConfigTo
+    Hookdeck.DestinationAuthMethodApiKeyConfigTo
 > = core.serialization.enum_(["header", "query"]);
 
 export declare namespace DestinationAuthMethodApiKeyConfigTo {

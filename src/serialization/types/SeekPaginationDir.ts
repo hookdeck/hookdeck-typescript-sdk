@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { OrderByDirection } from "./OrderByDirection";
 
 export const SeekPaginationDir: core.serialization.Schema<
     serializers.SeekPaginationDir.Raw,
-    Intercom.SeekPaginationDir
+    Hookdeck.SeekPaginationDir
 > = core.serialization.undiscriminatedUnion([OrderByDirection, core.serialization.list(OrderByDirection)]);
 
 export declare namespace SeekPaginationDir {

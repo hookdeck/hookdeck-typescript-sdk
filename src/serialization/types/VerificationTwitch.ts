@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { VerificationTwitchType } from "./VerificationTwitchType";
 import { VerificationTwitchConfigs } from "./VerificationTwitchConfigs";
 
 export const VerificationTwitch: core.serialization.ObjectSchema<
     serializers.VerificationTwitch.Raw,
-    Intercom.VerificationTwitch
+    Hookdeck.VerificationTwitch
 > = core.serialization.object({
     type: VerificationTwitchType,
     configs: VerificationTwitchConfigs.optional(),

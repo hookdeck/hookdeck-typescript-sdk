@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { ApiErrorResponseData } from "./ApiErrorResponseData";
 
 export const ApiErrorResponse: core.serialization.ObjectSchema<
     serializers.ApiErrorResponse.Raw,
-    Intercom.ApiErrorResponse
+    Hookdeck.ApiErrorResponse
 > = core.serialization.object({
     code: core.serialization.string(),
     status: core.serialization.number(),

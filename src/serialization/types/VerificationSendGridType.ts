@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationSendGridType: core.serialization.Schema<
     serializers.VerificationSendGridType.Raw,
-    Intercom.VerificationSendGridType
+    Hookdeck.VerificationSendGridType
 > = core.serialization.enum_(["sendgrid", "SENDGRID"]);
 
 export declare namespace VerificationSendGridType {

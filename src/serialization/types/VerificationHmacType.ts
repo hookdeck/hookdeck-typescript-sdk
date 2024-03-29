@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationHmacType: core.serialization.Schema<
     serializers.VerificationHmacType.Raw,
-    Intercom.VerificationHmacType
+    Hookdeck.VerificationHmacType
 > = core.serialization.enum_(["hmac", "HMAC"]);
 
 export declare namespace VerificationHmacType {

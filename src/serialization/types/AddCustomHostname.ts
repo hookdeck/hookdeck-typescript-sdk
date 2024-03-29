@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const AddCustomHostname: core.serialization.ObjectSchema<
     serializers.AddCustomHostname.Raw,
-    Intercom.AddCustomHostname
+    Hookdeck.AddCustomHostname
 > = core.serialization.object({
     hostname: core.serialization.string(),
 });

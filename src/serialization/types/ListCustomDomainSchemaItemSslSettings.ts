@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const ListCustomDomainSchemaItemSslSettings: core.serialization.ObjectSchema<
     serializers.ListCustomDomainSchemaItemSslSettings.Raw,
-    Intercom.ListCustomDomainSchemaItemSslSettings
+    Hookdeck.ListCustomDomainSchemaItemSslSettings
 > = core.serialization.object({
     minTlsVersion: core.serialization.property("min_tls_version", core.serialization.string().optional()),
 });

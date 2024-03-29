@@ -3,11 +3,11 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { FilterRuleProperty } from "./FilterRuleProperty";
 
-export const FilterRule: core.serialization.ObjectSchema<serializers.FilterRule.Raw, Intercom.FilterRule> =
+export const FilterRule: core.serialization.ObjectSchema<serializers.FilterRule.Raw, Hookdeck.FilterRule> =
     core.serialization.object({
         type: core.serialization.stringLiteral("filter"),
         headers: FilterRuleProperty.optional(),

@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { VerificationTrelloType } from "./VerificationTrelloType";
 import { VerificationTrelloConfigs } from "./VerificationTrelloConfigs";
 
 export const VerificationTrello: core.serialization.ObjectSchema<
     serializers.VerificationTrello.Raw,
-    Intercom.VerificationTrello
+    Hookdeck.VerificationTrello
 > = core.serialization.object({
     type: VerificationTrelloType,
     configs: VerificationTrelloConfigs.optional(),

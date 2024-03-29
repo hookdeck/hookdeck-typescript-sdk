@@ -3,7 +3,7 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { HmacIntegrationConfigs } from "./HmacIntegrationConfigs";
 import { ApiKeyIntegrationConfigs } from "./ApiKeyIntegrationConfigs";
@@ -15,7 +15,7 @@ import { IntegrationConfigsSix } from "./IntegrationConfigsSix";
 
 export const IntegrationConfigs: core.serialization.Schema<
     serializers.IntegrationConfigs.Raw,
-    Intercom.IntegrationConfigs
+    Hookdeck.IntegrationConfigs
 > = core.serialization.undiscriminatedUnion([
     HmacIntegrationConfigs,
     ApiKeyIntegrationConfigs,

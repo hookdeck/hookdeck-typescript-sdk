@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationShopifyType: core.serialization.Schema<
     serializers.VerificationShopifyType.Raw,
-    Intercom.VerificationShopifyType
+    Hookdeck.VerificationShopifyType
 > = core.serialization.enum_(["shopify", "SHOPIFY"]);
 
 export declare namespace VerificationShopifyType {

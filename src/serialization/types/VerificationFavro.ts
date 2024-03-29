@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { VerificationFavroType } from "./VerificationFavroType";
 import { VerificationFavroConfigs } from "./VerificationFavroConfigs";
 
 export const VerificationFavro: core.serialization.ObjectSchema<
     serializers.VerificationFavro.Raw,
-    Intercom.VerificationFavro
+    Hookdeck.VerificationFavro
 > = core.serialization.object({
     type: VerificationFavroType,
     configs: VerificationFavroConfigs.optional(),

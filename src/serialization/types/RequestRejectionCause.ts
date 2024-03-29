@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const RequestRejectionCause: core.serialization.Schema<
     serializers.RequestRejectionCause.Raw,
-    Intercom.RequestRejectionCause
+    Hookdeck.RequestRejectionCause
 > = core.serialization.enum_([
     "SOURCE_DISABLED",
     "NO_CONNECTION",

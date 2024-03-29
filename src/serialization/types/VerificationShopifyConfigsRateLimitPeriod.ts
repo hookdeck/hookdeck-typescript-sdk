@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationShopifyConfigsRateLimitPeriod: core.serialization.Schema<
     serializers.VerificationShopifyConfigsRateLimitPeriod.Raw,
-    Intercom.VerificationShopifyConfigsRateLimitPeriod
+    Hookdeck.VerificationShopifyConfigsRateLimitPeriod
 > = core.serialization.enum_(["minute", "second"]);
 
 export declare namespace VerificationShopifyConfigsRateLimitPeriod {

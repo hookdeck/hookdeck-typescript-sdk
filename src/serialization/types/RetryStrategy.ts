@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
-export const RetryStrategy: core.serialization.Schema<serializers.RetryStrategy.Raw, Intercom.RetryStrategy> =
+export const RetryStrategy: core.serialization.Schema<serializers.RetryStrategy.Raw, Hookdeck.RetryStrategy> =
     core.serialization.enum_(["linear", "exponential"]);
 
 export declare namespace RetryStrategy {

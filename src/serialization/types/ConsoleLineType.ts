@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
-export const ConsoleLineType: core.serialization.Schema<serializers.ConsoleLineType.Raw, Intercom.ConsoleLineType> =
+export const ConsoleLineType: core.serialization.Schema<serializers.ConsoleLineType.Raw, Hookdeck.ConsoleLineType> =
     core.serialization.enum_(["error", "log", "warn", "info", "debug"]);
 
 export declare namespace ConsoleLineType {

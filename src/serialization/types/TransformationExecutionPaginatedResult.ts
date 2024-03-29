@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { SeekPagination } from "./SeekPagination";
 import { TransformationExecution } from "./TransformationExecution";
 
 export const TransformationExecutionPaginatedResult: core.serialization.ObjectSchema<
     serializers.TransformationExecutionPaginatedResult.Raw,
-    Intercom.TransformationExecutionPaginatedResult
+    Hookdeck.TransformationExecutionPaginatedResult
 > = core.serialization.object({
     pagination: SeekPagination.optional(),
     count: core.serialization.number().optional(),

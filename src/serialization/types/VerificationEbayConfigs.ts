@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationEbayConfigs: core.serialization.ObjectSchema<
     serializers.VerificationEbayConfigs.Raw,
-    Intercom.VerificationEbayConfigs
+    Hookdeck.VerificationEbayConfigs
 > = core.serialization.object({
     environment: core.serialization.string(),
     clientId: core.serialization.property("client_id", core.serialization.string()),

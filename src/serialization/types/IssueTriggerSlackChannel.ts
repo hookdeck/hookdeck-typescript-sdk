@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const IssueTriggerSlackChannel: core.serialization.ObjectSchema<
     serializers.IssueTriggerSlackChannel.Raw,
-    Intercom.IssueTriggerSlackChannel
+    Hookdeck.IssueTriggerSlackChannel
 > = core.serialization.object({
     channelName: core.serialization.property("channel_name", core.serialization.string()),
 });

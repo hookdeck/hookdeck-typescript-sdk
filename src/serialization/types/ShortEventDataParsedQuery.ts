@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { ShortEventDataParsedQueryOne } from "./ShortEventDataParsedQueryOne";
 
 export const ShortEventDataParsedQuery: core.serialization.Schema<
     serializers.ShortEventDataParsedQuery.Raw,
-    Intercom.ShortEventDataParsedQuery
+    Hookdeck.ShortEventDataParsedQuery
 > = core.serialization.undiscriminatedUnion([core.serialization.string().optional(), ShortEventDataParsedQueryOne]);
 
 export declare namespace ShortEventDataParsedQuery {

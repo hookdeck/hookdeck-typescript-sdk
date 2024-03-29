@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { VerificationEnodeType } from "./VerificationEnodeType";
 import { VerificationEnodeConfigs } from "./VerificationEnodeConfigs";
 
 export const VerificationEnode: core.serialization.ObjectSchema<
     serializers.VerificationEnode.Raw,
-    Intercom.VerificationEnode
+    Hookdeck.VerificationEnode
 > = core.serialization.object({
     type: VerificationEnodeType,
     configs: VerificationEnodeConfigs.optional(),

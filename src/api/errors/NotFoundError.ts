@@ -3,10 +3,10 @@
  */
 
 import * as errors from "../../errors";
-import * as Intercom from "..";
+import * as Hookdeck from "..";
 
-export class NotFoundError extends errors.IntercomError {
-    constructor(body: Intercom.ApiErrorResponse) {
+export class NotFoundError extends errors.HookdeckError {
+    constructor(body: Hookdeck.ApiErrorResponse) {
         super({
             message: "NotFoundError",
             statusCode: 404,

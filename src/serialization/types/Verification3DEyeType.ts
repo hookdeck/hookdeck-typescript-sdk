@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const Verification3DEyeType: core.serialization.Schema<
     serializers.Verification3DEyeType.Raw,
-    Intercom.Verification3DEyeType
+    Hookdeck.Verification3DEyeType
 > = core.serialization.enum_(["three_d_eye", "THREE_D_EYE"]);
 
 export declare namespace Verification3DEyeType {

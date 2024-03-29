@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
-export const RawBody: core.serialization.ObjectSchema<serializers.RawBody.Raw, Intercom.RawBody> =
+export const RawBody: core.serialization.ObjectSchema<serializers.RawBody.Raw, Hookdeck.RawBody> =
     core.serialization.object({
         body: core.serialization.string(),
     });

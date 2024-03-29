@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const TransformationFailedMeta: core.serialization.ObjectSchema<
     serializers.TransformationFailedMeta.Raw,
-    Intercom.TransformationFailedMeta
+    Hookdeck.TransformationFailedMeta
 > = core.serialization.object({
     transformationId: core.serialization.property("transformation_id", core.serialization.string()),
 });

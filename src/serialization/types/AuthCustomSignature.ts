@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { DestinationAuthMethodCustomSignatureConfig } from "./DestinationAuthMethodCustomSignatureConfig";
 
 export const AuthCustomSignature: core.serialization.ObjectSchema<
     serializers.AuthCustomSignature.Raw,
-    Intercom.AuthCustomSignature
+    Hookdeck.AuthCustomSignature
 > = core.serialization.object({
     config: DestinationAuthMethodCustomSignatureConfig,
 });

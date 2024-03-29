@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { TransformReference } from "./TransformReference";
 import { TransformFull } from "./TransformFull";
 
-export const TransformRule: core.serialization.Schema<serializers.TransformRule.Raw, Intercom.TransformRule> =
+export const TransformRule: core.serialization.Schema<serializers.TransformRule.Raw, Hookdeck.TransformRule> =
     core.serialization.undiscriminatedUnion([TransformReference, TransformFull]);
 
 export declare namespace TransformRule {

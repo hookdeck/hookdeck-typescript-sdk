@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { VerificationSvixType } from "./VerificationSvixType";
 import { VerificationSvixConfigs } from "./VerificationSvixConfigs";
 
 export const VerificationSvix: core.serialization.ObjectSchema<
     serializers.VerificationSvix.Raw,
-    Intercom.VerificationSvix
+    Hookdeck.VerificationSvix
 > = core.serialization.object({
     type: VerificationSvixType,
     configs: VerificationSvixConfigs.optional(),

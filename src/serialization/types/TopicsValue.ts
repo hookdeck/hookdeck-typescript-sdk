@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
-export const TopicsValue: core.serialization.Schema<serializers.TopicsValue.Raw, Intercom.TopicsValue> =
+export const TopicsValue: core.serialization.Schema<serializers.TopicsValue.Raw, Hookdeck.TopicsValue> =
     core.serialization.enum_(["issue.opened", "issue.updated", "deprecated.attempt-failed", "event.successful"]);
 
 export declare namespace TopicsValue {

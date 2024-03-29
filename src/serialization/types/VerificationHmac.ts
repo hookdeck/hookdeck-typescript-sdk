@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { VerificationHmacType } from "./VerificationHmacType";
 import { VerificationHmacConfigs } from "./VerificationHmacConfigs";
 
 export const VerificationHmac: core.serialization.ObjectSchema<
     serializers.VerificationHmac.Raw,
-    Intercom.VerificationHmac
+    Hookdeck.VerificationHmac
 > = core.serialization.object({
     type: VerificationHmacType,
     configs: VerificationHmacConfigs.optional(),

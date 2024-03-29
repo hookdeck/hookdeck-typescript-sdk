@@ -3,11 +3,11 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { RetryStrategy } from "./RetryStrategy";
 
-export const RetryRule: core.serialization.ObjectSchema<serializers.RetryRule.Raw, Intercom.RetryRule> =
+export const RetryRule: core.serialization.ObjectSchema<serializers.RetryRule.Raw, Hookdeck.RetryRule> =
     core.serialization.object({
         type: core.serialization.stringLiteral("retry"),
         strategy: RetryStrategy,

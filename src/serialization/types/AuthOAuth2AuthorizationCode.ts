@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { DestinationAuthMethodOAuth2AuthorizationCodeConfig } from "./DestinationAuthMethodOAuth2AuthorizationCodeConfig";
 
 export const AuthOAuth2AuthorizationCode: core.serialization.ObjectSchema<
     serializers.AuthOAuth2AuthorizationCode.Raw,
-    Intercom.AuthOAuth2AuthorizationCode
+    Hookdeck.AuthOAuth2AuthorizationCode
 > = core.serialization.object({
     config: DestinationAuthMethodOAuth2AuthorizationCodeConfig.optional(),
 });

@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationNmiPaymentGatewayType: core.serialization.Schema<
     serializers.VerificationNmiPaymentGatewayType.Raw,
-    Intercom.VerificationNmiPaymentGatewayType
+    Hookdeck.VerificationNmiPaymentGatewayType
 > = core.serialization.enum_(["nmi", "NMI"]);
 
 export declare namespace VerificationNmiPaymentGatewayType {

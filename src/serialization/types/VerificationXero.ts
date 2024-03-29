@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { VerificationXeroType } from "./VerificationXeroType";
 import { VerificationXeroConfigs } from "./VerificationXeroConfigs";
 
 export const VerificationXero: core.serialization.ObjectSchema<
     serializers.VerificationXero.Raw,
-    Intercom.VerificationXero
+    Hookdeck.VerificationXero
 > = core.serialization.object({
     type: VerificationXeroType,
     configs: VerificationXeroConfigs.optional(),

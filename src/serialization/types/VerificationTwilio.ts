@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { VerificationTwilioType } from "./VerificationTwilioType";
 import { VerificationTwilioConfigs } from "./VerificationTwilioConfigs";
 
 export const VerificationTwilio: core.serialization.ObjectSchema<
     serializers.VerificationTwilio.Raw,
-    Intercom.VerificationTwilio
+    Hookdeck.VerificationTwilio
 > = core.serialization.object({
     type: VerificationTwilioType,
     configs: VerificationTwilioConfigs.optional(),

@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../..";
-import * as Intercom from "../../../../api";
+import * as Hookdeck from "../../../../api";
 import * as core from "../../../../core";
 
 export const TransformationListExecutionRequestLogLevel: core.serialization.Schema<
     serializers.TransformationListExecutionRequestLogLevel.Raw,
-    Intercom.TransformationListExecutionRequestLogLevel
+    Hookdeck.TransformationListExecutionRequestLogLevel
 > = core.serialization.enum_(["debug", "info", "warn", "error", "fatal"]);
 
 export declare namespace TransformationListExecutionRequestLogLevel {

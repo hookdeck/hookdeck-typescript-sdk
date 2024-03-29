@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "../../..";
-import * as Intercom from "../../../../api";
+import * as Hookdeck from "../../../../api";
 import * as core from "../../../../core";
 import { EventBulkRetryCreateRequestQueryLastAttemptAtAny } from "./EventBulkRetryCreateRequestQueryLastAttemptAtAny";
 
 export const EventBulkRetryCreateRequestQueryLastAttemptAt: core.serialization.Schema<
     serializers.EventBulkRetryCreateRequestQueryLastAttemptAt.Raw,
-    Intercom.EventBulkRetryCreateRequestQueryLastAttemptAt
+    Hookdeck.EventBulkRetryCreateRequestQueryLastAttemptAt
 > = core.serialization.undiscriminatedUnion([
     core.serialization.date(),
     EventBulkRetryCreateRequestQueryLastAttemptAtAny,

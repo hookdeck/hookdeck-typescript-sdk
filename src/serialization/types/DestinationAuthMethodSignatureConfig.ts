@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const DestinationAuthMethodSignatureConfig: core.serialization.ObjectSchema<
     serializers.DestinationAuthMethodSignatureConfig.Raw,
-    Intercom.DestinationAuthMethodSignatureConfig
+    Hookdeck.DestinationAuthMethodSignatureConfig
 > = core.serialization.object({});
 
 export declare namespace DestinationAuthMethodSignatureConfig {

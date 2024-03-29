@@ -3,11 +3,11 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { DestinationAuthMethodBasicAuthConfig } from "./DestinationAuthMethodBasicAuthConfig";
 
-export const AuthBasicAuth: core.serialization.ObjectSchema<serializers.AuthBasicAuth.Raw, Intercom.AuthBasicAuth> =
+export const AuthBasicAuth: core.serialization.ObjectSchema<serializers.AuthBasicAuth.Raw, Hookdeck.AuthBasicAuth> =
     core.serialization.object({
         config: DestinationAuthMethodBasicAuthConfig.optional(),
     });

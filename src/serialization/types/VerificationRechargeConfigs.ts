@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { HmacAlgorithms } from "./HmacAlgorithms";
 import { VerificationRechargeConfigsEncoding } from "./VerificationRechargeConfigsEncoding";
 
 export const VerificationRechargeConfigs: core.serialization.ObjectSchema<
     serializers.VerificationRechargeConfigs.Raw,
-    Intercom.VerificationRechargeConfigs
+    Hookdeck.VerificationRechargeConfigs
 > = core.serialization.object({
     webhookSecretKey: core.serialization.property("webhook_secret_key", core.serialization.string()),
     algorithm: HmacAlgorithms,

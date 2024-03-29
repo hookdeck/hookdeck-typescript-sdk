@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { IssueTriggerStrategy } from "./IssueTriggerStrategy";
 import { IssueTriggerDeliveryConfigsConnections } from "./IssueTriggerDeliveryConfigsConnections";
 
 export const IssueTriggerDeliveryConfigs: core.serialization.ObjectSchema<
     serializers.IssueTriggerDeliveryConfigs.Raw,
-    Intercom.IssueTriggerDeliveryConfigs
+    Hookdeck.IssueTriggerDeliveryConfigs
 > = core.serialization.object({
     strategy: IssueTriggerStrategy,
     connections: IssueTriggerDeliveryConfigsConnections,

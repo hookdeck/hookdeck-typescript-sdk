@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const ApiKeyIntegrationConfigs: core.serialization.ObjectSchema<
     serializers.ApiKeyIntegrationConfigs.Raw,
-    Intercom.ApiKeyIntegrationConfigs
+    Hookdeck.ApiKeyIntegrationConfigs
 > = core.serialization.object({
     headerKey: core.serialization.property("header_key", core.serialization.string()),
     apiKey: core.serialization.property("api_key", core.serialization.string()),

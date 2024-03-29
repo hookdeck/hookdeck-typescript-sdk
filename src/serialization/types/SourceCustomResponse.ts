@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { SourceCustomResponseContentType } from "./SourceCustomResponseContentType";
 
 export const SourceCustomResponse: core.serialization.ObjectSchema<
     serializers.SourceCustomResponse.Raw,
-    Intercom.SourceCustomResponse
+    Hookdeck.SourceCustomResponse
 > = core.serialization.object({
     contentType: core.serialization.property("content_type", SourceCustomResponseContentType),
     body: core.serialization.string(),

@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../..";
-import * as Intercom from "../../../../api";
+import * as Hookdeck from "../../../../api";
 import * as core from "../../../../core";
 
 export const IgnoredEventBulkRetryListRequestOrderBy: core.serialization.Schema<
     serializers.IgnoredEventBulkRetryListRequestOrderBy.Raw,
-    Intercom.IgnoredEventBulkRetryListRequestOrderBy
+    Hookdeck.IgnoredEventBulkRetryListRequestOrderBy
 > = core.serialization.enum_(["created_at"]);
 
 export declare namespace IgnoredEventBulkRetryListRequestOrderBy {

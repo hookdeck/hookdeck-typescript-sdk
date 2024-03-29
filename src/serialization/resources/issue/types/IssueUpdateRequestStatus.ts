@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../..";
-import * as Intercom from "../../../../api";
+import * as Hookdeck from "../../../../api";
 import * as core from "../../../../core";
 
 export const IssueUpdateRequestStatus: core.serialization.Schema<
     serializers.IssueUpdateRequestStatus.Raw,
-    Intercom.IssueUpdateRequestStatus
+    Hookdeck.IssueUpdateRequestStatus
 > = core.serialization.enum_(["OPENED", "IGNORED", "ACKNOWLEDGED", "RESOLVED"]);
 
 export declare namespace IssueUpdateRequestStatus {

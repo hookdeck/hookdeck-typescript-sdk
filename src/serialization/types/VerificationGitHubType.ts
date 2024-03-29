@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationGitHubType: core.serialization.Schema<
     serializers.VerificationGitHubType.Raw,
-    Intercom.VerificationGitHubType
+    Hookdeck.VerificationGitHubType
 > = core.serialization.enum_(["github", "GITHUB"]);
 
 export declare namespace VerificationGitHubType {

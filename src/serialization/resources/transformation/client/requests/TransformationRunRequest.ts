@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "../../../..";
-import * as Intercom from "../../../../../api";
+import * as Hookdeck from "../../../../../api";
 import * as core from "../../../../../core";
 import { TransformationRunRequestRequest } from "../../types/TransformationRunRequestRequest";
 
 export const TransformationRunRequest: core.serialization.Schema<
     serializers.TransformationRunRequest.Raw,
-    Intercom.TransformationRunRequest
+    Hookdeck.TransformationRunRequest
 > = core.serialization.object({
     env: core.serialization.record(core.serialization.string(), core.serialization.string()).optional(),
     webhookId: core.serialization.property("webhook_id", core.serialization.string().optional()),

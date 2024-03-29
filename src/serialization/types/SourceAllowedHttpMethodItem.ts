@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const SourceAllowedHttpMethodItem: core.serialization.Schema<
     serializers.SourceAllowedHttpMethodItem.Raw,
-    Intercom.SourceAllowedHttpMethodItem
+    Hookdeck.SourceAllowedHttpMethodItem
 > = core.serialization.enum_(["GET", "POST", "PUT", "PATCH", "DELETE"]);
 
 export declare namespace SourceAllowedHttpMethodItem {

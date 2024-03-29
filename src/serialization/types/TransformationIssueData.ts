@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { TransformationExecution } from "./TransformationExecution";
 import { EventAttempt } from "./EventAttempt";
 
 export const TransformationIssueData: core.serialization.ObjectSchema<
     serializers.TransformationIssueData.Raw,
-    Intercom.TransformationIssueData
+    Hookdeck.TransformationIssueData
 > = core.serialization.object({
     transformationExecution: core.serialization.property("transformation_execution", TransformationExecution),
     triggerAttempt: core.serialization.property("trigger_attempt", EventAttempt.optional()),

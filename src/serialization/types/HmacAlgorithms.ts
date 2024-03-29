@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
-export const HmacAlgorithms: core.serialization.Schema<serializers.HmacAlgorithms.Raw, Intercom.HmacAlgorithms> =
+export const HmacAlgorithms: core.serialization.Schema<serializers.HmacAlgorithms.Raw, Hookdeck.HmacAlgorithms> =
     core.serialization.enum_(["md5", "sha1", "sha256", "sha512"]);
 
 export declare namespace HmacAlgorithms {

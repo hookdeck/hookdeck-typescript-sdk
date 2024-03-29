@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../..";
-import * as Intercom from "../../../../api";
+import * as Hookdeck from "../../../../api";
 import * as core from "../../../../core";
 
 export const ConnectionCountResponse: core.serialization.ObjectSchema<
     serializers.ConnectionCountResponse.Raw,
-    Intercom.ConnectionCountResponse
+    Hookdeck.ConnectionCountResponse
 > = core.serialization.object({
     count: core.serialization.number(),
 });

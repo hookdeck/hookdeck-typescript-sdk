@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const RequestIngestPriority: core.serialization.Schema<
     serializers.RequestIngestPriority.Raw,
-    Intercom.RequestIngestPriority
+    Hookdeck.RequestIngestPriority
 > = core.serialization.enum_(["NORMAL", "LOW"]);
 
 export declare namespace RequestIngestPriority {

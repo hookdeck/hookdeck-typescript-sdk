@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { TopicsValue } from "./TopicsValue";
 
 export const ToggleWebhookNotifications: core.serialization.ObjectSchema<
     serializers.ToggleWebhookNotifications.Raw,
-    Intercom.ToggleWebhookNotifications
+    Hookdeck.ToggleWebhookNotifications
 > = core.serialization.object({
     enabled: core.serialization.boolean(),
     topics: core.serialization.list(TopicsValue).optional(),

@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationStripeType: core.serialization.Schema<
     serializers.VerificationStripeType.Raw,
-    Intercom.VerificationStripeType
+    Hookdeck.VerificationStripeType
 > = core.serialization.enum_(["stripe", "STRIPE"]);
 
 export declare namespace VerificationStripeType {

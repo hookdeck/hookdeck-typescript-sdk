@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationOrbType: core.serialization.Schema<
     serializers.VerificationOrbType.Raw,
-    Intercom.VerificationOrbType
+    Hookdeck.VerificationOrbType
 > = core.serialization.enum_(["orb", "ORB"]);
 
 export declare namespace VerificationOrbType {

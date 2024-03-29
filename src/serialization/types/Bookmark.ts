@@ -3,11 +3,11 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { ShortEventData } from "./ShortEventData";
 
-export const Bookmark: core.serialization.ObjectSchema<serializers.Bookmark.Raw, Intercom.Bookmark> =
+export const Bookmark: core.serialization.ObjectSchema<serializers.Bookmark.Raw, Hookdeck.Bookmark> =
     core.serialization.object({
         id: core.serialization.string(),
         teamId: core.serialization.property("team_id", core.serialization.string()),

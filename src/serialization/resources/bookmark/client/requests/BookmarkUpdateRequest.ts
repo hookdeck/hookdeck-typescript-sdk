@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../../..";
-import * as Intercom from "../../../../../api";
+import * as Hookdeck from "../../../../../api";
 import * as core from "../../../../../core";
 
 export const BookmarkUpdateRequest: core.serialization.Schema<
     serializers.BookmarkUpdateRequest.Raw,
-    Intercom.BookmarkUpdateRequest
+    Hookdeck.BookmarkUpdateRequest
 > = core.serialization.object({
     eventDataId: core.serialization.property("event_data_id", core.serialization.string().optional()),
     webhookId: core.serialization.property("webhook_id", core.serialization.string().optional()),

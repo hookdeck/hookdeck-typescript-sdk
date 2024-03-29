@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { VerificationSendGridType } from "./VerificationSendGridType";
 import { VerificationSendGridConfigs } from "./VerificationSendGridConfigs";
 
 export const VerificationSendGrid: core.serialization.ObjectSchema<
     serializers.VerificationSendGrid.Raw,
-    Intercom.VerificationSendGrid
+    Hookdeck.VerificationSendGrid
 > = core.serialization.object({
     type: VerificationSendGridType,
     configs: VerificationSendGridConfigs.optional(),

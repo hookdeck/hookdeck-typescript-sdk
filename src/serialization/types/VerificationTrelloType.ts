@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationTrelloType: core.serialization.Schema<
     serializers.VerificationTrelloType.Raw,
-    Intercom.VerificationTrelloType
+    Hookdeck.VerificationTrelloType
 > = core.serialization.enum_(["trello", "TRELLO"]);
 
 export declare namespace VerificationTrelloType {

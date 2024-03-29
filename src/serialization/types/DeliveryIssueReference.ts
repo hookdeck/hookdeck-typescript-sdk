@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const DeliveryIssueReference: core.serialization.ObjectSchema<
     serializers.DeliveryIssueReference.Raw,
-    Intercom.DeliveryIssueReference
+    Hookdeck.DeliveryIssueReference
 > = core.serialization.object({
     eventId: core.serialization.property("event_id", core.serialization.string()),
     attemptId: core.serialization.property("attempt_id", core.serialization.string()),

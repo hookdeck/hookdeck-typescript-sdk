@@ -3,7 +3,7 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { IssueTriggerSlackChannel } from "./IssueTriggerSlackChannel";
 import { IssueTriggerIntegrationChannel } from "./IssueTriggerIntegrationChannel";
@@ -11,7 +11,7 @@ import { IssueTriggerEmailChannel } from "./IssueTriggerEmailChannel";
 
 export const IssueTriggerChannels: core.serialization.ObjectSchema<
     serializers.IssueTriggerChannels.Raw,
-    Intercom.IssueTriggerChannels
+    Hookdeck.IssueTriggerChannels
 > = core.serialization.object({
     slack: IssueTriggerSlackChannel.optional(),
     opsgenie: IssueTriggerIntegrationChannel.optional(),

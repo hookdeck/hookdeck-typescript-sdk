@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
-export const Transformation: core.serialization.ObjectSchema<serializers.Transformation.Raw, Intercom.Transformation> =
+export const Transformation: core.serialization.ObjectSchema<serializers.Transformation.Raw, Hookdeck.Transformation> =
     core.serialization.object({
         id: core.serialization.string(),
         teamId: core.serialization.property("team_id", core.serialization.string()),

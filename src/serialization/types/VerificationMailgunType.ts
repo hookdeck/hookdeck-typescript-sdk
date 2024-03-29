@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationMailgunType: core.serialization.Schema<
     serializers.VerificationMailgunType.Raw,
-    Intercom.VerificationMailgunType
+    Hookdeck.VerificationMailgunType
 > = core.serialization.enum_(["mailgun", "MAILGUN"]);
 
 export declare namespace VerificationMailgunType {

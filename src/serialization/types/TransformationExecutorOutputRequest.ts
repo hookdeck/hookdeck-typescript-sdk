@@ -3,7 +3,7 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { TransformationExecutorOutputRequestHeaders } from "./TransformationExecutorOutputRequestHeaders";
 import { TransformationExecutorOutputRequestQuery } from "./TransformationExecutorOutputRequestQuery";
@@ -12,7 +12,7 @@ import { TransformationExecutorOutputRequestBody } from "./TransformationExecuto
 
 export const TransformationExecutorOutputRequest: core.serialization.ObjectSchema<
     serializers.TransformationExecutorOutputRequest.Raw,
-    Intercom.TransformationExecutorOutputRequest
+    Hookdeck.TransformationExecutorOutputRequest
 > = core.serialization.object({
     headers: TransformationExecutorOutputRequestHeaders.optional(),
     path: core.serialization.string(),

@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationAkeneoType: core.serialization.Schema<
     serializers.VerificationAkeneoType.Raw,
-    Intercom.VerificationAkeneoType
+    Hookdeck.VerificationAkeneoType
 > = core.serialization.enum_(["akeneo", "AKENEO"]);
 
 export declare namespace VerificationAkeneoType {

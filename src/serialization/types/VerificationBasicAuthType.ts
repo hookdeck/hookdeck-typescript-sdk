@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationBasicAuthType: core.serialization.Schema<
     serializers.VerificationBasicAuthType.Raw,
-    Intercom.VerificationBasicAuthType
+    Hookdeck.VerificationBasicAuthType
 > = core.serialization.enum_(["basic_auth", "BASIC_AUTH"]);
 
 export declare namespace VerificationBasicAuthType {

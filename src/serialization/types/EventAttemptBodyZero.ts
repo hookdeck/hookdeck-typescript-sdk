@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const EventAttemptBodyZero: core.serialization.ObjectSchema<
     serializers.EventAttemptBodyZero.Raw,
-    Intercom.EventAttemptBodyZero
+    Hookdeck.EventAttemptBodyZero
 > = core.serialization.object({});
 
 export declare namespace EventAttemptBodyZero {

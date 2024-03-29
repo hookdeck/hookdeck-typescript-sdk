@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { VerificationTokenIoType } from "./VerificationTokenIoType";
 import { VerificationTokenIoConfigs } from "./VerificationTokenIoConfigs";
 
 export const VerificationTokenIo: core.serialization.ObjectSchema<
     serializers.VerificationTokenIo.Raw,
-    Intercom.VerificationTokenIo
+    Hookdeck.VerificationTokenIo
 > = core.serialization.object({
     type: VerificationTokenIoType,
     configs: VerificationTokenIoConfigs.optional(),

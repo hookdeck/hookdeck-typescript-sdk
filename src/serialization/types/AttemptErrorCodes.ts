@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const AttemptErrorCodes: core.serialization.Schema<
     serializers.AttemptErrorCodes.Raw,
-    Intercom.AttemptErrorCodes
+    Hookdeck.AttemptErrorCodes
 > = core.serialization.enum_([
     "CANCELLED",
     "TIMEOUT",

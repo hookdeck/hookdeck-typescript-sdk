@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { VerificationShoplineType } from "./VerificationShoplineType";
 import { VerificationShoplineConfigs } from "./VerificationShoplineConfigs";
 
 export const VerificationShopline: core.serialization.ObjectSchema<
     serializers.VerificationShopline.Raw,
-    Intercom.VerificationShopline
+    Hookdeck.VerificationShopline
 > = core.serialization.object({
     type: VerificationShoplineType,
     configs: VerificationShoplineConfigs.optional(),

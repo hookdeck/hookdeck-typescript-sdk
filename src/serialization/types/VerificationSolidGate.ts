@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { VerificationSolidGateType } from "./VerificationSolidGateType";
 import { VerificationSolidGateConfigs } from "./VerificationSolidGateConfigs";
 
 export const VerificationSolidGate: core.serialization.ObjectSchema<
     serializers.VerificationSolidGate.Raw,
-    Intercom.VerificationSolidGate
+    Hookdeck.VerificationSolidGate
 > = core.serialization.object({
     type: VerificationSolidGateType,
     configs: VerificationSolidGateConfigs.optional(),

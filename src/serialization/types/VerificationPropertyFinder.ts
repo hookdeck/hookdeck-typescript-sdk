@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { VerificationPropertyFinderConfigs } from "./VerificationPropertyFinderConfigs";
 
 export const VerificationPropertyFinder: core.serialization.ObjectSchema<
     serializers.VerificationPropertyFinder.Raw,
-    Intercom.VerificationPropertyFinder
+    Hookdeck.VerificationPropertyFinder
 > = core.serialization.object({
     type: core.serialization.string(),
     configs: VerificationPropertyFinderConfigs.optional(),

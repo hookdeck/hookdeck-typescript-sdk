@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationSolidGateType: core.serialization.Schema<
     serializers.VerificationSolidGateType.Raw,
-    Intercom.VerificationSolidGateType
+    Hookdeck.VerificationSolidGateType
 > = core.serialization.enum_(["solidgate", "SOLIDGATE"]);
 
 export declare namespace VerificationSolidGateType {

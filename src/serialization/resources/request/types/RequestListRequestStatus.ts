@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../..";
-import * as Intercom from "../../../../api";
+import * as Hookdeck from "../../../../api";
 import * as core from "../../../../core";
 
 export const RequestListRequestStatus: core.serialization.Schema<
     serializers.RequestListRequestStatus.Raw,
-    Intercom.RequestListRequestStatus
+    Hookdeck.RequestListRequestStatus
 > = core.serialization.enum_(["accepted", "rejected"]);
 
 export declare namespace RequestListRequestStatus {

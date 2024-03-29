@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationTwitchType: core.serialization.Schema<
     serializers.VerificationTwitchType.Raw,
-    Intercom.VerificationTwitchType
+    Hookdeck.VerificationTwitchType
 > = core.serialization.enum_(["twitch", "TWITCH"]);
 
 export declare namespace VerificationTwitchType {

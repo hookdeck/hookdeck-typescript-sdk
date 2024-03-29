@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../..";
-import * as Intercom from "../../../../api";
+import * as Hookdeck from "../../../../api";
 import * as core from "../../../../core";
 
 export const EventBulkRetryCreateRequestQueryCliIdAll: core.serialization.ObjectSchema<
     serializers.EventBulkRetryCreateRequestQueryCliIdAll.Raw,
-    Intercom.EventBulkRetryCreateRequestQueryCliIdAll
+    Hookdeck.EventBulkRetryCreateRequestQueryCliIdAll
 > = core.serialization.object({
     any: core.serialization.boolean().optional(),
     all: core.serialization.boolean().optional(),

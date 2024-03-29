@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const DestinationAuthMethodBearerTokenConfig: core.serialization.ObjectSchema<
     serializers.DestinationAuthMethodBearerTokenConfig.Raw,
-    Intercom.DestinationAuthMethodBearerTokenConfig
+    Hookdeck.DestinationAuthMethodBearerTokenConfig
 > = core.serialization.object({
     token: core.serialization.string(),
 });

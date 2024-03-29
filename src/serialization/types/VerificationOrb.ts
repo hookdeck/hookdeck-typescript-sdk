@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { VerificationOrbType } from "./VerificationOrbType";
 import { VerificationOrbConfigs } from "./VerificationOrbConfigs";
 
 export const VerificationOrb: core.serialization.ObjectSchema<
     serializers.VerificationOrb.Raw,
-    Intercom.VerificationOrb
+    Hookdeck.VerificationOrb
 > = core.serialization.object({
     type: VerificationOrbType,
     configs: VerificationOrbConfigs.optional(),

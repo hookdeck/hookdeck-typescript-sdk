@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationFavroType: core.serialization.Schema<
     serializers.VerificationFavroType.Raw,
-    Intercom.VerificationFavroType
+    Hookdeck.VerificationFavroType
 > = core.serialization.enum_(["favro", "FAVRO"]);
 
 export declare namespace VerificationFavroType {

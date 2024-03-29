@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const AttachedIntegrationToSource: core.serialization.ObjectSchema<
     serializers.AttachedIntegrationToSource.Raw,
-    Intercom.AttachedIntegrationToSource
+    Hookdeck.AttachedIntegrationToSource
 > = core.serialization.object({
     success: core.serialization.boolean(),
 });

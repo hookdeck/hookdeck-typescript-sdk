@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { VerificationCommercelayerType } from "./VerificationCommercelayerType";
 import { VerificationCommercelayerConfigs } from "./VerificationCommercelayerConfigs";
 
 export const VerificationCommercelayer: core.serialization.ObjectSchema<
     serializers.VerificationCommercelayer.Raw,
-    Intercom.VerificationCommercelayer
+    Hookdeck.VerificationCommercelayer
 > = core.serialization.object({
     type: VerificationCommercelayerType,
     configs: VerificationCommercelayerConfigs.optional(),

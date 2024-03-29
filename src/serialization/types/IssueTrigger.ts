@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { IssueType } from "./IssueType";
 import { IssueTriggerReference } from "./IssueTriggerReference";
 import { IssueTriggerChannels } from "./IssueTriggerChannels";
 
-export const IssueTrigger: core.serialization.ObjectSchema<serializers.IssueTrigger.Raw, Intercom.IssueTrigger> =
+export const IssueTrigger: core.serialization.ObjectSchema<serializers.IssueTrigger.Raw, Hookdeck.IssueTrigger> =
     core.serialization.object({
         id: core.serialization.string(),
         teamId: core.serialization.property("team_id", core.serialization.string().optional()),

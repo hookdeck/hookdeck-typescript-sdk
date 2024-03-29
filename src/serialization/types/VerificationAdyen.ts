@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { VerificationAdyenType } from "./VerificationAdyenType";
 import { VerificationAdyenConfigs } from "./VerificationAdyenConfigs";
 
 export const VerificationAdyen: core.serialization.ObjectSchema<
     serializers.VerificationAdyen.Raw,
-    Intercom.VerificationAdyen
+    Hookdeck.VerificationAdyen
 > = core.serialization.object({
     type: VerificationAdyenType,
     configs: VerificationAdyenConfigs.optional(),

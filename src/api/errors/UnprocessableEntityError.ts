@@ -3,10 +3,10 @@
  */
 
 import * as errors from "../../errors";
-import * as Intercom from "..";
+import * as Hookdeck from "..";
 
-export class UnprocessableEntityError extends errors.IntercomError {
-    constructor(body: Intercom.ApiErrorResponse) {
+export class UnprocessableEntityError extends errors.HookdeckError {
+    constructor(body: Hookdeck.ApiErrorResponse) {
         super({
             message: "UnprocessableEntityError",
             statusCode: 422,

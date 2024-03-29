@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { VerificationBasicAuthType } from "./VerificationBasicAuthType";
 import { VerificationBasicAuthConfigs } from "./VerificationBasicAuthConfigs";
 
 export const VerificationBasicAuth: core.serialization.ObjectSchema<
     serializers.VerificationBasicAuth.Raw,
-    Intercom.VerificationBasicAuth
+    Hookdeck.VerificationBasicAuth
 > = core.serialization.object({
     type: VerificationBasicAuthType,
     configs: VerificationBasicAuthConfigs.optional(),

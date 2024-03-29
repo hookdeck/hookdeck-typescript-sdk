@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { Event } from "./Event";
 import { EventAttempt } from "./EventAttempt";
 
-export const RetriedEvent: core.serialization.ObjectSchema<serializers.RetriedEvent.Raw, Intercom.RetriedEvent> =
+export const RetriedEvent: core.serialization.ObjectSchema<serializers.RetriedEvent.Raw, Hookdeck.RetriedEvent> =
     core.serialization.object({
         event: Event,
         attempt: EventAttempt.optional(),

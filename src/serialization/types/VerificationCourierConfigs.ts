@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationCourierConfigs: core.serialization.ObjectSchema<
     serializers.VerificationCourierConfigs.Raw,
-    Intercom.VerificationCourierConfigs
+    Hookdeck.VerificationCourierConfigs
 > = core.serialization.object({
     webhookSecretKey: core.serialization.property("webhook_secret_key", core.serialization.string()),
 });

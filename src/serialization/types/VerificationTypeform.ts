@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { VerificationTypeformType } from "./VerificationTypeformType";
 import { VerificationTypeformConfigs } from "./VerificationTypeformConfigs";
 
 export const VerificationTypeform: core.serialization.ObjectSchema<
     serializers.VerificationTypeform.Raw,
-    Intercom.VerificationTypeform
+    Hookdeck.VerificationTypeform
 > = core.serialization.object({
     type: VerificationTypeformType,
     configs: VerificationTypeformConfigs.optional(),

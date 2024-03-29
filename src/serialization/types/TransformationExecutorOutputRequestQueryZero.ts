@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const TransformationExecutorOutputRequestQueryZero: core.serialization.ObjectSchema<
     serializers.TransformationExecutorOutputRequestQueryZero.Raw,
-    Intercom.TransformationExecutorOutputRequestQueryZero
+    Hookdeck.TransformationExecutorOutputRequestQueryZero
 > = core.serialization.object({});
 
 export declare namespace TransformationExecutorOutputRequestQueryZero {

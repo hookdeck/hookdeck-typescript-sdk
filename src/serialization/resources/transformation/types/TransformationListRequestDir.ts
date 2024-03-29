@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../..";
-import * as Intercom from "../../../../api";
+import * as Hookdeck from "../../../../api";
 import * as core from "../../../../core";
 
 export const TransformationListRequestDir: core.serialization.Schema<
     serializers.TransformationListRequestDir.Raw,
-    Intercom.TransformationListRequestDir
+    Hookdeck.TransformationListRequestDir
 > = core.serialization.enum_(["asc", "desc"]);
 
 export declare namespace TransformationListRequestDir {

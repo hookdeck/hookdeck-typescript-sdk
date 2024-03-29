@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "../../../..";
-import * as Intercom from "../../../../../api";
+import * as Hookdeck from "../../../../../api";
 import * as core from "../../../../../core";
 import { IgnoredEventBulkRetryCreateRequestQuery } from "../../types/IgnoredEventBulkRetryCreateRequestQuery";
 
 export const IgnoredEventBulkRetryCreateRequest: core.serialization.Schema<
     serializers.IgnoredEventBulkRetryCreateRequest.Raw,
-    Intercom.IgnoredEventBulkRetryCreateRequest
+    Hookdeck.IgnoredEventBulkRetryCreateRequest
 > = core.serialization.object({
     query: IgnoredEventBulkRetryCreateRequestQuery.optional(),
 });

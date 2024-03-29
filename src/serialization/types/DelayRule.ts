@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
-export const DelayRule: core.serialization.ObjectSchema<serializers.DelayRule.Raw, Intercom.DelayRule> =
+export const DelayRule: core.serialization.ObjectSchema<serializers.DelayRule.Raw, Hookdeck.DelayRule> =
     core.serialization.object({
         type: core.serialization.stringLiteral("delay"),
         delay: core.serialization.number(),

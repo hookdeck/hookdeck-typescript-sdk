@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "../../../..";
-import * as Intercom from "../../../../../api";
+import * as Hookdeck from "../../../../../api";
 import * as core from "../../../../../core";
 import { IssueUpdateRequestStatus } from "../../types/IssueUpdateRequestStatus";
 
 export const IssueUpdateRequest: core.serialization.Schema<
     serializers.IssueUpdateRequest.Raw,
-    Intercom.IssueUpdateRequest
+    Hookdeck.IssueUpdateRequest
 > = core.serialization.object({
     status: IssueUpdateRequestStatus,
 });

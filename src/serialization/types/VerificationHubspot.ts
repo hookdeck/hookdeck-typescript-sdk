@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { VerificationHubspotType } from "./VerificationHubspotType";
 import { VerificationHubspotConfigs } from "./VerificationHubspotConfigs";
 
 export const VerificationHubspot: core.serialization.ObjectSchema<
     serializers.VerificationHubspot.Raw,
-    Intercom.VerificationHubspot
+    Hookdeck.VerificationHubspot
 > = core.serialization.object({
     type: VerificationHubspotType,
     configs: VerificationHubspotConfigs.optional(),

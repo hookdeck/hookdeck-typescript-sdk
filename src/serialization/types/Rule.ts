@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { RetryRule } from "./RetryRule";
 import { FilterRule } from "./FilterRule";
 import { TransformRule } from "./TransformRule";
 import { DelayRule } from "./DelayRule";
 
-export const Rule: core.serialization.Schema<serializers.Rule.Raw, Intercom.Rule> =
+export const Rule: core.serialization.Schema<serializers.Rule.Raw, Hookdeck.Rule> =
     core.serialization.undiscriminatedUnion([RetryRule, FilterRule, TransformRule, DelayRule]);
 
 export declare namespace Rule {

@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { VerificationNmiPaymentGatewayType } from "./VerificationNmiPaymentGatewayType";
 import { VerificationNmiPaymentGatewayConfigs } from "./VerificationNmiPaymentGatewayConfigs";
 
 export const VerificationNmiPaymentGateway: core.serialization.ObjectSchema<
     serializers.VerificationNmiPaymentGateway.Raw,
-    Intercom.VerificationNmiPaymentGateway
+    Hookdeck.VerificationNmiPaymentGateway
 > = core.serialization.object({
     type: VerificationNmiPaymentGatewayType,
     configs: VerificationNmiPaymentGatewayConfigs.optional(),

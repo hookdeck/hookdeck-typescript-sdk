@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { VerificationTwitterType } from "./VerificationTwitterType";
 import { VerificationTwitterConfigs } from "./VerificationTwitterConfigs";
 
 export const VerificationTwitter: core.serialization.ObjectSchema<
     serializers.VerificationTwitter.Raw,
-    Intercom.VerificationTwitter
+    Hookdeck.VerificationTwitter
 > = core.serialization.object({
     type: VerificationTwitterType,
     configs: VerificationTwitterConfigs.optional(),

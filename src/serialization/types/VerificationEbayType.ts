@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationEbayType: core.serialization.Schema<
     serializers.VerificationEbayType.Raw,
-    Intercom.VerificationEbayType
+    Hookdeck.VerificationEbayType
 > = core.serialization.enum_(["ebay", "EBAY"]);
 
 export declare namespace VerificationEbayType {

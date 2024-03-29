@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { IgnoredEventCause } from "./IgnoredEventCause";
 import { IgnoredEventMeta } from "./IgnoredEventMeta";
 
-export const IgnoredEvent: core.serialization.ObjectSchema<serializers.IgnoredEvent.Raw, Intercom.IgnoredEvent> =
+export const IgnoredEvent: core.serialization.ObjectSchema<serializers.IgnoredEvent.Raw, Hookdeck.IgnoredEvent> =
     core.serialization.object({
         id: core.serialization.string(),
         teamId: core.serialization.property("team_id", core.serialization.string()),

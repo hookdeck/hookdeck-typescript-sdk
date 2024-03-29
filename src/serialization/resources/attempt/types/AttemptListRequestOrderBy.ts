@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../..";
-import * as Intercom from "../../../../api";
+import * as Hookdeck from "../../../../api";
 import * as core from "../../../../core";
 
 export const AttemptListRequestOrderBy: core.serialization.Schema<
     serializers.AttemptListRequestOrderBy.Raw,
-    Intercom.AttemptListRequestOrderBy
+    Hookdeck.AttemptListRequestOrderBy
 > = core.serialization.enum_(["created_at"]);
 
 export declare namespace AttemptListRequestOrderBy {

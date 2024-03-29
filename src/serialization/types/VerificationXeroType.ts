@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationXeroType: core.serialization.Schema<
     serializers.VerificationXeroType.Raw,
-    Intercom.VerificationXeroType
+    Hookdeck.VerificationXeroType
 > = core.serialization.enum_(["xero", "XERO"]);
 
 export declare namespace VerificationXeroType {

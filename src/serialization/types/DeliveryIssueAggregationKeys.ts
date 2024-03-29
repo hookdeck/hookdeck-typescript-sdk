@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { AttemptErrorCodes } from "./AttemptErrorCodes";
 
 export const DeliveryIssueAggregationKeys: core.serialization.ObjectSchema<
     serializers.DeliveryIssueAggregationKeys.Raw,
-    Intercom.DeliveryIssueAggregationKeys
+    Hookdeck.DeliveryIssueAggregationKeys
 > = core.serialization.object({
     webhookId: core.serialization.property("webhook_id", core.serialization.list(core.serialization.string())),
     responseStatus: core.serialization.property(

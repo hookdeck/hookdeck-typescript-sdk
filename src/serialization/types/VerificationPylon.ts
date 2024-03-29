@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { VerificationPylonType } from "./VerificationPylonType";
 import { VerificationPylonConfigs } from "./VerificationPylonConfigs";
 
 export const VerificationPylon: core.serialization.ObjectSchema<
     serializers.VerificationPylon.Raw,
-    Intercom.VerificationPylon
+    Hookdeck.VerificationPylon
 > = core.serialization.object({
     type: VerificationPylonType,
     configs: VerificationPylonConfigs.optional(),

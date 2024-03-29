@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
-export const EventStatus: core.serialization.Schema<serializers.EventStatus.Raw, Intercom.EventStatus> =
+export const EventStatus: core.serialization.Schema<serializers.EventStatus.Raw, Hookdeck.EventStatus> =
     core.serialization.enum_(["SCHEDULED", "QUEUED", "HOLD", "SUCCESSFUL", "FAILED"]);
 
 export declare namespace EventStatus {

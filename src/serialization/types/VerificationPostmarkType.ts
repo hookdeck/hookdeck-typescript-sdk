@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationPostmarkType: core.serialization.Schema<
     serializers.VerificationPostmarkType.Raw,
-    Intercom.VerificationPostmarkType
+    Hookdeck.VerificationPostmarkType
 > = core.serialization.enum_(["postmark", "POSTMARK"]);
 
 export declare namespace VerificationPostmarkType {

@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "../../..";
-import * as Intercom from "../../../../api";
+import * as Hookdeck from "../../../../api";
 import * as core from "../../../../core";
 import { EventBulkRetryCreateRequestQueryResponseStatusAll } from "./EventBulkRetryCreateRequestQueryResponseStatusAll";
 
 export const EventBulkRetryCreateRequestQueryResponseStatus: core.serialization.Schema<
     serializers.EventBulkRetryCreateRequestQueryResponseStatus.Raw,
-    Intercom.EventBulkRetryCreateRequestQueryResponseStatus
+    Hookdeck.EventBulkRetryCreateRequestQueryResponseStatus
 > = core.serialization.undiscriminatedUnion([
     core.serialization.number(),
     EventBulkRetryCreateRequestQueryResponseStatusAll,

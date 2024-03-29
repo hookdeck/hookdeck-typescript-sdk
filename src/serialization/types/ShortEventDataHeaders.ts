@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const ShortEventDataHeaders: core.serialization.Schema<
     serializers.ShortEventDataHeaders.Raw,
-    Intercom.ShortEventDataHeaders
+    Hookdeck.ShortEventDataHeaders
 > = core.serialization.undiscriminatedUnion([
     core.serialization.string(),
     core.serialization.record(core.serialization.string(), core.serialization.string().optional()),

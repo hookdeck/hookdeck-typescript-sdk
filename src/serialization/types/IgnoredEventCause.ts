@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const IgnoredEventCause: core.serialization.Schema<
     serializers.IgnoredEventCause.Raw,
-    Intercom.IgnoredEventCause
+    Hookdeck.IgnoredEventCause
 > = core.serialization.enum_(["DISABLED", "FILTERED", "TRANSFORMATION_FAILED", "CLI_DISCONNECTED"]);
 
 export declare namespace IgnoredEventCause {

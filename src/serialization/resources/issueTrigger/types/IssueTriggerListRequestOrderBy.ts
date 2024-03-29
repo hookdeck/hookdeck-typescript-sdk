@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../..";
-import * as Intercom from "../../../../api";
+import * as Hookdeck from "../../../../api";
 import * as core from "../../../../core";
 
 export const IssueTriggerListRequestOrderBy: core.serialization.Schema<
     serializers.IssueTriggerListRequestOrderBy.Raw,
-    Intercom.IssueTriggerListRequestOrderBy
+    Hookdeck.IssueTriggerListRequestOrderBy
 > = core.serialization.enum_(["created_at", "type"]);
 
 export declare namespace IssueTriggerListRequestOrderBy {

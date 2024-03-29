@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { SeekPaginationOrderBy } from "./SeekPaginationOrderBy";
 import { SeekPaginationDir } from "./SeekPaginationDir";
 
-export const SeekPagination: core.serialization.ObjectSchema<serializers.SeekPagination.Raw, Intercom.SeekPagination> =
+export const SeekPagination: core.serialization.ObjectSchema<serializers.SeekPagination.Raw, Hookdeck.SeekPagination> =
     core.serialization.object({
         orderBy: core.serialization.property("order_by", SeekPaginationOrderBy.optional()),
         dir: SeekPaginationDir.optional(),

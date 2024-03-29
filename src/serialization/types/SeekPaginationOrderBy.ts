@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const SeekPaginationOrderBy: core.serialization.Schema<
     serializers.SeekPaginationOrderBy.Raw,
-    Intercom.SeekPaginationOrderBy
+    Hookdeck.SeekPaginationOrderBy
 > = core.serialization.undiscriminatedUnion([
     core.serialization.string(),
     core.serialization.list(core.serialization.string()),

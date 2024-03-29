@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationRechargeType: core.serialization.Schema<
     serializers.VerificationRechargeType.Raw,
-    Intercom.VerificationRechargeType
+    Hookdeck.VerificationRechargeType
 > = core.serialization.enum_(["recharge", "RECHARGE"]);
 
 export declare namespace VerificationRechargeType {

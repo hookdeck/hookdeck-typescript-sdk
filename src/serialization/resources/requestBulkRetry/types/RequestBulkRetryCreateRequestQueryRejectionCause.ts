@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "../../..";
-import * as Intercom from "../../../../api";
+import * as Hookdeck from "../../../../api";
 import * as core from "../../../../core";
 import { RequestRejectionCause } from "../../../types/RequestRejectionCause";
 
 export const RequestBulkRetryCreateRequestQueryRejectionCause: core.serialization.Schema<
     serializers.RequestBulkRetryCreateRequestQueryRejectionCause.Raw,
-    Intercom.RequestBulkRetryCreateRequestQueryRejectionCause
+    Hookdeck.RequestBulkRetryCreateRequestQueryRejectionCause
 > = core.serialization.undiscriminatedUnion([RequestRejectionCause, core.serialization.list(RequestRejectionCause)]);
 
 export declare namespace RequestBulkRetryCreateRequestQueryRejectionCause {

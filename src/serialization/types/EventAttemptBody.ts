@@ -3,11 +3,11 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { EventAttemptBodyZero } from "./EventAttemptBodyZero";
 
-export const EventAttemptBody: core.serialization.Schema<serializers.EventAttemptBody.Raw, Intercom.EventAttemptBody> =
+export const EventAttemptBody: core.serialization.Schema<serializers.EventAttemptBody.Raw, Hookdeck.EventAttemptBody> =
     core.serialization.undiscriminatedUnion([EventAttemptBodyZero.optional(), core.serialization.string().optional()]);
 
 export declare namespace EventAttemptBody {

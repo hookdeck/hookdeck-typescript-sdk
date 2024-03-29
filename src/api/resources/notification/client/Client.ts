@@ -4,14 +4,14 @@
 
 import * as environments from "../../../../environments";
 import * as core from "../../../../core";
-import * as Intercom from "../../..";
+import * as Hookdeck from "../../..";
 import * as serializers from "../../../../serialization";
 import urlJoin from "url-join";
 import * as errors from "../../../../errors";
 
 export declare namespace Notification {
     interface Options {
-        environment?: core.Supplier<environments.IntercomEnvironment | string>;
+        environment?: core.Supplier<environments.HookdeckEnvironment | string>;
         token: core.Supplier<core.BearerToken>;
         fetcher?: core.FetchFunction;
     }
@@ -29,15 +29,15 @@ export class Notification {
      *
      *
      * @example
-     *     await intercom.notification.update()
+     *     await hookdeck.notification.update()
      */
     public async update(
-        request: Intercom.NotificationUpdateRequest = {},
+        request: Hookdeck.NotificationUpdateRequest = {},
         requestOptions?: Notification.RequestOptions
-    ): Promise<Intercom.ToggleWebhookNotifications> {
+    ): Promise<Hookdeck.ToggleWebhookNotifications> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: urlJoin(
-                (await core.Supplier.get(this._options.environment)) ?? environments.IntercomEnvironment.Default,
+                (await core.Supplier.get(this._options.environment)) ?? environments.HookdeckEnvironment.Default,
                 "notifications/webhooks"
             ),
             method: "PUT",
@@ -65,7 +65,7 @@ export class Notification {
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.IntercomError({
+            throw new errors.HookdeckError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
             });
@@ -73,14 +73,14 @@ export class Notification {
 
         switch (_response.error.reason) {
             case "non-json":
-                throw new errors.IntercomError({
+                throw new errors.HookdeckError({
                     statusCode: _response.error.statusCode,
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.IntercomTimeoutError();
+                throw new errors.HookdeckTimeoutError();
             case "unknown":
-                throw new errors.IntercomError({
+                throw new errors.HookdeckError({
                     message: _response.error.errorMessage,
                 });
         }

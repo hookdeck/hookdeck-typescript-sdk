@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const IssueTriggerTransformationConfigsTransformations: core.serialization.Schema<
     serializers.IssueTriggerTransformationConfigsTransformations.Raw,
-    Intercom.IssueTriggerTransformationConfigsTransformations
+    Hookdeck.IssueTriggerTransformationConfigsTransformations
 > = core.serialization.undiscriminatedUnion([
     core.serialization.string(),
     core.serialization.list(core.serialization.string()),

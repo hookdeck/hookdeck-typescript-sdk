@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const IssueTriggerBackpressureDelay: core.serialization.Schema<
     serializers.IssueTriggerBackpressureDelay.Raw,
-    Intercom.IssueTriggerBackpressureDelay
+    Hookdeck.IssueTriggerBackpressureDelay
 > = core.serialization.number();
 
 export declare namespace IssueTriggerBackpressureDelay {

@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationWorkOsType: core.serialization.Schema<
     serializers.VerificationWorkOsType.Raw,
-    Intercom.VerificationWorkOsType
+    Hookdeck.VerificationWorkOsType
 > = core.serialization.enum_(["workos", "WORKOS"]);
 
 export declare namespace VerificationWorkOsType {

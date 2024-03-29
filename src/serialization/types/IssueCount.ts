@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
-export const IssueCount: core.serialization.ObjectSchema<serializers.IssueCount.Raw, Intercom.IssueCount> =
+export const IssueCount: core.serialization.ObjectSchema<serializers.IssueCount.Raw, Hookdeck.IssueCount> =
     core.serialization.object({
         count: core.serialization.number(),
     });

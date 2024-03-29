@@ -3,11 +3,11 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { TransformFullTransformation } from "./TransformFullTransformation";
 
-export const TransformFull: core.serialization.ObjectSchema<serializers.TransformFull.Raw, Intercom.TransformFull> =
+export const TransformFull: core.serialization.ObjectSchema<serializers.TransformFull.Raw, Hookdeck.TransformFull> =
     core.serialization.object({
         type: core.serialization.stringLiteral("transform"),
         transformationId: core.serialization.property("transformation_id", core.serialization.string().optional()),

@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationCourierType: core.serialization.Schema<
     serializers.VerificationCourierType.Raw,
-    Intercom.VerificationCourierType
+    Hookdeck.VerificationCourierType
 > = core.serialization.enum_(["courier", "COURIER"]);
 
 export declare namespace VerificationCourierType {

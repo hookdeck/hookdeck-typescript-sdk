@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
-export const AttemptState: core.serialization.Schema<serializers.AttemptState.Raw, Intercom.AttemptState> =
+export const AttemptState: core.serialization.Schema<serializers.AttemptState.Raw, Hookdeck.AttemptState> =
     core.serialization.enum_(["DELIVERING", "QUEUED", "PENDING", "COMPLETED", "HOLD"]);
 
 export declare namespace AttemptState {

@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "../../..";
-import * as Intercom from "../../../../api";
+import * as Hookdeck from "../../../../api";
 import * as core from "../../../../core";
 import { IgnoredEventBulkRetryCreateRequestQueryCause } from "./IgnoredEventBulkRetryCreateRequestQueryCause";
 import { IgnoredEventBulkRetryCreateRequestQueryWebhookId } from "./IgnoredEventBulkRetryCreateRequestQueryWebhookId";
 
 export const IgnoredEventBulkRetryCreateRequestQuery: core.serialization.ObjectSchema<
     serializers.IgnoredEventBulkRetryCreateRequestQuery.Raw,
-    Intercom.IgnoredEventBulkRetryCreateRequestQuery
+    Hookdeck.IgnoredEventBulkRetryCreateRequestQuery
 > = core.serialization.object({
     cause: IgnoredEventBulkRetryCreateRequestQueryCause.optional(),
     webhookId: core.serialization.property("webhook_id", IgnoredEventBulkRetryCreateRequestQueryWebhookId.optional()),

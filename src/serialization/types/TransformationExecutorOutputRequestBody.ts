@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { TransformationExecutorOutputRequestBodyOne } from "./TransformationExecutorOutputRequestBodyOne";
 
 export const TransformationExecutorOutputRequestBody: core.serialization.Schema<
     serializers.TransformationExecutorOutputRequestBody.Raw,
-    Intercom.TransformationExecutorOutputRequestBody
+    Hookdeck.TransformationExecutorOutputRequestBody
 > = core.serialization.undiscriminatedUnion([
     core.serialization.string().optional(),
     TransformationExecutorOutputRequestBodyOne,

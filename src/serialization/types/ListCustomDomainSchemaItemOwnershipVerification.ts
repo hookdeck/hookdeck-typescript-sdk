@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const ListCustomDomainSchemaItemOwnershipVerification: core.serialization.ObjectSchema<
     serializers.ListCustomDomainSchemaItemOwnershipVerification.Raw,
-    Intercom.ListCustomDomainSchemaItemOwnershipVerification
+    Hookdeck.ListCustomDomainSchemaItemOwnershipVerification
 > = core.serialization.object({
     type: core.serialization.string().optional(),
     name: core.serialization.string().optional(),

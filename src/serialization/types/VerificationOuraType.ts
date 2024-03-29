@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationOuraType: core.serialization.Schema<
     serializers.VerificationOuraType.Raw,
-    Intercom.VerificationOuraType
+    Hookdeck.VerificationOuraType
 > = core.serialization.enum_(["oura", "OURA"]);
 
 export declare namespace VerificationOuraType {

@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { VerificationAwssnsType } from "./VerificationAwssnsType";
 import { VerificationAwssnsConfigs } from "./VerificationAwssnsConfigs";
 
 export const VerificationAwssns: core.serialization.ObjectSchema<
     serializers.VerificationAwssns.Raw,
-    Intercom.VerificationAwssns
+    Hookdeck.VerificationAwssns
 > = core.serialization.object({
     type: VerificationAwssnsType,
     configs: VerificationAwssnsConfigs.optional(),

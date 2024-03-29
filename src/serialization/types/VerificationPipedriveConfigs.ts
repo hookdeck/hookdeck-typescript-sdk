@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationPipedriveConfigs: core.serialization.ObjectSchema<
     serializers.VerificationPipedriveConfigs.Raw,
-    Intercom.VerificationPipedriveConfigs
+    Hookdeck.VerificationPipedriveConfigs
 > = core.serialization.object({
     username: core.serialization.string(),
     password: core.serialization.string(),

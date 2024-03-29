@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const IntegrationProvider: core.serialization.Schema<
     serializers.IntegrationProvider.Raw,
-    Intercom.IntegrationProvider
+    Hookdeck.IntegrationProvider
 > = core.serialization.enum_([
     "HMAC",
     "BASIC_AUTH",

@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../..";
-import * as Intercom from "../../../../api";
+import * as Hookdeck from "../../../../api";
 import * as core from "../../../../core";
 
 export const BookmarkTriggerRequestTarget: core.serialization.Schema<
     serializers.BookmarkTriggerRequestTarget.Raw,
-    Intercom.BookmarkTriggerRequestTarget
+    Hookdeck.BookmarkTriggerRequestTarget
 > = core.serialization.enum_(["http", "cli"]);
 
 export declare namespace BookmarkTriggerRequestTarget {

@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "../../..";
-import * as Intercom from "../../../../api";
+import * as Hookdeck from "../../../../api";
 import * as core from "../../../../core";
 import { TransformationRunRequestRequestBodyZero } from "./TransformationRunRequestRequestBodyZero";
 
 export const TransformationRunRequestRequestBody: core.serialization.Schema<
     serializers.TransformationRunRequestRequestBody.Raw,
-    Intercom.TransformationRunRequestRequestBody
+    Hookdeck.TransformationRunRequestRequestBody
 > = core.serialization.undiscriminatedUnion([TransformationRunRequestRequestBodyZero, core.serialization.string()]);
 
 export declare namespace TransformationRunRequestRequestBody {

@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationHubspotType: core.serialization.Schema<
     serializers.VerificationHubspotType.Raw,
-    Intercom.VerificationHubspotType
+    Hookdeck.VerificationHubspotType
 > = core.serialization.enum_(["hubspot", "HUBSPOT"]);
 
 export declare namespace VerificationHubspotType {

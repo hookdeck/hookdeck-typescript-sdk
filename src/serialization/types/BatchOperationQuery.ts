@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const BatchOperationQuery: core.serialization.Schema<
     serializers.BatchOperationQuery.Raw,
-    Intercom.BatchOperationQuery
+    Hookdeck.BatchOperationQuery
 > = core.serialization.undiscriminatedUnion([
     core.serialization.record(core.serialization.string(), core.serialization.unknown()),
     core.serialization.string().optional(),

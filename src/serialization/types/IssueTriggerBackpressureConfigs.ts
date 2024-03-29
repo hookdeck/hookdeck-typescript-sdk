@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { IssueTriggerBackpressureDelay } from "./IssueTriggerBackpressureDelay";
 import { IssueTriggerBackpressureConfigsDestinations } from "./IssueTriggerBackpressureConfigsDestinations";
 
 export const IssueTriggerBackpressureConfigs: core.serialization.ObjectSchema<
     serializers.IssueTriggerBackpressureConfigs.Raw,
-    Intercom.IssueTriggerBackpressureConfigs
+    Hookdeck.IssueTriggerBackpressureConfigs
 > = core.serialization.object({
     delay: IssueTriggerBackpressureDelay,
     destinations: IssueTriggerBackpressureConfigsDestinations,

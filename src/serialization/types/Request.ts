@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { RequestRejectionCause } from "./RequestRejectionCause";
 import { RequestIngestPriority } from "./RequestIngestPriority";
 import { ShortEventData } from "./ShortEventData";
 
-export const Request: core.serialization.ObjectSchema<serializers.Request.Raw, Intercom.Request> =
+export const Request: core.serialization.ObjectSchema<serializers.Request.Raw, Hookdeck.Request> =
     core.serialization.object({
         id: core.serialization.string(),
         teamId: core.serialization.property("team_id", core.serialization.string()),

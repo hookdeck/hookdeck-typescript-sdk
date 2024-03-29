@@ -3,7 +3,7 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { IssueStatus } from "./IssueStatus";
 import { TransformationIssueAggregationKeys } from "./TransformationIssueAggregationKeys";
@@ -12,7 +12,7 @@ import { TransformationIssueData } from "./TransformationIssueData";
 
 export const TransformationIssueWithData: core.serialization.ObjectSchema<
     serializers.TransformationIssueWithData.Raw,
-    Intercom.TransformationIssueWithData
+    Hookdeck.TransformationIssueWithData
 > = core.serialization.object({
     id: core.serialization.string(),
     teamId: core.serialization.property("team_id", core.serialization.string()),

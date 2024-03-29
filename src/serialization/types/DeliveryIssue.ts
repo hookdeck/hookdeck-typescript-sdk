@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { IssueStatus } from "./IssueStatus";
 import { DeliveryIssueAggregationKeys } from "./DeliveryIssueAggregationKeys";
 import { DeliveryIssueReference } from "./DeliveryIssueReference";
 
-export const DeliveryIssue: core.serialization.ObjectSchema<serializers.DeliveryIssue.Raw, Intercom.DeliveryIssue> =
+export const DeliveryIssue: core.serialization.ObjectSchema<serializers.DeliveryIssue.Raw, Hookdeck.DeliveryIssue> =
     core.serialization.object({
         id: core.serialization.string(),
         teamId: core.serialization.property("team_id", core.serialization.string()),

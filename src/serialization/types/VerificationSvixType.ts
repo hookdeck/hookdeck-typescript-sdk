@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationSvixType: core.serialization.Schema<
     serializers.VerificationSvixType.Raw,
-    Intercom.VerificationSvixType
+    Hookdeck.VerificationSvixType
 > = core.serialization.enum_(["svix", "SVIX"]);
 
 export declare namespace VerificationSvixType {

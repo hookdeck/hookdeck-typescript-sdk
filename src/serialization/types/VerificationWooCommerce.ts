@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { VerificationWooCommerceType } from "./VerificationWooCommerceType";
 import { VerificationWooCommerceConfigs } from "./VerificationWooCommerceConfigs";
 
 export const VerificationWooCommerce: core.serialization.ObjectSchema<
     serializers.VerificationWooCommerce.Raw,
-    Intercom.VerificationWooCommerce
+    Hookdeck.VerificationWooCommerce
 > = core.serialization.object({
     type: VerificationWooCommerceType,
     configs: VerificationWooCommerceConfigs.optional(),

@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { Event } from "./Event";
 import { EventAttempt } from "./EventAttempt";
 
 export const DeliveryIssueData: core.serialization.ObjectSchema<
     serializers.DeliveryIssueData.Raw,
-    Intercom.DeliveryIssueData
+    Hookdeck.DeliveryIssueData
 > = core.serialization.object({
     triggerEvent: core.serialization.property("trigger_event", Event.optional()),
     triggerAttempt: core.serialization.property("trigger_attempt", EventAttempt.optional()),

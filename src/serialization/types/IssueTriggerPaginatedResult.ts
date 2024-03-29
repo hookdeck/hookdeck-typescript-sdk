@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { SeekPagination } from "./SeekPagination";
 import { IssueTrigger } from "./IssueTrigger";
 
 export const IssueTriggerPaginatedResult: core.serialization.ObjectSchema<
     serializers.IssueTriggerPaginatedResult.Raw,
-    Intercom.IssueTriggerPaginatedResult
+    Hookdeck.IssueTriggerPaginatedResult
 > = core.serialization.object({
     pagination: SeekPagination.optional(),
     count: core.serialization.number().optional(),

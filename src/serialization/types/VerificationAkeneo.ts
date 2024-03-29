@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { VerificationAkeneoType } from "./VerificationAkeneoType";
 import { VerificationAkeneoConfigs } from "./VerificationAkeneoConfigs";
 
 export const VerificationAkeneo: core.serialization.ObjectSchema<
     serializers.VerificationAkeneo.Raw,
-    Intercom.VerificationAkeneo
+    Hookdeck.VerificationAkeneo
 > = core.serialization.object({
     type: VerificationAkeneoType,
     configs: VerificationAkeneoConfigs.optional(),

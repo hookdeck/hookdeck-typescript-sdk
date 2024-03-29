@@ -3,7 +3,7 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { AuthHookdeckSignature } from "./AuthHookdeckSignature";
 import { AuthBasicAuth } from "./AuthBasicAuth";
@@ -15,7 +15,7 @@ import { AuthCustomSignature } from "./AuthCustomSignature";
 
 export const DestinationAuthMethodConfig: core.serialization.Schema<
     serializers.DestinationAuthMethodConfig.Raw,
-    Intercom.DestinationAuthMethodConfig
+    Hookdeck.DestinationAuthMethodConfig
 > = core.serialization
     .union("type", {
         HOOKDECK_SIGNATURE: AuthHookdeckSignature,
@@ -26,7 +26,7 @@ export const DestinationAuthMethodConfig: core.serialization.Schema<
         OAUTH2_AUTHORIZATION_CODE: AuthOAuth2AuthorizationCode,
         CUSTOM_SIGNATURE: AuthCustomSignature,
     })
-    .transform<Intercom.DestinationAuthMethodConfig>({
+    .transform<Hookdeck.DestinationAuthMethodConfig>({
         transform: (value) => value,
         untransform: (value) => value,
     });

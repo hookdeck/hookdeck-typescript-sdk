@@ -3,14 +3,14 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { VerificationLinearType } from "./VerificationLinearType";
 import { VerificationLinearConfigs } from "./VerificationLinearConfigs";
 
 export const VerificationLinear: core.serialization.ObjectSchema<
     serializers.VerificationLinear.Raw,
-    Intercom.VerificationLinear
+    Hookdeck.VerificationLinear
 > = core.serialization.object({
     type: VerificationLinearType,
     configs: VerificationLinearConfigs.optional(),

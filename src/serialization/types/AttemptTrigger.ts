@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
-export const AttemptTrigger: core.serialization.Schema<serializers.AttemptTrigger.Raw, Intercom.AttemptTrigger> =
+export const AttemptTrigger: core.serialization.Schema<serializers.AttemptTrigger.Raw, Hookdeck.AttemptTrigger> =
     core.serialization.enum_(["INITIAL", "MANUAL", "BULK_RETRY", "UNPAUSE", "AUTOMATIC"]);
 
 export declare namespace AttemptTrigger {

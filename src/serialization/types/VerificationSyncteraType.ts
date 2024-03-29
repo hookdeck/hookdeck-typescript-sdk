@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationSyncteraType: core.serialization.Schema<
     serializers.VerificationSyncteraType.Raw,
-    Intercom.VerificationSyncteraType
+    Hookdeck.VerificationSyncteraType
 > = core.serialization.enum_(["synctera", "SYNCTERA"]);
 
 export declare namespace VerificationSyncteraType {

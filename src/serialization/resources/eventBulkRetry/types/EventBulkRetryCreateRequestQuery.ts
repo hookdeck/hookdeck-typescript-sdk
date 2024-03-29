@@ -3,7 +3,7 @@
  */
 
 import * as serializers from "../../..";
-import * as Intercom from "../../../../api";
+import * as Hookdeck from "../../../../api";
 import * as core from "../../../../core";
 import { EventBulkRetryCreateRequestQueryId } from "./EventBulkRetryCreateRequestQueryId";
 import { EventBulkRetryCreateRequestQueryStatus } from "./EventBulkRetryCreateRequestQueryStatus";
@@ -27,7 +27,7 @@ import { EventBulkRetryCreateRequestQueryBulkRetryId } from "./EventBulkRetryCre
 
 export const EventBulkRetryCreateRequestQuery: core.serialization.ObjectSchema<
     serializers.EventBulkRetryCreateRequestQuery.Raw,
-    Intercom.EventBulkRetryCreateRequestQuery
+    Hookdeck.EventBulkRetryCreateRequestQuery
 > = core.serialization.object({
     id: EventBulkRetryCreateRequestQueryId.optional(),
     status: EventBulkRetryCreateRequestQueryStatus.optional(),

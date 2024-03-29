@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../..";
-import * as Intercom from "../../../../api";
+import * as Hookdeck from "../../../../api";
 import * as core from "../../../../core";
 
 export const RequestBulkRetryPlanResponse: core.serialization.ObjectSchema<
     serializers.RequestBulkRetryPlanResponse.Raw,
-    Intercom.RequestBulkRetryPlanResponse
+    Hookdeck.RequestBulkRetryPlanResponse
 > = core.serialization.object({
     estimatedBatch: core.serialization.property("estimated_batch", core.serialization.number().optional()),
     estimatedCount: core.serialization.property("estimated_count", core.serialization.number().optional()),

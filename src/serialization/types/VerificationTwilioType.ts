@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationTwilioType: core.serialization.Schema<
     serializers.VerificationTwilioType.Raw,
-    Intercom.VerificationTwilioType
+    Hookdeck.VerificationTwilioType
 > = core.serialization.enum_(["twilio", "TWILIO"]);
 
 export declare namespace VerificationTwilioType {

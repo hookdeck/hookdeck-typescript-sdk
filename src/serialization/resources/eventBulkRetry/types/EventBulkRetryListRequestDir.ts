@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../..";
-import * as Intercom from "../../../../api";
+import * as Hookdeck from "../../../../api";
 import * as core from "../../../../core";
 
 export const EventBulkRetryListRequestDir: core.serialization.Schema<
     serializers.EventBulkRetryListRequestDir.Raw,
-    Intercom.EventBulkRetryListRequestDir
+    Hookdeck.EventBulkRetryListRequestDir
 > = core.serialization.enum_(["asc", "desc"]);
 
 export declare namespace EventBulkRetryListRequestDir {

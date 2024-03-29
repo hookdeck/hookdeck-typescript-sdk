@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const TransformReference: core.serialization.ObjectSchema<
     serializers.TransformReference.Raw,
-    Intercom.TransformReference
+    Hookdeck.TransformReference
 > = core.serialization.object({
     type: core.serialization.stringLiteral("transform"),
     transformationId: core.serialization.property("transformation_id", core.serialization.string()),

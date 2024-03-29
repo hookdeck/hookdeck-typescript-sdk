@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { IntegrationProvider } from "./IntegrationProvider";
 import { IntegrationFeature } from "./IntegrationFeature";
 import { IntegrationConfigs } from "./IntegrationConfigs";
 
-export const Integration: core.serialization.ObjectSchema<serializers.Integration.Raw, Intercom.Integration> =
+export const Integration: core.serialization.ObjectSchema<serializers.Integration.Raw, Hookdeck.Integration> =
     core.serialization.object({
         id: core.serialization.string(),
         teamId: core.serialization.property("team_id", core.serialization.string()),

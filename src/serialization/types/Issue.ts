@@ -3,17 +3,17 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 import { DeliveryIssue } from "./DeliveryIssue";
 import { TransformationIssue } from "./TransformationIssue";
 
-export const Issue: core.serialization.Schema<serializers.Issue.Raw, Intercom.Issue> = core.serialization
+export const Issue: core.serialization.Schema<serializers.Issue.Raw, Hookdeck.Issue> = core.serialization
     .union("type", {
         delivery: DeliveryIssue,
         transformation: TransformationIssue,
     })
-    .transform<Intercom.Issue>({
+    .transform<Hookdeck.Issue>({
         transform: (value) => value,
         untransform: (value) => value,
     });

@@ -3,13 +3,13 @@
  */
 
 import * as serializers from "../../../..";
-import * as Intercom from "../../../../../api";
+import * as Hookdeck from "../../../../../api";
 import * as core from "../../../../../core";
 import { TopicsValue } from "../../../../types/TopicsValue";
 
 export const NotificationUpdateRequest: core.serialization.Schema<
     serializers.NotificationUpdateRequest.Raw,
-    Intercom.NotificationUpdateRequest
+    Hookdeck.NotificationUpdateRequest
 > = core.serialization.object({
     enabled: core.serialization.boolean().optional(),
     topics: core.serialization.list(TopicsValue).optional(),

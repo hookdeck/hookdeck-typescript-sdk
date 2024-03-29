@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const VerificationFrontAppType: core.serialization.Schema<
     serializers.VerificationFrontAppType.Raw,
-    Intercom.VerificationFrontAppType
+    Hookdeck.VerificationFrontAppType
 > = core.serialization.enum_(["frontapp", "FRONTAPP"]);
 
 export declare namespace VerificationFrontAppType {

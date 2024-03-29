@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
-export const OrderByDirection: core.serialization.Schema<serializers.OrderByDirection.Raw, Intercom.OrderByDirection> =
+export const OrderByDirection: core.serialization.Schema<serializers.OrderByDirection.Raw, Hookdeck.OrderByDirection> =
     core.serialization.enum_(["asc", "desc", "ASC", "DESC"]);
 
 export declare namespace OrderByDirection {

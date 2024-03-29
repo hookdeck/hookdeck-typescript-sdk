@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "..";
-import * as Intercom from "../../api";
+import * as Hookdeck from "../../api";
 import * as core from "../../core";
 
 export const DestinationAuthMethodOAuth2AuthorizationCodeConfig: core.serialization.ObjectSchema<
     serializers.DestinationAuthMethodOAuth2AuthorizationCodeConfig.Raw,
-    Intercom.DestinationAuthMethodOAuth2AuthorizationCodeConfig
+    Hookdeck.DestinationAuthMethodOAuth2AuthorizationCodeConfig
 > = core.serialization.object({
     clientId: core.serialization.property("client_id", core.serialization.string()),
     clientSecret: core.serialization.property("client_secret", core.serialization.string()),
