@@ -41,8 +41,8 @@ export class CustomDomain {
             headers: {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
-                "X-Fern-SDK-Name": "",
-                "X-Fern-SDK-Version": "0.1.1",
+                "X-Fern-SDK-Name": "@hookdeck/sdk",
+                "X-Fern-SDK-Version": "0.1.2",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -103,8 +103,8 @@ export class CustomDomain {
             headers: {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
-                "X-Fern-SDK-Name": "",
-                "X-Fern-SDK-Version": "0.1.1",
+                "X-Fern-SDK-Name": "@hookdeck/sdk",
+                "X-Fern-SDK-Version": "0.1.2",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -164,8 +164,8 @@ export class CustomDomain {
             headers: {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
-                "X-Fern-SDK-Name": "",
-                "X-Fern-SDK-Version": "0.1.1",
+                "X-Fern-SDK-Name": "@hookdeck/sdk",
+                "X-Fern-SDK-Version": "0.1.2",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },

@@ -56,4 +56,5 @@ export type VerificationConfig =
     | Hookdeck.VerificationTrello
     | Hookdeck.VerificationSanity
     | Hookdeck.VerificationEbay
+    | Hookdeck.VerificationTelnyx
     | Hookdeck.VerificationTokenIo;

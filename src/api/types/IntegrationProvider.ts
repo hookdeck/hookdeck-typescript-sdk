@@ -51,6 +51,7 @@ export type IntegrationProvider =
     | "TRELLO"
     | "SANITY"
     | "EBAY"
+    | "TELNYX"
     | "TOKENIO";
 
 export const IntegrationProvider = {
@@ -102,5 +103,6 @@ export const IntegrationProvider = {
     Trello: "TRELLO",
     Sanity: "SANITY",
     Ebay: "EBAY",
+    Telnyx: "TELNYX",
     Tokenio: "TOKENIO",
 } as const;

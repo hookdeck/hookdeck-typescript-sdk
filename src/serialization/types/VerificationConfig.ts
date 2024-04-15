@@ -53,6 +53,7 @@ import { VerificationSolidGate } from "./VerificationSolidGate";
 import { VerificationTrello } from "./VerificationTrello";
 import { VerificationSanity } from "./VerificationSanity";
 import { VerificationEbay } from "./VerificationEbay";
+import { VerificationTelnyx } from "./VerificationTelnyx";
 import { VerificationTokenIo } from "./VerificationTokenIo";
 
 export const VerificationConfig: core.serialization.Schema<
@@ -107,6 +108,7 @@ export const VerificationConfig: core.serialization.Schema<
     VerificationTrello,
     VerificationSanity,
     VerificationEbay,
+    VerificationTelnyx,
     VerificationTokenIo,
 ]);
 
@@ -160,5 +162,6 @@ export declare namespace VerificationConfig {
         | VerificationTrello.Raw
         | VerificationSanity.Raw
         | VerificationEbay.Raw
+        | VerificationTelnyx.Raw
         | VerificationTokenIo.Raw;
 }
