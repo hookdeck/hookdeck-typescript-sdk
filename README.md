@@ -48,7 +48,7 @@ import them under the `Hookdeck` namespace:
 ```ts
 import { Hookdeck } from "@hookdeck/sdk"; 
 
-const user: Hookdeck.Connection = {
+const connection: Hookdeck.Connection = {
   "id": "web_mNP60lEYInVfnH1EUWbhfUYL",
   "teamId": "tm_nlcetVe8k1lMAY0KR0OxNuHr",
 }
