@@ -1,9 +1,9 @@
-# Hookdeck TypeScript Library
+# Hookdeck TypeScript SDK
 
 [![fern shield](https://img.shields.io/badge/%F0%9F%8C%BF-SDK%20generated%20by%20Fern-brightgreen)](https://buildwithfern.com/)
 [![npm shield](https://img.shields.io/npm/v/@hookdeck/sdk)](https://www.npmjs.com/package/@hookdeck/sdk)
 
-The Hookdeck TypeScript library provides convenient access to the Hookdeck API from JavaScript/TypeScript.
+The Hookdeck TypeScript SDK provides convenient access to the Hookdeck API from JavaScript/TypeScript with the Node.js or Deno runtime.
 
 ## Documentation
 
@@ -29,7 +29,7 @@ import { HookdeckClient, Hookdeck } from '@hookdeck/sdk';
 const hookdeck = new HookdeckClient({
   token: "YOUR_TOKEN_GOES_HERE"
 });
-const connection = await hookdeck.connections.create({
+const connection = await hookdeck.connection.create({
   "name": "shopify-my-api",
   "source": {
     "name": "shopify"
@@ -63,7 +63,7 @@ a subclass of [HookdeckError](./src/errors/HookdeckError.ts) will be thrown:
 import { HookdeckError } from '@hookdeck/sdk';
 
 try {
-  await hookdeck.connections.create(...);
+  await hookdeck.connection.create(...);
 } catch (err) {
   if (err instanceof HookdeckError) {
     console.log(err.statusCode); 
@@ -88,25 +88,25 @@ A request is deemed retriable when any of the following HTTP status codes is ret
 Use the `maxRetries` request option to configure this behavior. 
 
 ```ts
-const response = await hookdeck.connections.create(..., {
+const response = await hookdeck.connection.create(..., {
   maxRetries: 0 // override maxRetries at the request level
 });
 ```
 
 ## Timeouts
 
-The SDK defaults to a 60 second timout. Use the `timeoutInSeconds` option to 
+The SDK defaults to a 60 second timeout. Use the `timeoutInSeconds` option to 
 configure this behavior. 
 
 ```ts
-const response = await hookdeck.connections.create(..., {
+const response = await hookdeck.connection.create(..., {
   timeoutInSeconds: 30 // override timeout to 30s
 });
 ```
 
 ### Customizing Fetch client
 
-The SDK provides a way for you to customize the underlying HTTP client / Fetch function. If you're 
+The SDK allows you to customize the underlying HTTP client / Fetch function. If you're 
 running in an unsupported environment, this provides a way for you to break the glass and 
 ensure the SDK works. 
 
@@ -133,4 +133,4 @@ Additions made directly to this library would have to be moved over to our gener
 otherwise they would be overwritten upon the next generated release. Feel free to open a 
 PR as a proof of concept, but know that we will not be able to merge it as-is. 
 
-We suggest [opening an issue](https://github.com/FlatFilers/flatfile-node/issues) first to discuss with us!
+We suggest [opening an issue](https://github.com/hookdeck/hookdeck-typescript-sdk/issues) first to discuss with us!
