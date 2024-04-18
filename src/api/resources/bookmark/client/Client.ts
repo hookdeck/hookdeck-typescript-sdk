@@ -4,10 +4,10 @@
 
 import * as environments from "../../../../environments";
 import * as core from "../../../../core";
-import * as Hookdeck from "../../..";
+import * as Hookdeck from "../../../index";
 import urlJoin from "url-join";
-import * as serializers from "../../../../serialization";
-import * as errors from "../../../../errors";
+import * as serializers from "../../../../serialization/index";
+import * as errors from "../../../../errors/index";
 
 export declare namespace Bookmark {
     interface Options {
@@ -32,6 +32,21 @@ export class Bookmark {
      *
      * @example
      *     await hookdeck.bookmark.list()
+     *
+     * @example
+     *     await hookdeck.bookmark.list({
+     *         id: "string",
+     *         name: "string",
+     *         webhookId: "string",
+     *         eventDataId: "string",
+     *         label: "string",
+     *         lastUsedAt: new Date("2024-01-15T09:30:00.000Z"),
+     *         orderBy: Hookdeck.BookmarkListRequestOrderBy.CreatedAt,
+     *         dir: Hookdeck.BookmarkListRequestDir.Asc,
+     *         limit: 1,
+     *         next: "string",
+     *         prev: "string"
+     *     })
      */
     public async list(
         request: Hookdeck.BookmarkListRequest = {},
@@ -93,7 +108,7 @@ export class Bookmark {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.1.3",
+                "X-Fern-SDK-Version": "0.1.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -183,7 +198,7 @@ export class Bookmark {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.1.3",
+                "X-Fern-SDK-Version": "0.1.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -253,6 +268,9 @@ export class Bookmark {
      *
      * @example
      *     await hookdeck.bookmark.retrieve("id")
+     *
+     * @example
+     *     await hookdeck.bookmark.retrieve("string")
      */
     public async retrieve(id: string, requestOptions?: Bookmark.RequestOptions): Promise<Hookdeck.Bookmark> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
@@ -265,7 +283,7 @@ export class Bookmark {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.1.3",
+                "X-Fern-SDK-Version": "0.1.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -326,6 +344,9 @@ export class Bookmark {
      *
      * @example
      *     await hookdeck.bookmark.update("id")
+     *
+     * @example
+     *     await hookdeck.bookmark.update("string")
      */
     public async update(
         id: string,
@@ -342,7 +363,7 @@ export class Bookmark {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.1.3",
+                "X-Fern-SDK-Version": "0.1.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -422,6 +443,9 @@ export class Bookmark {
      *
      * @example
      *     await hookdeck.bookmark.delete("id")
+     *
+     * @example
+     *     await hookdeck.bookmark.delete("string")
      */
     public async delete(
         id: string,
@@ -437,7 +461,7 @@ export class Bookmark {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.1.3",
+                "X-Fern-SDK-Version": "0.1.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -496,6 +520,9 @@ export class Bookmark {
      *
      * @example
      *     await hookdeck.bookmark.retrieveBody("id")
+     *
+     * @example
+     *     await hookdeck.bookmark.retrieveBody("string")
      */
     public async retrieveBody(id: string, requestOptions?: Bookmark.RequestOptions): Promise<Hookdeck.RawBody> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
@@ -508,7 +535,7 @@ export class Bookmark {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.1.3",
+                "X-Fern-SDK-Version": "0.1.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -569,6 +596,9 @@ export class Bookmark {
      *
      * @example
      *     await hookdeck.bookmark.trigger("id")
+     *
+     * @example
+     *     await hookdeck.bookmark.trigger("string")
      */
     public async trigger(
         id: string,
@@ -585,7 +615,7 @@ export class Bookmark {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.1.3",
+                "X-Fern-SDK-Version": "0.1.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -659,7 +689,7 @@ export class Bookmark {
         }
     }
 
-    protected async _getAuthorizationHeader() {
+    protected async _getAuthorizationHeader(): Promise<string> {
         return `Bearer ${await core.Supplier.get(this._options.token)}`;
     }
 }

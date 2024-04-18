@@ -4,10 +4,10 @@
 
 import * as environments from "../../../../environments";
 import * as core from "../../../../core";
-import * as Hookdeck from "../../..";
+import * as Hookdeck from "../../../index";
 import urlJoin from "url-join";
-import * as serializers from "../../../../serialization";
-import * as errors from "../../../../errors";
+import * as serializers from "../../../../serialization/index";
+import * as errors from "../../../../errors/index";
 
 export declare namespace Issue {
     interface Options {
@@ -35,6 +35,24 @@ export class Issue {
      *         id: "iss_YXKv5OdJXCiVwkPhGy",
      *         issueTriggerId: "it_BXKv5OdJXCiVwkPhGy",
      *         mergedWith: "iss_AXKv3OdJXCiKlkPhDz"
+     *     })
+     *
+     * @example
+     *     await hookdeck.issue.list({
+     *         id: "string",
+     *         issueTriggerId: "string",
+     *         type: Hookdeck.IssueListRequestType.Delivery,
+     *         status: Hookdeck.IssueListRequestStatus.Opened,
+     *         mergedWith: "string",
+     *         createdAt: new Date("2024-01-15T09:30:00.000Z"),
+     *         firstSeenAt: new Date("2024-01-15T09:30:00.000Z"),
+     *         lastSeenAt: new Date("2024-01-15T09:30:00.000Z"),
+     *         dismissedAt: new Date("2024-01-15T09:30:00.000Z"),
+     *         orderBy: Hookdeck.IssueListRequestOrderBy.CreatedAt,
+     *         dir: Hookdeck.IssueListRequestDir.Asc,
+     *         limit: 1,
+     *         next: "string",
+     *         prev: "string"
      *     })
      */
     public async list(
@@ -124,7 +142,7 @@ export class Issue {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.1.3",
+                "X-Fern-SDK-Version": "0.1.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -197,6 +215,24 @@ export class Issue {
      *         id: "iss_YXKv5OdJXCiVwkPhGy",
      *         issueTriggerId: "it_BXKv5OdJXCiVwkPhGy",
      *         mergedWith: "iss_AXKv3OdJXCiKlkPhDz"
+     *     })
+     *
+     * @example
+     *     await hookdeck.issue.count({
+     *         id: "string",
+     *         issueTriggerId: "string",
+     *         type: Hookdeck.IssueCountRequestType.Delivery,
+     *         status: Hookdeck.IssueCountRequestStatus.Opened,
+     *         mergedWith: "string",
+     *         createdAt: new Date("2024-01-15T09:30:00.000Z"),
+     *         firstSeenAt: new Date("2024-01-15T09:30:00.000Z"),
+     *         lastSeenAt: new Date("2024-01-15T09:30:00.000Z"),
+     *         dismissedAt: new Date("2024-01-15T09:30:00.000Z"),
+     *         orderBy: Hookdeck.IssueCountRequestOrderBy.CreatedAt,
+     *         dir: Hookdeck.IssueCountRequestDir.Asc,
+     *         limit: 1,
+     *         next: "string",
+     *         prev: "string"
      *     })
      */
     public async count(
@@ -286,7 +322,7 @@ export class Issue {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.1.3",
+                "X-Fern-SDK-Version": "0.1.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -343,6 +379,9 @@ export class Issue {
     /**
      *
      * @throws {@link Hookdeck.NotFoundError}
+     *
+     * @example
+     *     await hookdeck.issue.retrieve("string")
      */
     public async retrieve(id: string, requestOptions?: Issue.RequestOptions): Promise<Hookdeck.IssueWithData> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
@@ -355,7 +394,7 @@ export class Issue {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.1.3",
+                "X-Fern-SDK-Version": "0.1.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -412,6 +451,11 @@ export class Issue {
      *
      * @throws {@link Hookdeck.BadRequestError}
      * @throws {@link Hookdeck.UnprocessableEntityError}
+     *
+     * @example
+     *     await hookdeck.issue.update("string", {
+     *         status: Hookdeck.IssueUpdateRequestStatus.Opened
+     *     })
      */
     public async update(
         id: string,
@@ -428,7 +472,7 @@ export class Issue {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.1.3",
+                "X-Fern-SDK-Version": "0.1.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -495,6 +539,9 @@ export class Issue {
     /**
      *
      * @throws {@link Hookdeck.NotFoundError}
+     *
+     * @example
+     *     await hookdeck.issue.dismiss("string")
      */
     public async dismiss(id: string, requestOptions?: Issue.RequestOptions): Promise<Hookdeck.Issue> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
@@ -507,7 +554,7 @@ export class Issue {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.1.3",
+                "X-Fern-SDK-Version": "0.1.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -560,7 +607,7 @@ export class Issue {
         }
     }
 
-    protected async _getAuthorizationHeader() {
+    protected async _getAuthorizationHeader(): Promise<string> {
         return `Bearer ${await core.Supplier.get(this._options.token)}`;
     }
 }

@@ -5,6 +5,33 @@
 /**
  * @example
  *     {}
+ *
+ * @example
+ *     {
+ *         destinationId: "string",
+ *         sourceId: "string",
+ *         disabled: true,
+ *         disabledAt: new Date("2024-01-15T09:30:00.000Z"),
+ *         pausedAt: new Date("2024-01-15T09:30:00.000Z")
+ *     }
+ *
+ * @example
+ *     {
+ *         destinationId: "string",
+ *         sourceId: "string",
+ *         disabled: true,
+ *         disabledAt: new Date("2024-01-15T09:30:00.000Z"),
+ *         pausedAt: new Date("2024-01-15T09:30:00.000Z")
+ *     }
+ *
+ * @example
+ *     {
+ *         destinationId: "string",
+ *         sourceId: "string",
+ *         disabled: true,
+ *         disabledAt: new Date("2024-01-15T09:30:00.000Z"),
+ *         pausedAt: new Date("2024-01-15T09:30:00.000Z")
+ *     }
  */
 export interface ConnectionCountRequest {
     destinationId?: string;

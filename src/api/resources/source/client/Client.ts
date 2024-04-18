@@ -4,10 +4,10 @@
 
 import * as environments from "../../../../environments";
 import * as core from "../../../../core";
-import * as Hookdeck from "../../..";
+import * as Hookdeck from "../../../index";
 import urlJoin from "url-join";
-import * as serializers from "../../../../serialization";
-import * as errors from "../../../../errors";
+import * as serializers from "../../../../serialization/index";
+import * as errors from "../../../../errors/index";
 
 export declare namespace Source {
     interface Options {
@@ -32,6 +32,19 @@ export class Source {
      *
      * @example
      *     await hookdeck.source.list()
+     *
+     * @example
+     *     await hookdeck.source.list({
+     *         id: "string",
+     *         name: "string",
+     *         disabled: true,
+     *         disabledAt: new Date("2024-01-15T09:30:00.000Z"),
+     *         orderBy: Hookdeck.SourceListRequestOrderBy.CreatedAt,
+     *         dir: Hookdeck.SourceListRequestDir.Asc,
+     *         limit: 1,
+     *         next: "string",
+     *         prev: "string"
+     *     })
      */
     public async list(
         request: Hookdeck.SourceListRequest = {},
@@ -85,7 +98,7 @@ export class Source {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.1.3",
+                "X-Fern-SDK-Version": "0.1.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -173,7 +186,7 @@ export class Source {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.1.3",
+                "X-Fern-SDK-Version": "0.1.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -261,7 +274,7 @@ export class Source {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.1.3",
+                "X-Fern-SDK-Version": "0.1.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -331,6 +344,11 @@ export class Source {
      *
      * @example
      *     await hookdeck.source.retrieve("id")
+     *
+     * @example
+     *     await hookdeck.source.retrieve("string", {
+     *         include: "verification.configs"
+     *     })
      */
     public async retrieve(
         id: string,
@@ -353,7 +371,7 @@ export class Source {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.1.3",
+                "X-Fern-SDK-Version": "0.1.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -415,6 +433,9 @@ export class Source {
      *
      * @example
      *     await hookdeck.source.update("id")
+     *
+     * @example
+     *     await hookdeck.source.update("string")
      */
     public async update(
         id: string,
@@ -431,7 +452,7 @@ export class Source {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.1.3",
+                "X-Fern-SDK-Version": "0.1.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -511,6 +532,9 @@ export class Source {
      *
      * @example
      *     await hookdeck.source.delete("id")
+     *
+     * @example
+     *     await hookdeck.source.delete("string")
      */
     public async delete(id: string, requestOptions?: Source.RequestOptions): Promise<Hookdeck.SourceDeleteResponse> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
@@ -523,7 +547,7 @@ export class Source {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.1.3",
+                "X-Fern-SDK-Version": "0.1.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -582,6 +606,9 @@ export class Source {
      *
      * @example
      *     await hookdeck.source.disable("id")
+     *
+     * @example
+     *     await hookdeck.source.disable("string")
      */
     public async disable(id: string, requestOptions?: Source.RequestOptions): Promise<Hookdeck.Source> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
@@ -594,7 +621,7 @@ export class Source {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.1.3",
+                "X-Fern-SDK-Version": "0.1.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -653,6 +680,9 @@ export class Source {
      *
      * @example
      *     await hookdeck.source.enable("id")
+     *
+     * @example
+     *     await hookdeck.source.enable("string")
      */
     public async enable(id: string, requestOptions?: Source.RequestOptions): Promise<Hookdeck.Source> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
@@ -665,7 +695,7 @@ export class Source {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.1.3",
+                "X-Fern-SDK-Version": "0.1.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -718,7 +748,7 @@ export class Source {
         }
     }
 
-    protected async _getAuthorizationHeader() {
+    protected async _getAuthorizationHeader(): Promise<string> {
         return `Bearer ${await core.Supplier.get(this._options.token)}`;
     }
 }

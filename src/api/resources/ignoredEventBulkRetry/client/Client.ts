@@ -4,10 +4,10 @@
 
 import * as environments from "../../../../environments";
 import * as core from "../../../../core";
-import * as Hookdeck from "../../..";
+import * as Hookdeck from "../../../index";
 import urlJoin from "url-join";
-import * as serializers from "../../../../serialization";
-import * as errors from "../../../../errors";
+import * as serializers from "../../../../serialization/index";
+import * as errors from "../../../../errors/index";
 
 export declare namespace IgnoredEventBulkRetry {
     interface Options {
@@ -32,6 +32,21 @@ export class IgnoredEventBulkRetry {
      *
      * @example
      *     await hookdeck.ignoredEventBulkRetry.list()
+     *
+     * @example
+     *     await hookdeck.ignoredEventBulkRetry.list({
+     *         cancelledAt: new Date("2024-01-15T09:30:00.000Z"),
+     *         completedAt: new Date("2024-01-15T09:30:00.000Z"),
+     *         createdAt: new Date("2024-01-15T09:30:00.000Z"),
+     *         id: "string",
+     *         queryPartialMatch: true,
+     *         inProgress: true,
+     *         orderBy: Hookdeck.IgnoredEventBulkRetryListRequestOrderBy.CreatedAt,
+     *         dir: Hookdeck.IgnoredEventBulkRetryListRequestDir.Asc,
+     *         limit: 1,
+     *         next: "string",
+     *         prev: "string"
+     *     })
      */
     public async list(
         request: Hookdeck.IgnoredEventBulkRetryListRequest = {},
@@ -105,7 +120,7 @@ export class IgnoredEventBulkRetry {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.1.3",
+                "X-Fern-SDK-Version": "0.1.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -191,7 +206,7 @@ export class IgnoredEventBulkRetry {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.1.3",
+                "X-Fern-SDK-Version": "0.1.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -278,7 +293,7 @@ export class IgnoredEventBulkRetry {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.1.3",
+                "X-Fern-SDK-Version": "0.1.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -347,6 +362,9 @@ export class IgnoredEventBulkRetry {
      *
      * @example
      *     await hookdeck.ignoredEventBulkRetry.retrieve("id")
+     *
+     * @example
+     *     await hookdeck.ignoredEventBulkRetry.retrieve("string")
      */
     public async retrieve(
         id: string,
@@ -362,7 +380,7 @@ export class IgnoredEventBulkRetry {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.1.3",
+                "X-Fern-SDK-Version": "0.1.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -421,6 +439,9 @@ export class IgnoredEventBulkRetry {
      *
      * @example
      *     await hookdeck.ignoredEventBulkRetry.cancel("id")
+     *
+     * @example
+     *     await hookdeck.ignoredEventBulkRetry.cancel("string")
      */
     public async cancel(
         id: string,
@@ -436,7 +457,7 @@ export class IgnoredEventBulkRetry {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.1.3",
+                "X-Fern-SDK-Version": "0.1.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -489,7 +510,7 @@ export class IgnoredEventBulkRetry {
         }
     }
 
-    protected async _getAuthorizationHeader() {
+    protected async _getAuthorizationHeader(): Promise<string> {
         return `Bearer ${await core.Supplier.get(this._options.token)}`;
     }
 }

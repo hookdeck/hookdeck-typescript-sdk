@@ -4,10 +4,10 @@
 
 import * as environments from "../../../../environments";
 import * as core from "../../../../core";
-import * as Hookdeck from "../../..";
+import * as Hookdeck from "../../../index";
 import urlJoin from "url-join";
-import * as serializers from "../../../../serialization";
-import * as errors from "../../../../errors";
+import * as serializers from "../../../../serialization/index";
+import * as errors from "../../../../errors/index";
 
 export declare namespace Request {
     interface Options {
@@ -32,6 +32,30 @@ export class Request {
      *
      * @example
      *     await hookdeck.request.list()
+     *
+     * @example
+     *     await hookdeck.request.list({
+     *         id: "string",
+     *         status: Hookdeck.RequestListRequestStatus.Accepted,
+     *         rejectionCause: Hookdeck.RequestRejectionCause.SourceDisabled,
+     *         sourceId: "string",
+     *         verified: true,
+     *         searchTerm: "string",
+     *         headers: "string",
+     *         body: "string",
+     *         parsedQuery: "string",
+     *         path: "string",
+     *         ignoredCount: 1,
+     *         eventsCount: 1,
+     *         ingestedAt: new Date("2024-01-15T09:30:00.000Z"),
+     *         bulkRetryId: "string",
+     *         include: "data",
+     *         orderBy: Hookdeck.RequestListRequestOrderBy.IngestedAt,
+     *         dir: Hookdeck.RequestListRequestDir.Asc,
+     *         limit: 1,
+     *         next: "string",
+     *         prev: "string"
+     *     })
      */
     public async list(
         request: Hookdeck.RequestListRequest = {},
@@ -150,7 +174,7 @@ export class Request {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.1.3",
+                "X-Fern-SDK-Version": "0.1.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -220,6 +244,9 @@ export class Request {
      *
      * @example
      *     await hookdeck.request.retrieve("id")
+     *
+     * @example
+     *     await hookdeck.request.retrieve("string")
      */
     public async retrieve(id: string, requestOptions?: Request.RequestOptions): Promise<Hookdeck.Request> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
@@ -232,7 +259,7 @@ export class Request {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.1.3",
+                "X-Fern-SDK-Version": "0.1.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -291,6 +318,9 @@ export class Request {
      *
      * @example
      *     await hookdeck.request.retrieveBody("id")
+     *
+     * @example
+     *     await hookdeck.request.retrieveBody("string")
      */
     public async retrieveBody(id: string, requestOptions?: Request.RequestOptions): Promise<Hookdeck.RawBody> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
@@ -303,7 +333,7 @@ export class Request {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.1.3",
+                "X-Fern-SDK-Version": "0.1.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -366,6 +396,11 @@ export class Request {
      *     await hookdeck.request.retry("id", {
      *         webhookIds: ["webhook_ids"]
      *     })
+     *
+     * @example
+     *     await hookdeck.request.retry("string", {
+     *         webhookIds: ["webhook_ids"]
+     *     })
      */
     public async retry(
         id: string,
@@ -382,7 +417,7 @@ export class Request {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.1.3",
+                "X-Fern-SDK-Version": "0.1.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -464,6 +499,37 @@ export class Request {
      *
      * @example
      *     await hookdeck.request.listEvent("id")
+     *
+     * @example
+     *     await hookdeck.request.listEvent("string", {
+     *         id: "string",
+     *         status: Hookdeck.EventStatus.Scheduled,
+     *         webhookId: "string",
+     *         destinationId: "string",
+     *         sourceId: "string",
+     *         attempts: 1,
+     *         responseStatus: 1,
+     *         successfulAt: new Date("2024-01-15T09:30:00.000Z"),
+     *         createdAt: new Date("2024-01-15T09:30:00.000Z"),
+     *         errorCode: Hookdeck.AttemptErrorCodes.Cancelled,
+     *         cliId: "string",
+     *         lastAttemptAt: new Date("2024-01-15T09:30:00.000Z"),
+     *         searchTerm: "string",
+     *         headers: "string",
+     *         body: "string",
+     *         parsedQuery: "string",
+     *         path: "string",
+     *         cliUserId: "string",
+     *         issueId: "string",
+     *         eventDataId: "string",
+     *         bulkRetryId: "string",
+     *         include: "data",
+     *         orderBy: Hookdeck.RequestListEventRequestOrderBy.LastAttemptAt,
+     *         dir: Hookdeck.RequestListEventRequestDir.Asc,
+     *         limit: 1,
+     *         next: "string",
+     *         prev: "string"
+     *     })
      */
     public async listEvent(
         id: string,
@@ -618,7 +684,7 @@ export class Request {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.1.3",
+                "X-Fern-SDK-Version": "0.1.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -700,6 +766,16 @@ export class Request {
      *
      * @example
      *     await hookdeck.request.listIgnoredEvent("id")
+     *
+     * @example
+     *     await hookdeck.request.listIgnoredEvent("string", {
+     *         id: "string",
+     *         orderBy: Hookdeck.RequestListIgnoredEventRequestOrderBy.CreatedAt,
+     *         dir: Hookdeck.RequestListIgnoredEventRequestDir.Asc,
+     *         limit: 1,
+     *         next: "string",
+     *         prev: "string"
+     *     })
      */
     public async listIgnoredEvent(
         id: string,
@@ -742,7 +818,7 @@ export class Request {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.1.3",
+                "X-Fern-SDK-Version": "0.1.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -816,7 +892,7 @@ export class Request {
         }
     }
 
-    protected async _getAuthorizationHeader() {
+    protected async _getAuthorizationHeader(): Promise<string> {
         return `Bearer ${await core.Supplier.get(this._options.token)}`;
     }
 }

@@ -4,10 +4,10 @@
 
 import * as environments from "../../../../environments";
 import * as core from "../../../../core";
-import * as Hookdeck from "../../..";
+import * as Hookdeck from "../../../index";
 import urlJoin from "url-join";
-import * as serializers from "../../../../serialization";
-import * as errors from "../../../../errors";
+import * as serializers from "../../../../serialization/index";
+import * as errors from "../../../../errors/index";
 
 export declare namespace IssueTrigger {
     interface Options {
@@ -32,6 +32,18 @@ export class IssueTrigger {
      *
      * @example
      *     await hookdeck.issueTrigger.list()
+     *
+     * @example
+     *     await hookdeck.issueTrigger.list({
+     *         name: "string",
+     *         type: Hookdeck.IssueType.Delivery,
+     *         disabledAt: new Date("2024-01-15T09:30:00.000Z"),
+     *         orderBy: Hookdeck.IssueTriggerListRequestOrderBy.CreatedAt,
+     *         dir: Hookdeck.IssueTriggerListRequestDir.Asc,
+     *         limit: 1,
+     *         next: "string",
+     *         prev: "string"
+     *     })
      */
     public async list(
         request: Hookdeck.IssueTriggerListRequest = {},
@@ -81,7 +93,7 @@ export class IssueTrigger {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.1.3",
+                "X-Fern-SDK-Version": "0.1.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -169,7 +181,7 @@ export class IssueTrigger {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.1.3",
+                "X-Fern-SDK-Version": "0.1.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -258,7 +270,7 @@ export class IssueTrigger {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.1.3",
+                "X-Fern-SDK-Version": "0.1.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -328,6 +340,9 @@ export class IssueTrigger {
      *
      * @example
      *     await hookdeck.issueTrigger.retrieve("id")
+     *
+     * @example
+     *     await hookdeck.issueTrigger.retrieve("string")
      */
     public async retrieve(id: string, requestOptions?: IssueTrigger.RequestOptions): Promise<Hookdeck.IssueTrigger> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
@@ -340,7 +355,7 @@ export class IssueTrigger {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.1.3",
+                "X-Fern-SDK-Version": "0.1.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -400,6 +415,9 @@ export class IssueTrigger {
      *
      * @example
      *     await hookdeck.issueTrigger.update("id")
+     *
+     * @example
+     *     await hookdeck.issueTrigger.update("string")
      */
     public async update(
         id: string,
@@ -416,7 +434,7 @@ export class IssueTrigger {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.1.3",
+                "X-Fern-SDK-Version": "0.1.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -486,6 +504,9 @@ export class IssueTrigger {
      *
      * @example
      *     await hookdeck.issueTrigger.delete("id")
+     *
+     * @example
+     *     await hookdeck.issueTrigger.delete("string")
      */
     public async delete(
         id: string,
@@ -501,7 +522,7 @@ export class IssueTrigger {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.1.3",
+                "X-Fern-SDK-Version": "0.1.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -560,6 +581,9 @@ export class IssueTrigger {
      *
      * @example
      *     await hookdeck.issueTrigger.disable("id")
+     *
+     * @example
+     *     await hookdeck.issueTrigger.disable("string")
      */
     public async disable(id: string, requestOptions?: IssueTrigger.RequestOptions): Promise<Hookdeck.IssueTrigger> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
@@ -572,7 +596,7 @@ export class IssueTrigger {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.1.3",
+                "X-Fern-SDK-Version": "0.1.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -631,6 +655,9 @@ export class IssueTrigger {
      *
      * @example
      *     await hookdeck.issueTrigger.enable("id")
+     *
+     * @example
+     *     await hookdeck.issueTrigger.enable("string")
      */
     public async enable(id: string, requestOptions?: IssueTrigger.RequestOptions): Promise<Hookdeck.IssueTrigger> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
@@ -643,7 +670,7 @@ export class IssueTrigger {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.1.3",
+                "X-Fern-SDK-Version": "0.1.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -696,7 +723,7 @@ export class IssueTrigger {
         }
     }
 
-    protected async _getAuthorizationHeader() {
+    protected async _getAuthorizationHeader(): Promise<string> {
         return `Bearer ${await core.Supplier.get(this._options.token)}`;
     }
 }

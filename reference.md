@@ -1,6 +1,4 @@
-
 ## IssueTrigger
-
 
 <details><summary> <code>hookdeck.issueTrigger.<a href="./src/api/resources/issueTrigger/client/Client.ts">list</a>({ ...params }) -> Hookdeck.IssueTriggerPaginatedResult</code> </summary>
 
@@ -17,8 +15,6 @@
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -60,9 +56,7 @@ await hookdeck.issueTrigger.list();
 
 <dd>
 
-
-**request: `Hookdeck.IssueTriggerListRequest`** 
-
+**request: `Hookdeck.IssueTriggerListRequest`**
 
 </dd>
 
@@ -72,9 +66,7 @@ await hookdeck.issueTrigger.list();
 
 <dd>
 
-
-**requestOptions: `IssueTrigger.RequestOptions`** 
-
+**requestOptions: `IssueTrigger.RequestOptions`**
 
 </dd>
 
@@ -83,14 +75,11 @@ await hookdeck.issueTrigger.list();
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.issueTrigger.<a href="./src/api/resources/issueTrigger/client/Client.ts">create</a>({ ...params }) -> Hookdeck.IssueTrigger</code> </summary>
 
@@ -107,8 +96,6 @@ await hookdeck.issueTrigger.list();
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -130,7 +117,7 @@ await hookdeck.issueTrigger.list();
 
 ```ts
 await hookdeck.issueTrigger.create({
-    type: Hookdeck.IssueType.Delivery
+    type: Hookdeck.IssueType.Delivery,
 });
 ```
 
@@ -152,9 +139,7 @@ await hookdeck.issueTrigger.create({
 
 <dd>
 
-
-**request: `Hookdeck.IssueTriggerCreateRequest`** 
-
+**request: `Hookdeck.IssueTriggerCreateRequest`**
 
 </dd>
 
@@ -164,9 +149,7 @@ await hookdeck.issueTrigger.create({
 
 <dd>
 
-
-**requestOptions: `IssueTrigger.RequestOptions`** 
-
+**requestOptions: `IssueTrigger.RequestOptions`**
 
 </dd>
 
@@ -175,14 +158,11 @@ await hookdeck.issueTrigger.create({
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.issueTrigger.<a href="./src/api/resources/issueTrigger/client/Client.ts">upsert</a>({ ...params }) -> Hookdeck.IssueTrigger</code> </summary>
 
@@ -199,8 +179,6 @@ await hookdeck.issueTrigger.create({
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -223,7 +201,7 @@ await hookdeck.issueTrigger.create({
 ```ts
 await hookdeck.issueTrigger.upsert({
     type: Hookdeck.IssueType.Delivery,
-    name: "name"
+    name: "name",
 });
 ```
 
@@ -245,9 +223,7 @@ await hookdeck.issueTrigger.upsert({
 
 <dd>
 
-
-**request: `Hookdeck.IssueTriggerUpsertRequest`** 
-
+**request: `Hookdeck.IssueTriggerUpsertRequest`**
 
 </dd>
 
@@ -257,9 +233,7 @@ await hookdeck.issueTrigger.upsert({
 
 <dd>
 
-
-**requestOptions: `IssueTrigger.RequestOptions`** 
-
+**requestOptions: `IssueTrigger.RequestOptions`**
 
 </dd>
 
@@ -268,14 +242,11 @@ await hookdeck.issueTrigger.upsert({
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.issueTrigger.<a href="./src/api/resources/issueTrigger/client/Client.ts">retrieve</a>(id) -> Hookdeck.IssueTrigger</code> </summary>
 
@@ -292,8 +263,6 @@ await hookdeck.issueTrigger.upsert({
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -335,9 +304,7 @@ await hookdeck.issueTrigger.retrieve("id");
 
 <dd>
 
-
-**id: `string`** 
-
+**id: `string`**
 
 </dd>
 
@@ -347,9 +314,7 @@ await hookdeck.issueTrigger.retrieve("id");
 
 <dd>
 
-
-**requestOptions: `IssueTrigger.RequestOptions`** 
-
+**requestOptions: `IssueTrigger.RequestOptions`**
 
 </dd>
 
@@ -358,14 +323,11 @@ await hookdeck.issueTrigger.retrieve("id");
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.issueTrigger.<a href="./src/api/resources/issueTrigger/client/Client.ts">update</a>(id, { ...params }) -> Hookdeck.IssueTrigger</code> </summary>
 
@@ -382,8 +344,6 @@ await hookdeck.issueTrigger.retrieve("id");
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -425,9 +385,7 @@ await hookdeck.issueTrigger.update("id");
 
 <dd>
 
-
-**id: `string`** 
-
+**id: `string`**
 
 </dd>
 
@@ -437,9 +395,7 @@ await hookdeck.issueTrigger.update("id");
 
 <dd>
 
-
-**request: `Hookdeck.IssueTriggerUpdateRequest`** 
-
+**request: `Hookdeck.IssueTriggerUpdateRequest`**
 
 </dd>
 
@@ -449,9 +405,7 @@ await hookdeck.issueTrigger.update("id");
 
 <dd>
 
-
-**requestOptions: `IssueTrigger.RequestOptions`** 
-
+**requestOptions: `IssueTrigger.RequestOptions`**
 
 </dd>
 
@@ -460,14 +414,11 @@ await hookdeck.issueTrigger.update("id");
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.issueTrigger.<a href="./src/api/resources/issueTrigger/client/Client.ts">delete</a>(id) -> Hookdeck.DeletedIssueTriggerResponse</code> </summary>
 
@@ -484,8 +435,6 @@ await hookdeck.issueTrigger.update("id");
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -527,9 +476,7 @@ await hookdeck.issueTrigger.delete("id");
 
 <dd>
 
-
-**id: `string`** 
-
+**id: `string`**
 
 </dd>
 
@@ -539,9 +486,7 @@ await hookdeck.issueTrigger.delete("id");
 
 <dd>
 
-
-**requestOptions: `IssueTrigger.RequestOptions`** 
-
+**requestOptions: `IssueTrigger.RequestOptions`**
 
 </dd>
 
@@ -550,14 +495,11 @@ await hookdeck.issueTrigger.delete("id");
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.issueTrigger.<a href="./src/api/resources/issueTrigger/client/Client.ts">disable</a>(id) -> Hookdeck.IssueTrigger</code> </summary>
 
@@ -574,8 +516,6 @@ await hookdeck.issueTrigger.delete("id");
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -617,9 +557,7 @@ await hookdeck.issueTrigger.disable("id");
 
 <dd>
 
-
-**id: `string`** 
-
+**id: `string`**
 
 </dd>
 
@@ -629,9 +567,7 @@ await hookdeck.issueTrigger.disable("id");
 
 <dd>
 
-
-**requestOptions: `IssueTrigger.RequestOptions`** 
-
+**requestOptions: `IssueTrigger.RequestOptions`**
 
 </dd>
 
@@ -640,14 +576,11 @@ await hookdeck.issueTrigger.disable("id");
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.issueTrigger.<a href="./src/api/resources/issueTrigger/client/Client.ts">enable</a>(id) -> Hookdeck.IssueTrigger</code> </summary>
 
@@ -664,8 +597,6 @@ await hookdeck.issueTrigger.disable("id");
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -707,9 +638,7 @@ await hookdeck.issueTrigger.enable("id");
 
 <dd>
 
-
-**id: `string`** 
-
+**id: `string`**
 
 </dd>
 
@@ -719,9 +648,7 @@ await hookdeck.issueTrigger.enable("id");
 
 <dd>
 
-
-**requestOptions: `IssueTrigger.RequestOptions`** 
-
+**requestOptions: `IssueTrigger.RequestOptions`**
 
 </dd>
 
@@ -730,19 +657,13 @@ await hookdeck.issueTrigger.enable("id");
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
 
-
-
-
 ## Attempt
-
 
 <details><summary> <code>hookdeck.attempt.<a href="./src/api/resources/attempt/client/Client.ts">list</a>({ ...params }) -> Hookdeck.EventAttemptPaginatedResult</code> </summary>
 
@@ -759,8 +680,6 @@ await hookdeck.issueTrigger.enable("id");
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -802,9 +721,7 @@ await hookdeck.attempt.list();
 
 <dd>
 
-
-**request: `Hookdeck.AttemptListRequest`** 
-
+**request: `Hookdeck.AttemptListRequest`**
 
 </dd>
 
@@ -814,9 +731,7 @@ await hookdeck.attempt.list();
 
 <dd>
 
-
-**requestOptions: `Attempt.RequestOptions`** 
-
+**requestOptions: `Attempt.RequestOptions`**
 
 </dd>
 
@@ -825,14 +740,11 @@ await hookdeck.attempt.list();
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.attempt.<a href="./src/api/resources/attempt/client/Client.ts">retrieve</a>(id) -> Hookdeck.EventAttempt | undefined</code> </summary>
 
@@ -849,8 +761,6 @@ await hookdeck.attempt.list();
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -892,9 +802,7 @@ await hookdeck.attempt.retrieve("id");
 
 <dd>
 
-
-**id: `string`** 
-
+**id: `string`**
 
 </dd>
 
@@ -904,9 +812,7 @@ await hookdeck.attempt.retrieve("id");
 
 <dd>
 
-
-**requestOptions: `Attempt.RequestOptions`** 
-
+**requestOptions: `Attempt.RequestOptions`**
 
 </dd>
 
@@ -915,19 +821,13 @@ await hookdeck.attempt.retrieve("id");
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
 
-
-
-
 ## Bookmark
-
 
 <details><summary> <code>hookdeck.bookmark.<a href="./src/api/resources/bookmark/client/Client.ts">list</a>({ ...params }) -> Hookdeck.BookmarkPaginatedResult</code> </summary>
 
@@ -944,8 +844,6 @@ await hookdeck.attempt.retrieve("id");
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -987,9 +885,7 @@ await hookdeck.bookmark.list();
 
 <dd>
 
-
-**request: `Hookdeck.BookmarkListRequest`** 
-
+**request: `Hookdeck.BookmarkListRequest`**
 
 </dd>
 
@@ -999,9 +895,7 @@ await hookdeck.bookmark.list();
 
 <dd>
 
-
-**requestOptions: `Bookmark.RequestOptions`** 
-
+**requestOptions: `Bookmark.RequestOptions`**
 
 </dd>
 
@@ -1010,14 +904,11 @@ await hookdeck.bookmark.list();
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.bookmark.<a href="./src/api/resources/bookmark/client/Client.ts">create</a>({ ...params }) -> Hookdeck.Bookmark</code> </summary>
 
@@ -1034,8 +925,6 @@ await hookdeck.bookmark.list();
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -1059,7 +948,7 @@ await hookdeck.bookmark.list();
 await hookdeck.bookmark.create({
     eventDataId: "event_data_id",
     webhookId: "webhook_id",
-    label: "label"
+    label: "label",
 });
 ```
 
@@ -1081,9 +970,7 @@ await hookdeck.bookmark.create({
 
 <dd>
 
-
-**request: `Hookdeck.BookmarkCreateRequest`** 
-
+**request: `Hookdeck.BookmarkCreateRequest`**
 
 </dd>
 
@@ -1093,9 +980,7 @@ await hookdeck.bookmark.create({
 
 <dd>
 
-
-**requestOptions: `Bookmark.RequestOptions`** 
-
+**requestOptions: `Bookmark.RequestOptions`**
 
 </dd>
 
@@ -1104,14 +989,11 @@ await hookdeck.bookmark.create({
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.bookmark.<a href="./src/api/resources/bookmark/client/Client.ts">retrieve</a>(id) -> Hookdeck.Bookmark</code> </summary>
 
@@ -1128,8 +1010,6 @@ await hookdeck.bookmark.create({
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -1171,9 +1051,7 @@ await hookdeck.bookmark.retrieve("id");
 
 <dd>
 
-
-**id: `string`** 
-
+**id: `string`**
 
 </dd>
 
@@ -1183,9 +1061,7 @@ await hookdeck.bookmark.retrieve("id");
 
 <dd>
 
-
-**requestOptions: `Bookmark.RequestOptions`** 
-
+**requestOptions: `Bookmark.RequestOptions`**
 
 </dd>
 
@@ -1194,14 +1070,11 @@ await hookdeck.bookmark.retrieve("id");
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.bookmark.<a href="./src/api/resources/bookmark/client/Client.ts">update</a>(id, { ...params }) -> Hookdeck.Bookmark</code> </summary>
 
@@ -1218,8 +1091,6 @@ await hookdeck.bookmark.retrieve("id");
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -1261,9 +1132,7 @@ await hookdeck.bookmark.update("id");
 
 <dd>
 
-
-**id: `string`** 
-
+**id: `string`**
 
 </dd>
 
@@ -1273,9 +1142,7 @@ await hookdeck.bookmark.update("id");
 
 <dd>
 
-
-**request: `Hookdeck.BookmarkUpdateRequest`** 
-
+**request: `Hookdeck.BookmarkUpdateRequest`**
 
 </dd>
 
@@ -1285,9 +1152,7 @@ await hookdeck.bookmark.update("id");
 
 <dd>
 
-
-**requestOptions: `Bookmark.RequestOptions`** 
-
+**requestOptions: `Bookmark.RequestOptions`**
 
 </dd>
 
@@ -1296,14 +1161,11 @@ await hookdeck.bookmark.update("id");
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.bookmark.<a href="./src/api/resources/bookmark/client/Client.ts">delete</a>(id) -> Hookdeck.DeletedBookmarkResponse</code> </summary>
 
@@ -1320,8 +1182,6 @@ await hookdeck.bookmark.update("id");
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -1363,9 +1223,7 @@ await hookdeck.bookmark.delete("id");
 
 <dd>
 
-
-**id: `string`** 
-
+**id: `string`**
 
 </dd>
 
@@ -1375,9 +1233,7 @@ await hookdeck.bookmark.delete("id");
 
 <dd>
 
-
-**requestOptions: `Bookmark.RequestOptions`** 
-
+**requestOptions: `Bookmark.RequestOptions`**
 
 </dd>
 
@@ -1386,14 +1242,11 @@ await hookdeck.bookmark.delete("id");
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.bookmark.<a href="./src/api/resources/bookmark/client/Client.ts">retrieveBody</a>(id) -> Hookdeck.RawBody</code> </summary>
 
@@ -1410,8 +1263,6 @@ await hookdeck.bookmark.delete("id");
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -1453,9 +1304,7 @@ await hookdeck.bookmark.retrieveBody("id");
 
 <dd>
 
-
-**id: `string`** 
-
+**id: `string`**
 
 </dd>
 
@@ -1465,9 +1314,7 @@ await hookdeck.bookmark.retrieveBody("id");
 
 <dd>
 
-
-**requestOptions: `Bookmark.RequestOptions`** 
-
+**requestOptions: `Bookmark.RequestOptions`**
 
 </dd>
 
@@ -1476,14 +1323,11 @@ await hookdeck.bookmark.retrieveBody("id");
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.bookmark.<a href="./src/api/resources/bookmark/client/Client.ts">trigger</a>(id, { ...params }) -> Hookdeck.EventArray</code> </summary>
 
@@ -1500,8 +1344,6 @@ await hookdeck.bookmark.retrieveBody("id");
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -1543,9 +1385,7 @@ await hookdeck.bookmark.trigger("id");
 
 <dd>
 
-
-**id: `string`** 
-
+**id: `string`**
 
 </dd>
 
@@ -1555,9 +1395,7 @@ await hookdeck.bookmark.trigger("id");
 
 <dd>
 
-
-**request: `Hookdeck.BookmarkTriggerRequest`** 
-
+**request: `Hookdeck.BookmarkTriggerRequest`**
 
 </dd>
 
@@ -1567,9 +1405,7 @@ await hookdeck.bookmark.trigger("id");
 
 <dd>
 
-
-**requestOptions: `Bookmark.RequestOptions`** 
-
+**requestOptions: `Bookmark.RequestOptions`**
 
 </dd>
 
@@ -1578,19 +1414,13 @@ await hookdeck.bookmark.trigger("id");
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
 
-
-
-
 ## Destination
-
 
 <details><summary> <code>hookdeck.destination.<a href="./src/api/resources/destination/client/Client.ts">list</a>({ ...params }) -> Hookdeck.DestinationPaginatedResult</code> </summary>
 
@@ -1607,8 +1437,6 @@ await hookdeck.bookmark.trigger("id");
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -1650,9 +1478,7 @@ await hookdeck.destination.list();
 
 <dd>
 
-
-**request: `Hookdeck.DestinationListRequest`** 
-
+**request: `Hookdeck.DestinationListRequest`**
 
 </dd>
 
@@ -1662,9 +1488,7 @@ await hookdeck.destination.list();
 
 <dd>
 
-
-**requestOptions: `Destination.RequestOptions`** 
-
+**requestOptions: `Destination.RequestOptions`**
 
 </dd>
 
@@ -1673,14 +1497,11 @@ await hookdeck.destination.list();
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.destination.<a href="./src/api/resources/destination/client/Client.ts">create</a>({ ...params }) -> Hookdeck.Destination</code> </summary>
 
@@ -1697,8 +1518,6 @@ await hookdeck.destination.list();
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -1720,7 +1539,7 @@ await hookdeck.destination.list();
 
 ```ts
 await hookdeck.destination.create({
-    name: "name"
+    name: "name",
 });
 ```
 
@@ -1742,9 +1561,7 @@ await hookdeck.destination.create({
 
 <dd>
 
-
-**request: `Hookdeck.DestinationCreateRequest`** 
-
+**request: `Hookdeck.DestinationCreateRequest`**
 
 </dd>
 
@@ -1754,9 +1571,7 @@ await hookdeck.destination.create({
 
 <dd>
 
-
-**requestOptions: `Destination.RequestOptions`** 
-
+**requestOptions: `Destination.RequestOptions`**
 
 </dd>
 
@@ -1765,14 +1580,11 @@ await hookdeck.destination.create({
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.destination.<a href="./src/api/resources/destination/client/Client.ts">upsert</a>({ ...params }) -> Hookdeck.Destination</code> </summary>
 
@@ -1789,8 +1601,6 @@ await hookdeck.destination.create({
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -1812,7 +1622,7 @@ await hookdeck.destination.create({
 
 ```ts
 await hookdeck.destination.upsert({
-    name: "name"
+    name: "name",
 });
 ```
 
@@ -1834,9 +1644,7 @@ await hookdeck.destination.upsert({
 
 <dd>
 
-
-**request: `Hookdeck.DestinationUpsertRequest`** 
-
+**request: `Hookdeck.DestinationUpsertRequest`**
 
 </dd>
 
@@ -1846,9 +1654,7 @@ await hookdeck.destination.upsert({
 
 <dd>
 
-
-**requestOptions: `Destination.RequestOptions`** 
-
+**requestOptions: `Destination.RequestOptions`**
 
 </dd>
 
@@ -1857,14 +1663,11 @@ await hookdeck.destination.upsert({
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.destination.<a href="./src/api/resources/destination/client/Client.ts">retrieve</a>(id) -> Hookdeck.Destination</code> </summary>
 
@@ -1881,8 +1684,6 @@ await hookdeck.destination.upsert({
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -1924,9 +1725,7 @@ await hookdeck.destination.retrieve("id");
 
 <dd>
 
-
-**id: `string`** 
-
+**id: `string`**
 
 </dd>
 
@@ -1936,9 +1735,7 @@ await hookdeck.destination.retrieve("id");
 
 <dd>
 
-
-**requestOptions: `Destination.RequestOptions`** 
-
+**requestOptions: `Destination.RequestOptions`**
 
 </dd>
 
@@ -1947,14 +1744,11 @@ await hookdeck.destination.retrieve("id");
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.destination.<a href="./src/api/resources/destination/client/Client.ts">update</a>(id, { ...params }) -> Hookdeck.Destination</code> </summary>
 
@@ -1971,8 +1765,6 @@ await hookdeck.destination.retrieve("id");
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -2014,9 +1806,7 @@ await hookdeck.destination.update("id");
 
 <dd>
 
-
-**id: `string`** 
-
+**id: `string`**
 
 </dd>
 
@@ -2026,9 +1816,7 @@ await hookdeck.destination.update("id");
 
 <dd>
 
-
-**request: `Hookdeck.DestinationUpdateRequest`** 
-
+**request: `Hookdeck.DestinationUpdateRequest`**
 
 </dd>
 
@@ -2038,9 +1826,7 @@ await hookdeck.destination.update("id");
 
 <dd>
 
-
-**requestOptions: `Destination.RequestOptions`** 
-
+**requestOptions: `Destination.RequestOptions`**
 
 </dd>
 
@@ -2049,14 +1835,11 @@ await hookdeck.destination.update("id");
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.destination.<a href="./src/api/resources/destination/client/Client.ts">delete</a>(id) -> Hookdeck.DestinationDeleteResponse</code> </summary>
 
@@ -2073,8 +1856,6 @@ await hookdeck.destination.update("id");
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -2116,9 +1897,7 @@ await hookdeck.destination.delete("id");
 
 <dd>
 
-
-**id: `string`** 
-
+**id: `string`**
 
 </dd>
 
@@ -2128,9 +1907,7 @@ await hookdeck.destination.delete("id");
 
 <dd>
 
-
-**requestOptions: `Destination.RequestOptions`** 
-
+**requestOptions: `Destination.RequestOptions`**
 
 </dd>
 
@@ -2139,14 +1916,11 @@ await hookdeck.destination.delete("id");
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.destination.<a href="./src/api/resources/destination/client/Client.ts">disable</a>(id) -> Hookdeck.Destination</code> </summary>
 
@@ -2163,8 +1937,6 @@ await hookdeck.destination.delete("id");
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -2206,9 +1978,7 @@ await hookdeck.destination.disable("id");
 
 <dd>
 
-
-**id: `string`** 
-
+**id: `string`**
 
 </dd>
 
@@ -2218,9 +1988,7 @@ await hookdeck.destination.disable("id");
 
 <dd>
 
-
-**requestOptions: `Destination.RequestOptions`** 
-
+**requestOptions: `Destination.RequestOptions`**
 
 </dd>
 
@@ -2229,14 +1997,11 @@ await hookdeck.destination.disable("id");
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.destination.<a href="./src/api/resources/destination/client/Client.ts">enable</a>(id) -> Hookdeck.Destination</code> </summary>
 
@@ -2253,8 +2018,6 @@ await hookdeck.destination.disable("id");
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -2296,9 +2059,7 @@ await hookdeck.destination.enable("id");
 
 <dd>
 
-
-**id: `string`** 
-
+**id: `string`**
 
 </dd>
 
@@ -2308,9 +2069,7 @@ await hookdeck.destination.enable("id");
 
 <dd>
 
-
-**requestOptions: `Destination.RequestOptions`** 
-
+**requestOptions: `Destination.RequestOptions`**
 
 </dd>
 
@@ -2319,19 +2078,13 @@ await hookdeck.destination.enable("id");
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
 
-
-
-
 ## EventBulkRetry
-
 
 <details><summary> <code>hookdeck.eventBulkRetry.<a href="./src/api/resources/eventBulkRetry/client/Client.ts">list</a>({ ...params }) -> Hookdeck.BatchOperationPaginatedResult</code> </summary>
 
@@ -2348,8 +2101,6 @@ await hookdeck.destination.enable("id");
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -2391,9 +2142,7 @@ await hookdeck.eventBulkRetry.list();
 
 <dd>
 
-
-**request: `Hookdeck.EventBulkRetryListRequest`** 
-
+**request: `Hookdeck.EventBulkRetryListRequest`**
 
 </dd>
 
@@ -2403,9 +2152,7 @@ await hookdeck.eventBulkRetry.list();
 
 <dd>
 
-
-**requestOptions: `EventBulkRetry.RequestOptions`** 
-
+**requestOptions: `EventBulkRetry.RequestOptions`**
 
 </dd>
 
@@ -2414,14 +2161,11 @@ await hookdeck.eventBulkRetry.list();
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.eventBulkRetry.<a href="./src/api/resources/eventBulkRetry/client/Client.ts">create</a>({ ...params }) -> Hookdeck.BatchOperation</code> </summary>
 
@@ -2438,8 +2182,6 @@ await hookdeck.eventBulkRetry.list();
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -2481,9 +2223,7 @@ await hookdeck.eventBulkRetry.create();
 
 <dd>
 
-
-**request: `Hookdeck.EventBulkRetryCreateRequest`** 
-
+**request: `Hookdeck.EventBulkRetryCreateRequest`**
 
 </dd>
 
@@ -2493,9 +2233,7 @@ await hookdeck.eventBulkRetry.create();
 
 <dd>
 
-
-**requestOptions: `EventBulkRetry.RequestOptions`** 
-
+**requestOptions: `EventBulkRetry.RequestOptions`**
 
 </dd>
 
@@ -2504,14 +2242,11 @@ await hookdeck.eventBulkRetry.create();
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.eventBulkRetry.<a href="./src/api/resources/eventBulkRetry/client/Client.ts">plan</a>() -> Hookdeck.EventBulkRetryPlanResponse</code> </summary>
 
@@ -2528,8 +2263,6 @@ await hookdeck.eventBulkRetry.create();
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -2571,9 +2304,7 @@ await hookdeck.eventBulkRetry.plan();
 
 <dd>
 
-
-**requestOptions: `EventBulkRetry.RequestOptions`** 
-
+**requestOptions: `EventBulkRetry.RequestOptions`**
 
 </dd>
 
@@ -2582,14 +2313,11 @@ await hookdeck.eventBulkRetry.plan();
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.eventBulkRetry.<a href="./src/api/resources/eventBulkRetry/client/Client.ts">retrieve</a>(id) -> Hookdeck.BatchOperation</code> </summary>
 
@@ -2606,8 +2334,6 @@ await hookdeck.eventBulkRetry.plan();
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -2649,9 +2375,7 @@ await hookdeck.eventBulkRetry.retrieve("id");
 
 <dd>
 
-
-**id: `string`** 
-
+**id: `string`**
 
 </dd>
 
@@ -2661,9 +2385,7 @@ await hookdeck.eventBulkRetry.retrieve("id");
 
 <dd>
 
-
-**requestOptions: `EventBulkRetry.RequestOptions`** 
-
+**requestOptions: `EventBulkRetry.RequestOptions`**
 
 </dd>
 
@@ -2672,14 +2394,11 @@ await hookdeck.eventBulkRetry.retrieve("id");
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.eventBulkRetry.<a href="./src/api/resources/eventBulkRetry/client/Client.ts">cancel</a>(id) -> Hookdeck.BatchOperation</code> </summary>
 
@@ -2696,8 +2415,6 @@ await hookdeck.eventBulkRetry.retrieve("id");
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -2739,9 +2456,7 @@ await hookdeck.eventBulkRetry.cancel("id");
 
 <dd>
 
-
-**id: `string`** 
-
+**id: `string`**
 
 </dd>
 
@@ -2751,9 +2466,7 @@ await hookdeck.eventBulkRetry.cancel("id");
 
 <dd>
 
-
-**requestOptions: `EventBulkRetry.RequestOptions`** 
-
+**requestOptions: `EventBulkRetry.RequestOptions`**
 
 </dd>
 
@@ -2762,19 +2475,13 @@ await hookdeck.eventBulkRetry.cancel("id");
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
 
-
-
-
 ## Event
-
 
 <details><summary> <code>hookdeck.event.<a href="./src/api/resources/event/client/Client.ts">list</a>({ ...params }) -> Hookdeck.EventPaginatedResult</code> </summary>
 
@@ -2791,8 +2498,6 @@ await hookdeck.eventBulkRetry.cancel("id");
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -2834,9 +2539,7 @@ await hookdeck.event.list();
 
 <dd>
 
-
-**request: `Hookdeck.EventListRequest`** 
-
+**request: `Hookdeck.EventListRequest`**
 
 </dd>
 
@@ -2846,9 +2549,7 @@ await hookdeck.event.list();
 
 <dd>
 
-
-**requestOptions: `Event.RequestOptions`** 
-
+**requestOptions: `Event.RequestOptions`**
 
 </dd>
 
@@ -2857,14 +2558,11 @@ await hookdeck.event.list();
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.event.<a href="./src/api/resources/event/client/Client.ts">retrieve</a>(id) -> Hookdeck.Event</code> </summary>
 
@@ -2881,8 +2579,6 @@ await hookdeck.event.list();
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -2924,9 +2620,7 @@ await hookdeck.event.retrieve("id");
 
 <dd>
 
-
-**id: `string`** 
-
+**id: `string`**
 
 </dd>
 
@@ -2936,9 +2630,7 @@ await hookdeck.event.retrieve("id");
 
 <dd>
 
-
-**requestOptions: `Event.RequestOptions`** 
-
+**requestOptions: `Event.RequestOptions`**
 
 </dd>
 
@@ -2947,14 +2639,11 @@ await hookdeck.event.retrieve("id");
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.event.<a href="./src/api/resources/event/client/Client.ts">retrieveBody</a>(id) -> Hookdeck.RawBody</code> </summary>
 
@@ -2971,8 +2660,6 @@ await hookdeck.event.retrieve("id");
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -3014,9 +2701,7 @@ await hookdeck.event.retrieveBody("id");
 
 <dd>
 
-
-**id: `string`** 
-
+**id: `string`**
 
 </dd>
 
@@ -3026,9 +2711,7 @@ await hookdeck.event.retrieveBody("id");
 
 <dd>
 
-
-**requestOptions: `Event.RequestOptions`** 
-
+**requestOptions: `Event.RequestOptions`**
 
 </dd>
 
@@ -3037,14 +2720,11 @@ await hookdeck.event.retrieveBody("id");
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.event.<a href="./src/api/resources/event/client/Client.ts">retry</a>(id) -> Hookdeck.RetriedEvent</code> </summary>
 
@@ -3061,8 +2741,6 @@ await hookdeck.event.retrieveBody("id");
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -3104,9 +2782,7 @@ await hookdeck.event.retry("id");
 
 <dd>
 
-
-**id: `string`** 
-
+**id: `string`**
 
 </dd>
 
@@ -3116,9 +2792,7 @@ await hookdeck.event.retry("id");
 
 <dd>
 
-
-**requestOptions: `Event.RequestOptions`** 
-
+**requestOptions: `Event.RequestOptions`**
 
 </dd>
 
@@ -3127,14 +2801,11 @@ await hookdeck.event.retry("id");
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.event.<a href="./src/api/resources/event/client/Client.ts">mute</a>(id) -> Hookdeck.Event</code> </summary>
 
@@ -3151,8 +2822,6 @@ await hookdeck.event.retry("id");
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -3194,9 +2863,7 @@ await hookdeck.event.mute("id");
 
 <dd>
 
-
-**id: `string`** 
-
+**id: `string`**
 
 </dd>
 
@@ -3206,9 +2873,7 @@ await hookdeck.event.mute("id");
 
 <dd>
 
-
-**requestOptions: `Event.RequestOptions`** 
-
+**requestOptions: `Event.RequestOptions`**
 
 </dd>
 
@@ -3217,19 +2882,13 @@ await hookdeck.event.mute("id");
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
 
-
-
-
 ## IgnoredEventBulkRetry
-
 
 <details><summary> <code>hookdeck.ignoredEventBulkRetry.<a href="./src/api/resources/ignoredEventBulkRetry/client/Client.ts">list</a>({ ...params }) -> Hookdeck.BatchOperationPaginatedResult</code> </summary>
 
@@ -3246,8 +2905,6 @@ await hookdeck.event.mute("id");
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -3289,9 +2946,7 @@ await hookdeck.ignoredEventBulkRetry.list();
 
 <dd>
 
-
-**request: `Hookdeck.IgnoredEventBulkRetryListRequest`** 
-
+**request: `Hookdeck.IgnoredEventBulkRetryListRequest`**
 
 </dd>
 
@@ -3301,9 +2956,7 @@ await hookdeck.ignoredEventBulkRetry.list();
 
 <dd>
 
-
-**requestOptions: `IgnoredEventBulkRetry.RequestOptions`** 
-
+**requestOptions: `IgnoredEventBulkRetry.RequestOptions`**
 
 </dd>
 
@@ -3312,14 +2965,11 @@ await hookdeck.ignoredEventBulkRetry.list();
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.ignoredEventBulkRetry.<a href="./src/api/resources/ignoredEventBulkRetry/client/Client.ts">create</a>({ ...params }) -> Hookdeck.BatchOperation</code> </summary>
 
@@ -3336,8 +2986,6 @@ await hookdeck.ignoredEventBulkRetry.list();
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -3379,9 +3027,7 @@ await hookdeck.ignoredEventBulkRetry.create();
 
 <dd>
 
-
-**request: `Hookdeck.IgnoredEventBulkRetryCreateRequest`** 
-
+**request: `Hookdeck.IgnoredEventBulkRetryCreateRequest`**
 
 </dd>
 
@@ -3391,9 +3037,7 @@ await hookdeck.ignoredEventBulkRetry.create();
 
 <dd>
 
-
-**requestOptions: `IgnoredEventBulkRetry.RequestOptions`** 
-
+**requestOptions: `IgnoredEventBulkRetry.RequestOptions`**
 
 </dd>
 
@@ -3402,14 +3046,11 @@ await hookdeck.ignoredEventBulkRetry.create();
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.ignoredEventBulkRetry.<a href="./src/api/resources/ignoredEventBulkRetry/client/Client.ts">plan</a>() -> Hookdeck.IgnoredEventBulkRetryPlanResponse</code> </summary>
 
@@ -3426,8 +3067,6 @@ await hookdeck.ignoredEventBulkRetry.create();
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -3469,9 +3108,7 @@ await hookdeck.ignoredEventBulkRetry.plan();
 
 <dd>
 
-
-**requestOptions: `IgnoredEventBulkRetry.RequestOptions`** 
-
+**requestOptions: `IgnoredEventBulkRetry.RequestOptions`**
 
 </dd>
 
@@ -3480,14 +3117,11 @@ await hookdeck.ignoredEventBulkRetry.plan();
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.ignoredEventBulkRetry.<a href="./src/api/resources/ignoredEventBulkRetry/client/Client.ts">retrieve</a>(id) -> Hookdeck.BatchOperation</code> </summary>
 
@@ -3504,8 +3138,6 @@ await hookdeck.ignoredEventBulkRetry.plan();
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -3547,9 +3179,7 @@ await hookdeck.ignoredEventBulkRetry.retrieve("id");
 
 <dd>
 
-
-**id: `string`** 
-
+**id: `string`**
 
 </dd>
 
@@ -3559,9 +3189,7 @@ await hookdeck.ignoredEventBulkRetry.retrieve("id");
 
 <dd>
 
-
-**requestOptions: `IgnoredEventBulkRetry.RequestOptions`** 
-
+**requestOptions: `IgnoredEventBulkRetry.RequestOptions`**
 
 </dd>
 
@@ -3570,14 +3198,11 @@ await hookdeck.ignoredEventBulkRetry.retrieve("id");
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.ignoredEventBulkRetry.<a href="./src/api/resources/ignoredEventBulkRetry/client/Client.ts">cancel</a>(id) -> Hookdeck.BatchOperation</code> </summary>
 
@@ -3594,8 +3219,6 @@ await hookdeck.ignoredEventBulkRetry.retrieve("id");
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -3637,9 +3260,7 @@ await hookdeck.ignoredEventBulkRetry.cancel("id");
 
 <dd>
 
-
-**id: `string`** 
-
+**id: `string`**
 
 </dd>
 
@@ -3649,9 +3270,7 @@ await hookdeck.ignoredEventBulkRetry.cancel("id");
 
 <dd>
 
-
-**requestOptions: `IgnoredEventBulkRetry.RequestOptions`** 
-
+**requestOptions: `IgnoredEventBulkRetry.RequestOptions`**
 
 </dd>
 
@@ -3660,19 +3279,13 @@ await hookdeck.ignoredEventBulkRetry.cancel("id");
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
 
-
-
-
 ## Issue
-
 
 <details><summary> <code>hookdeck.issue.<a href="./src/api/resources/issue/client/Client.ts">list</a>({ ...params }) -> Hookdeck.IssueWithDataPaginatedResult</code> </summary>
 
@@ -3689,8 +3302,6 @@ await hookdeck.ignoredEventBulkRetry.cancel("id");
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -3714,7 +3325,7 @@ await hookdeck.ignoredEventBulkRetry.cancel("id");
 await hookdeck.issue.list({
     id: "iss_YXKv5OdJXCiVwkPhGy",
     issueTriggerId: "it_BXKv5OdJXCiVwkPhGy",
-    mergedWith: "iss_AXKv3OdJXCiKlkPhDz"
+    mergedWith: "iss_AXKv3OdJXCiKlkPhDz",
 });
 ```
 
@@ -3736,9 +3347,7 @@ await hookdeck.issue.list({
 
 <dd>
 
-
-**request: `Hookdeck.IssueListRequest`** 
-
+**request: `Hookdeck.IssueListRequest`**
 
 </dd>
 
@@ -3748,9 +3357,7 @@ await hookdeck.issue.list({
 
 <dd>
 
-
-**requestOptions: `Issue.RequestOptions`** 
-
+**requestOptions: `Issue.RequestOptions`**
 
 </dd>
 
@@ -3759,14 +3366,11 @@ await hookdeck.issue.list({
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.issue.<a href="./src/api/resources/issue/client/Client.ts">count</a>({ ...params }) -> Hookdeck.IssueCount</code> </summary>
 
@@ -3783,8 +3387,6 @@ await hookdeck.issue.list({
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -3808,7 +3410,7 @@ await hookdeck.issue.list({
 await hookdeck.issue.count({
     id: "iss_YXKv5OdJXCiVwkPhGy",
     issueTriggerId: "it_BXKv5OdJXCiVwkPhGy",
-    mergedWith: "iss_AXKv3OdJXCiKlkPhDz"
+    mergedWith: "iss_AXKv3OdJXCiKlkPhDz",
 });
 ```
 
@@ -3830,9 +3432,7 @@ await hookdeck.issue.count({
 
 <dd>
 
-
-**request: `Hookdeck.IssueCountRequest`** 
-
+**request: `Hookdeck.IssueCountRequest`**
 
 </dd>
 
@@ -3842,9 +3442,7 @@ await hookdeck.issue.count({
 
 <dd>
 
-
-**requestOptions: `Issue.RequestOptions`** 
-
+**requestOptions: `Issue.RequestOptions`**
 
 </dd>
 
@@ -3853,19 +3451,268 @@ await hookdeck.issue.count({
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
 
+<details><summary> <code>hookdeck.issue.<a href="./src/api/resources/issue/client/Client.ts">retrieve</a>(id) -> Hookdeck.IssueWithData</code> </summary>
 
+<dl>
 
+<dd>
+
+#### 📝 Description
+
+<dl>
+
+<dd>
+
+<dl>
+
+<dd>
+
+</dd>
+
+</dl>
+
+</dd>
+
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+
+<dd>
+
+<dl>
+
+<dd>
+
+```ts
+await hookdeck.issue.retrieve("string");
+```
+
+</dd>
+
+</dl>
+
+</dd>
+
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+
+<dd>
+
+<dl>
+
+<dd>
+
+**id: `string`**
+
+</dd>
+
+</dl>
+
+<dl>
+
+<dd>
+
+**requestOptions: `Issue.RequestOptions`**
+
+</dd>
+
+</dl>
+
+</dd>
+
+</dl>
+
+</dd>
+
+</dl>
+</details>
+
+<details><summary> <code>hookdeck.issue.<a href="./src/api/resources/issue/client/Client.ts">update</a>(id, { ...params }) -> Hookdeck.Issue</code> </summary>
+
+<dl>
+
+<dd>
+
+#### 📝 Description
+
+<dl>
+
+<dd>
+
+<dl>
+
+<dd>
+
+</dd>
+
+</dl>
+
+</dd>
+
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+
+<dd>
+
+<dl>
+
+<dd>
+
+```ts
+await hookdeck.issue.update("string", {
+    status: Hookdeck.IssueUpdateRequestStatus.Opened,
+});
+```
+
+</dd>
+
+</dl>
+
+</dd>
+
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+
+<dd>
+
+<dl>
+
+<dd>
+
+**id: `string`**
+
+</dd>
+
+</dl>
+
+<dl>
+
+<dd>
+
+**request: `Hookdeck.IssueUpdateRequest`**
+
+</dd>
+
+</dl>
+
+<dl>
+
+<dd>
+
+**requestOptions: `Issue.RequestOptions`**
+
+</dd>
+
+</dl>
+
+</dd>
+
+</dl>
+
+</dd>
+
+</dl>
+</details>
+
+<details><summary> <code>hookdeck.issue.<a href="./src/api/resources/issue/client/Client.ts">dismiss</a>(id) -> Hookdeck.Issue</code> </summary>
+
+<dl>
+
+<dd>
+
+#### 📝 Description
+
+<dl>
+
+<dd>
+
+<dl>
+
+<dd>
+
+</dd>
+
+</dl>
+
+</dd>
+
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+
+<dd>
+
+<dl>
+
+<dd>
+
+```ts
+await hookdeck.issue.dismiss("string");
+```
+
+</dd>
+
+</dl>
+
+</dd>
+
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+
+<dd>
+
+<dl>
+
+<dd>
+
+**id: `string`**
+
+</dd>
+
+</dl>
+
+<dl>
+
+<dd>
+
+**requestOptions: `Issue.RequestOptions`**
+
+</dd>
+
+</dl>
+
+</dd>
+
+</dl>
+
+</dd>
+
+</dl>
+</details>
 
 ## Request
-
 
 <details><summary> <code>hookdeck.request.<a href="./src/api/resources/request/client/Client.ts">list</a>({ ...params }) -> Hookdeck.RequestPaginatedResult</code> </summary>
 
@@ -3882,8 +3729,6 @@ await hookdeck.issue.count({
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -3925,9 +3770,7 @@ await hookdeck.request.list();
 
 <dd>
 
-
-**request: `Hookdeck.RequestListRequest`** 
-
+**request: `Hookdeck.RequestListRequest`**
 
 </dd>
 
@@ -3937,9 +3780,7 @@ await hookdeck.request.list();
 
 <dd>
 
-
-**requestOptions: `Request.RequestOptions`** 
-
+**requestOptions: `Request.RequestOptions`**
 
 </dd>
 
@@ -3948,14 +3789,11 @@ await hookdeck.request.list();
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.request.<a href="./src/api/resources/request/client/Client.ts">retrieve</a>(id) -> Hookdeck.Request</code> </summary>
 
@@ -3972,8 +3810,6 @@ await hookdeck.request.list();
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -4015,9 +3851,7 @@ await hookdeck.request.retrieve("id");
 
 <dd>
 
-
-**id: `string`** 
-
+**id: `string`**
 
 </dd>
 
@@ -4027,9 +3861,7 @@ await hookdeck.request.retrieve("id");
 
 <dd>
 
-
-**requestOptions: `Request.RequestOptions`** 
-
+**requestOptions: `Request.RequestOptions`**
 
 </dd>
 
@@ -4038,14 +3870,11 @@ await hookdeck.request.retrieve("id");
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.request.<a href="./src/api/resources/request/client/Client.ts">retrieveBody</a>(id) -> Hookdeck.RawBody</code> </summary>
 
@@ -4062,8 +3891,6 @@ await hookdeck.request.retrieve("id");
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -4105,9 +3932,7 @@ await hookdeck.request.retrieveBody("id");
 
 <dd>
 
-
-**id: `string`** 
-
+**id: `string`**
 
 </dd>
 
@@ -4117,9 +3942,7 @@ await hookdeck.request.retrieveBody("id");
 
 <dd>
 
-
-**requestOptions: `Request.RequestOptions`** 
-
+**requestOptions: `Request.RequestOptions`**
 
 </dd>
 
@@ -4128,14 +3951,11 @@ await hookdeck.request.retrieveBody("id");
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.request.<a href="./src/api/resources/request/client/Client.ts">retry</a>(id, { ...params }) -> Hookdeck.RetryRequest</code> </summary>
 
@@ -4152,8 +3972,6 @@ await hookdeck.request.retrieveBody("id");
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -4175,7 +3993,7 @@ await hookdeck.request.retrieveBody("id");
 
 ```ts
 await hookdeck.request.retry("id", {
-    webhookIds: ["webhook_ids"]
+    webhookIds: ["webhook_ids"],
 });
 ```
 
@@ -4197,9 +4015,7 @@ await hookdeck.request.retry("id", {
 
 <dd>
 
-
-**id: `string`** 
-
+**id: `string`**
 
 </dd>
 
@@ -4209,9 +4025,7 @@ await hookdeck.request.retry("id", {
 
 <dd>
 
-
-**request: `Hookdeck.RequestRetryRequest`** 
-
+**request: `Hookdeck.RequestRetryRequest`**
 
 </dd>
 
@@ -4221,9 +4035,7 @@ await hookdeck.request.retry("id", {
 
 <dd>
 
-
-**requestOptions: `Request.RequestOptions`** 
-
+**requestOptions: `Request.RequestOptions`**
 
 </dd>
 
@@ -4232,14 +4044,11 @@ await hookdeck.request.retry("id", {
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.request.<a href="./src/api/resources/request/client/Client.ts">listEvent</a>(id, { ...params }) -> Hookdeck.EventPaginatedResult</code> </summary>
 
@@ -4256,8 +4065,6 @@ await hookdeck.request.retry("id", {
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -4299,9 +4106,7 @@ await hookdeck.request.listEvent("id");
 
 <dd>
 
-
-**id: `string`** 
-
+**id: `string`**
 
 </dd>
 
@@ -4311,9 +4116,7 @@ await hookdeck.request.listEvent("id");
 
 <dd>
 
-
-**request: `Hookdeck.RequestListEventRequest`** 
-
+**request: `Hookdeck.RequestListEventRequest`**
 
 </dd>
 
@@ -4323,9 +4126,7 @@ await hookdeck.request.listEvent("id");
 
 <dd>
 
-
-**requestOptions: `Request.RequestOptions`** 
-
+**requestOptions: `Request.RequestOptions`**
 
 </dd>
 
@@ -4334,14 +4135,11 @@ await hookdeck.request.listEvent("id");
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.request.<a href="./src/api/resources/request/client/Client.ts">listIgnoredEvent</a>(id, { ...params }) -> Hookdeck.IgnoredEventPaginatedResult</code> </summary>
 
@@ -4358,8 +4156,6 @@ await hookdeck.request.listEvent("id");
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -4401,9 +4197,7 @@ await hookdeck.request.listIgnoredEvent("id");
 
 <dd>
 
-
-**id: `string`** 
-
+**id: `string`**
 
 </dd>
 
@@ -4413,9 +4207,7 @@ await hookdeck.request.listIgnoredEvent("id");
 
 <dd>
 
-
-**request: `Hookdeck.RequestListIgnoredEventRequest`** 
-
+**request: `Hookdeck.RequestListIgnoredEventRequest`**
 
 </dd>
 
@@ -4425,9 +4217,7 @@ await hookdeck.request.listIgnoredEvent("id");
 
 <dd>
 
-
-**requestOptions: `Request.RequestOptions`** 
-
+**requestOptions: `Request.RequestOptions`**
 
 </dd>
 
@@ -4436,19 +4226,13 @@ await hookdeck.request.listIgnoredEvent("id");
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
 
-
-
-
 ## RequestBulkRetry
-
 
 <details><summary> <code>hookdeck.requestBulkRetry.<a href="./src/api/resources/requestBulkRetry/client/Client.ts">list</a>({ ...params }) -> Hookdeck.BatchOperationPaginatedResult</code> </summary>
 
@@ -4465,8 +4249,6 @@ await hookdeck.request.listIgnoredEvent("id");
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -4508,9 +4290,7 @@ await hookdeck.requestBulkRetry.list();
 
 <dd>
 
-
-**request: `Hookdeck.RequestBulkRetryListRequest`** 
-
+**request: `Hookdeck.RequestBulkRetryListRequest`**
 
 </dd>
 
@@ -4520,9 +4300,7 @@ await hookdeck.requestBulkRetry.list();
 
 <dd>
 
-
-**requestOptions: `RequestBulkRetry.RequestOptions`** 
-
+**requestOptions: `RequestBulkRetry.RequestOptions`**
 
 </dd>
 
@@ -4531,14 +4309,11 @@ await hookdeck.requestBulkRetry.list();
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.requestBulkRetry.<a href="./src/api/resources/requestBulkRetry/client/Client.ts">create</a>({ ...params }) -> Hookdeck.BatchOperation</code> </summary>
 
@@ -4555,8 +4330,6 @@ await hookdeck.requestBulkRetry.list();
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -4598,9 +4371,7 @@ await hookdeck.requestBulkRetry.create();
 
 <dd>
 
-
-**request: `Hookdeck.RequestBulkRetryCreateRequest`** 
-
+**request: `Hookdeck.RequestBulkRetryCreateRequest`**
 
 </dd>
 
@@ -4610,9 +4381,7 @@ await hookdeck.requestBulkRetry.create();
 
 <dd>
 
-
-**requestOptions: `RequestBulkRetry.RequestOptions`** 
-
+**requestOptions: `RequestBulkRetry.RequestOptions`**
 
 </dd>
 
@@ -4621,14 +4390,11 @@ await hookdeck.requestBulkRetry.create();
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.requestBulkRetry.<a href="./src/api/resources/requestBulkRetry/client/Client.ts">plan</a>() -> Hookdeck.RequestBulkRetryPlanResponse</code> </summary>
 
@@ -4645,8 +4411,6 @@ await hookdeck.requestBulkRetry.create();
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -4688,9 +4452,7 @@ await hookdeck.requestBulkRetry.plan();
 
 <dd>
 
-
-**requestOptions: `RequestBulkRetry.RequestOptions`** 
-
+**requestOptions: `RequestBulkRetry.RequestOptions`**
 
 </dd>
 
@@ -4699,14 +4461,11 @@ await hookdeck.requestBulkRetry.plan();
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.requestBulkRetry.<a href="./src/api/resources/requestBulkRetry/client/Client.ts">retrieve</a>(id) -> Hookdeck.BatchOperation</code> </summary>
 
@@ -4723,8 +4482,6 @@ await hookdeck.requestBulkRetry.plan();
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -4766,9 +4523,7 @@ await hookdeck.requestBulkRetry.retrieve("id");
 
 <dd>
 
-
-**id: `string`** 
-
+**id: `string`**
 
 </dd>
 
@@ -4778,9 +4533,7 @@ await hookdeck.requestBulkRetry.retrieve("id");
 
 <dd>
 
-
-**requestOptions: `RequestBulkRetry.RequestOptions`** 
-
+**requestOptions: `RequestBulkRetry.RequestOptions`**
 
 </dd>
 
@@ -4789,14 +4542,11 @@ await hookdeck.requestBulkRetry.retrieve("id");
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.requestBulkRetry.<a href="./src/api/resources/requestBulkRetry/client/Client.ts">cancel</a>(id) -> Hookdeck.BatchOperation</code> </summary>
 
@@ -4813,8 +4563,6 @@ await hookdeck.requestBulkRetry.retrieve("id");
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -4856,9 +4604,7 @@ await hookdeck.requestBulkRetry.cancel("id");
 
 <dd>
 
-
-**id: `string`** 
-
+**id: `string`**
 
 </dd>
 
@@ -4868,9 +4614,7 @@ await hookdeck.requestBulkRetry.cancel("id");
 
 <dd>
 
-
-**requestOptions: `RequestBulkRetry.RequestOptions`** 
-
+**requestOptions: `RequestBulkRetry.RequestOptions`**
 
 </dd>
 
@@ -4879,19 +4623,13 @@ await hookdeck.requestBulkRetry.cancel("id");
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
 
-
-
-
 ## Source
-
 
 <details><summary> <code>hookdeck.source.<a href="./src/api/resources/source/client/Client.ts">list</a>({ ...params }) -> Hookdeck.SourcePaginatedResult</code> </summary>
 
@@ -4908,8 +4646,6 @@ await hookdeck.requestBulkRetry.cancel("id");
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -4951,9 +4687,7 @@ await hookdeck.source.list();
 
 <dd>
 
-
-**request: `Hookdeck.SourceListRequest`** 
-
+**request: `Hookdeck.SourceListRequest`**
 
 </dd>
 
@@ -4963,9 +4697,7 @@ await hookdeck.source.list();
 
 <dd>
 
-
-**requestOptions: `Source.RequestOptions`** 
-
+**requestOptions: `Source.RequestOptions`**
 
 </dd>
 
@@ -4974,14 +4706,11 @@ await hookdeck.source.list();
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.source.<a href="./src/api/resources/source/client/Client.ts">create</a>({ ...params }) -> Hookdeck.Source</code> </summary>
 
@@ -4998,8 +4727,6 @@ await hookdeck.source.list();
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -5021,7 +4748,7 @@ await hookdeck.source.list();
 
 ```ts
 await hookdeck.source.create({
-    name: "name"
+    name: "name",
 });
 ```
 
@@ -5043,9 +4770,7 @@ await hookdeck.source.create({
 
 <dd>
 
-
-**request: `Hookdeck.SourceCreateRequest`** 
-
+**request: `Hookdeck.SourceCreateRequest`**
 
 </dd>
 
@@ -5055,9 +4780,7 @@ await hookdeck.source.create({
 
 <dd>
 
-
-**requestOptions: `Source.RequestOptions`** 
-
+**requestOptions: `Source.RequestOptions`**
 
 </dd>
 
@@ -5066,14 +4789,11 @@ await hookdeck.source.create({
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.source.<a href="./src/api/resources/source/client/Client.ts">upsert</a>({ ...params }) -> Hookdeck.Source</code> </summary>
 
@@ -5090,8 +4810,6 @@ await hookdeck.source.create({
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -5113,7 +4831,7 @@ await hookdeck.source.create({
 
 ```ts
 await hookdeck.source.upsert({
-    name: "name"
+    name: "name",
 });
 ```
 
@@ -5135,9 +4853,7 @@ await hookdeck.source.upsert({
 
 <dd>
 
-
-**request: `Hookdeck.SourceUpsertRequest`** 
-
+**request: `Hookdeck.SourceUpsertRequest`**
 
 </dd>
 
@@ -5147,9 +4863,7 @@ await hookdeck.source.upsert({
 
 <dd>
 
-
-**requestOptions: `Source.RequestOptions`** 
-
+**requestOptions: `Source.RequestOptions`**
 
 </dd>
 
@@ -5158,14 +4872,11 @@ await hookdeck.source.upsert({
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.source.<a href="./src/api/resources/source/client/Client.ts">retrieve</a>(id, { ...params }) -> Hookdeck.Source</code> </summary>
 
@@ -5182,8 +4893,6 @@ await hookdeck.source.upsert({
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -5225,9 +4934,7 @@ await hookdeck.source.retrieve("id");
 
 <dd>
 
-
-**id: `string`** 
-
+**id: `string`**
 
 </dd>
 
@@ -5237,9 +4944,7 @@ await hookdeck.source.retrieve("id");
 
 <dd>
 
-
-**request: `Hookdeck.SourceRetrieveRequest`** 
-
+**request: `Hookdeck.SourceRetrieveRequest`**
 
 </dd>
 
@@ -5249,9 +4954,7 @@ await hookdeck.source.retrieve("id");
 
 <dd>
 
-
-**requestOptions: `Source.RequestOptions`** 
-
+**requestOptions: `Source.RequestOptions`**
 
 </dd>
 
@@ -5260,14 +4963,11 @@ await hookdeck.source.retrieve("id");
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.source.<a href="./src/api/resources/source/client/Client.ts">update</a>(id, { ...params }) -> Hookdeck.Source</code> </summary>
 
@@ -5284,8 +4984,6 @@ await hookdeck.source.retrieve("id");
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -5327,9 +5025,7 @@ await hookdeck.source.update("id");
 
 <dd>
 
-
-**id: `string`** 
-
+**id: `string`**
 
 </dd>
 
@@ -5339,9 +5035,7 @@ await hookdeck.source.update("id");
 
 <dd>
 
-
-**request: `Hookdeck.SourceUpdateRequest`** 
-
+**request: `Hookdeck.SourceUpdateRequest`**
 
 </dd>
 
@@ -5351,9 +5045,7 @@ await hookdeck.source.update("id");
 
 <dd>
 
-
-**requestOptions: `Source.RequestOptions`** 
-
+**requestOptions: `Source.RequestOptions`**
 
 </dd>
 
@@ -5362,14 +5054,11 @@ await hookdeck.source.update("id");
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.source.<a href="./src/api/resources/source/client/Client.ts">delete</a>(id) -> Hookdeck.SourceDeleteResponse</code> </summary>
 
@@ -5386,8 +5075,6 @@ await hookdeck.source.update("id");
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -5429,9 +5116,7 @@ await hookdeck.source.delete("id");
 
 <dd>
 
-
-**id: `string`** 
-
+**id: `string`**
 
 </dd>
 
@@ -5441,9 +5126,7 @@ await hookdeck.source.delete("id");
 
 <dd>
 
-
-**requestOptions: `Source.RequestOptions`** 
-
+**requestOptions: `Source.RequestOptions`**
 
 </dd>
 
@@ -5452,14 +5135,11 @@ await hookdeck.source.delete("id");
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.source.<a href="./src/api/resources/source/client/Client.ts">disable</a>(id) -> Hookdeck.Source</code> </summary>
 
@@ -5476,8 +5156,6 @@ await hookdeck.source.delete("id");
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -5519,9 +5197,7 @@ await hookdeck.source.disable("id");
 
 <dd>
 
-
-**id: `string`** 
-
+**id: `string`**
 
 </dd>
 
@@ -5531,9 +5207,7 @@ await hookdeck.source.disable("id");
 
 <dd>
 
-
-**requestOptions: `Source.RequestOptions`** 
-
+**requestOptions: `Source.RequestOptions`**
 
 </dd>
 
@@ -5542,14 +5216,11 @@ await hookdeck.source.disable("id");
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.source.<a href="./src/api/resources/source/client/Client.ts">enable</a>(id) -> Hookdeck.Source</code> </summary>
 
@@ -5566,8 +5237,6 @@ await hookdeck.source.disable("id");
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -5609,9 +5278,7 @@ await hookdeck.source.enable("id");
 
 <dd>
 
-
-**id: `string`** 
-
+**id: `string`**
 
 </dd>
 
@@ -5621,9 +5288,7 @@ await hookdeck.source.enable("id");
 
 <dd>
 
-
-**requestOptions: `Source.RequestOptions`** 
-
+**requestOptions: `Source.RequestOptions`**
 
 </dd>
 
@@ -5632,19 +5297,13 @@ await hookdeck.source.enable("id");
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
 
-
-
-
 ## Notification
-
 
 <details><summary> <code>hookdeck.notification.<a href="./src/api/resources/notification/client/Client.ts">update</a>({ ...params }) -> Hookdeck.ToggleWebhookNotifications</code> </summary>
 
@@ -5661,8 +5320,6 @@ await hookdeck.source.enable("id");
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -5704,9 +5361,7 @@ await hookdeck.notification.update();
 
 <dd>
 
-
-**request: `Hookdeck.NotificationUpdateRequest`** 
-
+**request: `Hookdeck.NotificationUpdateRequest`**
 
 </dd>
 
@@ -5716,9 +5371,7 @@ await hookdeck.notification.update();
 
 <dd>
 
-
-**requestOptions: `Notification.RequestOptions`** 
-
+**requestOptions: `Notification.RequestOptions`**
 
 </dd>
 
@@ -5727,19 +5380,13 @@ await hookdeck.notification.update();
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
 
-
-
-
 ## CustomDomain
-
 
 <details><summary> <code>hookdeck.customDomain.<a href="./src/api/resources/customDomain/client/Client.ts">list</a>() -> Hookdeck.ListCustomDomainSchema</code> </summary>
 
@@ -5756,8 +5403,6 @@ await hookdeck.notification.update();
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -5799,9 +5444,7 @@ await hookdeck.customDomain.list();
 
 <dd>
 
-
-**requestOptions: `CustomDomain.RequestOptions`** 
-
+**requestOptions: `CustomDomain.RequestOptions`**
 
 </dd>
 
@@ -5810,14 +5453,11 @@ await hookdeck.customDomain.list();
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.customDomain.<a href="./src/api/resources/customDomain/client/Client.ts">create</a>({ ...params }) -> Hookdeck.AddCustomHostname</code> </summary>
 
@@ -5834,8 +5474,6 @@ await hookdeck.customDomain.list();
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -5857,7 +5495,7 @@ await hookdeck.customDomain.list();
 
 ```ts
 await hookdeck.customDomain.create({
-    hostname: "hostname"
+    hostname: "hostname",
 });
 ```
 
@@ -5879,9 +5517,7 @@ await hookdeck.customDomain.create({
 
 <dd>
 
-
-**request: `Hookdeck.AddCustomHostname`** 
-
+**request: `Hookdeck.AddCustomHostname`**
 
 </dd>
 
@@ -5891,9 +5527,7 @@ await hookdeck.customDomain.create({
 
 <dd>
 
-
-**requestOptions: `CustomDomain.RequestOptions`** 
-
+**requestOptions: `CustomDomain.RequestOptions`**
 
 </dd>
 
@@ -5902,14 +5536,11 @@ await hookdeck.customDomain.create({
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.customDomain.<a href="./src/api/resources/customDomain/client/Client.ts">delete</a>(domainId) -> Hookdeck.DeleteCustomDomainSchema</code> </summary>
 
@@ -5926,8 +5557,6 @@ await hookdeck.customDomain.create({
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -5969,9 +5598,7 @@ await hookdeck.customDomain.delete("domain_id");
 
 <dd>
 
-
-**domainId: `string`** 
-
+**domainId: `string`**
 
 </dd>
 
@@ -5981,9 +5608,7 @@ await hookdeck.customDomain.delete("domain_id");
 
 <dd>
 
-
-**requestOptions: `CustomDomain.RequestOptions`** 
-
+**requestOptions: `CustomDomain.RequestOptions`**
 
 </dd>
 
@@ -5992,19 +5617,13 @@ await hookdeck.customDomain.delete("domain_id");
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
 
-
-
-
 ## Transformation
-
 
 <details><summary> <code>hookdeck.transformation.<a href="./src/api/resources/transformation/client/Client.ts">list</a>({ ...params }) -> Hookdeck.TransformationPaginatedResult</code> </summary>
 
@@ -6021,8 +5640,6 @@ await hookdeck.customDomain.delete("domain_id");
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -6064,9 +5681,7 @@ await hookdeck.transformation.list();
 
 <dd>
 
-
-**request: `Hookdeck.TransformationListRequest`** 
-
+**request: `Hookdeck.TransformationListRequest`**
 
 </dd>
 
@@ -6076,9 +5691,7 @@ await hookdeck.transformation.list();
 
 <dd>
 
-
-**requestOptions: `Transformation.RequestOptions`** 
-
+**requestOptions: `Transformation.RequestOptions`**
 
 </dd>
 
@@ -6087,14 +5700,11 @@ await hookdeck.transformation.list();
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.transformation.<a href="./src/api/resources/transformation/client/Client.ts">create</a>({ ...params }) -> Hookdeck.Transformation</code> </summary>
 
@@ -6111,8 +5721,6 @@ await hookdeck.transformation.list();
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -6135,7 +5743,7 @@ await hookdeck.transformation.list();
 ```ts
 await hookdeck.transformation.create({
     name: "name",
-    code: "code"
+    code: "code",
 });
 ```
 
@@ -6157,9 +5765,7 @@ await hookdeck.transformation.create({
 
 <dd>
 
-
-**request: `Hookdeck.TransformationCreateRequest`** 
-
+**request: `Hookdeck.TransformationCreateRequest`**
 
 </dd>
 
@@ -6169,9 +5775,7 @@ await hookdeck.transformation.create({
 
 <dd>
 
-
-**requestOptions: `Transformation.RequestOptions`** 
-
+**requestOptions: `Transformation.RequestOptions`**
 
 </dd>
 
@@ -6180,14 +5784,11 @@ await hookdeck.transformation.create({
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.transformation.<a href="./src/api/resources/transformation/client/Client.ts">upsert</a>({ ...params }) -> Hookdeck.Transformation</code> </summary>
 
@@ -6204,8 +5805,6 @@ await hookdeck.transformation.create({
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -6228,7 +5827,7 @@ await hookdeck.transformation.create({
 ```ts
 await hookdeck.transformation.upsert({
     name: "name",
-    code: "code"
+    code: "code",
 });
 ```
 
@@ -6250,9 +5849,7 @@ await hookdeck.transformation.upsert({
 
 <dd>
 
-
-**request: `Hookdeck.TransformationUpsertRequest`** 
-
+**request: `Hookdeck.TransformationUpsertRequest`**
 
 </dd>
 
@@ -6262,9 +5859,7 @@ await hookdeck.transformation.upsert({
 
 <dd>
 
-
-**requestOptions: `Transformation.RequestOptions`** 
-
+**requestOptions: `Transformation.RequestOptions`**
 
 </dd>
 
@@ -6273,14 +5868,11 @@ await hookdeck.transformation.upsert({
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.transformation.<a href="./src/api/resources/transformation/client/Client.ts">retrieve</a>(id) -> Hookdeck.Transformation</code> </summary>
 
@@ -6297,8 +5889,6 @@ await hookdeck.transformation.upsert({
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -6340,9 +5930,7 @@ await hookdeck.transformation.retrieve("id");
 
 <dd>
 
-
-**id: `string`** 
-
+**id: `string`**
 
 </dd>
 
@@ -6352,9 +5940,7 @@ await hookdeck.transformation.retrieve("id");
 
 <dd>
 
-
-**requestOptions: `Transformation.RequestOptions`** 
-
+**requestOptions: `Transformation.RequestOptions`**
 
 </dd>
 
@@ -6363,14 +5949,11 @@ await hookdeck.transformation.retrieve("id");
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.transformation.<a href="./src/api/resources/transformation/client/Client.ts">update</a>(id, { ...params }) -> Hookdeck.Transformation</code> </summary>
 
@@ -6387,8 +5970,6 @@ await hookdeck.transformation.retrieve("id");
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -6430,9 +6011,7 @@ await hookdeck.transformation.update("id");
 
 <dd>
 
-
-**id: `string`** 
-
+**id: `string`**
 
 </dd>
 
@@ -6442,9 +6021,7 @@ await hookdeck.transformation.update("id");
 
 <dd>
 
-
-**request: `Hookdeck.TransformationUpdateRequest`** 
-
+**request: `Hookdeck.TransformationUpdateRequest`**
 
 </dd>
 
@@ -6454,9 +6031,7 @@ await hookdeck.transformation.update("id");
 
 <dd>
 
-
-**requestOptions: `Transformation.RequestOptions`** 
-
+**requestOptions: `Transformation.RequestOptions`**
 
 </dd>
 
@@ -6465,14 +6040,11 @@ await hookdeck.transformation.update("id");
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.transformation.<a href="./src/api/resources/transformation/client/Client.ts">run</a>({ ...params }) -> Hookdeck.TransformationExecutorOutput</code> </summary>
 
@@ -6489,8 +6061,6 @@ await hookdeck.transformation.update("id");
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -6532,9 +6102,7 @@ await hookdeck.transformation.run();
 
 <dd>
 
-
-**request: `Hookdeck.TransformationRunRequest`** 
-
+**request: `Hookdeck.TransformationRunRequest`**
 
 </dd>
 
@@ -6544,9 +6112,7 @@ await hookdeck.transformation.run();
 
 <dd>
 
-
-**requestOptions: `Transformation.RequestOptions`** 
-
+**requestOptions: `Transformation.RequestOptions`**
 
 </dd>
 
@@ -6555,14 +6121,11 @@ await hookdeck.transformation.run();
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.transformation.<a href="./src/api/resources/transformation/client/Client.ts">listExecution</a>(id, { ...params }) -> Hookdeck.TransformationExecutionPaginatedResult</code> </summary>
 
@@ -6579,8 +6142,6 @@ await hookdeck.transformation.run();
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -6622,9 +6183,7 @@ await hookdeck.transformation.listExecution("id");
 
 <dd>
 
-
-**id: `string`** 
-
+**id: `string`**
 
 </dd>
 
@@ -6634,9 +6193,7 @@ await hookdeck.transformation.listExecution("id");
 
 <dd>
 
-
-**request: `Hookdeck.TransformationListExecutionRequest`** 
-
+**request: `Hookdeck.TransformationListExecutionRequest`**
 
 </dd>
 
@@ -6646,9 +6203,7 @@ await hookdeck.transformation.listExecution("id");
 
 <dd>
 
-
-**requestOptions: `Transformation.RequestOptions`** 
-
+**requestOptions: `Transformation.RequestOptions`**
 
 </dd>
 
@@ -6657,14 +6212,11 @@ await hookdeck.transformation.listExecution("id");
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.transformation.<a href="./src/api/resources/transformation/client/Client.ts">retrieveExecution</a>(id, executionId) -> Hookdeck.TransformationExecution</code> </summary>
 
@@ -6681,8 +6233,6 @@ await hookdeck.transformation.listExecution("id");
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -6724,9 +6274,7 @@ await hookdeck.transformation.retrieveExecution("id", "execution_id");
 
 <dd>
 
-
-**id: `string`** 
-
+**id: `string`**
 
 </dd>
 
@@ -6736,9 +6284,7 @@ await hookdeck.transformation.retrieveExecution("id", "execution_id");
 
 <dd>
 
-
-**executionId: `string`** 
-
+**executionId: `string`**
 
 </dd>
 
@@ -6748,9 +6294,7 @@ await hookdeck.transformation.retrieveExecution("id", "execution_id");
 
 <dd>
 
-
-**requestOptions: `Transformation.RequestOptions`** 
-
+**requestOptions: `Transformation.RequestOptions`**
 
 </dd>
 
@@ -6759,19 +6303,13 @@ await hookdeck.transformation.retrieveExecution("id", "execution_id");
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
 
-
-
-
 ## Connection
-
 
 <details><summary> <code>hookdeck.connection.<a href="./src/api/resources/connection/client/Client.ts">list</a>({ ...params }) -> Hookdeck.ConnectionPaginatedResult</code> </summary>
 
@@ -6788,8 +6326,6 @@ await hookdeck.transformation.retrieveExecution("id", "execution_id");
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -6831,9 +6367,7 @@ await hookdeck.connection.list();
 
 <dd>
 
-
-**request: `Hookdeck.ConnectionListRequest`** 
-
+**request: `Hookdeck.ConnectionListRequest`**
 
 </dd>
 
@@ -6843,9 +6377,7 @@ await hookdeck.connection.list();
 
 <dd>
 
-
-**requestOptions: `Connection.RequestOptions`** 
-
+**requestOptions: `Connection.RequestOptions`**
 
 </dd>
 
@@ -6854,14 +6386,11 @@ await hookdeck.connection.list();
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.connection.<a href="./src/api/resources/connection/client/Client.ts">create</a>({ ...params }) -> Hookdeck.Connection</code> </summary>
 
@@ -6878,8 +6407,6 @@ await hookdeck.connection.list();
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -6921,9 +6448,7 @@ await hookdeck.connection.create();
 
 <dd>
 
-
-**request: `Hookdeck.ConnectionCreateRequest`** 
-
+**request: `Hookdeck.ConnectionCreateRequest`**
 
 </dd>
 
@@ -6933,9 +6458,7 @@ await hookdeck.connection.create();
 
 <dd>
 
-
-**requestOptions: `Connection.RequestOptions`** 
-
+**requestOptions: `Connection.RequestOptions`**
 
 </dd>
 
@@ -6944,14 +6467,11 @@ await hookdeck.connection.create();
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.connection.<a href="./src/api/resources/connection/client/Client.ts">upsert</a>({ ...params }) -> Hookdeck.Connection</code> </summary>
 
@@ -6968,8 +6488,6 @@ await hookdeck.connection.create();
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -7011,9 +6529,7 @@ await hookdeck.connection.upsert();
 
 <dd>
 
-
-**request: `Hookdeck.ConnectionUpsertRequest`** 
-
+**request: `Hookdeck.ConnectionUpsertRequest`**
 
 </dd>
 
@@ -7023,9 +6539,7 @@ await hookdeck.connection.upsert();
 
 <dd>
 
-
-**requestOptions: `Connection.RequestOptions`** 
-
+**requestOptions: `Connection.RequestOptions`**
 
 </dd>
 
@@ -7034,14 +6548,11 @@ await hookdeck.connection.upsert();
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.connection.<a href="./src/api/resources/connection/client/Client.ts">count</a>({ ...params }) -> Hookdeck.ConnectionCountResponse</code> </summary>
 
@@ -7058,8 +6569,6 @@ await hookdeck.connection.upsert();
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -7101,9 +6610,7 @@ await hookdeck.connection.count();
 
 <dd>
 
-
-**request: `Hookdeck.ConnectionCountRequest`** 
-
+**request: `Hookdeck.ConnectionCountRequest`**
 
 </dd>
 
@@ -7113,9 +6620,7 @@ await hookdeck.connection.count();
 
 <dd>
 
-
-**requestOptions: `Connection.RequestOptions`** 
-
+**requestOptions: `Connection.RequestOptions`**
 
 </dd>
 
@@ -7124,14 +6629,11 @@ await hookdeck.connection.count();
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.connection.<a href="./src/api/resources/connection/client/Client.ts">retrieve</a>(id) -> Hookdeck.Connection</code> </summary>
 
@@ -7148,8 +6650,6 @@ await hookdeck.connection.count();
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -7191,9 +6691,7 @@ await hookdeck.connection.retrieve("id");
 
 <dd>
 
-
-**id: `string`** 
-
+**id: `string`**
 
 </dd>
 
@@ -7203,9 +6701,7 @@ await hookdeck.connection.retrieve("id");
 
 <dd>
 
-
-**requestOptions: `Connection.RequestOptions`** 
-
+**requestOptions: `Connection.RequestOptions`**
 
 </dd>
 
@@ -7214,14 +6710,11 @@ await hookdeck.connection.retrieve("id");
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.connection.<a href="./src/api/resources/connection/client/Client.ts">update</a>(id, { ...params }) -> Hookdeck.Connection</code> </summary>
 
@@ -7238,8 +6731,6 @@ await hookdeck.connection.retrieve("id");
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -7281,9 +6772,7 @@ await hookdeck.connection.update("id");
 
 <dd>
 
-
-**id: `string`** 
-
+**id: `string`**
 
 </dd>
 
@@ -7293,9 +6782,7 @@ await hookdeck.connection.update("id");
 
 <dd>
 
-
-**request: `Hookdeck.ConnectionUpdateRequest`** 
-
+**request: `Hookdeck.ConnectionUpdateRequest`**
 
 </dd>
 
@@ -7305,9 +6792,7 @@ await hookdeck.connection.update("id");
 
 <dd>
 
-
-**requestOptions: `Connection.RequestOptions`** 
-
+**requestOptions: `Connection.RequestOptions`**
 
 </dd>
 
@@ -7316,14 +6801,11 @@ await hookdeck.connection.update("id");
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.connection.<a href="./src/api/resources/connection/client/Client.ts">delete</a>(id) -> Hookdeck.ConnectionDeleteResponse</code> </summary>
 
@@ -7340,8 +6822,6 @@ await hookdeck.connection.update("id");
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -7383,9 +6863,7 @@ await hookdeck.connection.delete("id");
 
 <dd>
 
-
-**id: `string`** 
-
+**id: `string`**
 
 </dd>
 
@@ -7395,9 +6873,7 @@ await hookdeck.connection.delete("id");
 
 <dd>
 
-
-**requestOptions: `Connection.RequestOptions`** 
-
+**requestOptions: `Connection.RequestOptions`**
 
 </dd>
 
@@ -7406,14 +6882,11 @@ await hookdeck.connection.delete("id");
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.connection.<a href="./src/api/resources/connection/client/Client.ts">disable</a>(id) -> Hookdeck.Connection</code> </summary>
 
@@ -7430,8 +6903,6 @@ await hookdeck.connection.delete("id");
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -7473,9 +6944,7 @@ await hookdeck.connection.disable("id");
 
 <dd>
 
-
-**id: `string`** 
-
+**id: `string`**
 
 </dd>
 
@@ -7485,9 +6954,7 @@ await hookdeck.connection.disable("id");
 
 <dd>
 
-
-**requestOptions: `Connection.RequestOptions`** 
-
+**requestOptions: `Connection.RequestOptions`**
 
 </dd>
 
@@ -7496,14 +6963,11 @@ await hookdeck.connection.disable("id");
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.connection.<a href="./src/api/resources/connection/client/Client.ts">enable</a>(id) -> Hookdeck.Connection</code> </summary>
 
@@ -7520,8 +6984,6 @@ await hookdeck.connection.disable("id");
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -7563,9 +7025,7 @@ await hookdeck.connection.enable("id");
 
 <dd>
 
-
-**id: `string`** 
-
+**id: `string`**
 
 </dd>
 
@@ -7575,9 +7035,7 @@ await hookdeck.connection.enable("id");
 
 <dd>
 
-
-**requestOptions: `Connection.RequestOptions`** 
-
+**requestOptions: `Connection.RequestOptions`**
 
 </dd>
 
@@ -7586,14 +7044,11 @@ await hookdeck.connection.enable("id");
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.connection.<a href="./src/api/resources/connection/client/Client.ts">pause</a>(id) -> Hookdeck.Connection</code> </summary>
 
@@ -7610,8 +7065,6 @@ await hookdeck.connection.enable("id");
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -7653,9 +7106,7 @@ await hookdeck.connection.pause("id");
 
 <dd>
 
-
-**id: `string`** 
-
+**id: `string`**
 
 </dd>
 
@@ -7665,9 +7116,7 @@ await hookdeck.connection.pause("id");
 
 <dd>
 
-
-**requestOptions: `Connection.RequestOptions`** 
-
+**requestOptions: `Connection.RequestOptions`**
 
 </dd>
 
@@ -7676,14 +7125,11 @@ await hookdeck.connection.pause("id");
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
 
 <details><summary> <code>hookdeck.connection.<a href="./src/api/resources/connection/client/Client.ts">unpause</a>(id) -> Hookdeck.Connection</code> </summary>
 
@@ -7700,8 +7146,6 @@ await hookdeck.connection.pause("id");
 <dl>
 
 <dd>
-
-
 
 </dd>
 
@@ -7743,9 +7187,7 @@ await hookdeck.connection.unpause("id");
 
 <dd>
 
-
-**id: `string`** 
-
+**id: `string`**
 
 </dd>
 
@@ -7755,9 +7197,7 @@ await hookdeck.connection.unpause("id");
 
 <dd>
 
-
-**requestOptions: `Connection.RequestOptions`** 
-
+**requestOptions: `Connection.RequestOptions`**
 
 </dd>
 
@@ -7766,12 +7206,8 @@ await hookdeck.connection.unpause("id");
 </dd>
 
 </dl>
-
-
 
 </dd>
 
 </dl>
 </details>
-
-

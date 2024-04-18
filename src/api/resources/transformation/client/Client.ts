@@ -4,10 +4,10 @@
 
 import * as environments from "../../../../environments";
 import * as core from "../../../../core";
-import * as Hookdeck from "../../..";
+import * as Hookdeck from "../../../index";
 import urlJoin from "url-join";
-import * as serializers from "../../../../serialization";
-import * as errors from "../../../../errors";
+import * as serializers from "../../../../serialization/index";
+import * as errors from "../../../../errors/index";
 
 export declare namespace Transformation {
     interface Options {
@@ -32,6 +32,17 @@ export class Transformation {
      *
      * @example
      *     await hookdeck.transformation.list()
+     *
+     * @example
+     *     await hookdeck.transformation.list({
+     *         id: "string",
+     *         name: "string",
+     *         orderBy: Hookdeck.TransformationListRequestOrderBy.CreatedAt,
+     *         dir: Hookdeck.TransformationListRequestDir.Asc,
+     *         limit: 1,
+     *         next: "string",
+     *         prev: "string"
+     *     })
      */
     public async list(
         request: Hookdeck.TransformationListRequest = {},
@@ -77,7 +88,7 @@ export class Transformation {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.1.3",
+                "X-Fern-SDK-Version": "0.1.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -166,7 +177,7 @@ export class Transformation {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.1.3",
+                "X-Fern-SDK-Version": "0.1.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -257,7 +268,7 @@ export class Transformation {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.1.3",
+                "X-Fern-SDK-Version": "0.1.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -329,6 +340,9 @@ export class Transformation {
      *
      * @example
      *     await hookdeck.transformation.retrieve("id")
+     *
+     * @example
+     *     await hookdeck.transformation.retrieve("string")
      */
     public async retrieve(
         id: string,
@@ -344,7 +358,7 @@ export class Transformation {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.1.3",
+                "X-Fern-SDK-Version": "0.1.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -405,6 +419,9 @@ export class Transformation {
      *
      * @example
      *     await hookdeck.transformation.update("id")
+     *
+     * @example
+     *     await hookdeck.transformation.update("string")
      */
     public async update(
         id: string,
@@ -421,7 +438,7 @@ export class Transformation {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.1.3",
+                "X-Fern-SDK-Version": "0.1.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -519,7 +536,7 @@ export class Transformation {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.1.3",
+                "X-Fern-SDK-Version": "0.1.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -590,6 +607,19 @@ export class Transformation {
      *
      * @example
      *     await hookdeck.transformation.listExecution("id")
+     *
+     * @example
+     *     await hookdeck.transformation.listExecution("string", {
+     *         logLevel: Hookdeck.TransformationListExecutionRequestLogLevel.Debug,
+     *         webhookId: "string",
+     *         issueId: "string",
+     *         createdAt: new Date("2024-01-15T09:30:00.000Z"),
+     *         orderBy: Hookdeck.TransformationListExecutionRequestOrderBy.CreatedAt,
+     *         dir: Hookdeck.TransformationListExecutionRequestDir.Asc,
+     *         limit: 1,
+     *         next: "string",
+     *         prev: "string"
+     *     })
      */
     public async listExecution(
         id: string,
@@ -644,7 +674,7 @@ export class Transformation {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.1.3",
+                "X-Fern-SDK-Version": "0.1.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -714,6 +744,9 @@ export class Transformation {
      *
      * @example
      *     await hookdeck.transformation.retrieveExecution("id", "execution_id")
+     *
+     * @example
+     *     await hookdeck.transformation.retrieveExecution("string", "string")
      */
     public async retrieveExecution(
         id: string,
@@ -730,7 +763,7 @@ export class Transformation {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.1.3",
+                "X-Fern-SDK-Version": "0.1.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -783,7 +816,7 @@ export class Transformation {
         }
     }
 
-    protected async _getAuthorizationHeader() {
+    protected async _getAuthorizationHeader(): Promise<string> {
         return `Bearer ${await core.Supplier.get(this._options.token)}`;
     }
 }

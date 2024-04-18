@@ -4,10 +4,10 @@
 
 import * as environments from "../../../../environments";
 import * as core from "../../../../core";
-import * as Hookdeck from "../../..";
+import * as Hookdeck from "../../../index";
 import urlJoin from "url-join";
-import * as serializers from "../../../../serialization";
-import * as errors from "../../../../errors";
+import * as serializers from "../../../../serialization/index";
+import * as errors from "../../../../errors/index";
 
 export declare namespace Attempt {
     interface Options {
@@ -32,6 +32,16 @@ export class Attempt {
      *
      * @example
      *     await hookdeck.attempt.list()
+     *
+     * @example
+     *     await hookdeck.attempt.list({
+     *         eventId: "string",
+     *         orderBy: Hookdeck.AttemptListRequestOrderBy.CreatedAt,
+     *         dir: Hookdeck.AttemptListRequestDir.Asc,
+     *         limit: 1,
+     *         next: "string",
+     *         prev: "string"
+     *     })
      */
     public async list(
         request: Hookdeck.AttemptListRequest = {},
@@ -73,7 +83,7 @@ export class Attempt {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.1.3",
+                "X-Fern-SDK-Version": "0.1.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -143,6 +153,9 @@ export class Attempt {
      *
      * @example
      *     await hookdeck.attempt.retrieve("id")
+     *
+     * @example
+     *     await hookdeck.attempt.retrieve("string")
      */
     public async retrieve(
         id: string,
@@ -158,7 +171,7 @@ export class Attempt {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.1.3",
+                "X-Fern-SDK-Version": "0.1.4",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -211,7 +224,7 @@ export class Attempt {
         }
     }
 
-    protected async _getAuthorizationHeader() {
+    protected async _getAuthorizationHeader(): Promise<string> {
         return `Bearer ${await core.Supplier.get(this._options.token)}`;
     }
 }
