@@ -7,18 +7,21 @@ The Hookdeck TypeScript SDK provides convenient access to the Hookdeck API from 
 
 ## Documentation
 
-API reference documentation is available [here](https://hookdeck.com/docs/api).
-
-## Reference
-
-A full reference of the SDK is available [here](./reference.md).
+- [Hookdeck API reference](https://hookdeck.com/docs/api)
+- [SDK Reference](./reference.md)
 
 ## Installation
 
 ```bash
 npm install --save @hookdeck/sdk
-# or
+```
+
+```bash
 yarn add @hookdeck/sdk
+```
+
+```bash
+deno add @hookdeck/sdk
 ```
 
 ## Usage
@@ -29,15 +32,19 @@ import { HookdeckClient, Hookdeck } from '@hookdeck/sdk';
 const hookdeck = new HookdeckClient({
   token: "YOUR_TOKEN_GOES_HERE"
 });
-const connection = await hookdeck.connection.create({
-  "name": "shopify-my-api",
-  "source": {
-    "name": "shopify"
+
+const connection = await hookdeck.connection.upsert({
+  name: "inbound-example",
+  source: {
+    name: "inbound"
   },
-  "destination": {
-    "name": "my-api",
+  destination: {
+    name: "outbound",
+    url: "https://mock.hookdeck.com"
   }
 });
+
+console.log("Created or updated Connection. Source URL:", connection.source.url);
 ```
 
 ## Request and Response Types
