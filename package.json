@@ -1,6 +1,6 @@
 {
     "name": "@hookdeck/sdk",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "private": false,
     "repository": "https://github.com/hookdeck/hookdeck-typescript-sdk",
     "main": "./index.js",
@@ -9,7 +9,7 @@
         "format": "prettier . --write --ignore-unknown",
         "build": "tsc",
         "prepack": "cp -rv dist/. .",
-        "test": "fern test --command='jest'"
+        "test": "jest"
     },
     "dependencies": {
         "url-join": "4.0.1",
