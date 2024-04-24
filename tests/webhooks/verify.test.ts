@@ -17,7 +17,7 @@ describe("Hookdeck webhook verification", () => {
     it("should succeed with valid additional signature", async () => {
         const result = await verifyWebhookSignature({
             signature: "invalid-signature",
-            secondarySignture: VALID_SIGNATURE,
+            secondarySignature: VALID_SIGNATURE,
             rawBody: VALID_RAW_BODY,
             signingSecret: VALID_SIGNING_SECRET,
         });

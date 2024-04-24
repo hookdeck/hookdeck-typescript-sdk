@@ -20,7 +20,7 @@ const createHS256Signature = async ({ signingSecret, data }: { signingSecret: st
 
 export type HookdeckVerifyArguments = {
     signature: string;
-    secondarySignture?: string;
+    secondarySignature?: string;
     rawBody: string;
     signingSecret: string;
 };
@@ -50,11 +50,11 @@ export const verifyWebhookSignature = async ({
     signature,
     rawBody,
     signingSecret,
-    secondarySignture,
+    secondarySignature,
 }: HookdeckVerifyArguments): Promise<HookdeckVerificationResult> => {
     const signatureCheck = await createHS256Signature({ signingSecret, data: rawBody });
 
     return {
-        isValidSignature: signatureCheck === signature || signatureCheck === secondarySignture,
+        isValidSignature: signatureCheck === signature || signatureCheck === secondarySignature,
     };
 };
