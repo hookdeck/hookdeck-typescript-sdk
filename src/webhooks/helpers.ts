@@ -8,7 +8,7 @@ const createHS256Signature = async ({ signingSecret, data }: { signingSecret: st
     const enc = new TextEncoder();
 
     let key = await subtle.importKey("raw", enc.encode(signingSecret), ALGORITHM, false, ["sign"]);
-    let signatureBuffer = await crypto.subtle.sign(ALGORITHM.name, key, enc.encode(data));
+    let signatureBuffer = await subtle.sign(ALGORITHM.name, key, enc.encode(data));
     let signature = Buffer.from(signatureBuffer).toString("base64");
 
     // Useful to check signature creation
