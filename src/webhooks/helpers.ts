@@ -1,54 +1,60 @@
-const { subtle } = require("node:crypto").webcrypto;
+// const { webcrypto, createHmac } = require("node:crypto");
+const { webcrypto } = require("node:crypto");
+const { subtle } = webcrypto;
 
-type HookdeckVerifyArguments = {
+const ALGORITHM = { name: "HMAC", hash: "SHA-256" };
+
+const createHS256Signature = async ({ signingSecret, data }: { signingSecret: string; data: string }) => {
+    const enc = new TextEncoder();
+
+    let key = await subtle.importKey("raw", enc.encode(signingSecret), ALGORITHM, false, ["sign"]);
+    let signatureBuffer = await crypto.subtle.sign(ALGORITHM.name, key, enc.encode(data));
+    let signature = Buffer.from(signatureBuffer).toString("base64");
+
+    // Useful to check signature creation
+    // const hash = createHmac("sha256", signingSecret).update(data).digest("base64");
+    // console.log({ signature, hash });
+
+    return signature;
+};
+
+export type HookdeckVerifyArguments = {
     signature: string;
-    additionalSignature?: string;
+    secondarySignture?: string;
     rawBody: string;
     signingSecret: string;
 };
 
-type HookdeckVerificationResult = {
+export type HookdeckVerificationResult = {
     isValidSignature: boolean;
 };
 
-const ALGORITHM = { name: "HMAC", hash: "SHA-256" };
-
-async function sign({ key, data }: { key: string; data: string }) {
-    const ec = new TextEncoder();
-    const signature = await subtle.sign(ALGORITHM, key, ec.encode(data));
-    return signature;
-}
-
-async function verify({ key, signature, data }: { key: string; signature: string; data: string }) {
-    console.log({ key, signature });
-    const ec = new TextEncoder();
-    const verified = await subtle.verify(ALGORITHM, key, signature, ec.encode(data));
-    return verified;
-}
-
-const Verify = async ({
+/**
+ * Verify the Hookdeck webhook signature.
+ *
+ * @example
+ *     const result = await verifyWebhookSignature({
+ *         signature: "kKb0yljhY9tBo7oihOMTvRayKCUpCNVujkoTMNoGdGM=",
+ *         rawBody: `{"key1":"value1", "key2":"value2"}`,
+ *         signingSecret: "5fthvdmj8gtkzdv93mwkdpbupgwgfu4fu8xf4rro2oufn6qlhc",
+ *     })
+ *
+ *     if(!result.isValidSignature) {
+ *         // Reject the webhook payload
+ *     }
+ *     else {
+ *         // Proceed with the webhook payload
+ *     }
+ */
+export const verifyWebhookSignature = async ({
     signature,
-    additionalSignature,
     rawBody,
     signingSecret,
+    secondarySignture,
 }: HookdeckVerifyArguments): Promise<HookdeckVerificationResult> => {
-    const enc = new TextEncoder();
-
-    const key = await subtle.importKey("raw", enc.encode(signingSecret), ALGORITHM, false, ["sign", "verify"]);
-
-    const signatureCheck = await sign({ key, data: rawBody });
-    const verified = await verify({ key, signature: signatureCheck, data: rawBody });
-    let additionalVerified = true;
-    if (additionalSignature !== undefined) {
-        const additionalSignatureCheck = await sign({ key, data: rawBody });
-        additionalVerified = await verify({ key, signature: additionalSignatureCheck, data: rawBody });
-    }
-
-    console.log({ signatureCheck, signature, additionalSignature, verified });
+    const signatureCheck = await createHS256Signature({ signingSecret, data: rawBody });
 
     return {
-        isValidSignature: verified && additionalVerified,
+        isValidSignature: signatureCheck === signature || signatureCheck === secondarySignture,
     };
 };
-
-export { Verify };
