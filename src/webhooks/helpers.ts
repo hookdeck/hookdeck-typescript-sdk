@@ -1,19 +1,14 @@
-// const { webcrypto, createHmac } = require("node:crypto");
 const { webcrypto } = require("node:crypto");
 const { subtle } = webcrypto;
 
 const ALGORITHM = { name: "HMAC", hash: "SHA-256" };
 
-const createHS256Signature = async ({ signingSecret, data }: { signingSecret: string; data: string }) => {
+const createSHA256Signature = async ({ signingSecret, data }: { signingSecret: string; data: string }) => {
     const enc = new TextEncoder();
 
     let key = await subtle.importKey("raw", enc.encode(signingSecret), ALGORITHM, false, ["sign"]);
     let signatureBuffer = await subtle.sign(ALGORITHM.name, key, enc.encode(data));
     let signature = Buffer.from(signatureBuffer).toString("base64");
-
-    // Useful to check signature creation
-    // const hash = createHmac("sha256", signingSecret).update(data).digest("base64");
-    // console.log({ signature, hash });
 
     return signature;
 };
@@ -24,6 +19,7 @@ const createHS256Signature = async ({ signingSecret, data }: { signingSecret: st
 export class HookdeckWebhookVerificationParameterError extends Error {
     constructor(message: string) {
         super(message);
+        this.name = this.constructor.name;
         Object.setPrototypeOf(this, HookdeckWebhookVerificationParameterError.prototype);
     }
 }
@@ -97,12 +93,12 @@ export const verifyWebhookSignature = async ({
     const secondarySignature = headers[HOOKDECK_HEADERS.SECONDARY_SIGNATURE];
 
     if (!signature) {
-        throw new HookdeckWebhookVerificationParameterError(`The ${HOOKDECK_HEADERS.SIGNATURE} header is missing.`);
+        throw new HookdeckWebhookVerificationParameterError(`The "${HOOKDECK_HEADERS.SIGNATURE}" header is missing.`);
     }
 
     if (config.checkSourceVerification && !headers[HOOKDECK_HEADERS.VERIFIED_FLAG]) {
         throw new HookdeckWebhookVerificationParameterError(
-            `"checkSourceVerification" has been configured but the ${HOOKDECK_HEADERS.VERIFIED_FLAG} header is missing.`
+            `"checkSourceVerification" has been configured but the "${HOOKDECK_HEADERS.VERIFIED_FLAG}" header is missing.`
         );
     }
 
@@ -111,7 +107,7 @@ export const verifyWebhookSignature = async ({
         ["true", "false"].includes(headers[HOOKDECK_HEADERS.VERIFIED_FLAG]) === false
     ) {
         throw new HookdeckWebhookVerificationParameterError(
-            `The value of ${HOOKDECK_HEADERS.VERIFIED_FLAG} must be either "true" or "false". Value passed is "${
+            `The value of "${HOOKDECK_HEADERS.VERIFIED_FLAG}" must be either "true" or "false". Value passed is "${
                 headers[HOOKDECK_HEADERS.VERIFIED_FLAG]
             }".`
         );
@@ -123,7 +119,7 @@ export const verifyWebhookSignature = async ({
         };
     }
 
-    const signatureCheck = await createHS256Signature({ signingSecret, data: rawBody });
+    const signatureCheck = await createSHA256Signature({ signingSecret, data: rawBody });
 
     return {
         isValidSignature: signatureCheck === signature || signatureCheck === secondarySignature,
