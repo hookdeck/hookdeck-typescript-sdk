@@ -18,14 +18,34 @@ const createHS256Signature = async ({ signingSecret, data }: { signingSecret: st
     return signature;
 };
 
-export type HookdeckVerifyArguments = {
-    signature: string;
-    secondarySignature?: string;
-    rawBody: string;
-    signingSecret: string;
+/**
+ * Error thrown when there are problems with the parameters used to verify webhooks.
+ */
+export class HookdeckWebhookVerificationParameterError extends Error {
+    constructor(message: string) {
+        super(message);
+        Object.setPrototypeOf(this, HookdeckWebhookVerificationParameterError.prototype);
+    }
+}
+
+export const HOOKDECK_HEADERS = {
+    SIGNATURE: "x-hookdeck-signature",
+    SECONDARY_SIGNATURE: "x-hookdeck-signature-2",
+    VERIFIED_FLAG: "x-hookdeck-verified",
 };
 
-export type HookdeckVerificationResult = {
+export type HookdeckWebhookVerificationConfig = {
+    checkSourceVerification?: boolean;
+};
+
+export type HookdeckWebhookVerificationArguments = {
+    headers: { [key: string]: string };
+    rawBody: string;
+    signingSecret: string;
+    config?: HookdeckWebhookVerificationConfig;
+};
+
+export type HookdeckWebhookVerificationResult = {
     isValidSignature: boolean;
 };
 
@@ -33,10 +53,31 @@ export type HookdeckVerificationResult = {
  * Verify the Hookdeck webhook signature.
  *
  * @example
+ *     const headers = request.headers;
+ *     const rawBody = await request.text();
  *     const result = await verifyWebhookSignature({
- *         signature: "kKb0yljhY9tBo7oihOMTvRayKCUpCNVujkoTMNoGdGM=",
- *         rawBody: `{"key1":"value1", "key2":"value2"}`,
- *         signingSecret: "5fthvdmj8gtkzdv93mwkdpbupgwgfu4fu8xf4rro2oufn6qlhc",
+ *         headers,
+ *         rawBody,
+ *         signingSecret: process.env.HOOKDECK_SIGNING_SECRET,
+ *     })
+ *
+ *     if(!result.isValidSignature) {
+ *         // Reject the webhook payload
+ *     }
+ *     else {
+ *         // Proceed with the webhook payload
+ *     }
+ *
+ * @example
+ *     const headers = request.headers;
+ *     const rawBody = await request.text();
+ *     const result = await verifyWebhookSignature({
+ *         headers,
+ *         rawBody,
+ *         signingSecret: process.env.HOOKDECK_SIGNING_SECRET,
+ *         config: {
+ *             checkSourceVerification: true,
+ *         }
  *     })
  *
  *     if(!result.isValidSignature) {
@@ -47,11 +88,41 @@ export type HookdeckVerificationResult = {
  *     }
  */
 export const verifyWebhookSignature = async ({
-    signature,
+    headers,
     rawBody,
     signingSecret,
-    secondarySignature,
-}: HookdeckVerifyArguments): Promise<HookdeckVerificationResult> => {
+    config = {},
+}: HookdeckWebhookVerificationArguments): Promise<HookdeckWebhookVerificationResult> => {
+    const signature = headers[HOOKDECK_HEADERS.SIGNATURE];
+    const secondarySignature = headers[HOOKDECK_HEADERS.SECONDARY_SIGNATURE];
+
+    if (!signature) {
+        throw new HookdeckWebhookVerificationParameterError(`The ${HOOKDECK_HEADERS.SIGNATURE} header is missing.`);
+    }
+
+    if (config.checkSourceVerification && !headers[HOOKDECK_HEADERS.VERIFIED_FLAG]) {
+        throw new HookdeckWebhookVerificationParameterError(
+            `"checkSourceVerification" has been configured but the ${HOOKDECK_HEADERS.VERIFIED_FLAG} header is missing.`
+        );
+    }
+
+    if (
+        config.checkSourceVerification &&
+        ["true", "false"].includes(headers[HOOKDECK_HEADERS.VERIFIED_FLAG]) === false
+    ) {
+        throw new HookdeckWebhookVerificationParameterError(
+            `The value of ${HOOKDECK_HEADERS.VERIFIED_FLAG} must be either "true" or "false". Value passed is "${
+                headers[HOOKDECK_HEADERS.VERIFIED_FLAG]
+            }".`
+        );
+    }
+
+    if (config.checkSourceVerification && headers[HOOKDECK_HEADERS.VERIFIED_FLAG] === "false") {
+        return {
+            isValidSignature: false,
+        };
+    }
+
     const signatureCheck = await createHS256Signature({ signingSecret, data: rawBody });
 
     return {
