@@ -7,7 +7,7 @@ import * as Hookdeck from "../index";
 export interface BatchOperation {
     /** ID of the bulk retry */
     id: string;
-    /** ID of the workspace */
+    /** ID of the project */
     teamId: string;
     /** Query object to filter records */
     query?: Hookdeck.BatchOperationQuery;

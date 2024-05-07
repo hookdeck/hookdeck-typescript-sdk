@@ -60,6 +60,8 @@ export const IntegrationProvider: core.serialization.Schema<
     "EBAY",
     "TELNYX",
     "TOKENIO",
+    "FISERV",
+    "BONDSMITH",
 ]);
 
 export declare namespace IntegrationProvider {
@@ -113,5 +115,7 @@ export declare namespace IntegrationProvider {
         | "SANITY"
         | "EBAY"
         | "TELNYX"
-        | "TOKENIO";
+        | "TOKENIO"
+        | "FISERV"
+        | "BONDSMITH";
 }

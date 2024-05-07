@@ -7,7 +7,7 @@ import * as Hookdeck from "../index";
 export interface Request {
     /** ID of the request */
     id: string;
-    /** ID of the workspace */
+    /** ID of the project */
     teamId: string;
     /** Whether or not the request was verified when received */
     verified?: boolean;

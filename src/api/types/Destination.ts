@@ -14,14 +14,14 @@ export interface Destination {
     name: string;
     /** Description of the destination */
     description?: string;
-    /** ID of the workspace */
+    /** ID of the project */
     teamId: string;
     pathForwardingDisabled?: boolean;
     /** HTTP endpoint of the destination */
     url?: string;
     /** Path for the CLI destination */
     cliPath?: string;
-    /** Limit event attempts to receive per period. Max value is workspace plan's max attempts thoughput. */
+    /** Limit delivery rate of event attempts to receive per period. */
     rateLimit?: number;
     rateLimitPeriod?: Hookdeck.DestinationRateLimitPeriod;
     httpMethod?: Hookdeck.DestinationHttpMethod;

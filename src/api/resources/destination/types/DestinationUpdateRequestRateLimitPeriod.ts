@@ -5,10 +5,11 @@
 /**
  * Period to rate limit attempts
  */
-export type DestinationUpdateRequestRateLimitPeriod = "second" | "minute" | "hour";
+export type DestinationUpdateRequestRateLimitPeriod = "second" | "minute" | "hour" | "concurrent";
 
 export const DestinationUpdateRequestRateLimitPeriod = {
     Second: "second",
     Minute: "minute",
     Hour: "hour",
+    Concurrent: "concurrent",
 } as const;

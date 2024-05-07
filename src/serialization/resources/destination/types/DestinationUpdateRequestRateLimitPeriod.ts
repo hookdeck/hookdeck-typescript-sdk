@@ -9,8 +9,8 @@ import * as core from "../../../../core";
 export const DestinationUpdateRequestRateLimitPeriod: core.serialization.Schema<
     serializers.DestinationUpdateRequestRateLimitPeriod.Raw,
     Hookdeck.DestinationUpdateRequestRateLimitPeriod
-> = core.serialization.enum_(["second", "minute", "hour"]);
+> = core.serialization.enum_(["second", "minute", "hour", "concurrent"]);
 
 export declare namespace DestinationUpdateRequestRateLimitPeriod {
-    type Raw = "second" | "minute" | "hour";
+    type Raw = "second" | "minute" | "hour" | "concurrent";
 }

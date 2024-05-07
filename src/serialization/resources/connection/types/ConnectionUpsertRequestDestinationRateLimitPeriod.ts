@@ -9,8 +9,8 @@ import * as core from "../../../../core";
 export const ConnectionUpsertRequestDestinationRateLimitPeriod: core.serialization.Schema<
     serializers.ConnectionUpsertRequestDestinationRateLimitPeriod.Raw,
     Hookdeck.ConnectionUpsertRequestDestinationRateLimitPeriod
-> = core.serialization.enum_(["second", "minute", "hour"]);
+> = core.serialization.enum_(["second", "minute", "hour", "concurrent"]);
 
 export declare namespace ConnectionUpsertRequestDestinationRateLimitPeriod {
-    type Raw = "second" | "minute" | "hour";
+    type Raw = "second" | "minute" | "hour" | "concurrent";
 }
