@@ -59,12 +59,12 @@ jobs:
     if: github.event_name == 'push' && contains(github.ref, 'refs/tags/')
     runs-on: ubuntu-latest
   
-      permissions:
-        contents: read
-        id-token: write
-  
-      steps:
-        - uses: actions/checkout@v4
-  
-        - name: Publish package
-          run: npx jsr publish
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Publish package
+        run: npx jsr publish
