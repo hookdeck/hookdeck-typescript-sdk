@@ -29,7 +29,7 @@ jobs:
       - name: Compile
         run: yarn && yarn test    
 
-  publish:
+  publish-npm:
     needs: [ compile, test ]
     if: github.event_name == 'push' && contains(github.ref, 'refs/tags/')
     runs-on: ubuntu-latest
@@ -53,3 +53,18 @@ jobs:
           npm publish --access public
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  publish-jsr:
+    needs: [ compile, test ]
+    if: github.event_name == 'push' && contains(github.ref, 'refs/tags/')
+    runs-on: ubuntu-latest
+  
+      permissions:
+        contents: read
+        id-token: write
+  
+      steps:
+        - uses: actions/checkout@v4
+  
+        - name: Publish package
+          run: npx jsr publish
