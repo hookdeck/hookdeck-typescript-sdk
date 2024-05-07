@@ -1,7 +1,8 @@
-name: ci
+name: Release
 
 on:
-  push:
+  release:
+    types: [published]
 
   workflow_dispatch:
     inputs:
@@ -14,35 +15,12 @@ on:
         - JSR
 
 jobs:
-  compile:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-
-      - name: Set up node
-        uses: actions/setup-node@v4
-
-      - name: Compile
-        run: yarn && yarn build
-
-  test:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
-
-      - name: Set up node
-        uses: actions/setup-node@v3
-
-      - name: Compile
-        run: yarn && yarn test    
+  tests:
+    uses: ./.github/workflows/tests.yml    
 
   publish-npm:
-    needs: [ compile, test ]
-    if: ${{inputs.package_manager}} == 'NPM' || (github.event_name == 'push' && contains(github.ref, 'refs/tags/'))
+    needs: [ tests ]
+    if: ${{inputs.package_manager}} == 'NPM' || (github.event_name == 'release' && contains(github.ref, 'refs/tags/'))
     runs-on: ubuntu-latest
 
     steps:
@@ -66,8 +44,8 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
   publish-jsr:
-    needs: [ compile, test ]
-    if: ${{inputs.package_manager == 'JSR'}} || (github.event_name == 'push' && contains(github.ref, 'refs/tags/'))
+    needs: [ tests ]
+    if: ${{inputs.package_manager == 'JSR'}} || (github.event_name == 'release' && contains(github.ref, 'refs/tags/'))
     runs-on: ubuntu-latest
   
     permissions:
