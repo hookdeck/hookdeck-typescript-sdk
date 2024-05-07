@@ -12,6 +12,7 @@ import { AuthBearerToken } from "./AuthBearerToken";
 import { AuthOAuth2ClientCredentials } from "./AuthOAuth2ClientCredentials";
 import { AuthOAuth2AuthorizationCode } from "./AuthOAuth2AuthorizationCode";
 import { AuthCustomSignature } from "./AuthCustomSignature";
+import { AuthAwsSignature } from "./AuthAwsSignature";
 
 export const DestinationAuthMethodConfig: core.serialization.Schema<
     serializers.DestinationAuthMethodConfig.Raw,
@@ -25,6 +26,7 @@ export const DestinationAuthMethodConfig: core.serialization.Schema<
         OAUTH2_CLIENT_CREDENTIALS: AuthOAuth2ClientCredentials,
         OAUTH2_AUTHORIZATION_CODE: AuthOAuth2AuthorizationCode,
         CUSTOM_SIGNATURE: AuthCustomSignature,
+        AWS_SIGNATURE: AuthAwsSignature,
     })
     .transform<Hookdeck.DestinationAuthMethodConfig>({
         transform: (value) => value,
@@ -39,7 +41,8 @@ export declare namespace DestinationAuthMethodConfig {
         | DestinationAuthMethodConfig.BearerToken
         | DestinationAuthMethodConfig.Oauth2ClientCredentials
         | DestinationAuthMethodConfig.Oauth2AuthorizationCode
-        | DestinationAuthMethodConfig.CustomSignature;
+        | DestinationAuthMethodConfig.CustomSignature
+        | DestinationAuthMethodConfig.AwsSignature;
 
     interface HookdeckSignature extends AuthHookdeckSignature.Raw {
         type: "HOOKDECK_SIGNATURE";
@@ -67,5 +70,9 @@ export declare namespace DestinationAuthMethodConfig {
 
     interface CustomSignature extends AuthCustomSignature.Raw {
         type: "CUSTOM_SIGNATURE";
+    }
+
+    interface AwsSignature extends AuthAwsSignature.Raw {
+        type: "AWS_SIGNATURE";
     }
 }

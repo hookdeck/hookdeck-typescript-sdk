@@ -14,7 +14,8 @@ export type DestinationAuthMethodConfig =
     | Hookdeck.DestinationAuthMethodConfig.BearerToken
     | Hookdeck.DestinationAuthMethodConfig.Oauth2ClientCredentials
     | Hookdeck.DestinationAuthMethodConfig.Oauth2AuthorizationCode
-    | Hookdeck.DestinationAuthMethodConfig.CustomSignature;
+    | Hookdeck.DestinationAuthMethodConfig.CustomSignature
+    | Hookdeck.DestinationAuthMethodConfig.AwsSignature;
 
 export declare namespace DestinationAuthMethodConfig {
     interface HookdeckSignature extends Hookdeck.AuthHookdeckSignature {
@@ -43,5 +44,9 @@ export declare namespace DestinationAuthMethodConfig {
 
     interface CustomSignature extends Hookdeck.AuthCustomSignature {
         type: "CUSTOM_SIGNATURE";
+    }
+
+    interface AwsSignature extends Hookdeck.AuthAwsSignature {
+        type: "AWS_SIGNATURE";
     }
 }

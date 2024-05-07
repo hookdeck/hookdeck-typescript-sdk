@@ -52,7 +52,9 @@ export type IntegrationProvider =
     | "SANITY"
     | "EBAY"
     | "TELNYX"
-    | "TOKENIO";
+    | "TOKENIO"
+    | "FISERV"
+    | "BONDSMITH";
 
 export const IntegrationProvider = {
     Hmac: "HMAC",
@@ -105,4 +107,6 @@ export const IntegrationProvider = {
     Ebay: "EBAY",
     Telnyx: "TELNYX",
     Tokenio: "TOKENIO",
+    Fiserv: "FISERV",
+    Bondsmith: "BONDSMITH",
 } as const;

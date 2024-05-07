@@ -7,7 +7,7 @@ import * as Hookdeck from "../index";
 export interface Integration {
     /** ID of the integration */
     id: string;
-    /** ID of the workspace */
+    /** ID of the project */
     teamId: string;
     /** Label of the integration */
     label: string;
