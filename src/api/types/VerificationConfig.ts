@@ -57,4 +57,6 @@ export type VerificationConfig =
     | Hookdeck.VerificationSanity
     | Hookdeck.VerificationEbay
     | Hookdeck.VerificationTelnyx
-    | Hookdeck.VerificationTokenIo;
+    | Hookdeck.VerificationTokenIo
+    | Hookdeck.VerificationFiserv
+    | Hookdeck.VerificationBondsmith;

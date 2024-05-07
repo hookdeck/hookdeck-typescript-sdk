@@ -55,6 +55,8 @@ import { VerificationSanity } from "./VerificationSanity";
 import { VerificationEbay } from "./VerificationEbay";
 import { VerificationTelnyx } from "./VerificationTelnyx";
 import { VerificationTokenIo } from "./VerificationTokenIo";
+import { VerificationFiserv } from "./VerificationFiserv";
+import { VerificationBondsmith } from "./VerificationBondsmith";
 
 export const VerificationConfig: core.serialization.Schema<
     serializers.VerificationConfig.Raw,
@@ -110,6 +112,8 @@ export const VerificationConfig: core.serialization.Schema<
     VerificationEbay,
     VerificationTelnyx,
     VerificationTokenIo,
+    VerificationFiserv,
+    VerificationBondsmith,
 ]);
 
 export declare namespace VerificationConfig {
@@ -163,5 +167,7 @@ export declare namespace VerificationConfig {
         | VerificationSanity.Raw
         | VerificationEbay.Raw
         | VerificationTelnyx.Raw
-        | VerificationTokenIo.Raw;
+        | VerificationTokenIo.Raw
+        | VerificationFiserv.Raw
+        | VerificationBondsmith.Raw;
 }

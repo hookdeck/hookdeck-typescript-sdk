@@ -10,7 +10,7 @@ import * as Hookdeck from "../index";
 export interface DeliveryIssue {
     /** Issue ID */
     id: string;
-    /** ID of the workspace */
+    /** ID of the project */
     teamId: string;
     status: Hookdeck.IssueStatus;
     /** ISO timestamp for when the issue was last opened */

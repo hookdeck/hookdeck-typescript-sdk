@@ -14,7 +14,7 @@ export interface Source {
     name: string;
     /** Description of the source */
     description?: string;
-    /** ID of the workspace */
+    /** ID of the project */
     teamId: string;
     /** A unique URL that must be supplied to your webhook's provider */
     url: string;

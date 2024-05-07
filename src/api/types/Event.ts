@@ -7,7 +7,7 @@ import * as Hookdeck from "../index";
 export interface Event {
     /** ID of the event */
     id: string;
-    /** ID of the workspace */
+    /** ID of the project */
     teamId: string;
     /** ID of the associated connection */
     webhookId: string;

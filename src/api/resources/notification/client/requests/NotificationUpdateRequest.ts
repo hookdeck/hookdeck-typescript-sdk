@@ -12,7 +12,7 @@ import * as Hookdeck from "../../../../index";
  *     {}
  */
 export interface NotificationUpdateRequest {
-    /** Enable or disable webhook notifications on the workspace */
+    /** Enable or disable webhook notifications on the project */
     enabled?: boolean;
     /** List of topics to send notifications for */
     topics?: Hookdeck.TopicsValue[];
