@@ -5,14 +5,6 @@ on:
     types: [published]
 
   workflow_dispatch:
-    inputs:
-      package_manager:
-        description: 'Which package manager to publish to?'
-        required: true
-        type: choice
-        options:
-        - NPM
-        - JSR
 
 jobs:
   tests:
@@ -20,7 +12,7 @@ jobs:
 
   publish-npm:
     needs: [ tests ]
-    if: (github.event_name == 'workflow_dispatch' && ${{inputs.package_manager}} == 'NPM') || (github.event_name == 'release' && contains(github.ref, 'refs/tags/'))
+    if: (github.event_name == 'workflow_dispatch') || (github.event_name == 'release' && contains(github.ref, 'refs/tags/'))
     runs-on: ubuntu-latest
 
     steps:
@@ -45,7 +37,7 @@ jobs:
 
   publish-jsr:
     needs: [ tests ]
-    if: (github.event_name == 'workflow_dispatch' && ${{inputs.package_manager}} == 'JSR') || (github.event_name == 'release' && contains(github.ref, 'refs/tags/'))
+    if: (github.event_name == 'workflow_dispatch') || (github.event_name == 'release' && contains(github.ref, 'refs/tags/'))
     runs-on: ubuntu-latest
   
     permissions:
