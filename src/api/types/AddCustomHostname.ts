@@ -3,6 +3,6 @@
  */
 
 export interface AddCustomHostname {
-    /** The custom hostname to attach to the workspace */
+    /** The custom hostname to attach to the project */
     hostname: string;
 }

@@ -7,7 +7,7 @@ import * as Hookdeck from "../index";
 export interface IssueTrigger {
     /** ID of the issue trigger */
     id: string;
-    /** ID of the workspace */
+    /** ID of the project */
     teamId?: string;
     /** Optional unique name to use as reference when using the API */
     name?: string;

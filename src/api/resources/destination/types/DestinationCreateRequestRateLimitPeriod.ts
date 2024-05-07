@@ -5,10 +5,11 @@
 /**
  * Period to rate limit attempts
  */
-export type DestinationCreateRequestRateLimitPeriod = "second" | "minute" | "hour";
+export type DestinationCreateRequestRateLimitPeriod = "second" | "minute" | "hour" | "concurrent";
 
 export const DestinationCreateRequestRateLimitPeriod = {
     Second: "second",
     Minute: "minute",
     Hour: "hour",
+    Concurrent: "concurrent",
 } as const;

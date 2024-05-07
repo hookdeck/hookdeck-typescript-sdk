@@ -5,6 +5,7 @@
 import * as serializers from "../index";
 import * as Hookdeck from "../../api/index";
 import * as core from "../../core";
+import { DestinationAuthMethodOAuth2ClientCredentialsConfigAuthenticationType } from "./DestinationAuthMethodOAuth2ClientCredentialsConfigAuthenticationType";
 
 export const DestinationAuthMethodOAuth2ClientCredentialsConfig: core.serialization.ObjectSchema<
     serializers.DestinationAuthMethodOAuth2ClientCredentialsConfig.Raw,
@@ -14,6 +15,10 @@ export const DestinationAuthMethodOAuth2ClientCredentialsConfig: core.serializat
     clientSecret: core.serialization.property("client_secret", core.serialization.string()),
     scope: core.serialization.string().optional(),
     authServer: core.serialization.property("auth_server", core.serialization.string()),
+    authenticationType: core.serialization.property(
+        "authentication_type",
+        DestinationAuthMethodOAuth2ClientCredentialsConfigAuthenticationType.optional()
+    ),
 });
 
 export declare namespace DestinationAuthMethodOAuth2ClientCredentialsConfig {
@@ -22,5 +27,6 @@ export declare namespace DestinationAuthMethodOAuth2ClientCredentialsConfig {
         client_secret: string;
         scope?: string | null;
         auth_server: string;
+        authentication_type?: DestinationAuthMethodOAuth2ClientCredentialsConfigAuthenticationType.Raw | null;
     }
 }

@@ -13,7 +13,7 @@ export interface Connection {
     fullName?: string;
     /** Description of the connection */
     description?: string;
-    /** ID of the workspace */
+    /** ID of the project */
     teamId: string;
     destination: Hookdeck.Destination;
     source: Hookdeck.Source;

@@ -5,7 +5,7 @@
 export interface Transformation {
     /** ID of the transformation */
     id: string;
-    /** ID of the workspace */
+    /** ID of the project */
     teamId: string;
     /** A unique, human-friendly name for the transformation */
     name: string;
