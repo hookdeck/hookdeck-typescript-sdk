@@ -42,7 +42,7 @@ jobs:
 
   publish-npm:
     needs: [ compile, test ]
-    if: ${{inputs.package_manager == 'NPM' || (github.event_name == 'push' && contains(github.ref, 'refs/tags/'))
+    if: ${{inputs.package_manager}} == 'NPM' || (github.event_name == 'push' && contains(github.ref, 'refs/tags/'))
     runs-on: ubuntu-latest
 
     steps:
@@ -67,7 +67,7 @@ jobs:
 
   publish-jsr:
     needs: [ compile, test ]
-    if: ${{inputs.package_manager == 'JSR' || (github.event_name == 'push' && contains(github.ref, 'refs/tags/'))
+    if: ${{inputs.package_manager == 'JSR'}} || (github.event_name == 'push' && contains(github.ref, 'refs/tags/'))
     runs-on: ubuntu-latest
   
     permissions:
