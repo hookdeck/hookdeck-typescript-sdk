@@ -29,30 +29,30 @@ jobs:
       - name: Compile
         run: yarn && yarn test    
 
-  # publish-npm:
-  #   needs: [ compile, test ]
-  #   if: github.event_name == 'push' && contains(github.ref, 'refs/tags/')
-  #   runs-on: ubuntu-latest
+  publish-npm:
+    needs: [ compile, test ]
+    if: github.event_name == 'push' && contains(github.ref, 'refs/tags/')
+    runs-on: ubuntu-latest
 
-  #   steps:
-  #     - name: Checkout repo
-  #       uses: actions/checkout@v4
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
 
-  #     - name: Set up node
-  #       uses: actions/setup-node@v4
+      - name: Set up node
+        uses: actions/setup-node@v4
 
-  #     - name: Install dependencies
-  #       run: yarn install
+      - name: Install dependencies
+        run: yarn install
 
-  #     - name: Build
-  #       run: yarn build
+      - name: Build
+        run: yarn build
 
-  #     - name: Publish to npm
-  #       run: |
-  #         npm config set //registry.npmjs.org/:_authToken ${NPM_TOKEN}
-  #         npm publish --access public
-  #       env:
-  #         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Publish to npm
+        run: |
+          npm config set //registry.npmjs.org/:_authToken ${NPM_TOKEN}
+          npm publish --access public
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
   publish-jsr:
     needs: [ compile, test ]
@@ -74,6 +74,24 @@ jobs:
 
       - name: Build
         run: yarn build
+
+      - name: Get NPM version
+        id: package-version
+        uses: martinbeentjes/npm-get-version-action@v1.3.1
+
+      - name: Update JSR version
+        uses: jossef/action-set-json-field@v2.1
+        with:
+          file: jsr.json
+          field: version
+          value: ${{ steps.package-version.outputs.current-version}}
+
+      - name: Commit JSR version
+        uses: EndBug/add-and-commit@v9
+        with:
+          default_author: github_actions
+          message: 'Update JSR version to ${{ steps.package-version.outputs.current-version}}'
+          add: 'jsr.json'
 
       - name: Publish package
         run: npx jsr publish
