@@ -2,3 +2,5 @@
 
 README.md
 jsr.json
+src/utils.ts
+tests/webhooks/verify.test.ts
