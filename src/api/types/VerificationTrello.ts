@@ -5,6 +5,5 @@
 import * as Hookdeck from "../index";
 
 export interface VerificationTrello {
-    type: Hookdeck.VerificationTrelloType;
     configs?: Hookdeck.VerificationTrelloConfigs;
 }

@@ -49,7 +49,7 @@ import * as Hookdeck from "../../../../index";
  *     }
  */
 export interface RequestListIgnoredEventRequest {
-    id?: string;
+    id?: string | string[];
     orderBy?: Hookdeck.RequestListIgnoredEventRequestOrderBy;
     dir?: Hookdeck.RequestListIgnoredEventRequestDir;
     limit?: number;

@@ -5,6 +5,5 @@
 import * as Hookdeck from "../index";
 
 export interface VerificationTwilio {
-    type: Hookdeck.VerificationTwilioType;
     configs?: Hookdeck.VerificationTwilioConfigs;
 }

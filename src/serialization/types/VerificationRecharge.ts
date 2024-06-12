@@ -5,20 +5,17 @@
 import * as serializers from "../index";
 import * as Hookdeck from "../../api/index";
 import * as core from "../../core";
-import { VerificationRechargeType } from "./VerificationRechargeType";
 import { VerificationRechargeConfigs } from "./VerificationRechargeConfigs";
 
 export const VerificationRecharge: core.serialization.ObjectSchema<
     serializers.VerificationRecharge.Raw,
     Hookdeck.VerificationRecharge
 > = core.serialization.object({
-    type: VerificationRechargeType,
     configs: VerificationRechargeConfigs.optional(),
 });
 
 export declare namespace VerificationRecharge {
     interface Raw {
-        type: VerificationRechargeType.Raw;
         configs?: VerificationRechargeConfigs.Raw | null;
     }
 }

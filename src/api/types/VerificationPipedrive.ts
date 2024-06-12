@@ -5,6 +5,5 @@
 import * as Hookdeck from "../index";
 
 export interface VerificationPipedrive {
-    type: Hookdeck.VerificationPipedriveType;
     configs?: Hookdeck.VerificationPipedriveConfigs;
 }

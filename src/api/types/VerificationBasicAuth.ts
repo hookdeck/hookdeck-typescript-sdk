@@ -5,6 +5,5 @@
 import * as Hookdeck from "../index";
 
 export interface VerificationBasicAuth {
-    type: Hookdeck.VerificationBasicAuthType;
     configs?: Hookdeck.VerificationBasicAuthConfigs;
 }

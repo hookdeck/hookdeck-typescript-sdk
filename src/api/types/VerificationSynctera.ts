@@ -5,6 +5,5 @@
 import * as Hookdeck from "../index";
 
 export interface VerificationSynctera {
-    type: Hookdeck.VerificationSyncteraType;
     configs?: Hookdeck.VerificationSyncteraConfigs;
 }

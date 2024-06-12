@@ -60,10 +60,10 @@ import * as Hookdeck from "../../../../index";
  *     }
  */
 export interface ConnectionListRequest {
-    id?: string;
+    id?: string | string[];
     name?: string;
-    destinationId?: string;
-    sourceId?: string;
+    destinationId?: string | string[];
+    sourceId?: string | string[];
     disabled?: boolean;
     disabledAt?: Date;
     fullName?: string;

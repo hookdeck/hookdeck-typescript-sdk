@@ -54,11 +54,11 @@ import * as Hookdeck from "../../../../index";
  *     }
  */
 export interface BookmarkListRequest {
-    id?: string;
-    name?: string;
-    webhookId?: string;
-    eventDataId?: string;
-    label?: string;
+    id?: string | string[];
+    name?: string | string[];
+    webhookId?: string | string[];
+    eventDataId?: string | string[];
+    label?: string | string[];
     lastUsedAt?: Date;
     orderBy?: Hookdeck.BookmarkListRequestOrderBy;
     dir?: Hookdeck.BookmarkListRequestDir;

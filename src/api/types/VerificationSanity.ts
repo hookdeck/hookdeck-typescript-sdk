@@ -5,6 +5,5 @@
 import * as Hookdeck from "../index";
 
 export interface VerificationSanity {
-    type: Hookdeck.VerificationSanityType;
     configs?: Hookdeck.VerificationSanityConfigs;
 }

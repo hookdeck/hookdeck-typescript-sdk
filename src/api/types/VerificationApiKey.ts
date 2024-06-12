@@ -5,6 +5,5 @@
 import * as Hookdeck from "../index";
 
 export interface VerificationApiKey {
-    type: Hookdeck.VerificationApiKeyType;
     configs?: Hookdeck.VerificationApiKeyConfigs;
 }

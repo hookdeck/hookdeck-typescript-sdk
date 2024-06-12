@@ -5,20 +5,17 @@
 import * as serializers from "../index";
 import * as Hookdeck from "../../api/index";
 import * as core from "../../core";
-import { VerificationSolidGateType } from "./VerificationSolidGateType";
 import { VerificationSolidGateConfigs } from "./VerificationSolidGateConfigs";
 
 export const VerificationSolidGate: core.serialization.ObjectSchema<
     serializers.VerificationSolidGate.Raw,
     Hookdeck.VerificationSolidGate
 > = core.serialization.object({
-    type: VerificationSolidGateType,
     configs: VerificationSolidGateConfigs.optional(),
 });
 
 export declare namespace VerificationSolidGate {
     interface Raw {
-        type: VerificationSolidGateType.Raw;
         configs?: VerificationSolidGateConfigs.Raw | null;
     }
 }

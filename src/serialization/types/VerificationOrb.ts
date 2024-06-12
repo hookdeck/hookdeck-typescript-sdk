@@ -5,20 +5,17 @@
 import * as serializers from "../index";
 import * as Hookdeck from "../../api/index";
 import * as core from "../../core";
-import { VerificationOrbType } from "./VerificationOrbType";
 import { VerificationOrbConfigs } from "./VerificationOrbConfigs";
 
 export const VerificationOrb: core.serialization.ObjectSchema<
     serializers.VerificationOrb.Raw,
     Hookdeck.VerificationOrb
 > = core.serialization.object({
-    type: VerificationOrbType,
     configs: VerificationOrbConfigs.optional(),
 });
 
 export declare namespace VerificationOrb {
     interface Raw {
-        type: VerificationOrbType.Raw;
         configs?: VerificationOrbConfigs.Raw | null;
     }
 }

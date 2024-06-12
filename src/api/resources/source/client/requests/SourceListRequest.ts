@@ -48,7 +48,7 @@ import * as Hookdeck from "../../../../index";
  *     }
  */
 export interface SourceListRequest {
-    id?: string;
+    id?: string | string[];
     name?: string;
     disabled?: boolean;
     disabledAt?: Date;

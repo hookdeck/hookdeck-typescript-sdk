@@ -81,10 +81,10 @@ import * as Hookdeck from "../../../../index";
  *     }
  */
 export interface RequestListRequest {
-    id?: string;
+    id?: string | string[];
     status?: Hookdeck.RequestListRequestStatus;
     rejectionCause?: Hookdeck.RequestRejectionCause;
-    sourceId?: string;
+    sourceId?: string | string[];
     verified?: boolean;
     searchTerm?: string;
     headers?: string;
@@ -94,7 +94,7 @@ export interface RequestListRequest {
     ignoredCount?: number;
     eventsCount?: number;
     ingestedAt?: Date;
-    bulkRetryId?: string;
+    bulkRetryId?: string | string[];
     include?: "data";
     orderBy?: Hookdeck.RequestListRequestOrderBy;
     dir?: Hookdeck.RequestListRequestDir;

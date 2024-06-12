@@ -5,20 +5,17 @@
 import * as serializers from "../index";
 import * as Hookdeck from "../../api/index";
 import * as core from "../../core";
-import { VerificationTelnyxType } from "./VerificationTelnyxType";
 import { VerificationTelnyxConfigs } from "./VerificationTelnyxConfigs";
 
 export const VerificationTelnyx: core.serialization.ObjectSchema<
     serializers.VerificationTelnyx.Raw,
     Hookdeck.VerificationTelnyx
 > = core.serialization.object({
-    type: VerificationTelnyxType,
     configs: VerificationTelnyxConfigs.optional(),
 });
 
 export declare namespace VerificationTelnyx {
     interface Raw {
-        type: VerificationTelnyxType.Raw;
         configs?: VerificationTelnyxConfigs.Raw | null;
     }
 }

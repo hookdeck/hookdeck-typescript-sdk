@@ -5,6 +5,5 @@
 import * as Hookdeck from "../index";
 
 export interface VerificationPropertyFinder {
-    type: string;
     configs?: Hookdeck.VerificationPropertyFinderConfigs;
 }

@@ -50,7 +50,11 @@ export class Attempt {
         const { eventId, orderBy, dir, limit, next, prev } = request;
         const _queryParams: Record<string, string | string[] | object | object[]> = {};
         if (eventId != null) {
-            _queryParams["event_id"] = eventId;
+            if (Array.isArray(eventId)) {
+                _queryParams["event_id"] = eventId.map((item) => item);
+            } else {
+                _queryParams["event_id"] = eventId;
+            }
         }
 
         if (orderBy != null) {
@@ -83,7 +87,7 @@ export class Attempt {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.2.0",
+                "X-Fern-SDK-Version": "0.3.0-beta.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -171,7 +175,7 @@ export class Attempt {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.2.0",
+                "X-Fern-SDK-Version": "0.3.0-beta.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },

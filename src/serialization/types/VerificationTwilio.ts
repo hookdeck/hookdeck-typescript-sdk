@@ -5,20 +5,17 @@
 import * as serializers from "../index";
 import * as Hookdeck from "../../api/index";
 import * as core from "../../core";
-import { VerificationTwilioType } from "./VerificationTwilioType";
 import { VerificationTwilioConfigs } from "./VerificationTwilioConfigs";
 
 export const VerificationTwilio: core.serialization.ObjectSchema<
     serializers.VerificationTwilio.Raw,
     Hookdeck.VerificationTwilio
 > = core.serialization.object({
-    type: VerificationTwilioType,
     configs: VerificationTwilioConfigs.optional(),
 });
 
 export declare namespace VerificationTwilio {
     interface Raw {
-        type: VerificationTwilioType.Raw;
         configs?: VerificationTwilioConfigs.Raw | null;
     }
 }

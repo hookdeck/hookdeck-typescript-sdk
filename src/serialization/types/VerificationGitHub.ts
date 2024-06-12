@@ -5,20 +5,17 @@
 import * as serializers from "../index";
 import * as Hookdeck from "../../api/index";
 import * as core from "../../core";
-import { VerificationGitHubType } from "./VerificationGitHubType";
 import { VerificationGitHubConfigs } from "./VerificationGitHubConfigs";
 
 export const VerificationGitHub: core.serialization.ObjectSchema<
     serializers.VerificationGitHub.Raw,
     Hookdeck.VerificationGitHub
 > = core.serialization.object({
-    type: VerificationGitHubType,
     configs: VerificationGitHubConfigs.optional(),
 });
 
 export declare namespace VerificationGitHub {
     interface Raw {
-        type: VerificationGitHubType.Raw;
         configs?: VerificationGitHubConfigs.Raw | null;
     }
 }

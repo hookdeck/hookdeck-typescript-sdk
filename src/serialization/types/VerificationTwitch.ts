@@ -5,20 +5,17 @@
 import * as serializers from "../index";
 import * as Hookdeck from "../../api/index";
 import * as core from "../../core";
-import { VerificationTwitchType } from "./VerificationTwitchType";
 import { VerificationTwitchConfigs } from "./VerificationTwitchConfigs";
 
 export const VerificationTwitch: core.serialization.ObjectSchema<
     serializers.VerificationTwitch.Raw,
     Hookdeck.VerificationTwitch
 > = core.serialization.object({
-    type: VerificationTwitchType,
     configs: VerificationTwitchConfigs.optional(),
 });
 
 export declare namespace VerificationTwitch {
     interface Raw {
-        type: VerificationTwitchType.Raw;
         configs?: VerificationTwitchConfigs.Raw | null;
     }
 }

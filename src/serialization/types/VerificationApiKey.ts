@@ -5,20 +5,17 @@
 import * as serializers from "../index";
 import * as Hookdeck from "../../api/index";
 import * as core from "../../core";
-import { VerificationApiKeyType } from "./VerificationApiKeyType";
 import { VerificationApiKeyConfigs } from "./VerificationApiKeyConfigs";
 
 export const VerificationApiKey: core.serialization.ObjectSchema<
     serializers.VerificationApiKey.Raw,
     Hookdeck.VerificationApiKey
 > = core.serialization.object({
-    type: VerificationApiKeyType,
     configs: VerificationApiKeyConfigs.optional(),
 });
 
 export declare namespace VerificationApiKey {
     interface Raw {
-        type: VerificationApiKeyType.Raw;
         configs?: VerificationApiKeyConfigs.Raw | null;
     }
 }

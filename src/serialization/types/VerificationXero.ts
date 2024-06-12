@@ -5,20 +5,17 @@
 import * as serializers from "../index";
 import * as Hookdeck from "../../api/index";
 import * as core from "../../core";
-import { VerificationXeroType } from "./VerificationXeroType";
 import { VerificationXeroConfigs } from "./VerificationXeroConfigs";
 
 export const VerificationXero: core.serialization.ObjectSchema<
     serializers.VerificationXero.Raw,
     Hookdeck.VerificationXero
 > = core.serialization.object({
-    type: VerificationXeroType,
     configs: VerificationXeroConfigs.optional(),
 });
 
 export declare namespace VerificationXero {
     interface Raw {
-        type: VerificationXeroType.Raw;
         configs?: VerificationXeroConfigs.Raw | null;
     }
 }

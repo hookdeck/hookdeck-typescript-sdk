@@ -5,6 +5,5 @@
 import * as Hookdeck from "../index";
 
 export interface VerificationWorkOs {
-    type: Hookdeck.VerificationWorkOsType;
     configs?: Hookdeck.VerificationWorkOsConfigs;
 }

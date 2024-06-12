@@ -5,7 +5,6 @@
 import * as Hookdeck from "../index";
 
 export interface FilterRule {
-    type: "filter";
     headers?: Hookdeck.FilterRuleProperty;
     body?: Hookdeck.FilterRuleProperty;
     query?: Hookdeck.FilterRuleProperty;

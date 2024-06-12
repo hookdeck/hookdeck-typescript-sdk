@@ -5,20 +5,17 @@
 import * as serializers from "../index";
 import * as Hookdeck from "../../api/index";
 import * as core from "../../core";
-import { VerificationSyncteraType } from "./VerificationSyncteraType";
 import { VerificationSyncteraConfigs } from "./VerificationSyncteraConfigs";
 
 export const VerificationSynctera: core.serialization.ObjectSchema<
     serializers.VerificationSynctera.Raw,
     Hookdeck.VerificationSynctera
 > = core.serialization.object({
-    type: VerificationSyncteraType,
     configs: VerificationSyncteraConfigs.optional(),
 });
 
 export declare namespace VerificationSynctera {
     interface Raw {
-        type: VerificationSyncteraType.Raw;
         configs?: VerificationSyncteraConfigs.Raw | null;
     }
 }

@@ -5,20 +5,17 @@
 import * as serializers from "../index";
 import * as Hookdeck from "../../api/index";
 import * as core from "../../core";
-import { VerificationTypeformType } from "./VerificationTypeformType";
 import { VerificationTypeformConfigs } from "./VerificationTypeformConfigs";
 
 export const VerificationTypeform: core.serialization.ObjectSchema<
     serializers.VerificationTypeform.Raw,
     Hookdeck.VerificationTypeform
 > = core.serialization.object({
-    type: VerificationTypeformType,
     configs: VerificationTypeformConfigs.optional(),
 });
 
 export declare namespace VerificationTypeform {
     interface Raw {
-        type: VerificationTypeformType.Raw;
         configs?: VerificationTypeformConfigs.Raw | null;
     }
 }

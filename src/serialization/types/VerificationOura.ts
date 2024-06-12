@@ -5,20 +5,17 @@
 import * as serializers from "../index";
 import * as Hookdeck from "../../api/index";
 import * as core from "../../core";
-import { VerificationOuraType } from "./VerificationOuraType";
 import { VerificationOuraConfigs } from "./VerificationOuraConfigs";
 
 export const VerificationOura: core.serialization.ObjectSchema<
     serializers.VerificationOura.Raw,
     Hookdeck.VerificationOura
 > = core.serialization.object({
-    type: VerificationOuraType,
     configs: VerificationOuraConfigs.optional(),
 });
 
 export declare namespace VerificationOura {
     interface Raw {
-        type: VerificationOuraType.Raw;
         configs?: VerificationOuraConfigs.Raw | null;
     }
 }

@@ -5,6 +5,5 @@
 import * as Hookdeck from "../index";
 
 export interface VerificationHubspot {
-    type: Hookdeck.VerificationHubspotType;
     configs?: Hookdeck.VerificationHubspotConfigs;
 }

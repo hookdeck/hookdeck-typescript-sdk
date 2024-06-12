@@ -5,6 +5,5 @@
 import * as Hookdeck from "../index";
 
 export interface VerificationXero {
-    type: Hookdeck.VerificationXeroType;
     configs?: Hookdeck.VerificationXeroConfigs;
 }

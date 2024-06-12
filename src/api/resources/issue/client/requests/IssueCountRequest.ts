@@ -49,11 +49,11 @@ import * as Hookdeck from "../../../../index";
  *     }
  */
 export interface IssueCountRequest {
-    id?: string;
-    issueTriggerId?: string;
+    id?: string | string[];
+    issueTriggerId?: string | string[];
     type?: Hookdeck.IssueCountRequestType;
     status?: Hookdeck.IssueCountRequestStatus;
-    mergedWith?: string;
+    mergedWith?: string | string[];
     createdAt?: Date;
     firstSeenAt?: Date;
     lastSeenAt?: Date;

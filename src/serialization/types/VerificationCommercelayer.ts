@@ -5,20 +5,17 @@
 import * as serializers from "../index";
 import * as Hookdeck from "../../api/index";
 import * as core from "../../core";
-import { VerificationCommercelayerType } from "./VerificationCommercelayerType";
 import { VerificationCommercelayerConfigs } from "./VerificationCommercelayerConfigs";
 
 export const VerificationCommercelayer: core.serialization.ObjectSchema<
     serializers.VerificationCommercelayer.Raw,
     Hookdeck.VerificationCommercelayer
 > = core.serialization.object({
-    type: VerificationCommercelayerType,
     configs: VerificationCommercelayerConfigs.optional(),
 });
 
 export declare namespace VerificationCommercelayer {
     interface Raw {
-        type: VerificationCommercelayerType.Raw;
         configs?: VerificationCommercelayerConfigs.Raw | null;
     }
 }

@@ -5,20 +5,17 @@
 import * as serializers from "../index";
 import * as Hookdeck from "../../api/index";
 import * as core from "../../core";
-import { VerificationNmiPaymentGatewayType } from "./VerificationNmiPaymentGatewayType";
 import { VerificationNmiPaymentGatewayConfigs } from "./VerificationNmiPaymentGatewayConfigs";
 
 export const VerificationNmiPaymentGateway: core.serialization.ObjectSchema<
     serializers.VerificationNmiPaymentGateway.Raw,
     Hookdeck.VerificationNmiPaymentGateway
 > = core.serialization.object({
-    type: VerificationNmiPaymentGatewayType,
     configs: VerificationNmiPaymentGatewayConfigs.optional(),
 });
 
 export declare namespace VerificationNmiPaymentGateway {
     interface Raw {
-        type: VerificationNmiPaymentGatewayType.Raw;
         configs?: VerificationNmiPaymentGatewayConfigs.Raw | null;
     }
 }

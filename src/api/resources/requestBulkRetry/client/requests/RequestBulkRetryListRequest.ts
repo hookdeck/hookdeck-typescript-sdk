@@ -57,7 +57,7 @@ export interface RequestBulkRetryListRequest {
     cancelledAt?: Date;
     completedAt?: Date;
     createdAt?: Date;
-    id?: string;
+    id?: string | string[];
     inProgress?: boolean;
     queryPartialMatch?: boolean;
     orderBy?: Hookdeck.RequestBulkRetryListRequestOrderBy;

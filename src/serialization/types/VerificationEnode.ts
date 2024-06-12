@@ -5,20 +5,17 @@
 import * as serializers from "../index";
 import * as Hookdeck from "../../api/index";
 import * as core from "../../core";
-import { VerificationEnodeType } from "./VerificationEnodeType";
 import { VerificationEnodeConfigs } from "./VerificationEnodeConfigs";
 
 export const VerificationEnode: core.serialization.ObjectSchema<
     serializers.VerificationEnode.Raw,
     Hookdeck.VerificationEnode
 > = core.serialization.object({
-    type: VerificationEnodeType,
     configs: VerificationEnodeConfigs.optional(),
 });
 
 export declare namespace VerificationEnode {
     interface Raw {
-        type: VerificationEnodeType.Raw;
         configs?: VerificationEnodeConfigs.Raw | null;
     }
 }

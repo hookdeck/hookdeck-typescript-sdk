@@ -5,6 +5,5 @@
 import * as Hookdeck from "../index";
 
 export interface VerificationWix {
-    type: Hookdeck.VerificationWixType;
     configs?: Hookdeck.VerificationWixConfigs;
 }

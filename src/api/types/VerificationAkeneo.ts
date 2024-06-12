@@ -5,6 +5,5 @@
 import * as Hookdeck from "../index";
 
 export interface VerificationAkeneo {
-    type: Hookdeck.VerificationAkeneoType;
     configs?: Hookdeck.VerificationAkeneoConfigs;
 }

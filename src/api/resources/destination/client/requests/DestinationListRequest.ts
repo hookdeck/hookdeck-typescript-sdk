@@ -54,11 +54,11 @@ import * as Hookdeck from "../../../../index";
  *     }
  */
 export interface DestinationListRequest {
-    id?: string;
+    id?: string | string[];
     name?: string;
     disabled?: boolean;
     disabledAt?: Date;
-    url?: string;
+    url?: string | string[];
     cliPath?: string;
     orderBy?: Hookdeck.DestinationListRequestOrderBy;
     dir?: Hookdeck.DestinationListRequestDir;

@@ -5,6 +5,5 @@
 import * as Hookdeck from "../index";
 
 export interface VerificationLinear {
-    type: Hookdeck.VerificationLinearType;
     configs?: Hookdeck.VerificationLinearConfigs;
 }

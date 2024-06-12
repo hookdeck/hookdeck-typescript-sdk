@@ -15,6 +15,11 @@
  *     {
  *         include: "verification.configs"
  *     }
+ *
+ * @example
+ *     {
+ *         include: "verification.configs"
+ *     }
  */
 export interface SourceRetrieveRequest {
     include?: "verification.configs";

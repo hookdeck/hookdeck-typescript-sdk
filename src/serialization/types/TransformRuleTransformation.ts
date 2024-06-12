@@ -6,16 +6,16 @@ import * as serializers from "../index";
 import * as Hookdeck from "../../api/index";
 import * as core from "../../core";
 
-export const TransformFullTransformation: core.serialization.ObjectSchema<
-    serializers.TransformFullTransformation.Raw,
-    Hookdeck.TransformFullTransformation
+export const TransformRuleTransformation: core.serialization.ObjectSchema<
+    serializers.TransformRuleTransformation.Raw,
+    Hookdeck.TransformRuleTransformation
 > = core.serialization.object({
     name: core.serialization.string(),
     code: core.serialization.string(),
     env: core.serialization.record(core.serialization.string(), core.serialization.string().optional()).optional(),
 });
 
-export declare namespace TransformFullTransformation {
+export declare namespace TransformRuleTransformation {
     interface Raw {
         name: string;
         code: string;

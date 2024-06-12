@@ -5,6 +5,5 @@
 import * as Hookdeck from "../index";
 
 export interface VerificationAwssns {
-    type: Hookdeck.VerificationAwssnsType;
     configs?: Hookdeck.VerificationAwssnsConfigs;
 }

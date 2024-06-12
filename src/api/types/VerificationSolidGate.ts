@@ -5,6 +5,5 @@
 import * as Hookdeck from "../index";
 
 export interface VerificationSolidGate {
-    type: Hookdeck.VerificationSolidGateType;
     configs?: Hookdeck.VerificationSolidGateConfigs;
 }

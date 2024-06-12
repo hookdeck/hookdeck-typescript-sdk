@@ -5,7 +5,6 @@
 import * as Hookdeck from "../index";
 
 export interface RetryRule {
-    type: "retry";
     strategy: Hookdeck.RetryStrategy;
     /** Time in MS between each retry */
     interval?: number;

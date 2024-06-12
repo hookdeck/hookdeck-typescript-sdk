@@ -5,6 +5,5 @@
 import * as Hookdeck from "../index";
 
 export interface VerificationWooCommerce {
-    type: Hookdeck.VerificationWooCommerceType;
     configs?: Hookdeck.VerificationWooCommerceConfigs;
 }

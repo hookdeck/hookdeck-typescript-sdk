@@ -51,7 +51,11 @@ export class Transformation {
         const { id, name, orderBy, dir, limit, next, prev } = request;
         const _queryParams: Record<string, string | string[] | object | object[]> = {};
         if (id != null) {
-            _queryParams["id"] = id;
+            if (Array.isArray(id)) {
+                _queryParams["id"] = id.map((item) => item);
+            } else {
+                _queryParams["id"] = id;
+            }
         }
 
         if (name != null) {
@@ -88,7 +92,7 @@ export class Transformation {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.2.0",
+                "X-Fern-SDK-Version": "0.3.0-beta.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -177,7 +181,7 @@ export class Transformation {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.2.0",
+                "X-Fern-SDK-Version": "0.3.0-beta.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -268,7 +272,7 @@ export class Transformation {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.2.0",
+                "X-Fern-SDK-Version": "0.3.0-beta.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -358,7 +362,7 @@ export class Transformation {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.2.0",
+                "X-Fern-SDK-Version": "0.3.0-beta.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -438,7 +442,7 @@ export class Transformation {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.2.0",
+                "X-Fern-SDK-Version": "0.3.0-beta.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -536,7 +540,7 @@ export class Transformation {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.2.0",
+                "X-Fern-SDK-Version": "0.3.0-beta.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -633,11 +637,19 @@ export class Transformation {
         }
 
         if (webhookId != null) {
-            _queryParams["webhook_id"] = webhookId;
+            if (Array.isArray(webhookId)) {
+                _queryParams["webhook_id"] = webhookId.map((item) => item);
+            } else {
+                _queryParams["webhook_id"] = webhookId;
+            }
         }
 
         if (issueId != null) {
-            _queryParams["issue_id"] = issueId;
+            if (Array.isArray(issueId)) {
+                _queryParams["issue_id"] = issueId.map((item) => item);
+            } else {
+                _queryParams["issue_id"] = issueId;
+            }
         }
 
         if (createdAt != null) {
@@ -674,7 +686,7 @@ export class Transformation {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.2.0",
+                "X-Fern-SDK-Version": "0.3.0-beta.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -763,7 +775,7 @@ export class Transformation {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.2.0",
+                "X-Fern-SDK-Version": "0.3.0-beta.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },

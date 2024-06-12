@@ -61,113 +61,326 @@ import { VerificationBondsmith } from "./VerificationBondsmith";
 export const VerificationConfig: core.serialization.Schema<
     serializers.VerificationConfig.Raw,
     Hookdeck.VerificationConfig
-> = core.serialization.undiscriminatedUnion([
-    VerificationHmac,
-    VerificationBasicAuth,
-    VerificationApiKey,
-    VerificationCloudSignal,
-    VerificationCourier,
-    VerificationFrontApp,
-    VerificationTwitter,
-    VerificationStripe,
-    VerificationRecharge,
-    VerificationTwilio,
-    VerificationGitHub,
-    VerificationShopify,
-    VerificationPostmark,
-    VerificationTypeform,
-    VerificationXero,
-    VerificationSvix,
-    VerificationZoom,
-    VerificationAkeneo,
-    VerificationAdyen,
-    VerificationGitLab,
-    VerificationPropertyFinder,
-    VerificationWooCommerce,
-    VerificationOura,
-    VerificationCommercelayer,
-    VerificationHubspot,
-    VerificationMailgun,
-    VerificationPersona,
-    VerificationPipedrive,
-    VerificationSendGrid,
-    VerificationWorkOs,
-    VerificationSynctera,
-    VerificationAwssns,
-    Verification3DEye,
-    VerificationTwitch,
-    VerificationEnode,
-    VerificationFavro,
-    VerificationLinear,
-    VerificationShopline,
-    VerificationWix,
-    VerificationNmiPaymentGateway,
-    VerificationOrb,
-    VerificationPylon,
-    VerificationRepay,
-    VerificationSquare,
-    VerificationSolidGate,
-    VerificationTrello,
-    VerificationSanity,
-    VerificationEbay,
-    VerificationTelnyx,
-    VerificationTokenIo,
-    VerificationFiserv,
-    VerificationBondsmith,
-]);
+> = core.serialization
+    .union("type", {
+        hmac: VerificationHmac,
+        basic_auth: VerificationBasicAuth,
+        api_key: VerificationApiKey,
+        cloudsignal: VerificationCloudSignal,
+        courier: VerificationCourier,
+        frontapp: VerificationFrontApp,
+        twitter: VerificationTwitter,
+        stripe: VerificationStripe,
+        recharge: VerificationRecharge,
+        twilio: VerificationTwilio,
+        github: VerificationGitHub,
+        shopify: VerificationShopify,
+        postmark: VerificationPostmark,
+        typeform: VerificationTypeform,
+        xero: VerificationXero,
+        svix: VerificationSvix,
+        zoom: VerificationZoom,
+        akeneo: VerificationAkeneo,
+        adyen: VerificationAdyen,
+        gitlab: VerificationGitLab,
+        "property-finder": VerificationPropertyFinder,
+        woocommerce: VerificationWooCommerce,
+        oura: VerificationOura,
+        commercelayer: VerificationCommercelayer,
+        hubspot: VerificationHubspot,
+        mailgun: VerificationMailgun,
+        persona: VerificationPersona,
+        pipedrive: VerificationPipedrive,
+        sendgrid: VerificationSendGrid,
+        workos: VerificationWorkOs,
+        synctera: VerificationSynctera,
+        aws_sns: VerificationAwssns,
+        three_d_eye: Verification3DEye,
+        twitch: VerificationTwitch,
+        enode: VerificationEnode,
+        favro: VerificationFavro,
+        linear: VerificationLinear,
+        shopline: VerificationShopline,
+        wix: VerificationWix,
+        nmi: VerificationNmiPaymentGateway,
+        orb: VerificationOrb,
+        pylon: VerificationPylon,
+        repay: VerificationRepay,
+        square: VerificationSquare,
+        solidgate: VerificationSolidGate,
+        trello: VerificationTrello,
+        sanity: VerificationSanity,
+        ebay: VerificationEbay,
+        telnyx: VerificationTelnyx,
+        tokenio: VerificationTokenIo,
+        fiserv: VerificationFiserv,
+        bondsmith: VerificationBondsmith,
+    })
+    .transform<Hookdeck.VerificationConfig>({
+        transform: (value) => value,
+        untransform: (value) => value,
+    });
 
 export declare namespace VerificationConfig {
     type Raw =
-        | VerificationHmac.Raw
-        | VerificationBasicAuth.Raw
-        | VerificationApiKey.Raw
-        | VerificationCloudSignal.Raw
-        | VerificationCourier.Raw
-        | VerificationFrontApp.Raw
-        | VerificationTwitter.Raw
-        | VerificationStripe.Raw
-        | VerificationRecharge.Raw
-        | VerificationTwilio.Raw
-        | VerificationGitHub.Raw
-        | VerificationShopify.Raw
-        | VerificationPostmark.Raw
-        | VerificationTypeform.Raw
-        | VerificationXero.Raw
-        | VerificationSvix.Raw
-        | VerificationZoom.Raw
-        | VerificationAkeneo.Raw
-        | VerificationAdyen.Raw
-        | VerificationGitLab.Raw
-        | VerificationPropertyFinder.Raw
-        | VerificationWooCommerce.Raw
-        | VerificationOura.Raw
-        | VerificationCommercelayer.Raw
-        | VerificationHubspot.Raw
-        | VerificationMailgun.Raw
-        | VerificationPersona.Raw
-        | VerificationPipedrive.Raw
-        | VerificationSendGrid.Raw
-        | VerificationWorkOs.Raw
-        | VerificationSynctera.Raw
-        | VerificationAwssns.Raw
-        | Verification3DEye.Raw
-        | VerificationTwitch.Raw
-        | VerificationEnode.Raw
-        | VerificationFavro.Raw
-        | VerificationLinear.Raw
-        | VerificationShopline.Raw
-        | VerificationWix.Raw
-        | VerificationNmiPaymentGateway.Raw
-        | VerificationOrb.Raw
-        | VerificationPylon.Raw
-        | VerificationRepay.Raw
-        | VerificationSquare.Raw
-        | VerificationSolidGate.Raw
-        | VerificationTrello.Raw
-        | VerificationSanity.Raw
-        | VerificationEbay.Raw
-        | VerificationTelnyx.Raw
-        | VerificationTokenIo.Raw
-        | VerificationFiserv.Raw
-        | VerificationBondsmith.Raw;
+        | VerificationConfig.Hmac
+        | VerificationConfig.BasicAuth
+        | VerificationConfig.ApiKey
+        | VerificationConfig.Cloudsignal
+        | VerificationConfig.Courier
+        | VerificationConfig.Frontapp
+        | VerificationConfig.Twitter
+        | VerificationConfig.Stripe
+        | VerificationConfig.Recharge
+        | VerificationConfig.Twilio
+        | VerificationConfig.Github
+        | VerificationConfig.Shopify
+        | VerificationConfig.Postmark
+        | VerificationConfig.Typeform
+        | VerificationConfig.Xero
+        | VerificationConfig.Svix
+        | VerificationConfig.Zoom
+        | VerificationConfig.Akeneo
+        | VerificationConfig.Adyen
+        | VerificationConfig.Gitlab
+        | VerificationConfig.PropertyFinder
+        | VerificationConfig.Woocommerce
+        | VerificationConfig.Oura
+        | VerificationConfig.Commercelayer
+        | VerificationConfig.Hubspot
+        | VerificationConfig.Mailgun
+        | VerificationConfig.Persona
+        | VerificationConfig.Pipedrive
+        | VerificationConfig.Sendgrid
+        | VerificationConfig.Workos
+        | VerificationConfig.Synctera
+        | VerificationConfig.AwsSns
+        | VerificationConfig.ThreeDEye
+        | VerificationConfig.Twitch
+        | VerificationConfig.Enode
+        | VerificationConfig.Favro
+        | VerificationConfig.Linear
+        | VerificationConfig.Shopline
+        | VerificationConfig.Wix
+        | VerificationConfig.Nmi
+        | VerificationConfig.Orb
+        | VerificationConfig.Pylon
+        | VerificationConfig.Repay
+        | VerificationConfig.Square
+        | VerificationConfig.Solidgate
+        | VerificationConfig.Trello
+        | VerificationConfig.Sanity
+        | VerificationConfig.Ebay
+        | VerificationConfig.Telnyx
+        | VerificationConfig.Tokenio
+        | VerificationConfig.Fiserv
+        | VerificationConfig.Bondsmith;
+
+    interface Hmac extends VerificationHmac.Raw {
+        type: "hmac";
+    }
+
+    interface BasicAuth extends VerificationBasicAuth.Raw {
+        type: "basic_auth";
+    }
+
+    interface ApiKey extends VerificationApiKey.Raw {
+        type: "api_key";
+    }
+
+    interface Cloudsignal extends VerificationCloudSignal.Raw {
+        type: "cloudsignal";
+    }
+
+    interface Courier extends VerificationCourier.Raw {
+        type: "courier";
+    }
+
+    interface Frontapp extends VerificationFrontApp.Raw {
+        type: "frontapp";
+    }
+
+    interface Twitter extends VerificationTwitter.Raw {
+        type: "twitter";
+    }
+
+    interface Stripe extends VerificationStripe.Raw {
+        type: "stripe";
+    }
+
+    interface Recharge extends VerificationRecharge.Raw {
+        type: "recharge";
+    }
+
+    interface Twilio extends VerificationTwilio.Raw {
+        type: "twilio";
+    }
+
+    interface Github extends VerificationGitHub.Raw {
+        type: "github";
+    }
+
+    interface Shopify extends VerificationShopify.Raw {
+        type: "shopify";
+    }
+
+    interface Postmark extends VerificationPostmark.Raw {
+        type: "postmark";
+    }
+
+    interface Typeform extends VerificationTypeform.Raw {
+        type: "typeform";
+    }
+
+    interface Xero extends VerificationXero.Raw {
+        type: "xero";
+    }
+
+    interface Svix extends VerificationSvix.Raw {
+        type: "svix";
+    }
+
+    interface Zoom extends VerificationZoom.Raw {
+        type: "zoom";
+    }
+
+    interface Akeneo extends VerificationAkeneo.Raw {
+        type: "akeneo";
+    }
+
+    interface Adyen extends VerificationAdyen.Raw {
+        type: "adyen";
+    }
+
+    interface Gitlab extends VerificationGitLab.Raw {
+        type: "gitlab";
+    }
+
+    interface PropertyFinder extends VerificationPropertyFinder.Raw {
+        type: "property-finder";
+    }
+
+    interface Woocommerce extends VerificationWooCommerce.Raw {
+        type: "woocommerce";
+    }
+
+    interface Oura extends VerificationOura.Raw {
+        type: "oura";
+    }
+
+    interface Commercelayer extends VerificationCommercelayer.Raw {
+        type: "commercelayer";
+    }
+
+    interface Hubspot extends VerificationHubspot.Raw {
+        type: "hubspot";
+    }
+
+    interface Mailgun extends VerificationMailgun.Raw {
+        type: "mailgun";
+    }
+
+    interface Persona extends VerificationPersona.Raw {
+        type: "persona";
+    }
+
+    interface Pipedrive extends VerificationPipedrive.Raw {
+        type: "pipedrive";
+    }
+
+    interface Sendgrid extends VerificationSendGrid.Raw {
+        type: "sendgrid";
+    }
+
+    interface Workos extends VerificationWorkOs.Raw {
+        type: "workos";
+    }
+
+    interface Synctera extends VerificationSynctera.Raw {
+        type: "synctera";
+    }
+
+    interface AwsSns extends VerificationAwssns.Raw {
+        type: "aws_sns";
+    }
+
+    interface ThreeDEye extends Verification3DEye.Raw {
+        type: "three_d_eye";
+    }
+
+    interface Twitch extends VerificationTwitch.Raw {
+        type: "twitch";
+    }
+
+    interface Enode extends VerificationEnode.Raw {
+        type: "enode";
+    }
+
+    interface Favro extends VerificationFavro.Raw {
+        type: "favro";
+    }
+
+    interface Linear extends VerificationLinear.Raw {
+        type: "linear";
+    }
+
+    interface Shopline extends VerificationShopline.Raw {
+        type: "shopline";
+    }
+
+    interface Wix extends VerificationWix.Raw {
+        type: "wix";
+    }
+
+    interface Nmi extends VerificationNmiPaymentGateway.Raw {
+        type: "nmi";
+    }
+
+    interface Orb extends VerificationOrb.Raw {
+        type: "orb";
+    }
+
+    interface Pylon extends VerificationPylon.Raw {
+        type: "pylon";
+    }
+
+    interface Repay extends VerificationRepay.Raw {
+        type: "repay";
+    }
+
+    interface Square extends VerificationSquare.Raw {
+        type: "square";
+    }
+
+    interface Solidgate extends VerificationSolidGate.Raw {
+        type: "solidgate";
+    }
+
+    interface Trello extends VerificationTrello.Raw {
+        type: "trello";
+    }
+
+    interface Sanity extends VerificationSanity.Raw {
+        type: "sanity";
+    }
+
+    interface Ebay extends VerificationEbay.Raw {
+        type: "ebay";
+    }
+
+    interface Telnyx extends VerificationTelnyx.Raw {
+        type: "telnyx";
+    }
+
+    interface Tokenio extends VerificationTokenIo.Raw {
+        type: "tokenio";
+    }
+
+    interface Fiserv extends VerificationFiserv.Raw {
+        type: "fiserv";
+    }
+
+    interface Bondsmith extends VerificationBondsmith.Raw {
+        type: "bondsmith";
+    }
 }

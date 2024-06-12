@@ -39,7 +39,7 @@ import * as Hookdeck from "../../../../index";
  *     }
  */
 export interface AttemptListRequest {
-    eventId?: string;
+    eventId?: string | string[];
     orderBy?: Hookdeck.AttemptListRequestOrderBy;
     dir?: Hookdeck.AttemptListRequestDir;
     limit?: number;

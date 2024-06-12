@@ -67,11 +67,11 @@ import * as Hookdeck from "../../../../index";
  *     }
  */
 export interface IssueListRequest {
-    id?: string;
-    issueTriggerId?: string;
+    id?: string | string[];
+    issueTriggerId?: string | string[];
     type?: Hookdeck.IssueListRequestType;
     status?: Hookdeck.IssueListRequestStatus;
-    mergedWith?: string;
+    mergedWith?: string | string[];
     createdAt?: Date;
     firstSeenAt?: Date;
     lastSeenAt?: Date;

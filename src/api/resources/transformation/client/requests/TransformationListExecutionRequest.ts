@@ -49,8 +49,8 @@ import * as Hookdeck from "../../../../index";
  */
 export interface TransformationListExecutionRequest {
     logLevel?: Hookdeck.TransformationListExecutionRequestLogLevel;
-    webhookId?: string;
-    issueId?: string;
+    webhookId?: string | string[];
+    issueId?: string | string[];
     createdAt?: Date;
     orderBy?: Hookdeck.TransformationListExecutionRequestOrderBy;
     dir?: Hookdeck.TransformationListExecutionRequestDir;

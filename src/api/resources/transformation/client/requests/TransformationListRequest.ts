@@ -42,7 +42,7 @@ import * as Hookdeck from "../../../../index";
  *     }
  */
 export interface TransformationListRequest {
-    id?: string;
+    id?: string | string[];
     name?: string;
     orderBy?: Hookdeck.TransformationListRequestOrderBy;
     dir?: Hookdeck.TransformationListRequestDir;

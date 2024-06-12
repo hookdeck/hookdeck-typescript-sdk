@@ -71,7 +71,11 @@ export class Connection {
         } = request;
         const _queryParams: Record<string, string | string[] | object | object[]> = {};
         if (id != null) {
-            _queryParams["id"] = id;
+            if (Array.isArray(id)) {
+                _queryParams["id"] = id.map((item) => item);
+            } else {
+                _queryParams["id"] = id;
+            }
         }
 
         if (name != null) {
@@ -79,11 +83,19 @@ export class Connection {
         }
 
         if (destinationId != null) {
-            _queryParams["destination_id"] = destinationId;
+            if (Array.isArray(destinationId)) {
+                _queryParams["destination_id"] = destinationId.map((item) => item);
+            } else {
+                _queryParams["destination_id"] = destinationId;
+            }
         }
 
         if (sourceId != null) {
-            _queryParams["source_id"] = sourceId;
+            if (Array.isArray(sourceId)) {
+                _queryParams["source_id"] = sourceId.map((item) => item);
+            } else {
+                _queryParams["source_id"] = sourceId;
+            }
         }
 
         if (disabled != null) {
@@ -132,7 +144,7 @@ export class Connection {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.2.0",
+                "X-Fern-SDK-Version": "0.3.0-beta.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -218,7 +230,7 @@ export class Connection {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.2.0",
+                "X-Fern-SDK-Version": "0.3.0-beta.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -304,7 +316,7 @@ export class Connection {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.2.0",
+                "X-Fern-SDK-Version": "0.3.0-beta.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -392,11 +404,19 @@ export class Connection {
         const { destinationId, sourceId, disabled, disabledAt, pausedAt } = request;
         const _queryParams: Record<string, string | string[] | object | object[]> = {};
         if (destinationId != null) {
-            _queryParams["destination_id"] = destinationId;
+            if (Array.isArray(destinationId)) {
+                _queryParams["destination_id"] = destinationId.map((item) => item);
+            } else {
+                _queryParams["destination_id"] = destinationId;
+            }
         }
 
         if (sourceId != null) {
-            _queryParams["source_id"] = sourceId;
+            if (Array.isArray(sourceId)) {
+                _queryParams["source_id"] = sourceId.map((item) => item);
+            } else {
+                _queryParams["source_id"] = sourceId;
+            }
         }
 
         if (disabled != null) {
@@ -421,7 +441,7 @@ export class Connection {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.2.0",
+                "X-Fern-SDK-Version": "0.3.0-beta.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -488,6 +508,7 @@ export class Connection {
     /**
      *
      * @throws {@link Hookdeck.NotFoundError}
+     * @throws {@link Hookdeck.GoneError}
      *
      * @example
      *     await hookdeck.connection.retrieve("id")
@@ -506,7 +527,7 @@ export class Connection {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.2.0",
+                "X-Fern-SDK-Version": "0.3.0-beta.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -528,6 +549,16 @@ export class Connection {
             switch (_response.error.statusCode) {
                 case 404:
                     throw new Hookdeck.NotFoundError(
+                        await serializers.ApiErrorResponse.parseOrThrow(_response.error.body, {
+                            unrecognizedObjectKeys: "passthrough",
+                            allowUnrecognizedUnionMembers: true,
+                            allowUnrecognizedEnumValues: true,
+                            skipValidation: true,
+                            breadcrumbsPrefix: ["response"],
+                        })
+                    );
+                case 410:
+                    throw new Hookdeck.GoneError(
                         await serializers.ApiErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
@@ -586,7 +617,7 @@ export class Connection {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.2.0",
+                "X-Fern-SDK-Version": "0.3.0-beta.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -684,7 +715,7 @@ export class Connection {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.2.0",
+                "X-Fern-SDK-Version": "0.3.0-beta.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -758,7 +789,7 @@ export class Connection {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.2.0",
+                "X-Fern-SDK-Version": "0.3.0-beta.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -832,7 +863,7 @@ export class Connection {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.2.0",
+                "X-Fern-SDK-Version": "0.3.0-beta.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -906,7 +937,7 @@ export class Connection {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.2.0",
+                "X-Fern-SDK-Version": "0.3.0-beta.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -980,7 +1011,7 @@ export class Connection {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.2.0",
+                "X-Fern-SDK-Version": "0.3.0-beta.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },

@@ -57,7 +57,7 @@ export interface IgnoredEventBulkRetryListRequest {
     cancelledAt?: Date;
     completedAt?: Date;
     createdAt?: Date;
-    id?: string;
+    id?: string | string[];
     queryPartialMatch?: boolean;
     inProgress?: boolean;
     orderBy?: Hookdeck.IgnoredEventBulkRetryListRequestOrderBy;

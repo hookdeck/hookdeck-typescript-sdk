@@ -8,13 +8,11 @@ import * as core from "../../core";
 
 export const DelayRule: core.serialization.ObjectSchema<serializers.DelayRule.Raw, Hookdeck.DelayRule> =
     core.serialization.object({
-        type: core.serialization.stringLiteral("delay"),
         delay: core.serialization.number(),
     });
 
 export declare namespace DelayRule {
     interface Raw {
-        type: "delay";
         delay: number;
     }
 }

@@ -5,6 +5,5 @@
 import * as Hookdeck from "../index";
 
 export interface VerificationOura {
-    type: Hookdeck.VerificationOuraType;
     configs?: Hookdeck.VerificationOuraConfigs;
 }
