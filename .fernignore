@@ -2,8 +2,9 @@
 
 README.md
 jsr.json
-src/utils.ts
-tests/webhooks/verify.test.ts
+src/webhooks
+tests/webhooks
 
 # Included to support npm publish --tag beta
-.github/workflows/release.yml
+
+.github/workflows
