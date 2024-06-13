@@ -7,57 +7,6 @@ import * as Hookdeck from "../../../../index";
 /**
  * @example
  *     {}
- *
- * @example
- *     {
- *         id: "string",
- *         name: "string",
- *         destinationId: "string",
- *         sourceId: "string",
- *         disabled: true,
- *         disabledAt: new Date("2024-01-15T09:30:00.000Z"),
- *         fullName: "string",
- *         pausedAt: new Date("2024-01-15T09:30:00.000Z"),
- *         orderBy: Hookdeck.ConnectionListRequestOrderBy.CreatedAt,
- *         dir: Hookdeck.ConnectionListRequestDir.Asc,
- *         limit: 1,
- *         next: "string",
- *         prev: "string"
- *     }
- *
- * @example
- *     {
- *         id: "string",
- *         name: "string",
- *         destinationId: "string",
- *         sourceId: "string",
- *         disabled: true,
- *         disabledAt: new Date("2024-01-15T09:30:00.000Z"),
- *         fullName: "string",
- *         pausedAt: new Date("2024-01-15T09:30:00.000Z"),
- *         orderBy: Hookdeck.ConnectionListRequestOrderBy.CreatedAt,
- *         dir: Hookdeck.ConnectionListRequestDir.Asc,
- *         limit: 1,
- *         next: "string",
- *         prev: "string"
- *     }
- *
- * @example
- *     {
- *         id: "string",
- *         name: "string",
- *         destinationId: "string",
- *         sourceId: "string",
- *         disabled: true,
- *         disabledAt: new Date("2024-01-15T09:30:00.000Z"),
- *         fullName: "string",
- *         pausedAt: new Date("2024-01-15T09:30:00.000Z"),
- *         orderBy: Hookdeck.ConnectionListRequestOrderBy.CreatedAt,
- *         dir: Hookdeck.ConnectionListRequestDir.Asc,
- *         limit: 1,
- *         next: "string",
- *         prev: "string"
- *     }
  */
 export interface ConnectionListRequest {
     id?: string | string[];

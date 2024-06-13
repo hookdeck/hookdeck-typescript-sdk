@@ -1,2 +1,2 @@
-export { RequestBulkRetryListRequest } from "./RequestBulkRetryListRequest";
-export { RequestBulkRetryCreateRequest } from "./RequestBulkRetryCreateRequest";
+export { type RequestBulkRetryListRequest } from "./RequestBulkRetryListRequest";
+export { type RequestBulkRetryCreateRequest } from "./RequestBulkRetryCreateRequest";

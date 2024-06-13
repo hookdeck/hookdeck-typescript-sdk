@@ -19,6 +19,7 @@ export declare namespace CustomDomain {
     interface RequestOptions {
         timeoutInSeconds?: number;
         maxRetries?: number;
+        abortSignal?: AbortSignal;
     }
 }
 
@@ -27,6 +28,8 @@ export class CustomDomain {
 
     /**
      *
+     *
+     * @param {CustomDomain.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
      *     await hookdeck.customDomain.list()
@@ -42,13 +45,14 @@ export class CustomDomain {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.3.0-beta.2",
+                "X-Fern-SDK-Version": "0.3.0-beta.3",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
             contentType: "application/json",
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
             return await serializers.ListCustomDomainSchema.parseOrThrow(_response.body, {
@@ -85,6 +89,9 @@ export class CustomDomain {
     /**
      *
      *
+     * @param {Hookdeck.AddCustomHostname} request
+     * @param {CustomDomain.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @example
      *     await hookdeck.customDomain.create({
      *         hostname: "hostname"
@@ -104,7 +111,7 @@ export class CustomDomain {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.3.0-beta.2",
+                "X-Fern-SDK-Version": "0.3.0-beta.3",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -112,6 +119,7 @@ export class CustomDomain {
             body: await serializers.AddCustomHostname.jsonOrThrow(request, { unrecognizedObjectKeys: "strip" }),
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
             return await serializers.AddCustomHostname.parseOrThrow(_response.body, {
@@ -148,11 +156,11 @@ export class CustomDomain {
     /**
      *
      *
-     * @example
-     *     await hookdeck.customDomain.delete("domain_id")
+     * @param {string} domainId
+     * @param {CustomDomain.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
-     *     await hookdeck.customDomain.delete("string")
+     *     await hookdeck.customDomain.delete("domain_id")
      */
     public async delete(
         domainId: string,
@@ -161,20 +169,21 @@ export class CustomDomain {
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ?? environments.HookdeckEnvironment.Default,
-                `teams/current/custom_domains/${domainId}`
+                `teams/current/custom_domains/${encodeURIComponent(domainId)}`
             ),
             method: "DELETE",
             headers: {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.3.0-beta.2",
+                "X-Fern-SDK-Version": "0.3.0-beta.3",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
             contentType: "application/json",
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
             return await serializers.DeleteCustomDomainSchema.parseOrThrow(_response.body, {

@@ -19,6 +19,7 @@ export declare namespace IgnoredEventBulkRetry {
     interface RequestOptions {
         timeoutInSeconds?: number;
         maxRetries?: number;
+        abortSignal?: AbortSignal;
     }
 }
 
@@ -27,26 +28,15 @@ export class IgnoredEventBulkRetry {
 
     /**
      *
+     *
+     * @param {Hookdeck.IgnoredEventBulkRetryListRequest} request
+     * @param {IgnoredEventBulkRetry.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link Hookdeck.BadRequestError}
      * @throws {@link Hookdeck.UnprocessableEntityError}
      *
      * @example
      *     await hookdeck.ignoredEventBulkRetry.list()
-     *
-     * @example
-     *     await hookdeck.ignoredEventBulkRetry.list({
-     *         cancelledAt: new Date("2024-01-15T09:30:00.000Z"),
-     *         completedAt: new Date("2024-01-15T09:30:00.000Z"),
-     *         createdAt: new Date("2024-01-15T09:30:00.000Z"),
-     *         id: "string",
-     *         queryPartialMatch: true,
-     *         inProgress: true,
-     *         orderBy: Hookdeck.IgnoredEventBulkRetryListRequestOrderBy.CreatedAt,
-     *         dir: Hookdeck.IgnoredEventBulkRetryListRequestDir.Asc,
-     *         limit: 1,
-     *         next: "string",
-     *         prev: "string"
-     *     })
      */
     public async list(
         request: Hookdeck.IgnoredEventBulkRetryListRequest = {},
@@ -124,7 +114,7 @@ export class IgnoredEventBulkRetry {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.3.0-beta.2",
+                "X-Fern-SDK-Version": "0.3.0-beta.3",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -132,6 +122,7 @@ export class IgnoredEventBulkRetry {
             queryParameters: _queryParams,
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
             return await serializers.BatchOperationPaginatedResult.parseOrThrow(_response.body, {
@@ -190,6 +181,10 @@ export class IgnoredEventBulkRetry {
 
     /**
      *
+     *
+     * @param {Hookdeck.IgnoredEventBulkRetryCreateRequest} request
+     * @param {IgnoredEventBulkRetry.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link Hookdeck.BadRequestError}
      * @throws {@link Hookdeck.UnprocessableEntityError}
      *
@@ -210,7 +205,7 @@ export class IgnoredEventBulkRetry {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.3.0-beta.2",
+                "X-Fern-SDK-Version": "0.3.0-beta.3",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -220,6 +215,7 @@ export class IgnoredEventBulkRetry {
             }),
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
             return await serializers.BatchOperation.parseOrThrow(_response.body, {
@@ -278,6 +274,9 @@ export class IgnoredEventBulkRetry {
 
     /**
      *
+     *
+     * @param {IgnoredEventBulkRetry.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link Hookdeck.BadRequestError}
      * @throws {@link Hookdeck.UnprocessableEntityError}
      *
@@ -297,13 +296,14 @@ export class IgnoredEventBulkRetry {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.3.0-beta.2",
+                "X-Fern-SDK-Version": "0.3.0-beta.3",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
             contentType: "application/json",
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
             return await serializers.IgnoredEventBulkRetryPlanResponse.parseOrThrow(_response.body, {
@@ -362,13 +362,14 @@ export class IgnoredEventBulkRetry {
 
     /**
      *
+     *
+     * @param {string} id
+     * @param {IgnoredEventBulkRetry.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link Hookdeck.NotFoundError}
      *
      * @example
      *     await hookdeck.ignoredEventBulkRetry.retrieve("id")
-     *
-     * @example
-     *     await hookdeck.ignoredEventBulkRetry.retrieve("string")
      */
     public async retrieve(
         id: string,
@@ -377,20 +378,21 @@ export class IgnoredEventBulkRetry {
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ?? environments.HookdeckEnvironment.Default,
-                `bulk/ignored-events/retry/${id}`
+                `bulk/ignored-events/retry/${encodeURIComponent(id)}`
             ),
             method: "GET",
             headers: {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.3.0-beta.2",
+                "X-Fern-SDK-Version": "0.3.0-beta.3",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
             contentType: "application/json",
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
             return await serializers.BatchOperation.parseOrThrow(_response.body, {
@@ -439,13 +441,14 @@ export class IgnoredEventBulkRetry {
 
     /**
      *
+     *
+     * @param {string} id
+     * @param {IgnoredEventBulkRetry.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link Hookdeck.NotFoundError}
      *
      * @example
      *     await hookdeck.ignoredEventBulkRetry.cancel("id")
-     *
-     * @example
-     *     await hookdeck.ignoredEventBulkRetry.cancel("string")
      */
     public async cancel(
         id: string,
@@ -454,20 +457,21 @@ export class IgnoredEventBulkRetry {
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ?? environments.HookdeckEnvironment.Default,
-                `bulk/ignored-events/retry/${id}/cancel`
+                `bulk/ignored-events/retry/${encodeURIComponent(id)}/cancel`
             ),
             method: "POST",
             headers: {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.3.0-beta.2",
+                "X-Fern-SDK-Version": "0.3.0-beta.3",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
             contentType: "application/json",
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
             return await serializers.BatchOperation.parseOrThrow(_response.body, {

@@ -19,6 +19,7 @@ export declare namespace Event {
     interface RequestOptions {
         timeoutInSeconds?: number;
         maxRetries?: number;
+        abortSignal?: AbortSignal;
     }
 }
 
@@ -27,42 +28,15 @@ export class Event {
 
     /**
      *
+     *
+     * @param {Hookdeck.EventListRequest} request
+     * @param {Event.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link Hookdeck.BadRequestError}
      * @throws {@link Hookdeck.UnprocessableEntityError}
      *
      * @example
      *     await hookdeck.event.list()
-     *
-     * @example
-     *     await hookdeck.event.list({
-     *         id: "string",
-     *         status: Hookdeck.EventStatus.Scheduled,
-     *         webhookId: "string",
-     *         destinationId: "string",
-     *         sourceId: "string",
-     *         attempts: 1,
-     *         responseStatus: 1,
-     *         successfulAt: new Date("2024-01-15T09:30:00.000Z"),
-     *         createdAt: new Date("2024-01-15T09:30:00.000Z"),
-     *         errorCode: Hookdeck.AttemptErrorCodes.Cancelled,
-     *         cliId: "string",
-     *         lastAttemptAt: new Date("2024-01-15T09:30:00.000Z"),
-     *         searchTerm: "string",
-     *         headers: "string",
-     *         body: "string",
-     *         parsedQuery: "string",
-     *         path: "string",
-     *         cliUserId: "string",
-     *         issueId: "string",
-     *         eventDataId: "string",
-     *         bulkRetryId: "string",
-     *         include: "data",
-     *         orderBy: Hookdeck.EventListRequestOrderBy.LastAttemptAt,
-     *         dir: Hookdeck.EventListRequestDir.Asc,
-     *         limit: 1,
-     *         next: "string",
-     *         prev: "string"
-     *     })
      */
     public async list(
         request: Hookdeck.EventListRequest = {},
@@ -248,7 +222,7 @@ export class Event {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.3.0-beta.2",
+                "X-Fern-SDK-Version": "0.3.0-beta.3",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -256,6 +230,7 @@ export class Event {
             queryParameters: _queryParams,
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
             return await serializers.EventPaginatedResult.parseOrThrow(_response.body, {
@@ -314,32 +289,34 @@ export class Event {
 
     /**
      *
+     *
+     * @param {string} id
+     * @param {Event.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link Hookdeck.NotFoundError}
      *
      * @example
      *     await hookdeck.event.retrieve("id")
-     *
-     * @example
-     *     await hookdeck.event.retrieve("string")
      */
     public async retrieve(id: string, requestOptions?: Event.RequestOptions): Promise<Hookdeck.Event> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ?? environments.HookdeckEnvironment.Default,
-                `events/${id}`
+                `events/${encodeURIComponent(id)}`
             ),
             method: "GET",
             headers: {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.3.0-beta.2",
+                "X-Fern-SDK-Version": "0.3.0-beta.3",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
             contentType: "application/json",
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
             return await serializers.Event.parseOrThrow(_response.body, {
@@ -388,32 +365,34 @@ export class Event {
 
     /**
      *
+     *
+     * @param {string} id
+     * @param {Event.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link Hookdeck.NotFoundError}
      *
      * @example
      *     await hookdeck.event.retrieveBody("id")
-     *
-     * @example
-     *     await hookdeck.event.retrieveBody("string")
      */
     public async retrieveBody(id: string, requestOptions?: Event.RequestOptions): Promise<Hookdeck.RawBody> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ?? environments.HookdeckEnvironment.Default,
-                `events/${id}/raw_body`
+                `events/${encodeURIComponent(id)}/raw_body`
             ),
             method: "GET",
             headers: {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.3.0-beta.2",
+                "X-Fern-SDK-Version": "0.3.0-beta.3",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
             contentType: "application/json",
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
             return await serializers.RawBody.parseOrThrow(_response.body, {
@@ -462,32 +441,34 @@ export class Event {
 
     /**
      *
+     *
+     * @param {string} id
+     * @param {Event.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link Hookdeck.NotFoundError}
      *
      * @example
      *     await hookdeck.event.retry("id")
-     *
-     * @example
-     *     await hookdeck.event.retry("string")
      */
     public async retry(id: string, requestOptions?: Event.RequestOptions): Promise<Hookdeck.RetriedEvent> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ?? environments.HookdeckEnvironment.Default,
-                `events/${id}/retry`
+                `events/${encodeURIComponent(id)}/retry`
             ),
             method: "POST",
             headers: {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.3.0-beta.2",
+                "X-Fern-SDK-Version": "0.3.0-beta.3",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
             contentType: "application/json",
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
             return await serializers.RetriedEvent.parseOrThrow(_response.body, {
@@ -536,32 +517,34 @@ export class Event {
 
     /**
      *
+     *
+     * @param {string} id
+     * @param {Event.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link Hookdeck.NotFoundError}
      *
      * @example
      *     await hookdeck.event.mute("id")
-     *
-     * @example
-     *     await hookdeck.event.mute("string")
      */
     public async mute(id: string, requestOptions?: Event.RequestOptions): Promise<Hookdeck.Event> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ?? environments.HookdeckEnvironment.Default,
-                `events/${id}/mute`
+                `events/${encodeURIComponent(id)}/mute`
             ),
             method: "PUT",
             headers: {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.3.0-beta.2",
+                "X-Fern-SDK-Version": "0.3.0-beta.3",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
             contentType: "application/json",
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
             return await serializers.Event.parseOrThrow(_response.body, {

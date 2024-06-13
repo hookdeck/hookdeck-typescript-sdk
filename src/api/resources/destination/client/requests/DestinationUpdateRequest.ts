@@ -7,18 +7,6 @@ import * as Hookdeck from "../../../../index";
 /**
  * @example
  *     {}
- *
- * @example
- *     {}
- *
- * @example
- *     {}
- *
- * @example
- *     {}
- *
- * @example
- *     {}
  */
 export interface DestinationUpdateRequest {
     /** Name for the destination */

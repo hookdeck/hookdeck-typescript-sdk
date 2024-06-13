@@ -8,24 +8,6 @@
  *         name: "name",
  *         code: "code"
  *     }
- *
- * @example
- *     {
- *         name: "name",
- *         code: "code"
- *     }
- *
- * @example
- *     {
- *         name: "name",
- *         code: "code"
- *     }
- *
- * @example
- *     {
- *         name: "name",
- *         code: "code"
- *     }
  */
 export interface TransformationCreateRequest {
     /** A unique, human-friendly name for the transformation */

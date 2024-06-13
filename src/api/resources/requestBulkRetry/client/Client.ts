@@ -19,6 +19,7 @@ export declare namespace RequestBulkRetry {
     interface RequestOptions {
         timeoutInSeconds?: number;
         maxRetries?: number;
+        abortSignal?: AbortSignal;
     }
 }
 
@@ -27,26 +28,15 @@ export class RequestBulkRetry {
 
     /**
      *
+     *
+     * @param {Hookdeck.RequestBulkRetryListRequest} request
+     * @param {RequestBulkRetry.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link Hookdeck.BadRequestError}
      * @throws {@link Hookdeck.UnprocessableEntityError}
      *
      * @example
      *     await hookdeck.requestBulkRetry.list()
-     *
-     * @example
-     *     await hookdeck.requestBulkRetry.list({
-     *         cancelledAt: new Date("2024-01-15T09:30:00.000Z"),
-     *         completedAt: new Date("2024-01-15T09:30:00.000Z"),
-     *         createdAt: new Date("2024-01-15T09:30:00.000Z"),
-     *         id: "string",
-     *         inProgress: true,
-     *         queryPartialMatch: true,
-     *         orderBy: Hookdeck.RequestBulkRetryListRequestOrderBy.CreatedAt,
-     *         dir: Hookdeck.RequestBulkRetryListRequestDir.Asc,
-     *         limit: 1,
-     *         next: "string",
-     *         prev: "string"
-     *     })
      */
     public async list(
         request: Hookdeck.RequestBulkRetryListRequest = {},
@@ -124,7 +114,7 @@ export class RequestBulkRetry {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.3.0-beta.2",
+                "X-Fern-SDK-Version": "0.3.0-beta.3",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -132,6 +122,7 @@ export class RequestBulkRetry {
             queryParameters: _queryParams,
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
             return await serializers.BatchOperationPaginatedResult.parseOrThrow(_response.body, {
@@ -190,6 +181,10 @@ export class RequestBulkRetry {
 
     /**
      *
+     *
+     * @param {Hookdeck.RequestBulkRetryCreateRequest} request
+     * @param {RequestBulkRetry.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link Hookdeck.BadRequestError}
      * @throws {@link Hookdeck.UnprocessableEntityError}
      *
@@ -210,7 +205,7 @@ export class RequestBulkRetry {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.3.0-beta.2",
+                "X-Fern-SDK-Version": "0.3.0-beta.3",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -220,6 +215,7 @@ export class RequestBulkRetry {
             }),
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
             return await serializers.BatchOperation.parseOrThrow(_response.body, {
@@ -278,6 +274,9 @@ export class RequestBulkRetry {
 
     /**
      *
+     *
+     * @param {RequestBulkRetry.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link Hookdeck.BadRequestError}
      * @throws {@link Hookdeck.UnprocessableEntityError}
      *
@@ -297,13 +296,14 @@ export class RequestBulkRetry {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.3.0-beta.2",
+                "X-Fern-SDK-Version": "0.3.0-beta.3",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
             contentType: "application/json",
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
             return await serializers.RequestBulkRetryPlanResponse.parseOrThrow(_response.body, {
@@ -362,13 +362,14 @@ export class RequestBulkRetry {
 
     /**
      *
+     *
+     * @param {string} id
+     * @param {RequestBulkRetry.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link Hookdeck.NotFoundError}
      *
      * @example
      *     await hookdeck.requestBulkRetry.retrieve("id")
-     *
-     * @example
-     *     await hookdeck.requestBulkRetry.retrieve("string")
      */
     public async retrieve(
         id: string,
@@ -377,20 +378,21 @@ export class RequestBulkRetry {
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ?? environments.HookdeckEnvironment.Default,
-                `bulk/requests/retry/${id}`
+                `bulk/requests/retry/${encodeURIComponent(id)}`
             ),
             method: "GET",
             headers: {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.3.0-beta.2",
+                "X-Fern-SDK-Version": "0.3.0-beta.3",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
             contentType: "application/json",
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
             return await serializers.BatchOperation.parseOrThrow(_response.body, {
@@ -439,13 +441,14 @@ export class RequestBulkRetry {
 
     /**
      *
+     *
+     * @param {string} id
+     * @param {RequestBulkRetry.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link Hookdeck.NotFoundError}
      *
      * @example
      *     await hookdeck.requestBulkRetry.cancel("id")
-     *
-     * @example
-     *     await hookdeck.requestBulkRetry.cancel("string")
      */
     public async cancel(
         id: string,
@@ -454,20 +457,21 @@ export class RequestBulkRetry {
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ?? environments.HookdeckEnvironment.Default,
-                `bulk/requests/retry/${id}/cancel`
+                `bulk/requests/retry/${encodeURIComponent(id)}/cancel`
             ),
             method: "POST",
             headers: {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.3.0-beta.2",
+                "X-Fern-SDK-Version": "0.3.0-beta.3",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
             contentType: "application/json",
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
             return await serializers.BatchOperation.parseOrThrow(_response.body, {

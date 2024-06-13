@@ -11,60 +11,6 @@ import * as Hookdeck from "../../../../index";
  *         issueTriggerId: "it_BXKv5OdJXCiVwkPhGy",
  *         mergedWith: "iss_AXKv3OdJXCiKlkPhDz"
  *     }
- *
- * @example
- *     {
- *         id: "string",
- *         issueTriggerId: "string",
- *         type: Hookdeck.IssueListRequestType.Delivery,
- *         status: Hookdeck.IssueListRequestStatus.Opened,
- *         mergedWith: "string",
- *         createdAt: new Date("2024-01-15T09:30:00.000Z"),
- *         firstSeenAt: new Date("2024-01-15T09:30:00.000Z"),
- *         lastSeenAt: new Date("2024-01-15T09:30:00.000Z"),
- *         dismissedAt: new Date("2024-01-15T09:30:00.000Z"),
- *         orderBy: Hookdeck.IssueListRequestOrderBy.CreatedAt,
- *         dir: Hookdeck.IssueListRequestDir.Asc,
- *         limit: 1,
- *         next: "string",
- *         prev: "string"
- *     }
- *
- * @example
- *     {
- *         id: "string",
- *         issueTriggerId: "string",
- *         type: Hookdeck.IssueListRequestType.Delivery,
- *         status: Hookdeck.IssueListRequestStatus.Opened,
- *         mergedWith: "string",
- *         createdAt: new Date("2024-01-15T09:30:00.000Z"),
- *         firstSeenAt: new Date("2024-01-15T09:30:00.000Z"),
- *         lastSeenAt: new Date("2024-01-15T09:30:00.000Z"),
- *         dismissedAt: new Date("2024-01-15T09:30:00.000Z"),
- *         orderBy: Hookdeck.IssueListRequestOrderBy.CreatedAt,
- *         dir: Hookdeck.IssueListRequestDir.Asc,
- *         limit: 1,
- *         next: "string",
- *         prev: "string"
- *     }
- *
- * @example
- *     {
- *         id: "string",
- *         issueTriggerId: "string",
- *         type: Hookdeck.IssueListRequestType.Delivery,
- *         status: Hookdeck.IssueListRequestStatus.Opened,
- *         mergedWith: "string",
- *         createdAt: new Date("2024-01-15T09:30:00.000Z"),
- *         firstSeenAt: new Date("2024-01-15T09:30:00.000Z"),
- *         lastSeenAt: new Date("2024-01-15T09:30:00.000Z"),
- *         dismissedAt: new Date("2024-01-15T09:30:00.000Z"),
- *         orderBy: Hookdeck.IssueListRequestOrderBy.CreatedAt,
- *         dir: Hookdeck.IssueListRequestDir.Asc,
- *         limit: 1,
- *         next: "string",
- *         prev: "string"
- *     }
  */
 export interface IssueListRequest {
     id?: string | string[];

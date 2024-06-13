@@ -30,6 +30,7 @@ export declare namespace HookdeckClient {
     interface RequestOptions {
         timeoutInSeconds?: number;
         maxRetries?: number;
+        abortSignal?: AbortSignal;
     }
 }
 

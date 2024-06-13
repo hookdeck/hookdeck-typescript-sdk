@@ -5,18 +5,6 @@
 /**
  * @example
  *     {}
- *
- * @example
- *     {}
- *
- * @example
- *     {}
- *
- * @example
- *     {}
- *
- * @example
- *     {}
  */
 export interface TransformationUpdateRequest {
     /** A unique, human-friendly name for the transformation */

@@ -1,1 +1,1 @@
-export { NotificationUpdateRequest } from "./NotificationUpdateRequest";
+export { type NotificationUpdateRequest } from "./NotificationUpdateRequest";

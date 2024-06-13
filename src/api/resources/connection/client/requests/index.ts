@@ -1,5 +1,5 @@
-export { ConnectionListRequest } from "./ConnectionListRequest";
-export { ConnectionCreateRequest } from "./ConnectionCreateRequest";
-export { ConnectionUpsertRequest } from "./ConnectionUpsertRequest";
-export { ConnectionCountRequest } from "./ConnectionCountRequest";
-export { ConnectionUpdateRequest } from "./ConnectionUpdateRequest";
+export { type ConnectionListRequest } from "./ConnectionListRequest";
+export { type ConnectionCreateRequest } from "./ConnectionCreateRequest";
+export { type ConnectionUpsertRequest } from "./ConnectionUpsertRequest";
+export { type ConnectionCountRequest } from "./ConnectionCountRequest";
+export { type ConnectionUpdateRequest } from "./ConnectionUpdateRequest";

@@ -19,6 +19,7 @@ export declare namespace Bookmark {
     interface RequestOptions {
         timeoutInSeconds?: number;
         maxRetries?: number;
+        abortSignal?: AbortSignal;
     }
 }
 
@@ -27,26 +28,15 @@ export class Bookmark {
 
     /**
      *
+     *
+     * @param {Hookdeck.BookmarkListRequest} request
+     * @param {Bookmark.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link Hookdeck.BadRequestError}
      * @throws {@link Hookdeck.UnprocessableEntityError}
      *
      * @example
      *     await hookdeck.bookmark.list()
-     *
-     * @example
-     *     await hookdeck.bookmark.list({
-     *         id: "string",
-     *         name: "string",
-     *         webhookId: "string",
-     *         eventDataId: "string",
-     *         label: "string",
-     *         lastUsedAt: new Date("2024-01-15T09:30:00.000Z"),
-     *         orderBy: Hookdeck.BookmarkListRequestOrderBy.CreatedAt,
-     *         dir: Hookdeck.BookmarkListRequestDir.Asc,
-     *         limit: 1,
-     *         next: "string",
-     *         prev: "string"
-     *     })
      */
     public async list(
         request: Hookdeck.BookmarkListRequest = {},
@@ -128,7 +118,7 @@ export class Bookmark {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.3.0-beta.2",
+                "X-Fern-SDK-Version": "0.3.0-beta.3",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -136,6 +126,7 @@ export class Bookmark {
             queryParameters: _queryParams,
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
             return await serializers.BookmarkPaginatedResult.parseOrThrow(_response.body, {
@@ -194,6 +185,10 @@ export class Bookmark {
 
     /**
      *
+     *
+     * @param {Hookdeck.BookmarkCreateRequest} request
+     * @param {Bookmark.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link Hookdeck.BadRequestError}
      * @throws {@link Hookdeck.UnprocessableEntityError}
      *
@@ -218,7 +213,7 @@ export class Bookmark {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.3.0-beta.2",
+                "X-Fern-SDK-Version": "0.3.0-beta.3",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -226,6 +221,7 @@ export class Bookmark {
             body: await serializers.BookmarkCreateRequest.jsonOrThrow(request, { unrecognizedObjectKeys: "strip" }),
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
             return await serializers.Bookmark.parseOrThrow(_response.body, {
@@ -284,32 +280,34 @@ export class Bookmark {
 
     /**
      *
+     *
+     * @param {string} id
+     * @param {Bookmark.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link Hookdeck.NotFoundError}
      *
      * @example
      *     await hookdeck.bookmark.retrieve("id")
-     *
-     * @example
-     *     await hookdeck.bookmark.retrieve("string")
      */
     public async retrieve(id: string, requestOptions?: Bookmark.RequestOptions): Promise<Hookdeck.Bookmark> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ?? environments.HookdeckEnvironment.Default,
-                `bookmarks/${id}`
+                `bookmarks/${encodeURIComponent(id)}`
             ),
             method: "GET",
             headers: {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.3.0-beta.2",
+                "X-Fern-SDK-Version": "0.3.0-beta.3",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
             contentType: "application/json",
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
             return await serializers.Bookmark.parseOrThrow(_response.body, {
@@ -358,15 +356,17 @@ export class Bookmark {
 
     /**
      *
+     *
+     * @param {string} id
+     * @param {Hookdeck.BookmarkUpdateRequest} request
+     * @param {Bookmark.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link Hookdeck.BadRequestError}
      * @throws {@link Hookdeck.NotFoundError}
      * @throws {@link Hookdeck.UnprocessableEntityError}
      *
      * @example
      *     await hookdeck.bookmark.update("id")
-     *
-     * @example
-     *     await hookdeck.bookmark.update("string")
      */
     public async update(
         id: string,
@@ -376,14 +376,14 @@ export class Bookmark {
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ?? environments.HookdeckEnvironment.Default,
-                `bookmarks/${id}`
+                `bookmarks/${encodeURIComponent(id)}`
             ),
             method: "PUT",
             headers: {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.3.0-beta.2",
+                "X-Fern-SDK-Version": "0.3.0-beta.3",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -391,6 +391,7 @@ export class Bookmark {
             body: await serializers.BookmarkUpdateRequest.jsonOrThrow(request, { unrecognizedObjectKeys: "strip" }),
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
             return await serializers.Bookmark.parseOrThrow(_response.body, {
@@ -459,13 +460,14 @@ export class Bookmark {
 
     /**
      *
+     *
+     * @param {string} id
+     * @param {Bookmark.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link Hookdeck.NotFoundError}
      *
      * @example
      *     await hookdeck.bookmark.delete("id")
-     *
-     * @example
-     *     await hookdeck.bookmark.delete("string")
      */
     public async delete(
         id: string,
@@ -474,20 +476,21 @@ export class Bookmark {
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ?? environments.HookdeckEnvironment.Default,
-                `bookmarks/${id}`
+                `bookmarks/${encodeURIComponent(id)}`
             ),
             method: "DELETE",
             headers: {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.3.0-beta.2",
+                "X-Fern-SDK-Version": "0.3.0-beta.3",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
             contentType: "application/json",
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
             return await serializers.DeletedBookmarkResponse.parseOrThrow(_response.body, {
@@ -536,32 +539,34 @@ export class Bookmark {
 
     /**
      *
+     *
+     * @param {string} id
+     * @param {Bookmark.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link Hookdeck.NotFoundError}
      *
      * @example
      *     await hookdeck.bookmark.retrieveBody("id")
-     *
-     * @example
-     *     await hookdeck.bookmark.retrieveBody("string")
      */
     public async retrieveBody(id: string, requestOptions?: Bookmark.RequestOptions): Promise<Hookdeck.RawBody> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ?? environments.HookdeckEnvironment.Default,
-                `bookmarks/${id}/raw_body`
+                `bookmarks/${encodeURIComponent(id)}/raw_body`
             ),
             method: "GET",
             headers: {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.3.0-beta.2",
+                "X-Fern-SDK-Version": "0.3.0-beta.3",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
             contentType: "application/json",
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
             return await serializers.RawBody.parseOrThrow(_response.body, {
@@ -610,15 +615,17 @@ export class Bookmark {
 
     /**
      *
+     *
+     * @param {string} id
+     * @param {Hookdeck.BookmarkTriggerRequest} request
+     * @param {Bookmark.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link Hookdeck.BadRequestError}
      * @throws {@link Hookdeck.NotFoundError}
      * @throws {@link Hookdeck.UnprocessableEntityError}
      *
      * @example
      *     await hookdeck.bookmark.trigger("id")
-     *
-     * @example
-     *     await hookdeck.bookmark.trigger("string")
      */
     public async trigger(
         id: string,
@@ -628,14 +635,14 @@ export class Bookmark {
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ?? environments.HookdeckEnvironment.Default,
-                `bookmarks/${id}/trigger`
+                `bookmarks/${encodeURIComponent(id)}/trigger`
             ),
             method: "POST",
             headers: {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.3.0-beta.2",
+                "X-Fern-SDK-Version": "0.3.0-beta.3",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -643,6 +650,7 @@ export class Bookmark {
             body: await serializers.BookmarkTriggerRequest.jsonOrThrow(request, { unrecognizedObjectKeys: "strip" }),
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
             return await serializers.EventArray.parseOrThrow(_response.body, {

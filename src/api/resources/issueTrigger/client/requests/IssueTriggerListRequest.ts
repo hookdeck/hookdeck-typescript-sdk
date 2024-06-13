@@ -7,42 +7,6 @@ import * as Hookdeck from "../../../../index";
 /**
  * @example
  *     {}
- *
- * @example
- *     {
- *         name: "string",
- *         type: Hookdeck.IssueType.Delivery,
- *         disabledAt: new Date("2024-01-15T09:30:00.000Z"),
- *         orderBy: Hookdeck.IssueTriggerListRequestOrderBy.CreatedAt,
- *         dir: Hookdeck.IssueTriggerListRequestDir.Asc,
- *         limit: 1,
- *         next: "string",
- *         prev: "string"
- *     }
- *
- * @example
- *     {
- *         name: "string",
- *         type: Hookdeck.IssueType.Delivery,
- *         disabledAt: new Date("2024-01-15T09:30:00.000Z"),
- *         orderBy: Hookdeck.IssueTriggerListRequestOrderBy.CreatedAt,
- *         dir: Hookdeck.IssueTriggerListRequestDir.Asc,
- *         limit: 1,
- *         next: "string",
- *         prev: "string"
- *     }
- *
- * @example
- *     {
- *         name: "string",
- *         type: Hookdeck.IssueType.Delivery,
- *         disabledAt: new Date("2024-01-15T09:30:00.000Z"),
- *         orderBy: Hookdeck.IssueTriggerListRequestOrderBy.CreatedAt,
- *         dir: Hookdeck.IssueTriggerListRequestDir.Asc,
- *         limit: 1,
- *         next: "string",
- *         prev: "string"
- *     }
  */
 export interface IssueTriggerListRequest {
     name?: string;

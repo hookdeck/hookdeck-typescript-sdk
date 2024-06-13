@@ -1,2 +1,2 @@
-export { EventBulkRetryListRequest } from "./EventBulkRetryListRequest";
-export { EventBulkRetryCreateRequest } from "./EventBulkRetryCreateRequest";
+export { type EventBulkRetryListRequest } from "./EventBulkRetryListRequest";
+export { type EventBulkRetryCreateRequest } from "./EventBulkRetryCreateRequest";

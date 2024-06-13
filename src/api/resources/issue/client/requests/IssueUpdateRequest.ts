@@ -9,16 +9,6 @@ import * as Hookdeck from "../../../../index";
  *     {
  *         status: Hookdeck.IssueUpdateRequestStatus.Opened
  *     }
- *
- * @example
- *     {
- *         status: Hookdeck.IssueUpdateRequestStatus.Opened
- *     }
- *
- * @example
- *     {
- *         status: Hookdeck.IssueUpdateRequestStatus.Opened
- *     }
  */
 export interface IssueUpdateRequest {
     /** New status */

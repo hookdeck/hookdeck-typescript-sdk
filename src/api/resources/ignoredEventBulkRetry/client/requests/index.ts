@@ -1,2 +1,2 @@
-export { IgnoredEventBulkRetryListRequest } from "./IgnoredEventBulkRetryListRequest";
-export { IgnoredEventBulkRetryCreateRequest } from "./IgnoredEventBulkRetryCreateRequest";
+export { type IgnoredEventBulkRetryListRequest } from "./IgnoredEventBulkRetryListRequest";
+export { type IgnoredEventBulkRetryCreateRequest } from "./IgnoredEventBulkRetryCreateRequest";

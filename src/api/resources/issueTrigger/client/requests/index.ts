@@ -1,4 +1,4 @@
-export { IssueTriggerListRequest } from "./IssueTriggerListRequest";
-export { IssueTriggerCreateRequest } from "./IssueTriggerCreateRequest";
-export { IssueTriggerUpsertRequest } from "./IssueTriggerUpsertRequest";
-export { IssueTriggerUpdateRequest } from "./IssueTriggerUpdateRequest";
+export { type IssueTriggerListRequest } from "./IssueTriggerListRequest";
+export { type IssueTriggerCreateRequest } from "./IssueTriggerCreateRequest";
+export { type IssueTriggerUpsertRequest } from "./IssueTriggerUpsertRequest";
+export { type IssueTriggerUpdateRequest } from "./IssueTriggerUpdateRequest";

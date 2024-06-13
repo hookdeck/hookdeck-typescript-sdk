@@ -1,4 +1,4 @@
-export { RequestListRequest } from "./RequestListRequest";
-export { RequestRetryRequest } from "./RequestRetryRequest";
-export { RequestListEventRequest } from "./RequestListEventRequest";
-export { RequestListIgnoredEventRequest } from "./RequestListIgnoredEventRequest";
+export { type RequestListRequest } from "./RequestListRequest";
+export { type RequestRetryRequest } from "./RequestRetryRequest";
+export { type RequestListEventRequest } from "./RequestListEventRequest";
+export { type RequestListIgnoredEventRequest } from "./RequestListIgnoredEventRequest";

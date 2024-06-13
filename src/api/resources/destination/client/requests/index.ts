@@ -1,4 +1,4 @@
-export { DestinationListRequest } from "./DestinationListRequest";
-export { DestinationCreateRequest } from "./DestinationCreateRequest";
-export { DestinationUpsertRequest } from "./DestinationUpsertRequest";
-export { DestinationUpdateRequest } from "./DestinationUpdateRequest";
+export { type DestinationListRequest } from "./DestinationListRequest";
+export { type DestinationCreateRequest } from "./DestinationCreateRequest";
+export { type DestinationUpsertRequest } from "./DestinationUpsertRequest";
+export { type DestinationUpdateRequest } from "./DestinationUpdateRequest";

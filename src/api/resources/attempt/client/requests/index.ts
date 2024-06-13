@@ -1,1 +1,1 @@
-export { AttemptListRequest } from "./AttemptListRequest";
+export { type AttemptListRequest } from "./AttemptListRequest";

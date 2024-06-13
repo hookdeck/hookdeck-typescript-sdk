@@ -7,15 +7,6 @@ import * as Hookdeck from "../../../../index";
 /**
  * @example
  *     {}
- *
- * @example
- *     {}
- *
- * @example
- *     {}
- *
- * @example
- *     {}
  */
 export interface ConnectionCreateRequest {
     /** A unique name of the connection for the source */

@@ -19,6 +19,7 @@ export declare namespace Transformation {
     interface RequestOptions {
         timeoutInSeconds?: number;
         maxRetries?: number;
+        abortSignal?: AbortSignal;
     }
 }
 
@@ -27,22 +28,15 @@ export class Transformation {
 
     /**
      *
+     *
+     * @param {Hookdeck.TransformationListRequest} request
+     * @param {Transformation.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link Hookdeck.BadRequestError}
      * @throws {@link Hookdeck.UnprocessableEntityError}
      *
      * @example
      *     await hookdeck.transformation.list()
-     *
-     * @example
-     *     await hookdeck.transformation.list({
-     *         id: "string",
-     *         name: "string",
-     *         orderBy: Hookdeck.TransformationListRequestOrderBy.CreatedAt,
-     *         dir: Hookdeck.TransformationListRequestDir.Asc,
-     *         limit: 1,
-     *         next: "string",
-     *         prev: "string"
-     *     })
      */
     public async list(
         request: Hookdeck.TransformationListRequest = {},
@@ -92,7 +86,7 @@ export class Transformation {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.3.0-beta.2",
+                "X-Fern-SDK-Version": "0.3.0-beta.3",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -100,6 +94,7 @@ export class Transformation {
             queryParameters: _queryParams,
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
             return await serializers.TransformationPaginatedResult.parseOrThrow(_response.body, {
@@ -158,6 +153,10 @@ export class Transformation {
 
     /**
      *
+     *
+     * @param {Hookdeck.TransformationCreateRequest} request
+     * @param {Transformation.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link Hookdeck.BadRequestError}
      * @throws {@link Hookdeck.UnprocessableEntityError}
      *
@@ -181,7 +180,7 @@ export class Transformation {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.3.0-beta.2",
+                "X-Fern-SDK-Version": "0.3.0-beta.3",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -191,6 +190,7 @@ export class Transformation {
             }),
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
             return await serializers.Transformation.parseOrThrow(_response.body, {
@@ -248,6 +248,10 @@ export class Transformation {
     }
 
     /**
+     *
+     *
+     * @param {Hookdeck.TransformationUpsertRequest} request
+     * @param {Transformation.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @throws {@link Hookdeck.BadRequestError}
      * @throws {@link Hookdeck.UnprocessableEntityError}
@@ -272,7 +276,7 @@ export class Transformation {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.3.0-beta.2",
+                "X-Fern-SDK-Version": "0.3.0-beta.3",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -282,6 +286,7 @@ export class Transformation {
             }),
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
             return await serializers.Transformation.parseOrThrow(_response.body, {
@@ -340,13 +345,14 @@ export class Transformation {
 
     /**
      *
+     *
+     * @param {string} id
+     * @param {Transformation.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link Hookdeck.NotFoundError}
      *
      * @example
      *     await hookdeck.transformation.retrieve("id")
-     *
-     * @example
-     *     await hookdeck.transformation.retrieve("string")
      */
     public async retrieve(
         id: string,
@@ -355,20 +361,21 @@ export class Transformation {
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ?? environments.HookdeckEnvironment.Default,
-                `transformations/${id}`
+                `transformations/${encodeURIComponent(id)}`
             ),
             method: "GET",
             headers: {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.3.0-beta.2",
+                "X-Fern-SDK-Version": "0.3.0-beta.3",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
             contentType: "application/json",
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
             return await serializers.Transformation.parseOrThrow(_response.body, {
@@ -417,15 +424,17 @@ export class Transformation {
 
     /**
      *
+     *
+     * @param {string} id
+     * @param {Hookdeck.TransformationUpdateRequest} request
+     * @param {Transformation.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link Hookdeck.BadRequestError}
      * @throws {@link Hookdeck.NotFoundError}
      * @throws {@link Hookdeck.UnprocessableEntityError}
      *
      * @example
      *     await hookdeck.transformation.update("id")
-     *
-     * @example
-     *     await hookdeck.transformation.update("string")
      */
     public async update(
         id: string,
@@ -435,14 +444,14 @@ export class Transformation {
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ?? environments.HookdeckEnvironment.Default,
-                `transformations/${id}`
+                `transformations/${encodeURIComponent(id)}`
             ),
             method: "PUT",
             headers: {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.3.0-beta.2",
+                "X-Fern-SDK-Version": "0.3.0-beta.3",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -452,6 +461,7 @@ export class Transformation {
             }),
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
             return await serializers.Transformation.parseOrThrow(_response.body, {
@@ -519,6 +529,10 @@ export class Transformation {
     }
 
     /**
+     *
+     *
+     * @param {Hookdeck.TransformationRunRequest} request
+     * @param {Transformation.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @throws {@link Hookdeck.BadRequestError}
      * @throws {@link Hookdeck.UnprocessableEntityError}
@@ -540,7 +554,7 @@ export class Transformation {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.3.0-beta.2",
+                "X-Fern-SDK-Version": "0.3.0-beta.3",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -548,6 +562,7 @@ export class Transformation {
             body: await serializers.TransformationRunRequest.jsonOrThrow(request, { unrecognizedObjectKeys: "strip" }),
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
             return await serializers.TransformationExecutorOutput.parseOrThrow(_response.body, {
@@ -606,24 +621,16 @@ export class Transformation {
 
     /**
      *
+     *
+     * @param {string} id
+     * @param {Hookdeck.TransformationListExecutionRequest} request
+     * @param {Transformation.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link Hookdeck.BadRequestError}
      * @throws {@link Hookdeck.UnprocessableEntityError}
      *
      * @example
      *     await hookdeck.transformation.listExecution("id")
-     *
-     * @example
-     *     await hookdeck.transformation.listExecution("string", {
-     *         logLevel: Hookdeck.TransformationListExecutionRequestLogLevel.Debug,
-     *         webhookId: "string",
-     *         issueId: "string",
-     *         createdAt: new Date("2024-01-15T09:30:00.000Z"),
-     *         orderBy: Hookdeck.TransformationListExecutionRequestOrderBy.CreatedAt,
-     *         dir: Hookdeck.TransformationListExecutionRequestDir.Asc,
-     *         limit: 1,
-     *         next: "string",
-     *         prev: "string"
-     *     })
      */
     public async listExecution(
         id: string,
@@ -679,14 +686,14 @@ export class Transformation {
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ?? environments.HookdeckEnvironment.Default,
-                `transformations/${id}/executions`
+                `transformations/${encodeURIComponent(id)}/executions`
             ),
             method: "GET",
             headers: {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.3.0-beta.2",
+                "X-Fern-SDK-Version": "0.3.0-beta.3",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -694,6 +701,7 @@ export class Transformation {
             queryParameters: _queryParams,
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
             return await serializers.TransformationExecutionPaginatedResult.parseOrThrow(_response.body, {
@@ -752,13 +760,15 @@ export class Transformation {
 
     /**
      *
+     *
+     * @param {string} id
+     * @param {string} executionId
+     * @param {Transformation.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link Hookdeck.NotFoundError}
      *
      * @example
      *     await hookdeck.transformation.retrieveExecution("id", "execution_id")
-     *
-     * @example
-     *     await hookdeck.transformation.retrieveExecution("string", "string")
      */
     public async retrieveExecution(
         id: string,
@@ -768,20 +778,21 @@ export class Transformation {
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ?? environments.HookdeckEnvironment.Default,
-                `transformations/${id}/executions/${executionId}`
+                `transformations/${encodeURIComponent(id)}/executions/${encodeURIComponent(executionId)}`
             ),
             method: "GET",
             headers: {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.3.0-beta.2",
+                "X-Fern-SDK-Version": "0.3.0-beta.3",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
             contentType: "application/json",
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
             return await serializers.TransformationExecution.parseOrThrow(_response.body, {
