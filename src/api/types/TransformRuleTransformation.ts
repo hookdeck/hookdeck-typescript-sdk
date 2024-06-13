@@ -5,7 +5,7 @@
 /**
  * You can optionally define a new transformation while creating a transform rule
  */
-export interface TransformFullTransformation {
+export interface TransformRuleTransformation {
     /** The unique name of the transformation */
     name: string;
     /** A string representation of your JavaScript (ES6) code to run */

@@ -5,20 +5,17 @@
 import * as serializers from "../index";
 import * as Hookdeck from "../../api/index";
 import * as core from "../../core";
-import { VerificationBondsmithType } from "./VerificationBondsmithType";
 import { VerificationBondsmithConfigs } from "./VerificationBondsmithConfigs";
 
 export const VerificationBondsmith: core.serialization.ObjectSchema<
     serializers.VerificationBondsmith.Raw,
     Hookdeck.VerificationBondsmith
 > = core.serialization.object({
-    type: VerificationBondsmithType,
     configs: VerificationBondsmithConfigs.optional(),
 });
 
 export declare namespace VerificationBondsmith {
     interface Raw {
-        type: VerificationBondsmithType.Raw;
         configs?: VerificationBondsmithConfigs.Raw | null;
     }
 }

@@ -5,6 +5,5 @@
 import * as Hookdeck from "../index";
 
 export interface VerificationZoom {
-    type: Hookdeck.VerificationZoomType;
     configs?: Hookdeck.VerificationZoomConfigs;
 }

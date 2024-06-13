@@ -5,6 +5,5 @@
 import * as Hookdeck from "../index";
 
 export interface VerificationCloudSignal {
-    type: Hookdeck.VerificationCloudSignalType;
     configs?: Hookdeck.VerificationCloudSignalConfigs;
 }

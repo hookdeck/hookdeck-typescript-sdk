@@ -5,20 +5,17 @@
 import * as serializers from "../index";
 import * as Hookdeck from "../../api/index";
 import * as core from "../../core";
-import { VerificationHubspotType } from "./VerificationHubspotType";
 import { VerificationHubspotConfigs } from "./VerificationHubspotConfigs";
 
 export const VerificationHubspot: core.serialization.ObjectSchema<
     serializers.VerificationHubspot.Raw,
     Hookdeck.VerificationHubspot
 > = core.serialization.object({
-    type: VerificationHubspotType,
     configs: VerificationHubspotConfigs.optional(),
 });
 
 export declare namespace VerificationHubspot {
     interface Raw {
-        type: VerificationHubspotType.Raw;
         configs?: VerificationHubspotConfigs.Raw | null;
     }
 }

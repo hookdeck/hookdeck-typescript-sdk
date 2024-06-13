@@ -5,6 +5,5 @@
 import * as Hookdeck from "../index";
 
 export interface VerificationTwitch {
-    type: Hookdeck.VerificationTwitchType;
     configs?: Hookdeck.VerificationTwitchConfigs;
 }

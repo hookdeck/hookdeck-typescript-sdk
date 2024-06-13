@@ -5,20 +5,17 @@
 import * as serializers from "../index";
 import * as Hookdeck from "../../api/index";
 import * as core from "../../core";
-import { VerificationFavroType } from "./VerificationFavroType";
 import { VerificationFavroConfigs } from "./VerificationFavroConfigs";
 
 export const VerificationFavro: core.serialization.ObjectSchema<
     serializers.VerificationFavro.Raw,
     Hookdeck.VerificationFavro
 > = core.serialization.object({
-    type: VerificationFavroType,
     configs: VerificationFavroConfigs.optional(),
 });
 
 export declare namespace VerificationFavro {
     interface Raw {
-        type: VerificationFavroType.Raw;
         configs?: VerificationFavroConfigs.Raw | null;
     }
 }

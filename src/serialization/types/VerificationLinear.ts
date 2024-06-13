@@ -5,20 +5,17 @@
 import * as serializers from "../index";
 import * as Hookdeck from "../../api/index";
 import * as core from "../../core";
-import { VerificationLinearType } from "./VerificationLinearType";
 import { VerificationLinearConfigs } from "./VerificationLinearConfigs";
 
 export const VerificationLinear: core.serialization.ObjectSchema<
     serializers.VerificationLinear.Raw,
     Hookdeck.VerificationLinear
 > = core.serialization.object({
-    type: VerificationLinearType,
     configs: VerificationLinearConfigs.optional(),
 });
 
 export declare namespace VerificationLinear {
     interface Raw {
-        type: VerificationLinearType.Raw;
         configs?: VerificationLinearConfigs.Raw | null;
     }
 }

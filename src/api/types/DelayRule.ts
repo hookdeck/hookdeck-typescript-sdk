@@ -3,7 +3,6 @@
  */
 
 export interface DelayRule {
-    type: "delay";
     /** Delay to introduce in MS */
     delay: number;
 }

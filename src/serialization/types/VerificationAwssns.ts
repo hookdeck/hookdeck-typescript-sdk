@@ -5,20 +5,17 @@
 import * as serializers from "../index";
 import * as Hookdeck from "../../api/index";
 import * as core from "../../core";
-import { VerificationAwssnsType } from "./VerificationAwssnsType";
 import { VerificationAwssnsConfigs } from "./VerificationAwssnsConfigs";
 
 export const VerificationAwssns: core.serialization.ObjectSchema<
     serializers.VerificationAwssns.Raw,
     Hookdeck.VerificationAwssns
 > = core.serialization.object({
-    type: VerificationAwssnsType,
     configs: VerificationAwssnsConfigs.optional(),
 });
 
 export declare namespace VerificationAwssns {
     interface Raw {
-        type: VerificationAwssnsType.Raw;
         configs?: VerificationAwssnsConfigs.Raw | null;
     }
 }

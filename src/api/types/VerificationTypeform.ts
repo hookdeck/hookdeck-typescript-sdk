@@ -5,6 +5,5 @@
 import * as Hookdeck from "../index";
 
 export interface VerificationTypeform {
-    type: Hookdeck.VerificationTypeformType;
     configs?: Hookdeck.VerificationTypeformConfigs;
 }

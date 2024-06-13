@@ -5,6 +5,5 @@
 import * as Hookdeck from "../index";
 
 export interface VerificationFiserv {
-    type: Hookdeck.VerificationFiservType;
     configs?: Hookdeck.VerificationFiservConfigs;
 }

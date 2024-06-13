@@ -5,20 +5,17 @@
 import * as serializers from "../index";
 import * as Hookdeck from "../../api/index";
 import * as core from "../../core";
-import { VerificationPersonaType } from "./VerificationPersonaType";
 import { VerificationPersonaConfigs } from "./VerificationPersonaConfigs";
 
 export const VerificationPersona: core.serialization.ObjectSchema<
     serializers.VerificationPersona.Raw,
     Hookdeck.VerificationPersona
 > = core.serialization.object({
-    type: VerificationPersonaType,
     configs: VerificationPersonaConfigs.optional(),
 });
 
 export declare namespace VerificationPersona {
     interface Raw {
-        type: VerificationPersonaType.Raw;
         configs?: VerificationPersonaConfigs.Raw | null;
     }
 }

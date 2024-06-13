@@ -55,23 +55,43 @@ export class Bookmark {
         const { id, name, webhookId, eventDataId, label, lastUsedAt, orderBy, dir, limit, next, prev } = request;
         const _queryParams: Record<string, string | string[] | object | object[]> = {};
         if (id != null) {
-            _queryParams["id"] = id;
+            if (Array.isArray(id)) {
+                _queryParams["id"] = id.map((item) => item);
+            } else {
+                _queryParams["id"] = id;
+            }
         }
 
         if (name != null) {
-            _queryParams["name"] = name;
+            if (Array.isArray(name)) {
+                _queryParams["name"] = name.map((item) => item);
+            } else {
+                _queryParams["name"] = name;
+            }
         }
 
         if (webhookId != null) {
-            _queryParams["webhook_id"] = webhookId;
+            if (Array.isArray(webhookId)) {
+                _queryParams["webhook_id"] = webhookId.map((item) => item);
+            } else {
+                _queryParams["webhook_id"] = webhookId;
+            }
         }
 
         if (eventDataId != null) {
-            _queryParams["event_data_id"] = eventDataId;
+            if (Array.isArray(eventDataId)) {
+                _queryParams["event_data_id"] = eventDataId.map((item) => item);
+            } else {
+                _queryParams["event_data_id"] = eventDataId;
+            }
         }
 
         if (label != null) {
-            _queryParams["label"] = label;
+            if (Array.isArray(label)) {
+                _queryParams["label"] = label.map((item) => item);
+            } else {
+                _queryParams["label"] = label;
+            }
         }
 
         if (lastUsedAt != null) {
@@ -108,7 +128,7 @@ export class Bookmark {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.2.0",
+                "X-Fern-SDK-Version": "0.3.0-beta.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -198,7 +218,7 @@ export class Bookmark {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.2.0",
+                "X-Fern-SDK-Version": "0.3.0-beta.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -283,7 +303,7 @@ export class Bookmark {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.2.0",
+                "X-Fern-SDK-Version": "0.3.0-beta.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -363,7 +383,7 @@ export class Bookmark {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.2.0",
+                "X-Fern-SDK-Version": "0.3.0-beta.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -461,7 +481,7 @@ export class Bookmark {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.2.0",
+                "X-Fern-SDK-Version": "0.3.0-beta.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -535,7 +555,7 @@ export class Bookmark {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.2.0",
+                "X-Fern-SDK-Version": "0.3.0-beta.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -615,7 +635,7 @@ export class Bookmark {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.2.0",
+                "X-Fern-SDK-Version": "0.3.0-beta.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },

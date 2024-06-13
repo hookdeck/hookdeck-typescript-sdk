@@ -5,20 +5,17 @@
 import * as serializers from "../index";
 import * as Hookdeck from "../../api/index";
 import * as core from "../../core";
-import { VerificationGitLabType } from "./VerificationGitLabType";
 import { VerificationGitLabConfigs } from "./VerificationGitLabConfigs";
 
 export const VerificationGitLab: core.serialization.ObjectSchema<
     serializers.VerificationGitLab.Raw,
     Hookdeck.VerificationGitLab
 > = core.serialization.object({
-    type: VerificationGitLabType,
     configs: VerificationGitLabConfigs.optional(),
 });
 
 export declare namespace VerificationGitLab {
     interface Raw {
-        type: VerificationGitLabType.Raw;
         configs?: VerificationGitLabConfigs.Raw | null;
     }
 }

@@ -5,20 +5,17 @@
 import * as serializers from "../index";
 import * as Hookdeck from "../../api/index";
 import * as core from "../../core";
-import { VerificationHmacType } from "./VerificationHmacType";
 import { VerificationHmacConfigs } from "./VerificationHmacConfigs";
 
 export const VerificationHmac: core.serialization.ObjectSchema<
     serializers.VerificationHmac.Raw,
     Hookdeck.VerificationHmac
 > = core.serialization.object({
-    type: VerificationHmacType,
     configs: VerificationHmacConfigs.optional(),
 });
 
 export declare namespace VerificationHmac {
     interface Raw {
-        type: VerificationHmacType.Raw;
         configs?: VerificationHmacConfigs.Raw | null;
     }
 }

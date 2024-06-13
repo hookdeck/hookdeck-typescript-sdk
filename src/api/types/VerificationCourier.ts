@@ -5,6 +5,5 @@
 import * as Hookdeck from "../index";
 
 export interface VerificationCourier {
-    type: Hookdeck.VerificationCourierType;
     configs?: Hookdeck.VerificationCourierConfigs;
 }

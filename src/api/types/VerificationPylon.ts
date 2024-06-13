@@ -5,6 +5,5 @@
 import * as Hookdeck from "../index";
 
 export interface VerificationPylon {
-    type: Hookdeck.VerificationPylonType;
     configs?: Hookdeck.VerificationPylonConfigs;
 }

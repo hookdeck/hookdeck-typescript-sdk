@@ -5,6 +5,5 @@
 import * as Hookdeck from "../index";
 
 export interface VerificationGitHub {
-    type: Hookdeck.VerificationGitHubType;
     configs?: Hookdeck.VerificationGitHubConfigs;
 }

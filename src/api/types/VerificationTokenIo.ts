@@ -5,6 +5,5 @@
 import * as Hookdeck from "../index";
 
 export interface VerificationTokenIo {
-    type: Hookdeck.VerificationTokenIoType;
     configs?: Hookdeck.VerificationTokenIoConfigs;
 }

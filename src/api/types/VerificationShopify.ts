@@ -5,6 +5,5 @@
 import * as Hookdeck from "../index";
 
 export interface VerificationShopify {
-    type: Hookdeck.VerificationShopifyType;
     configs?: Hookdeck.VerificationShopifyConfigs;
 }

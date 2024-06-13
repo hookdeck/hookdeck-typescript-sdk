@@ -5,20 +5,17 @@
 import * as serializers from "../index";
 import * as Hookdeck from "../../api/index";
 import * as core from "../../core";
-import { VerificationSendGridType } from "./VerificationSendGridType";
 import { VerificationSendGridConfigs } from "./VerificationSendGridConfigs";
 
 export const VerificationSendGrid: core.serialization.ObjectSchema<
     serializers.VerificationSendGrid.Raw,
     Hookdeck.VerificationSendGrid
 > = core.serialization.object({
-    type: VerificationSendGridType,
     configs: VerificationSendGridConfigs.optional(),
 });
 
 export declare namespace VerificationSendGrid {
     interface Raw {
-        type: VerificationSendGridType.Raw;
         configs?: VerificationSendGridConfigs.Raw | null;
     }
 }

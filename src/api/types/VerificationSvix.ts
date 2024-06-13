@@ -5,6 +5,5 @@
 import * as Hookdeck from "../index";
 
 export interface VerificationSvix {
-    type: Hookdeck.VerificationSvixType;
     configs?: Hookdeck.VerificationSvixConfigs;
 }

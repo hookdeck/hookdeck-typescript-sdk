@@ -5,20 +5,17 @@
 import * as serializers from "../index";
 import * as Hookdeck from "../../api/index";
 import * as core from "../../core";
-import { VerificationWooCommerceType } from "./VerificationWooCommerceType";
 import { VerificationWooCommerceConfigs } from "./VerificationWooCommerceConfigs";
 
 export const VerificationWooCommerce: core.serialization.ObjectSchema<
     serializers.VerificationWooCommerce.Raw,
     Hookdeck.VerificationWooCommerce
 > = core.serialization.object({
-    type: VerificationWooCommerceType,
     configs: VerificationWooCommerceConfigs.optional(),
 });
 
 export declare namespace VerificationWooCommerce {
     interface Raw {
-        type: VerificationWooCommerceType.Raw;
         configs?: VerificationWooCommerceConfigs.Raw | null;
     }
 }

@@ -10,9 +10,34 @@ import { FilterRule } from "./FilterRule";
 import { TransformRule } from "./TransformRule";
 import { DelayRule } from "./DelayRule";
 
-export const Rule: core.serialization.Schema<serializers.Rule.Raw, Hookdeck.Rule> =
-    core.serialization.undiscriminatedUnion([RetryRule, FilterRule, TransformRule, DelayRule]);
+export const Rule: core.serialization.Schema<serializers.Rule.Raw, Hookdeck.Rule> = core.serialization
+    .union("type", {
+        retry: RetryRule,
+        filter: FilterRule,
+        transform: TransformRule,
+        delay: DelayRule,
+    })
+    .transform<Hookdeck.Rule>({
+        transform: (value) => value,
+        untransform: (value) => value,
+    });
 
 export declare namespace Rule {
-    type Raw = RetryRule.Raw | FilterRule.Raw | TransformRule.Raw | DelayRule.Raw;
+    type Raw = Rule.Retry | Rule.Filter | Rule.Transform | Rule.Delay;
+
+    interface Retry extends RetryRule.Raw {
+        type: "retry";
+    }
+
+    interface Filter extends FilterRule.Raw {
+        type: "filter";
+    }
+
+    interface Transform extends TransformRule.Raw {
+        type: "transform";
+    }
+
+    interface Delay extends DelayRule.Raw {
+        type: "delay";
+    }
 }

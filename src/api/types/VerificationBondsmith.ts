@@ -5,6 +5,5 @@
 import * as Hookdeck from "../index";
 
 export interface VerificationBondsmith {
-    type: Hookdeck.VerificationBondsmithType;
     configs?: Hookdeck.VerificationBondsmithConfigs;
 }

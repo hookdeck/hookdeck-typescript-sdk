@@ -5,20 +5,17 @@
 import * as serializers from "../index";
 import * as Hookdeck from "../../api/index";
 import * as core from "../../core";
-import { VerificationStripeType } from "./VerificationStripeType";
 import { VerificationStripeConfigs } from "./VerificationStripeConfigs";
 
 export const VerificationStripe: core.serialization.ObjectSchema<
     serializers.VerificationStripe.Raw,
     Hookdeck.VerificationStripe
 > = core.serialization.object({
-    type: VerificationStripeType,
     configs: VerificationStripeConfigs.optional(),
 });
 
 export declare namespace VerificationStripe {
     interface Raw {
-        type: VerificationStripeType.Raw;
         configs?: VerificationStripeConfigs.Raw | null;
     }
 }

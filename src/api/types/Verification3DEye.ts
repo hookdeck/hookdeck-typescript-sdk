@@ -5,6 +5,5 @@
 import * as Hookdeck from "../index";
 
 export interface Verification3DEye {
-    type: Hookdeck.Verification3DEyeType;
     configs?: Hookdeck.Verification3DEyeConfigs;
 }

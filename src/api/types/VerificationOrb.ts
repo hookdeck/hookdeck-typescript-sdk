@@ -5,6 +5,5 @@
 import * as Hookdeck from "../index";
 
 export interface VerificationOrb {
-    type: Hookdeck.VerificationOrbType;
     configs?: Hookdeck.VerificationOrbConfigs;
 }

@@ -5,6 +5,5 @@
 import * as Hookdeck from "../index";
 
 export interface VerificationStripe {
-    type: Hookdeck.VerificationStripeType;
     configs?: Hookdeck.VerificationStripeConfigs;
 }

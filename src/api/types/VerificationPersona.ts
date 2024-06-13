@@ -5,6 +5,5 @@
 import * as Hookdeck from "../index";
 
 export interface VerificationPersona {
-    type: Hookdeck.VerificationPersonaType;
     configs?: Hookdeck.VerificationPersonaConfigs;
 }

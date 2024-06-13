@@ -5,20 +5,17 @@
 import * as serializers from "../index";
 import * as Hookdeck from "../../api/index";
 import * as core from "../../core";
-import { Verification3DEyeType } from "./Verification3DEyeType";
 import { Verification3DEyeConfigs } from "./Verification3DEyeConfigs";
 
 export const Verification3DEye: core.serialization.ObjectSchema<
     serializers.Verification3DEye.Raw,
     Hookdeck.Verification3DEye
 > = core.serialization.object({
-    type: Verification3DEyeType,
     configs: Verification3DEyeConfigs.optional(),
 });
 
 export declare namespace Verification3DEye {
     interface Raw {
-        type: Verification3DEyeType.Raw;
         configs?: Verification3DEyeConfigs.Raw | null;
     }
 }

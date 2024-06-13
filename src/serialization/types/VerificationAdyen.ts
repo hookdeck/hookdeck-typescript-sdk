@@ -5,20 +5,17 @@
 import * as serializers from "../index";
 import * as Hookdeck from "../../api/index";
 import * as core from "../../core";
-import { VerificationAdyenType } from "./VerificationAdyenType";
 import { VerificationAdyenConfigs } from "./VerificationAdyenConfigs";
 
 export const VerificationAdyen: core.serialization.ObjectSchema<
     serializers.VerificationAdyen.Raw,
     Hookdeck.VerificationAdyen
 > = core.serialization.object({
-    type: VerificationAdyenType,
     configs: VerificationAdyenConfigs.optional(),
 });
 
 export declare namespace VerificationAdyen {
     interface Raw {
-        type: VerificationAdyenType.Raw;
         configs?: VerificationAdyenConfigs.Raw | null;
     }
 }

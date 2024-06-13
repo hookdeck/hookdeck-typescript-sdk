@@ -5,12 +5,17 @@
 import * as serializers from "../index";
 import * as Hookdeck from "../../api/index";
 import * as core from "../../core";
-import { TransformReference } from "./TransformReference";
-import { TransformFull } from "./TransformFull";
+import { TransformRuleTransformation } from "./TransformRuleTransformation";
 
-export const TransformRule: core.serialization.Schema<serializers.TransformRule.Raw, Hookdeck.TransformRule> =
-    core.serialization.undiscriminatedUnion([TransformReference, TransformFull]);
+export const TransformRule: core.serialization.ObjectSchema<serializers.TransformRule.Raw, Hookdeck.TransformRule> =
+    core.serialization.object({
+        transformationId: core.serialization.property("transformation_id", core.serialization.string().optional()),
+        transformation: TransformRuleTransformation.optional(),
+    });
 
 export declare namespace TransformRule {
-    type Raw = TransformReference.Raw | TransformFull.Raw;
+    interface Raw {
+        transformation_id?: string | null;
+        transformation?: TransformRuleTransformation.Raw | null;
+    }
 }

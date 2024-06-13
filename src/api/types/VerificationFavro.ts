@@ -5,6 +5,5 @@
 import * as Hookdeck from "../index";
 
 export interface VerificationFavro {
-    type: Hookdeck.VerificationFavroType;
     configs?: Hookdeck.VerificationFavroConfigs;
 }

@@ -5,6 +5,5 @@
 import * as Hookdeck from "../index";
 
 export interface VerificationTwitter {
-    type: Hookdeck.VerificationTwitterType;
     configs?: Hookdeck.VerificationTwitterConfigs;
 }

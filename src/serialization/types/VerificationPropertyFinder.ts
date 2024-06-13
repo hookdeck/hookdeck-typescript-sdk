@@ -11,13 +11,11 @@ export const VerificationPropertyFinder: core.serialization.ObjectSchema<
     serializers.VerificationPropertyFinder.Raw,
     Hookdeck.VerificationPropertyFinder
 > = core.serialization.object({
-    type: core.serialization.string(),
     configs: VerificationPropertyFinderConfigs.optional(),
 });
 
 export declare namespace VerificationPropertyFinder {
     interface Raw {
-        type: string;
         configs?: VerificationPropertyFinderConfigs.Raw | null;
     }
 }

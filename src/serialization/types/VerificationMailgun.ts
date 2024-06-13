@@ -5,20 +5,17 @@
 import * as serializers from "../index";
 import * as Hookdeck from "../../api/index";
 import * as core from "../../core";
-import { VerificationMailgunType } from "./VerificationMailgunType";
 import { VerificationMailgunConfigs } from "./VerificationMailgunConfigs";
 
 export const VerificationMailgun: core.serialization.ObjectSchema<
     serializers.VerificationMailgun.Raw,
     Hookdeck.VerificationMailgun
 > = core.serialization.object({
-    type: VerificationMailgunType,
     configs: VerificationMailgunConfigs.optional(),
 });
 
 export declare namespace VerificationMailgun {
     interface Raw {
-        type: VerificationMailgunType.Raw;
         configs?: VerificationMailgunConfigs.Raw | null;
     }
 }

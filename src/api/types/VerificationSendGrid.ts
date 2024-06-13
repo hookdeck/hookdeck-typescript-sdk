@@ -5,6 +5,5 @@
 import * as Hookdeck from "../index";
 
 export interface VerificationSendGrid {
-    type: Hookdeck.VerificationSendGridType;
     configs?: Hookdeck.VerificationSendGridConfigs;
 }

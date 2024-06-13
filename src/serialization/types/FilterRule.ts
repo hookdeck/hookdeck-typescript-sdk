@@ -9,7 +9,6 @@ import { FilterRuleProperty } from "./FilterRuleProperty";
 
 export const FilterRule: core.serialization.ObjectSchema<serializers.FilterRule.Raw, Hookdeck.FilterRule> =
     core.serialization.object({
-        type: core.serialization.stringLiteral("filter"),
         headers: FilterRuleProperty.optional(),
         body: FilterRuleProperty.optional(),
         query: FilterRuleProperty.optional(),
@@ -18,7 +17,6 @@ export const FilterRule: core.serialization.ObjectSchema<serializers.FilterRule.
 
 export declare namespace FilterRule {
     interface Raw {
-        type: "filter";
         headers?: FilterRuleProperty.Raw | null;
         body?: FilterRuleProperty.Raw | null;
         query?: FilterRuleProperty.Raw | null;

@@ -5,20 +5,17 @@
 import * as serializers from "../index";
 import * as Hookdeck from "../../api/index";
 import * as core from "../../core";
-import { VerificationSquareType } from "./VerificationSquareType";
 import { VerificationSquareConfigs } from "./VerificationSquareConfigs";
 
 export const VerificationSquare: core.serialization.ObjectSchema<
     serializers.VerificationSquare.Raw,
     Hookdeck.VerificationSquare
 > = core.serialization.object({
-    type: VerificationSquareType,
     configs: VerificationSquareConfigs.optional(),
 });
 
 export declare namespace VerificationSquare {
     interface Raw {
-        type: VerificationSquareType.Raw;
         configs?: VerificationSquareConfigs.Raw | null;
     }
 }

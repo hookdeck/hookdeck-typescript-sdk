@@ -5,20 +5,17 @@
 import * as serializers from "../index";
 import * as Hookdeck from "../../api/index";
 import * as core from "../../core";
-import { VerificationTwitterType } from "./VerificationTwitterType";
 import { VerificationTwitterConfigs } from "./VerificationTwitterConfigs";
 
 export const VerificationTwitter: core.serialization.ObjectSchema<
     serializers.VerificationTwitter.Raw,
     Hookdeck.VerificationTwitter
 > = core.serialization.object({
-    type: VerificationTwitterType,
     configs: VerificationTwitterConfigs.optional(),
 });
 
 export declare namespace VerificationTwitter {
     interface Raw {
-        type: VerificationTwitterType.Raw;
         configs?: VerificationTwitterConfigs.Raw | null;
     }
 }

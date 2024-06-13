@@ -5,6 +5,5 @@
 import * as Hookdeck from "../index";
 
 export interface VerificationRepay {
-    type: Hookdeck.VerificationRepayType;
     configs?: Hookdeck.VerificationRepayConfigs;
 }

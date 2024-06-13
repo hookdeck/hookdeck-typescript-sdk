@@ -5,6 +5,5 @@
 import * as Hookdeck from "../index";
 
 export interface VerificationFrontApp {
-    type: Hookdeck.VerificationFrontAppType;
     configs?: Hookdeck.VerificationFrontAppConfigs;
 }

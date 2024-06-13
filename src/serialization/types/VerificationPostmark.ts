@@ -5,20 +5,17 @@
 import * as serializers from "../index";
 import * as Hookdeck from "../../api/index";
 import * as core from "../../core";
-import { VerificationPostmarkType } from "./VerificationPostmarkType";
 import { VerificationPostmarkConfigs } from "./VerificationPostmarkConfigs";
 
 export const VerificationPostmark: core.serialization.ObjectSchema<
     serializers.VerificationPostmark.Raw,
     Hookdeck.VerificationPostmark
 > = core.serialization.object({
-    type: VerificationPostmarkType,
     configs: VerificationPostmarkConfigs.optional(),
 });
 
 export declare namespace VerificationPostmark {
     interface Raw {
-        type: VerificationPostmarkType.Raw;
         configs?: VerificationPostmarkConfigs.Raw | null;
     }
 }

@@ -5,6 +5,5 @@
 import * as Hookdeck from "../index";
 
 export interface VerificationHmac {
-    type: Hookdeck.VerificationHmacType;
     configs?: Hookdeck.VerificationHmacConfigs;
 }

@@ -5,20 +5,17 @@
 import * as serializers from "../index";
 import * as Hookdeck from "../../api/index";
 import * as core from "../../core";
-import { VerificationBasicAuthType } from "./VerificationBasicAuthType";
 import { VerificationBasicAuthConfigs } from "./VerificationBasicAuthConfigs";
 
 export const VerificationBasicAuth: core.serialization.ObjectSchema<
     serializers.VerificationBasicAuth.Raw,
     Hookdeck.VerificationBasicAuth
 > = core.serialization.object({
-    type: VerificationBasicAuthType,
     configs: VerificationBasicAuthConfigs.optional(),
 });
 
 export declare namespace VerificationBasicAuth {
     interface Raw {
-        type: VerificationBasicAuthType.Raw;
         configs?: VerificationBasicAuthConfigs.Raw | null;
     }
 }

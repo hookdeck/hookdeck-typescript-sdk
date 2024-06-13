@@ -5,6 +5,5 @@
 import * as Hookdeck from "../index";
 
 export interface VerificationMailgun {
-    type: Hookdeck.VerificationMailgunType;
     configs?: Hookdeck.VerificationMailgunConfigs;
 }

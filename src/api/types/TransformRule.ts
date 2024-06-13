@@ -4,4 +4,9 @@
 
 import * as Hookdeck from "../index";
 
-export type TransformRule = Hookdeck.TransformReference | Hookdeck.TransformFull;
+export interface TransformRule {
+    /** ID of the attached transformation object. Optional input, always set once the rule is defined */
+    transformationId?: string;
+    /** You can optionally define a new transformation while creating a transform rule */
+    transformation?: Hookdeck.TransformRuleTransformation;
+}

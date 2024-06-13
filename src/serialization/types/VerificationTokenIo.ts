@@ -5,20 +5,17 @@
 import * as serializers from "../index";
 import * as Hookdeck from "../../api/index";
 import * as core from "../../core";
-import { VerificationTokenIoType } from "./VerificationTokenIoType";
 import { VerificationTokenIoConfigs } from "./VerificationTokenIoConfigs";
 
 export const VerificationTokenIo: core.serialization.ObjectSchema<
     serializers.VerificationTokenIo.Raw,
     Hookdeck.VerificationTokenIo
 > = core.serialization.object({
-    type: VerificationTokenIoType,
     configs: VerificationTokenIoConfigs.optional(),
 });
 
 export declare namespace VerificationTokenIo {
     interface Raw {
-        type: VerificationTokenIoType.Raw;
         configs?: VerificationTokenIoConfigs.Raw | null;
     }
 }

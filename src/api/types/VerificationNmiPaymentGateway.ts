@@ -5,6 +5,5 @@
 import * as Hookdeck from "../index";
 
 export interface VerificationNmiPaymentGateway {
-    type: Hookdeck.VerificationNmiPaymentGatewayType;
     configs?: Hookdeck.VerificationNmiPaymentGatewayConfigs;
 }

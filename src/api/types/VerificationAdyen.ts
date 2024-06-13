@@ -5,6 +5,5 @@
 import * as Hookdeck from "../index";
 
 export interface VerificationAdyen {
-    type: Hookdeck.VerificationAdyenType;
     configs?: Hookdeck.VerificationAdyenConfigs;
 }

@@ -34,8 +34,8 @@
  *     }
  */
 export interface ConnectionCountRequest {
-    destinationId?: string;
-    sourceId?: string;
+    destinationId?: string | string[];
+    sourceId?: string | string[];
     disabled?: boolean;
     disabledAt?: Date;
     pausedAt?: Date;

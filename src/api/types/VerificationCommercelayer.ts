@@ -5,6 +5,5 @@
 import * as Hookdeck from "../index";
 
 export interface VerificationCommercelayer {
-    type: Hookdeck.VerificationCommercelayerType;
     configs?: Hookdeck.VerificationCommercelayerConfigs;
 }

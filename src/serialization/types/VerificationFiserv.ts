@@ -5,20 +5,17 @@
 import * as serializers from "../index";
 import * as Hookdeck from "../../api/index";
 import * as core from "../../core";
-import { VerificationFiservType } from "./VerificationFiservType";
 import { VerificationFiservConfigs } from "./VerificationFiservConfigs";
 
 export const VerificationFiserv: core.serialization.ObjectSchema<
     serializers.VerificationFiserv.Raw,
     Hookdeck.VerificationFiserv
 > = core.serialization.object({
-    type: VerificationFiservType,
     configs: VerificationFiservConfigs.optional(),
 });
 
 export declare namespace VerificationFiserv {
     interface Raw {
-        type: VerificationFiservType.Raw;
         configs?: VerificationFiservConfigs.Raw | null;
     }
 }

@@ -5,6 +5,5 @@
 import * as Hookdeck from "../index";
 
 export interface VerificationEbay {
-    type: Hookdeck.VerificationEbayType;
     configs?: Hookdeck.VerificationEbayConfigs;
 }

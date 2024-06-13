@@ -85,7 +85,11 @@ export class Request {
         } = request;
         const _queryParams: Record<string, string | string[] | object | object[]> = {};
         if (id != null) {
-            _queryParams["id"] = id;
+            if (Array.isArray(id)) {
+                _queryParams["id"] = id.map((item) => item);
+            } else {
+                _queryParams["id"] = id;
+            }
         }
 
         if (status != null) {
@@ -97,7 +101,11 @@ export class Request {
         }
 
         if (sourceId != null) {
-            _queryParams["source_id"] = sourceId;
+            if (Array.isArray(sourceId)) {
+                _queryParams["source_id"] = sourceId.map((item) => item);
+            } else {
+                _queryParams["source_id"] = sourceId;
+            }
         }
 
         if (verified != null) {
@@ -137,7 +145,11 @@ export class Request {
         }
 
         if (bulkRetryId != null) {
-            _queryParams["bulk_retry_id"] = bulkRetryId;
+            if (Array.isArray(bulkRetryId)) {
+                _queryParams["bulk_retry_id"] = bulkRetryId.map((item) => item);
+            } else {
+                _queryParams["bulk_retry_id"] = bulkRetryId;
+            }
         }
 
         if (include != null) {
@@ -174,7 +186,7 @@ export class Request {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.2.0",
+                "X-Fern-SDK-Version": "0.3.0-beta.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -259,7 +271,7 @@ export class Request {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.2.0",
+                "X-Fern-SDK-Version": "0.3.0-beta.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -333,7 +345,7 @@ export class Request {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.2.0",
+                "X-Fern-SDK-Version": "0.3.0-beta.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -417,7 +429,7 @@ export class Request {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.2.0",
+                "X-Fern-SDK-Version": "0.3.0-beta.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -567,7 +579,11 @@ export class Request {
         } = request;
         const _queryParams: Record<string, string | string[] | object | object[]> = {};
         if (id_ != null) {
-            _queryParams["id"] = id_;
+            if (Array.isArray(id_)) {
+                _queryParams["id"] = id_.map((item) => item);
+            } else {
+                _queryParams["id"] = id_;
+            }
         }
 
         if (status != null) {
@@ -575,15 +591,27 @@ export class Request {
         }
 
         if (webhookId != null) {
-            _queryParams["webhook_id"] = webhookId;
+            if (Array.isArray(webhookId)) {
+                _queryParams["webhook_id"] = webhookId.map((item) => item);
+            } else {
+                _queryParams["webhook_id"] = webhookId;
+            }
         }
 
         if (destinationId != null) {
-            _queryParams["destination_id"] = destinationId;
+            if (Array.isArray(destinationId)) {
+                _queryParams["destination_id"] = destinationId.map((item) => item);
+            } else {
+                _queryParams["destination_id"] = destinationId;
+            }
         }
 
         if (sourceId != null) {
-            _queryParams["source_id"] = sourceId;
+            if (Array.isArray(sourceId)) {
+                _queryParams["source_id"] = sourceId.map((item) => item);
+            } else {
+                _queryParams["source_id"] = sourceId;
+            }
         }
 
         if (attempts != null) {
@@ -635,19 +663,35 @@ export class Request {
         }
 
         if (cliUserId != null) {
-            _queryParams["cli_user_id"] = cliUserId;
+            if (Array.isArray(cliUserId)) {
+                _queryParams["cli_user_id"] = cliUserId.map((item) => item);
+            } else {
+                _queryParams["cli_user_id"] = cliUserId;
+            }
         }
 
         if (issueId != null) {
-            _queryParams["issue_id"] = issueId;
+            if (Array.isArray(issueId)) {
+                _queryParams["issue_id"] = issueId.map((item) => item);
+            } else {
+                _queryParams["issue_id"] = issueId;
+            }
         }
 
         if (eventDataId != null) {
-            _queryParams["event_data_id"] = eventDataId;
+            if (Array.isArray(eventDataId)) {
+                _queryParams["event_data_id"] = eventDataId.map((item) => item);
+            } else {
+                _queryParams["event_data_id"] = eventDataId;
+            }
         }
 
         if (bulkRetryId != null) {
-            _queryParams["bulk_retry_id"] = bulkRetryId;
+            if (Array.isArray(bulkRetryId)) {
+                _queryParams["bulk_retry_id"] = bulkRetryId.map((item) => item);
+            } else {
+                _queryParams["bulk_retry_id"] = bulkRetryId;
+            }
         }
 
         if (include != null) {
@@ -684,7 +728,7 @@ export class Request {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.2.0",
+                "X-Fern-SDK-Version": "0.3.0-beta.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -785,7 +829,11 @@ export class Request {
         const { id: id_, orderBy, dir, limit, next, prev } = request;
         const _queryParams: Record<string, string | string[] | object | object[]> = {};
         if (id_ != null) {
-            _queryParams["id"] = id_;
+            if (Array.isArray(id_)) {
+                _queryParams["id"] = id_.map((item) => item);
+            } else {
+                _queryParams["id"] = id_;
+            }
         }
 
         if (orderBy != null) {
@@ -818,7 +866,7 @@ export class Request {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.2.0",
+                "X-Fern-SDK-Version": "0.3.0-beta.1",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },

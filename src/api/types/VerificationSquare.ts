@@ -5,6 +5,5 @@
 import * as Hookdeck from "../index";
 
 export interface VerificationSquare {
-    type: Hookdeck.VerificationSquareType;
     configs?: Hookdeck.VerificationSquareConfigs;
 }

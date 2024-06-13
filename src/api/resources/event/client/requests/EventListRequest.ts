@@ -102,11 +102,11 @@ import * as Hookdeck from "../../../../index";
  *     }
  */
 export interface EventListRequest {
-    id?: string;
+    id?: string | string[];
     status?: Hookdeck.EventStatus;
-    webhookId?: string;
-    destinationId?: string;
-    sourceId?: string;
+    webhookId?: string | string[];
+    destinationId?: string | string[];
+    sourceId?: string | string[];
     attempts?: number;
     responseStatus?: number;
     successfulAt?: Date;
@@ -119,10 +119,10 @@ export interface EventListRequest {
     body?: string;
     parsedQuery?: string;
     path?: string;
-    cliUserId?: string;
-    issueId?: string;
-    eventDataId?: string;
-    bulkRetryId?: string;
+    cliUserId?: string | string[];
+    issueId?: string | string[];
+    eventDataId?: string | string[];
+    bulkRetryId?: string | string[];
     include?: "data";
     orderBy?: Hookdeck.EventListRequestOrderBy;
     dir?: Hookdeck.EventListRequestDir;

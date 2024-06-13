@@ -5,6 +5,5 @@
 import * as Hookdeck from "../index";
 
 export interface VerificationEnode {
-    type: Hookdeck.VerificationEnodeType;
     configs?: Hookdeck.VerificationEnodeConfigs;
 }

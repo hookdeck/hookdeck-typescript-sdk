@@ -5,6 +5,5 @@
 import * as Hookdeck from "../index";
 
 export interface VerificationTelnyx {
-    type: Hookdeck.VerificationTelnyxType;
     configs?: Hookdeck.VerificationTelnyxConfigs;
 }
