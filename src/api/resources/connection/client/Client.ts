@@ -19,6 +19,7 @@ export declare namespace Connection {
     interface RequestOptions {
         timeoutInSeconds?: number;
         maxRetries?: number;
+        abortSignal?: AbortSignal;
     }
 }
 
@@ -27,28 +28,15 @@ export class Connection {
 
     /**
      *
+     *
+     * @param {Hookdeck.ConnectionListRequest} request
+     * @param {Connection.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link Hookdeck.BadRequestError}
      * @throws {@link Hookdeck.UnprocessableEntityError}
      *
      * @example
      *     await hookdeck.connection.list()
-     *
-     * @example
-     *     await hookdeck.connection.list({
-     *         id: "string",
-     *         name: "string",
-     *         destinationId: "string",
-     *         sourceId: "string",
-     *         disabled: true,
-     *         disabledAt: new Date("2024-01-15T09:30:00.000Z"),
-     *         fullName: "string",
-     *         pausedAt: new Date("2024-01-15T09:30:00.000Z"),
-     *         orderBy: Hookdeck.ConnectionListRequestOrderBy.CreatedAt,
-     *         dir: Hookdeck.ConnectionListRequestDir.Asc,
-     *         limit: 1,
-     *         next: "string",
-     *         prev: "string"
-     *     })
      */
     public async list(
         request: Hookdeck.ConnectionListRequest = {},
@@ -144,7 +132,7 @@ export class Connection {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.3.0-beta.2",
+                "X-Fern-SDK-Version": "0.3.0-beta.3",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -152,6 +140,7 @@ export class Connection {
             queryParameters: _queryParams,
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
             return await serializers.ConnectionPaginatedResult.parseOrThrow(_response.body, {
@@ -210,6 +199,10 @@ export class Connection {
 
     /**
      *
+     *
+     * @param {Hookdeck.ConnectionCreateRequest} request
+     * @param {Connection.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link Hookdeck.BadRequestError}
      * @throws {@link Hookdeck.UnprocessableEntityError}
      *
@@ -230,7 +223,7 @@ export class Connection {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.3.0-beta.2",
+                "X-Fern-SDK-Version": "0.3.0-beta.3",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -238,6 +231,7 @@ export class Connection {
             body: await serializers.ConnectionCreateRequest.jsonOrThrow(request, { unrecognizedObjectKeys: "strip" }),
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
             return await serializers.Connection.parseOrThrow(_response.body, {
@@ -295,6 +289,10 @@ export class Connection {
     }
 
     /**
+     *
+     *
+     * @param {Hookdeck.ConnectionUpsertRequest} request
+     * @param {Connection.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @throws {@link Hookdeck.BadRequestError}
      * @throws {@link Hookdeck.UnprocessableEntityError}
@@ -316,7 +314,7 @@ export class Connection {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.3.0-beta.2",
+                "X-Fern-SDK-Version": "0.3.0-beta.3",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -324,6 +322,7 @@ export class Connection {
             body: await serializers.ConnectionUpsertRequest.jsonOrThrow(request, { unrecognizedObjectKeys: "strip" }),
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
             return await serializers.Connection.parseOrThrow(_response.body, {
@@ -382,20 +381,15 @@ export class Connection {
 
     /**
      *
+     *
+     * @param {Hookdeck.ConnectionCountRequest} request
+     * @param {Connection.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link Hookdeck.BadRequestError}
      * @throws {@link Hookdeck.UnprocessableEntityError}
      *
      * @example
      *     await hookdeck.connection.count()
-     *
-     * @example
-     *     await hookdeck.connection.count({
-     *         destinationId: "string",
-     *         sourceId: "string",
-     *         disabled: true,
-     *         disabledAt: new Date("2024-01-15T09:30:00.000Z"),
-     *         pausedAt: new Date("2024-01-15T09:30:00.000Z")
-     *     })
      */
     public async count(
         request: Hookdeck.ConnectionCountRequest = {},
@@ -441,7 +435,7 @@ export class Connection {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.3.0-beta.2",
+                "X-Fern-SDK-Version": "0.3.0-beta.3",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -449,6 +443,7 @@ export class Connection {
             queryParameters: _queryParams,
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
             return await serializers.ConnectionCountResponse.parseOrThrow(_response.body, {
@@ -507,33 +502,35 @@ export class Connection {
 
     /**
      *
+     *
+     * @param {string} id
+     * @param {Connection.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link Hookdeck.NotFoundError}
      * @throws {@link Hookdeck.GoneError}
      *
      * @example
      *     await hookdeck.connection.retrieve("id")
-     *
-     * @example
-     *     await hookdeck.connection.retrieve("string")
      */
     public async retrieve(id: string, requestOptions?: Connection.RequestOptions): Promise<Hookdeck.Connection> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ?? environments.HookdeckEnvironment.Default,
-                `connections/${id}`
+                `connections/${encodeURIComponent(id)}`
             ),
             method: "GET",
             headers: {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.3.0-beta.2",
+                "X-Fern-SDK-Version": "0.3.0-beta.3",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
             contentType: "application/json",
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
             return await serializers.Connection.parseOrThrow(_response.body, {
@@ -592,15 +589,17 @@ export class Connection {
 
     /**
      *
+     *
+     * @param {string} id
+     * @param {Hookdeck.ConnectionUpdateRequest} request
+     * @param {Connection.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link Hookdeck.BadRequestError}
      * @throws {@link Hookdeck.NotFoundError}
      * @throws {@link Hookdeck.UnprocessableEntityError}
      *
      * @example
      *     await hookdeck.connection.update("id")
-     *
-     * @example
-     *     await hookdeck.connection.update("string")
      */
     public async update(
         id: string,
@@ -610,14 +609,14 @@ export class Connection {
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ?? environments.HookdeckEnvironment.Default,
-                `connections/${id}`
+                `connections/${encodeURIComponent(id)}`
             ),
             method: "PUT",
             headers: {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.3.0-beta.2",
+                "X-Fern-SDK-Version": "0.3.0-beta.3",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -625,6 +624,7 @@ export class Connection {
             body: await serializers.ConnectionUpdateRequest.jsonOrThrow(request, { unrecognizedObjectKeys: "strip" }),
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
             return await serializers.Connection.parseOrThrow(_response.body, {
@@ -693,13 +693,14 @@ export class Connection {
 
     /**
      *
+     *
+     * @param {string} id
+     * @param {Connection.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link Hookdeck.NotFoundError}
      *
      * @example
      *     await hookdeck.connection.delete("id")
-     *
-     * @example
-     *     await hookdeck.connection.delete("string")
      */
     public async delete(
         id: string,
@@ -708,20 +709,21 @@ export class Connection {
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ?? environments.HookdeckEnvironment.Default,
-                `connections/${id}`
+                `connections/${encodeURIComponent(id)}`
             ),
             method: "DELETE",
             headers: {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.3.0-beta.2",
+                "X-Fern-SDK-Version": "0.3.0-beta.3",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
             contentType: "application/json",
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
             return await serializers.ConnectionDeleteResponse.parseOrThrow(_response.body, {
@@ -770,32 +772,34 @@ export class Connection {
 
     /**
      *
+     *
+     * @param {string} id
+     * @param {Connection.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link Hookdeck.NotFoundError}
      *
      * @example
      *     await hookdeck.connection.disable("id")
-     *
-     * @example
-     *     await hookdeck.connection.disable("string")
      */
     public async disable(id: string, requestOptions?: Connection.RequestOptions): Promise<Hookdeck.Connection> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ?? environments.HookdeckEnvironment.Default,
-                `connections/${id}/archive`
+                `connections/${encodeURIComponent(id)}/archive`
             ),
             method: "PUT",
             headers: {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.3.0-beta.2",
+                "X-Fern-SDK-Version": "0.3.0-beta.3",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
             contentType: "application/json",
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
             return await serializers.Connection.parseOrThrow(_response.body, {
@@ -843,33 +847,35 @@ export class Connection {
     }
 
     /**
+     *
+     *
+     * @param {string} id
+     * @param {Connection.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @throws {@link Hookdeck.NotFoundError}
      *
      * @example
      *     await hookdeck.connection.enable("id")
-     *
-     * @example
-     *     await hookdeck.connection.enable("string")
      */
     public async enable(id: string, requestOptions?: Connection.RequestOptions): Promise<Hookdeck.Connection> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ?? environments.HookdeckEnvironment.Default,
-                `connections/${id}/unarchive`
+                `connections/${encodeURIComponent(id)}/unarchive`
             ),
             method: "PUT",
             headers: {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.3.0-beta.2",
+                "X-Fern-SDK-Version": "0.3.0-beta.3",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
             contentType: "application/json",
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
             return await serializers.Connection.parseOrThrow(_response.body, {
@@ -917,33 +923,35 @@ export class Connection {
     }
 
     /**
+     *
+     *
+     * @param {string} id
+     * @param {Connection.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @throws {@link Hookdeck.NotFoundError}
      *
      * @example
      *     await hookdeck.connection.pause("id")
-     *
-     * @example
-     *     await hookdeck.connection.pause("string")
      */
     public async pause(id: string, requestOptions?: Connection.RequestOptions): Promise<Hookdeck.Connection> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ?? environments.HookdeckEnvironment.Default,
-                `connections/${id}/pause`
+                `connections/${encodeURIComponent(id)}/pause`
             ),
             method: "PUT",
             headers: {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.3.0-beta.2",
+                "X-Fern-SDK-Version": "0.3.0-beta.3",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
             contentType: "application/json",
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
             return await serializers.Connection.parseOrThrow(_response.body, {
@@ -992,32 +1000,34 @@ export class Connection {
 
     /**
      *
+     *
+     * @param {string} id
+     * @param {Connection.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link Hookdeck.NotFoundError}
      *
      * @example
      *     await hookdeck.connection.unpause("id")
-     *
-     * @example
-     *     await hookdeck.connection.unpause("string")
      */
     public async unpause(id: string, requestOptions?: Connection.RequestOptions): Promise<Hookdeck.Connection> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ?? environments.HookdeckEnvironment.Default,
-                `connections/${id}/unpause`
+                `connections/${encodeURIComponent(id)}/unpause`
             ),
             method: "PUT",
             headers: {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.3.0-beta.2",
+                "X-Fern-SDK-Version": "0.3.0-beta.3",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
             contentType: "application/json",
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
             return await serializers.Connection.parseOrThrow(_response.body, {

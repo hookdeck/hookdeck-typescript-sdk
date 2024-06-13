@@ -7,39 +7,6 @@ import * as Hookdeck from "../../../../index";
 /**
  * @example
  *     {}
- *
- * @example
- *     {
- *         id: "string",
- *         name: "string",
- *         orderBy: Hookdeck.TransformationListRequestOrderBy.CreatedAt,
- *         dir: Hookdeck.TransformationListRequestDir.Asc,
- *         limit: 1,
- *         next: "string",
- *         prev: "string"
- *     }
- *
- * @example
- *     {
- *         id: "string",
- *         name: "string",
- *         orderBy: Hookdeck.TransformationListRequestOrderBy.CreatedAt,
- *         dir: Hookdeck.TransformationListRequestDir.Asc,
- *         limit: 1,
- *         next: "string",
- *         prev: "string"
- *     }
- *
- * @example
- *     {
- *         id: "string",
- *         name: "string",
- *         orderBy: Hookdeck.TransformationListRequestOrderBy.CreatedAt,
- *         dir: Hookdeck.TransformationListRequestDir.Asc,
- *         limit: 1,
- *         next: "string",
- *         prev: "string"
- *     }
  */
 export interface TransformationListRequest {
     id?: string | string[];

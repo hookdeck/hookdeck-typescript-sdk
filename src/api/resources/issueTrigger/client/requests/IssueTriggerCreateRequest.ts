@@ -9,21 +9,6 @@ import * as Hookdeck from "../../../../index";
  *     {
  *         type: Hookdeck.IssueType.Delivery
  *     }
- *
- * @example
- *     {
- *         type: Hookdeck.IssueType.Delivery
- *     }
- *
- * @example
- *     {
- *         type: Hookdeck.IssueType.Delivery
- *     }
- *
- * @example
- *     {
- *         type: Hookdeck.IssueType.Delivery
- *     }
  */
 export interface IssueTriggerCreateRequest {
     type: Hookdeck.IssueType;

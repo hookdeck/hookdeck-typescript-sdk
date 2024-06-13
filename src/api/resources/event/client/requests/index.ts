@@ -1,1 +1,1 @@
-export { EventListRequest } from "./EventListRequest";
+export { type EventListRequest } from "./EventListRequest";

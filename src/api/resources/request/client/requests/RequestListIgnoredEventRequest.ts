@@ -7,46 +7,6 @@ import * as Hookdeck from "../../../../index";
 /**
  * @example
  *     {}
- *
- * @example
- *     {
- *         id: "string",
- *         orderBy: Hookdeck.RequestListIgnoredEventRequestOrderBy.CreatedAt,
- *         dir: Hookdeck.RequestListIgnoredEventRequestDir.Asc,
- *         limit: 1,
- *         next: "string",
- *         prev: "string"
- *     }
- *
- * @example
- *     {
- *         id: "string",
- *         orderBy: Hookdeck.RequestListIgnoredEventRequestOrderBy.CreatedAt,
- *         dir: Hookdeck.RequestListIgnoredEventRequestDir.Asc,
- *         limit: 1,
- *         next: "string",
- *         prev: "string"
- *     }
- *
- * @example
- *     {
- *         id: "string",
- *         orderBy: Hookdeck.RequestListIgnoredEventRequestOrderBy.CreatedAt,
- *         dir: Hookdeck.RequestListIgnoredEventRequestDir.Asc,
- *         limit: 1,
- *         next: "string",
- *         prev: "string"
- *     }
- *
- * @example
- *     {
- *         id: "string",
- *         orderBy: Hookdeck.RequestListIgnoredEventRequestOrderBy.CreatedAt,
- *         dir: Hookdeck.RequestListIgnoredEventRequestDir.Asc,
- *         limit: 1,
- *         next: "string",
- *         prev: "string"
- *     }
  */
 export interface RequestListIgnoredEventRequest {
     id?: string | string[];

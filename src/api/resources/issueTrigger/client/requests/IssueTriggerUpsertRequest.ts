@@ -10,24 +10,6 @@ import * as Hookdeck from "../../../../index";
  *         type: Hookdeck.IssueType.Delivery,
  *         name: "name"
  *     }
- *
- * @example
- *     {
- *         type: Hookdeck.IssueType.Delivery,
- *         name: "name"
- *     }
- *
- * @example
- *     {
- *         type: Hookdeck.IssueType.Delivery,
- *         name: "name"
- *     }
- *
- * @example
- *     {
- *         type: Hookdeck.IssueType.Delivery,
- *         name: "name"
- *     }
  */
 export interface IssueTriggerUpsertRequest {
     type: Hookdeck.IssueType;

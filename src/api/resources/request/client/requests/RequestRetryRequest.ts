@@ -7,26 +7,6 @@
  *     {
  *         webhookIds: ["webhook_ids"]
  *     }
- *
- * @example
- *     {
- *         webhookIds: ["webhook_ids"]
- *     }
- *
- * @example
- *     {
- *         webhookIds: ["webhook_ids"]
- *     }
- *
- * @example
- *     {
- *         webhookIds: ["webhook_ids"]
- *     }
- *
- * @example
- *     {
- *         webhookIds: ["webhook_ids"]
- *     }
  */
 export interface RequestRetryRequest {
     /** Subset of webhook_ids to re-run the event logic on. Useful to retry only specific ignored_events */

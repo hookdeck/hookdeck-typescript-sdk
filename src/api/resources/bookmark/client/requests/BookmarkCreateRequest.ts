@@ -9,27 +9,6 @@
  *         webhookId: "webhook_id",
  *         label: "label"
  *     }
- *
- * @example
- *     {
- *         eventDataId: "event_data_id",
- *         webhookId: "webhook_id",
- *         label: "label"
- *     }
- *
- * @example
- *     {
- *         eventDataId: "event_data_id",
- *         webhookId: "webhook_id",
- *         label: "label"
- *     }
- *
- * @example
- *     {
- *         eventDataId: "event_data_id",
- *         webhookId: "webhook_id",
- *         label: "label"
- *     }
  */
 export interface BookmarkCreateRequest {
     /** ID of the event data to bookmark */

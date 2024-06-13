@@ -19,6 +19,7 @@ export declare namespace Issue {
     interface RequestOptions {
         timeoutInSeconds?: number;
         maxRetries?: number;
+        abortSignal?: AbortSignal;
     }
 }
 
@@ -26,6 +27,10 @@ export class Issue {
     constructor(protected readonly _options: Issue.Options) {}
 
     /**
+     *
+     *
+     * @param {Hookdeck.IssueListRequest} request
+     * @param {Issue.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @throws {@link Hookdeck.BadRequestError}
      * @throws {@link Hookdeck.UnprocessableEntityError}
@@ -35,24 +40,6 @@ export class Issue {
      *         id: "iss_YXKv5OdJXCiVwkPhGy",
      *         issueTriggerId: "it_BXKv5OdJXCiVwkPhGy",
      *         mergedWith: "iss_AXKv3OdJXCiKlkPhDz"
-     *     })
-     *
-     * @example
-     *     await hookdeck.issue.list({
-     *         id: "string",
-     *         issueTriggerId: "string",
-     *         type: Hookdeck.IssueListRequestType.Delivery,
-     *         status: Hookdeck.IssueListRequestStatus.Opened,
-     *         mergedWith: "string",
-     *         createdAt: new Date("2024-01-15T09:30:00.000Z"),
-     *         firstSeenAt: new Date("2024-01-15T09:30:00.000Z"),
-     *         lastSeenAt: new Date("2024-01-15T09:30:00.000Z"),
-     *         dismissedAt: new Date("2024-01-15T09:30:00.000Z"),
-     *         orderBy: Hookdeck.IssueListRequestOrderBy.CreatedAt,
-     *         dir: Hookdeck.IssueListRequestDir.Asc,
-     *         limit: 1,
-     *         next: "string",
-     *         prev: "string"
      *     })
      */
     public async list(
@@ -154,7 +141,7 @@ export class Issue {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.3.0-beta.2",
+                "X-Fern-SDK-Version": "0.3.0-beta.3",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -162,6 +149,7 @@ export class Issue {
             queryParameters: _queryParams,
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
             return await serializers.IssueWithDataPaginatedResult.parseOrThrow(_response.body, {
@@ -220,6 +208,10 @@ export class Issue {
 
     /**
      *
+     *
+     * @param {Hookdeck.IssueCountRequest} request
+     * @param {Issue.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link Hookdeck.UnprocessableEntityError}
      *
      * @example
@@ -227,24 +219,6 @@ export class Issue {
      *         id: "iss_YXKv5OdJXCiVwkPhGy",
      *         issueTriggerId: "it_BXKv5OdJXCiVwkPhGy",
      *         mergedWith: "iss_AXKv3OdJXCiKlkPhDz"
-     *     })
-     *
-     * @example
-     *     await hookdeck.issue.count({
-     *         id: "string",
-     *         issueTriggerId: "string",
-     *         type: Hookdeck.IssueCountRequestType.Delivery,
-     *         status: Hookdeck.IssueCountRequestStatus.Opened,
-     *         mergedWith: "string",
-     *         createdAt: new Date("2024-01-15T09:30:00.000Z"),
-     *         firstSeenAt: new Date("2024-01-15T09:30:00.000Z"),
-     *         lastSeenAt: new Date("2024-01-15T09:30:00.000Z"),
-     *         dismissedAt: new Date("2024-01-15T09:30:00.000Z"),
-     *         orderBy: Hookdeck.IssueCountRequestOrderBy.CreatedAt,
-     *         dir: Hookdeck.IssueCountRequestDir.Asc,
-     *         limit: 1,
-     *         next: "string",
-     *         prev: "string"
      *     })
      */
     public async count(
@@ -346,7 +320,7 @@ export class Issue {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.3.0-beta.2",
+                "X-Fern-SDK-Version": "0.3.0-beta.3",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -354,6 +328,7 @@ export class Issue {
             queryParameters: _queryParams,
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
             return await serializers.IssueCount.parseOrThrow(_response.body, {
@@ -402,6 +377,10 @@ export class Issue {
 
     /**
      *
+     *
+     * @param {string} id
+     * @param {Issue.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link Hookdeck.NotFoundError}
      *
      * @example
@@ -411,20 +390,21 @@ export class Issue {
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ?? environments.HookdeckEnvironment.Default,
-                `issues/${id}`
+                `issues/${encodeURIComponent(id)}`
             ),
             method: "GET",
             headers: {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.3.0-beta.2",
+                "X-Fern-SDK-Version": "0.3.0-beta.3",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
             contentType: "application/json",
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
             return await serializers.IssueWithData.parseOrThrow(_response.body, {
@@ -473,6 +453,11 @@ export class Issue {
 
     /**
      *
+     *
+     * @param {string} id
+     * @param {Hookdeck.IssueUpdateRequest} request
+     * @param {Issue.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link Hookdeck.BadRequestError}
      * @throws {@link Hookdeck.UnprocessableEntityError}
      *
@@ -489,14 +474,14 @@ export class Issue {
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ?? environments.HookdeckEnvironment.Default,
-                `issues/${id}`
+                `issues/${encodeURIComponent(id)}`
             ),
             method: "PUT",
             headers: {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.3.0-beta.2",
+                "X-Fern-SDK-Version": "0.3.0-beta.3",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -504,6 +489,7 @@ export class Issue {
             body: await serializers.IssueUpdateRequest.jsonOrThrow(request, { unrecognizedObjectKeys: "strip" }),
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
             return await serializers.Issue.parseOrThrow(_response.body, {
@@ -562,6 +548,10 @@ export class Issue {
 
     /**
      *
+     *
+     * @param {string} id
+     * @param {Issue.RequestOptions} requestOptions - Request-specific configuration.
+     *
      * @throws {@link Hookdeck.NotFoundError}
      *
      * @example
@@ -571,20 +561,21 @@ export class Issue {
         const _response = await (this._options.fetcher ?? core.fetcher)({
             url: urlJoin(
                 (await core.Supplier.get(this._options.environment)) ?? environments.HookdeckEnvironment.Default,
-                `issues/${id}`
+                `issues/${encodeURIComponent(id)}`
             ),
             method: "DELETE",
             headers: {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.3.0-beta.2",
+                "X-Fern-SDK-Version": "0.3.0-beta.3",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
             contentType: "application/json",
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
             return await serializers.Issue.parseOrThrow(_response.body, {

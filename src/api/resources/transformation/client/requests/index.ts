@@ -1,6 +1,6 @@
-export { TransformationListRequest } from "./TransformationListRequest";
-export { TransformationCreateRequest } from "./TransformationCreateRequest";
-export { TransformationUpsertRequest } from "./TransformationUpsertRequest";
-export { TransformationUpdateRequest } from "./TransformationUpdateRequest";
-export { TransformationRunRequest } from "./TransformationRunRequest";
-export { TransformationListExecutionRequest } from "./TransformationListExecutionRequest";
+export { type TransformationListRequest } from "./TransformationListRequest";
+export { type TransformationCreateRequest } from "./TransformationCreateRequest";
+export { type TransformationUpsertRequest } from "./TransformationUpsertRequest";
+export { type TransformationUpdateRequest } from "./TransformationUpdateRequest";
+export { type TransformationRunRequest } from "./TransformationRunRequest";
+export { type TransformationListExecutionRequest } from "./TransformationListExecutionRequest";

@@ -7,15 +7,6 @@ import * as Hookdeck from "../../../../index";
 /**
  * @example
  *     {}
- *
- * @example
- *     {}
- *
- * @example
- *     {}
- *
- * @example
- *     {}
  */
 export interface RequestBulkRetryCreateRequest {
     /** Filter properties for the events to be included in the bulk retry, use query parameters of [Requests](#requests) */

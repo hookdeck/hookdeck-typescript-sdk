@@ -5,18 +5,6 @@
 /**
  * @example
  *     {}
- *
- * @example
- *     {}
- *
- * @example
- *     {}
- *
- * @example
- *     {}
- *
- * @example
- *     {}
  */
 export interface BookmarkUpdateRequest {
     /** ID of the event data to bookmark */

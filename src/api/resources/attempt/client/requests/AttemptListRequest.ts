@@ -7,36 +7,6 @@ import * as Hookdeck from "../../../../index";
 /**
  * @example
  *     {}
- *
- * @example
- *     {
- *         eventId: "string",
- *         orderBy: Hookdeck.AttemptListRequestOrderBy.CreatedAt,
- *         dir: Hookdeck.AttemptListRequestDir.Asc,
- *         limit: 1,
- *         next: "string",
- *         prev: "string"
- *     }
- *
- * @example
- *     {
- *         eventId: "string",
- *         orderBy: Hookdeck.AttemptListRequestOrderBy.CreatedAt,
- *         dir: Hookdeck.AttemptListRequestDir.Asc,
- *         limit: 1,
- *         next: "string",
- *         prev: "string"
- *     }
- *
- * @example
- *     {
- *         eventId: "string",
- *         orderBy: Hookdeck.AttemptListRequestOrderBy.CreatedAt,
- *         dir: Hookdeck.AttemptListRequestDir.Asc,
- *         limit: 1,
- *         next: "string",
- *         prev: "string"
- *     }
  */
 export interface AttemptListRequest {
     eventId?: string | string[];

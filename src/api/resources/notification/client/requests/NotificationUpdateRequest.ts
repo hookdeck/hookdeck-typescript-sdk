@@ -7,9 +7,6 @@ import * as Hookdeck from "../../../../index";
 /**
  * @example
  *     {}
- *
- * @example
- *     {}
  */
 export interface NotificationUpdateRequest {
     /** Enable or disable webhook notifications on the project */

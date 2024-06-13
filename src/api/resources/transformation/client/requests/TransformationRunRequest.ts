@@ -7,15 +7,6 @@ import * as Hookdeck from "../../../../index";
 /**
  * @example
  *     {}
- *
- * @example
- *     {}
- *
- * @example
- *     {}
- *
- * @example
- *     {}
  */
 export interface TransformationRunRequest {
     /** Key-value environment variables to be passed to the transformation */

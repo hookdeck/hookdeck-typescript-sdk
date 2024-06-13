@@ -9,21 +9,6 @@ import * as Hookdeck from "../../../../index";
  *     {
  *         name: "name"
  *     }
- *
- * @example
- *     {
- *         name: "name"
- *     }
- *
- * @example
- *     {
- *         name: "name"
- *     }
- *
- * @example
- *     {
- *         name: "name"
- *     }
  */
 export interface SourceCreateRequest {
     /** A unique name for the source */

@@ -19,6 +19,7 @@ export declare namespace Notification {
     interface RequestOptions {
         timeoutInSeconds?: number;
         maxRetries?: number;
+        abortSignal?: AbortSignal;
     }
 }
 
@@ -27,6 +28,9 @@ export class Notification {
 
     /**
      *
+     *
+     * @param {Hookdeck.NotificationUpdateRequest} request
+     * @param {Notification.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
      *     await hookdeck.notification.update()
@@ -45,7 +49,7 @@ export class Notification {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.3.0-beta.2",
+                "X-Fern-SDK-Version": "0.3.0-beta.3",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
@@ -53,6 +57,7 @@ export class Notification {
             body: await serializers.NotificationUpdateRequest.jsonOrThrow(request, { unrecognizedObjectKeys: "strip" }),
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
+            abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
             return await serializers.ToggleWebhookNotifications.parseOrThrow(_response.body, {
