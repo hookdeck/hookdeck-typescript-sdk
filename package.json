@@ -1,6 +1,6 @@
 {
     "name": "@hookdeck/sdk",
-    "version": "0.3.0-beta.1",
+    "version": "0.3.0-beta.2",
     "private": false,
     "repository": "https://github.com/hookdeck/hookdeck-typescript-sdk",
     "main": "./index.js",
