@@ -57,9 +57,15 @@ export type VerificationConfig =
     | Hookdeck.VerificationConfig.Sanity
     | Hookdeck.VerificationConfig.Ebay
     | Hookdeck.VerificationConfig.Telnyx
+    | Hookdeck.VerificationConfig.Discord
     | Hookdeck.VerificationConfig.Tokenio
     | Hookdeck.VerificationConfig.Fiserv
-    | Hookdeck.VerificationConfig.Bondsmith;
+    | Hookdeck.VerificationConfig.Bondsmith
+    | Hookdeck.VerificationConfig.VercelLogDrains
+    | Hookdeck.VerificationConfig.Vercel
+    | Hookdeck.VerificationConfig.Tebex
+    | Hookdeck.VerificationConfig.Slack
+    | Hookdeck.VerificationConfig.Razorpay;
 
 export declare namespace VerificationConfig {
     interface Hmac extends Hookdeck.VerificationHmac {
@@ -258,6 +264,10 @@ export declare namespace VerificationConfig {
         type: "telnyx";
     }
 
+    interface Discord extends Hookdeck.VerificationDiscord {
+        type: "discord";
+    }
+
     interface Tokenio extends Hookdeck.VerificationTokenIo {
         type: "tokenio";
     }
@@ -268,5 +278,25 @@ export declare namespace VerificationConfig {
 
     interface Bondsmith extends Hookdeck.VerificationBondsmith {
         type: "bondsmith";
+    }
+
+    interface VercelLogDrains extends Hookdeck.VerificationVercelLogDrains {
+        type: "vercel_log_drains";
+    }
+
+    interface Vercel extends Hookdeck.VerificationVercel {
+        type: "vercel";
+    }
+
+    interface Tebex extends Hookdeck.VerificationTebex {
+        type: "tebex";
+    }
+
+    interface Slack extends Hookdeck.VerificationSlack {
+        type: "slack";
+    }
+
+    interface Razorpay extends Hookdeck.VerificationRazorpay {
+        type: "razorpay";
     }
 }
