@@ -52,9 +52,15 @@ export type IntegrationProvider =
     | "SANITY"
     | "EBAY"
     | "TELNYX"
+    | "DISCORD"
     | "TOKENIO"
     | "FISERV"
-    | "BONDSMITH";
+    | "BONDSMITH"
+    | "VERCEL_LOG_DRAINS"
+    | "VERCEL"
+    | "TEBEX"
+    | "SLACK"
+    | "RAZORPAY";
 
 export const IntegrationProvider = {
     Hmac: "HMAC",
@@ -106,7 +112,13 @@ export const IntegrationProvider = {
     Sanity: "SANITY",
     Ebay: "EBAY",
     Telnyx: "TELNYX",
+    Discord: "DISCORD",
     Tokenio: "TOKENIO",
     Fiserv: "FISERV",
     Bondsmith: "BONDSMITH",
+    VercelLogDrains: "VERCEL_LOG_DRAINS",
+    Vercel: "VERCEL",
+    Tebex: "TEBEX",
+    Slack: "SLACK",
+    Razorpay: "RAZORPAY",
 } as const;

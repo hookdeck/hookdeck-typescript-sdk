@@ -54,9 +54,15 @@ import { VerificationTrello } from "./VerificationTrello";
 import { VerificationSanity } from "./VerificationSanity";
 import { VerificationEbay } from "./VerificationEbay";
 import { VerificationTelnyx } from "./VerificationTelnyx";
+import { VerificationDiscord } from "./VerificationDiscord";
 import { VerificationTokenIo } from "./VerificationTokenIo";
 import { VerificationFiserv } from "./VerificationFiserv";
 import { VerificationBondsmith } from "./VerificationBondsmith";
+import { VerificationVercelLogDrains } from "./VerificationVercelLogDrains";
+import { VerificationVercel } from "./VerificationVercel";
+import { VerificationTebex } from "./VerificationTebex";
+import { VerificationSlack } from "./VerificationSlack";
+import { VerificationRazorpay } from "./VerificationRazorpay";
 
 export const VerificationConfig: core.serialization.Schema<
     serializers.VerificationConfig.Raw,
@@ -112,9 +118,15 @@ export const VerificationConfig: core.serialization.Schema<
         sanity: VerificationSanity,
         ebay: VerificationEbay,
         telnyx: VerificationTelnyx,
+        discord: VerificationDiscord,
         tokenio: VerificationTokenIo,
         fiserv: VerificationFiserv,
         bondsmith: VerificationBondsmith,
+        vercel_log_drains: VerificationVercelLogDrains,
+        vercel: VerificationVercel,
+        tebex: VerificationTebex,
+        slack: VerificationSlack,
+        razorpay: VerificationRazorpay,
     })
     .transform<Hookdeck.VerificationConfig>({
         transform: (value) => value,
@@ -172,9 +184,15 @@ export declare namespace VerificationConfig {
         | VerificationConfig.Sanity
         | VerificationConfig.Ebay
         | VerificationConfig.Telnyx
+        | VerificationConfig.Discord
         | VerificationConfig.Tokenio
         | VerificationConfig.Fiserv
-        | VerificationConfig.Bondsmith;
+        | VerificationConfig.Bondsmith
+        | VerificationConfig.VercelLogDrains
+        | VerificationConfig.Vercel
+        | VerificationConfig.Tebex
+        | VerificationConfig.Slack
+        | VerificationConfig.Razorpay;
 
     interface Hmac extends VerificationHmac.Raw {
         type: "hmac";
@@ -372,6 +390,10 @@ export declare namespace VerificationConfig {
         type: "telnyx";
     }
 
+    interface Discord extends VerificationDiscord.Raw {
+        type: "discord";
+    }
+
     interface Tokenio extends VerificationTokenIo.Raw {
         type: "tokenio";
     }
@@ -382,5 +404,25 @@ export declare namespace VerificationConfig {
 
     interface Bondsmith extends VerificationBondsmith.Raw {
         type: "bondsmith";
+    }
+
+    interface VercelLogDrains extends VerificationVercelLogDrains.Raw {
+        type: "vercel_log_drains";
+    }
+
+    interface Vercel extends VerificationVercel.Raw {
+        type: "vercel";
+    }
+
+    interface Tebex extends VerificationTebex.Raw {
+        type: "tebex";
+    }
+
+    interface Slack extends VerificationSlack.Raw {
+        type: "slack";
+    }
+
+    interface Razorpay extends VerificationRazorpay.Raw {
+        type: "razorpay";
     }
 }

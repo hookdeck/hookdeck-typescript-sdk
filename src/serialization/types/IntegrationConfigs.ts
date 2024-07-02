@@ -11,7 +11,8 @@ import { HandledApiKeyIntegrationConfigs } from "./HandledApiKeyIntegrationConfi
 import { HandledHmacConfigs } from "./HandledHmacConfigs";
 import { BasicAuthIntegrationConfigs } from "./BasicAuthIntegrationConfigs";
 import { ShopifyIntegrationConfigs } from "./ShopifyIntegrationConfigs";
-import { IntegrationConfigsSix } from "./IntegrationConfigsSix";
+import { VercelLogDrainsIntegrationConfigs } from "./VercelLogDrainsIntegrationConfigs";
+import { IntegrationConfigsSeven } from "./IntegrationConfigsSeven";
 
 export const IntegrationConfigs: core.serialization.Schema<
     serializers.IntegrationConfigs.Raw,
@@ -23,7 +24,8 @@ export const IntegrationConfigs: core.serialization.Schema<
     HandledHmacConfigs,
     BasicAuthIntegrationConfigs,
     ShopifyIntegrationConfigs,
-    IntegrationConfigsSix,
+    VercelLogDrainsIntegrationConfigs,
+    IntegrationConfigsSeven,
 ]);
 
 export declare namespace IntegrationConfigs {
@@ -34,5 +36,6 @@ export declare namespace IntegrationConfigs {
         | HandledHmacConfigs.Raw
         | BasicAuthIntegrationConfigs.Raw
         | ShopifyIntegrationConfigs.Raw
-        | IntegrationConfigsSix.Raw;
+        | VercelLogDrainsIntegrationConfigs.Raw
+        | IntegrationConfigsSeven.Raw;
 }

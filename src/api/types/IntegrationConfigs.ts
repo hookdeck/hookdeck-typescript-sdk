@@ -14,4 +14,5 @@ export type IntegrationConfigs =
     | Hookdeck.HandledHmacConfigs
     | Hookdeck.BasicAuthIntegrationConfigs
     | Hookdeck.ShopifyIntegrationConfigs
-    | Hookdeck.IntegrationConfigsSix;
+    | Hookdeck.VercelLogDrainsIntegrationConfigs
+    | Hookdeck.IntegrationConfigsSeven;
