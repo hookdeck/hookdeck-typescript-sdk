@@ -63,6 +63,8 @@ import { VerificationVercel } from "./VerificationVercel";
 import { VerificationTebex } from "./VerificationTebex";
 import { VerificationSlack } from "./VerificationSlack";
 import { VerificationRazorpay } from "./VerificationRazorpay";
+import { VerificationMailchimp } from "./VerificationMailchimp";
+import { VerificationPaddle } from "./VerificationPaddle";
 
 export const VerificationConfig: core.serialization.Schema<
     serializers.VerificationConfig.Raw,
@@ -127,6 +129,8 @@ export const VerificationConfig: core.serialization.Schema<
         tebex: VerificationTebex,
         slack: VerificationSlack,
         razorpay: VerificationRazorpay,
+        mailchimp: VerificationMailchimp,
+        paddle: VerificationPaddle,
     })
     .transform<Hookdeck.VerificationConfig>({
         transform: (value) => value,
@@ -192,7 +196,9 @@ export declare namespace VerificationConfig {
         | VerificationConfig.Vercel
         | VerificationConfig.Tebex
         | VerificationConfig.Slack
-        | VerificationConfig.Razorpay;
+        | VerificationConfig.Razorpay
+        | VerificationConfig.Mailchimp
+        | VerificationConfig.Paddle;
 
     interface Hmac extends VerificationHmac.Raw {
         type: "hmac";
@@ -424,5 +430,13 @@ export declare namespace VerificationConfig {
 
     interface Razorpay extends VerificationRazorpay.Raw {
         type: "razorpay";
+    }
+
+    interface Mailchimp extends VerificationMailchimp.Raw {
+        type: "mailchimp";
+    }
+
+    interface Paddle extends VerificationPaddle.Raw {
+        type: "paddle";
     }
 }

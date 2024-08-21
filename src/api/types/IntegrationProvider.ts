@@ -60,7 +60,9 @@ export type IntegrationProvider =
     | "VERCEL"
     | "TEBEX"
     | "SLACK"
-    | "RAZORPAY";
+    | "RAZORPAY"
+    | "MAILCHIMP"
+    | "PADDLE";
 
 export const IntegrationProvider = {
     Hmac: "HMAC",
@@ -121,4 +123,6 @@ export const IntegrationProvider = {
     Tebex: "TEBEX",
     Slack: "SLACK",
     Razorpay: "RAZORPAY",
+    Mailchimp: "MAILCHIMP",
+    Paddle: "PADDLE",
 } as const;

@@ -68,6 +68,8 @@ export const IntegrationProvider: core.serialization.Schema<
     "TEBEX",
     "SLACK",
     "RAZORPAY",
+    "MAILCHIMP",
+    "PADDLE",
 ]);
 
 export declare namespace IntegrationProvider {
@@ -129,5 +131,7 @@ export declare namespace IntegrationProvider {
         | "VERCEL"
         | "TEBEX"
         | "SLACK"
-        | "RAZORPAY";
+        | "RAZORPAY"
+        | "MAILCHIMP"
+        | "PADDLE";
 }
