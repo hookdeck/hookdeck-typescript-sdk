@@ -7,4 +7,4 @@ import * as Hookdeck from "../../../index";
 /**
  * Filter by `created_at` date using a date operator
  */
-export type EventBulkRetryCreateRequestQueryCreatedAt = Date | Hookdeck.EventBulkRetryCreateRequestQueryCreatedAtAny;
+export type EventBulkRetryCreateRequestQueryCreatedAt = Date | Hookdeck.Operators;

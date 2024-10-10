@@ -5,24 +5,16 @@
 import * as serializers from "../index";
 import * as Hookdeck from "../../api/index";
 import * as core from "../../core";
-import { HmacAlgorithms } from "./HmacAlgorithms";
-import { VerificationRechargeConfigsEncoding } from "./VerificationRechargeConfigsEncoding";
 
 export const VerificationRechargeConfigs: core.serialization.ObjectSchema<
     serializers.VerificationRechargeConfigs.Raw,
     Hookdeck.VerificationRechargeConfigs
 > = core.serialization.object({
     webhookSecretKey: core.serialization.property("webhook_secret_key", core.serialization.string()),
-    algorithm: HmacAlgorithms,
-    headerKey: core.serialization.property("header_key", core.serialization.string()),
-    encoding: VerificationRechargeConfigsEncoding,
 });
 
 export declare namespace VerificationRechargeConfigs {
     interface Raw {
         webhook_secret_key: string;
-        algorithm: HmacAlgorithms.Raw;
-        header_key: string;
-        encoding: VerificationRechargeConfigsEncoding.Raw;
     }
 }

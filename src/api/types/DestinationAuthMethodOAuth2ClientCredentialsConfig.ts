@@ -16,6 +16,6 @@ export interface DestinationAuthMethodOAuth2ClientCredentialsConfig {
     scope?: string;
     /** URL of the auth server */
     authServer: string;
-    /** Basic (default) or Bearer Authentication */
+    /** Basic (default), Bearer Authentication or x-www-form-urlencoded */
     authenticationType?: Hookdeck.DestinationAuthMethodOAuth2ClientCredentialsConfigAuthenticationType;
 }

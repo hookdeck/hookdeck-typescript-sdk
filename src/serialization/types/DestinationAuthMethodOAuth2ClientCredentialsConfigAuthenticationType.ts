@@ -9,8 +9,8 @@ import * as core from "../../core";
 export const DestinationAuthMethodOAuth2ClientCredentialsConfigAuthenticationType: core.serialization.Schema<
     serializers.DestinationAuthMethodOAuth2ClientCredentialsConfigAuthenticationType.Raw,
     Hookdeck.DestinationAuthMethodOAuth2ClientCredentialsConfigAuthenticationType
-> = core.serialization.enum_(["basic", "bearer"]);
+> = core.serialization.enum_(["basic", "bearer", "x-www-form-urlencoded"]);
 
 export declare namespace DestinationAuthMethodOAuth2ClientCredentialsConfigAuthenticationType {
-    type Raw = "basic" | "bearer";
+    type Raw = "basic" | "bearer" | "x-www-form-urlencoded";
 }

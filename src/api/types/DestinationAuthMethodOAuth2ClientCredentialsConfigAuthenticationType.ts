@@ -3,11 +3,15 @@
  */
 
 /**
- * Basic (default) or Bearer Authentication
+ * Basic (default), Bearer Authentication or x-www-form-urlencoded
  */
-export type DestinationAuthMethodOAuth2ClientCredentialsConfigAuthenticationType = "basic" | "bearer";
+export type DestinationAuthMethodOAuth2ClientCredentialsConfigAuthenticationType =
+    | "basic"
+    | "bearer"
+    | "x-www-form-urlencoded";
 
 export const DestinationAuthMethodOAuth2ClientCredentialsConfigAuthenticationType = {
     Basic: "basic",
     Bearer: "bearer",
+    XWwwFormUrlencoded: "x-www-form-urlencoded",
 } as const;

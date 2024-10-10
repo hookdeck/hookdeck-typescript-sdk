@@ -17,8 +17,11 @@ export declare namespace Attempt {
     }
 
     interface RequestOptions {
+        /** The maximum time to wait for a response in seconds. */
         timeoutInSeconds?: number;
+        /** The number of times to retry the request. Defaults to 2. */
         maxRetries?: number;
+        /** A hook to abort the request. */
         abortSignal?: AbortSignal;
     }
 }
@@ -36,7 +39,7 @@ export class Attempt {
      * @throws {@link Hookdeck.UnprocessableEntityError}
      *
      * @example
-     *     await hookdeck.attempt.list()
+     *     await client.attempt.list()
      */
     public async list(
         request: Hookdeck.AttemptListRequest = {},
@@ -82,18 +85,20 @@ export class Attempt {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.4.0",
+                "X-Fern-SDK-Version": "0.5.0",
+                "User-Agent": "@hookdeck/sdk/0.5.0",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
             contentType: "application/json",
             queryParameters: _queryParams,
+            requestType: "json",
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
             abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
-            return await serializers.EventAttemptPaginatedResult.parseOrThrow(_response.body, {
+            return serializers.EventAttemptPaginatedResult.parseOrThrow(_response.body, {
                 unrecognizedObjectKeys: "passthrough",
                 allowUnrecognizedUnionMembers: true,
                 allowUnrecognizedEnumValues: true,
@@ -106,7 +111,7 @@ export class Attempt {
             switch (_response.error.statusCode) {
                 case 400:
                     throw new Hookdeck.BadRequestError(
-                        await serializers.ApiErrorResponse.parseOrThrow(_response.error.body, {
+                        serializers.ApiErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
@@ -116,7 +121,7 @@ export class Attempt {
                     );
                 case 422:
                     throw new Hookdeck.UnprocessableEntityError(
-                        await serializers.ApiErrorResponse.parseOrThrow(_response.error.body, {
+                        serializers.ApiErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
@@ -156,7 +161,7 @@ export class Attempt {
      * @throws {@link Hookdeck.NotFoundError}
      *
      * @example
-     *     await hookdeck.attempt.retrieve("id")
+     *     await client.attempt.retrieve("id")
      */
     public async retrieve(
         id: string,
@@ -172,17 +177,19 @@ export class Attempt {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.4.0",
+                "X-Fern-SDK-Version": "0.5.0",
+                "User-Agent": "@hookdeck/sdk/0.5.0",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
             contentType: "application/json",
+            requestType: "json",
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
             abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
-            return await serializers.attempt.retrieve.Response.parseOrThrow(_response.body, {
+            return serializers.attempt.retrieve.Response.parseOrThrow(_response.body, {
                 unrecognizedObjectKeys: "passthrough",
                 allowUnrecognizedUnionMembers: true,
                 allowUnrecognizedEnumValues: true,
@@ -195,7 +202,7 @@ export class Attempt {
             switch (_response.error.statusCode) {
                 case 404:
                     throw new Hookdeck.NotFoundError(
-                        await serializers.ApiErrorResponse.parseOrThrow(_response.error.body, {
+                        serializers.ApiErrorResponse.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,

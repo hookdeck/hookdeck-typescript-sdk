@@ -9,6 +9,7 @@ export interface TransformationExecution {
     transformedEventDataId: string;
     originalEventDataId: string;
     transformationId: string;
+    /** ID of the project */
     teamId: string;
     webhookId: string;
     logLevel: Hookdeck.TransformationExecutionLogLevel;

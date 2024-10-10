@@ -7,6 +7,4 @@ import * as Hookdeck from "../../../index";
 /**
  * Filter by event ingested date
  */
-export type RequestBulkRetryCreateRequestQueryIngestedAt =
-    | Date
-    | Hookdeck.RequestBulkRetryCreateRequestQueryIngestedAtAny;
+export type RequestBulkRetryCreateRequestQueryIngestedAt = Date | Hookdeck.Operators;

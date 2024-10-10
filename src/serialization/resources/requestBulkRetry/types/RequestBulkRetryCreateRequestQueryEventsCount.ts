@@ -5,17 +5,17 @@
 import * as serializers from "../../../index";
 import * as Hookdeck from "../../../../api/index";
 import * as core from "../../../../core";
-import { RequestBulkRetryCreateRequestQueryEventsCountAll } from "./RequestBulkRetryCreateRequestQueryEventsCountAll";
+import { Operators } from "../../../types/Operators";
 
 export const RequestBulkRetryCreateRequestQueryEventsCount: core.serialization.Schema<
     serializers.RequestBulkRetryCreateRequestQueryEventsCount.Raw,
     Hookdeck.RequestBulkRetryCreateRequestQueryEventsCount
 > = core.serialization.undiscriminatedUnion([
     core.serialization.number(),
-    RequestBulkRetryCreateRequestQueryEventsCountAll,
+    Operators,
     core.serialization.list(core.serialization.number()),
 ]);
 
 export declare namespace RequestBulkRetryCreateRequestQueryEventsCount {
-    type Raw = number | RequestBulkRetryCreateRequestQueryEventsCountAll.Raw | number[];
+    type Raw = number | Operators.Raw | number[];
 }

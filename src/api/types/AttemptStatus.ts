@@ -5,11 +5,9 @@
 /**
  * Attempt status
  */
-export type AttemptStatus = "QUEUED" | "FAILED" | "SUCCESSFUL" | "HOLD";
+export type AttemptStatus = "FAILED" | "SUCCESSFUL";
 
 export const AttemptStatus = {
-    Queued: "QUEUED",
     Failed: "FAILED",
     Successful: "SUCCESSFUL",
-    Hold: "HOLD",
 } as const;

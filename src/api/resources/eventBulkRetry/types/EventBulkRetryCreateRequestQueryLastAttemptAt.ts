@@ -7,6 +7,4 @@ import * as Hookdeck from "../../../index";
 /**
  * Filter by `last_attempt_at` date using a date operator
  */
-export type EventBulkRetryCreateRequestQueryLastAttemptAt =
-    | Date
-    | Hookdeck.EventBulkRetryCreateRequestQueryLastAttemptAtAny;
+export type EventBulkRetryCreateRequestQueryLastAttemptAt = Date | Hookdeck.Operators;

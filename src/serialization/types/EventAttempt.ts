@@ -10,13 +10,13 @@ import { AttemptErrorCodes } from "./AttemptErrorCodes";
 import { EventAttemptBody } from "./EventAttemptBody";
 import { EventAttemptHttpMethod } from "./EventAttemptHttpMethod";
 import { AttemptStatus } from "./AttemptStatus";
-import { AttemptState } from "./AttemptState";
 
 export const EventAttempt: core.serialization.ObjectSchema<serializers.EventAttempt.Raw, Hookdeck.EventAttempt> =
     core.serialization.object({
         id: core.serialization.string(),
         teamId: core.serialization.property("team_id", core.serialization.string()),
         eventId: core.serialization.property("event_id", core.serialization.string()),
+        destinationId: core.serialization.property("destination_id", core.serialization.string()),
         responseStatus: core.serialization.property("response_status", core.serialization.number().optional()),
         attemptNumber: core.serialization.property("attempt_number", core.serialization.number().optional()),
         trigger: AttemptTrigger.optional(),
@@ -33,8 +33,6 @@ export const EventAttempt: core.serialization.ObjectSchema<serializers.EventAtte
         responseLatency: core.serialization.property("response_latency", core.serialization.number().optional()),
         updatedAt: core.serialization.property("updated_at", core.serialization.date()),
         createdAt: core.serialization.property("created_at", core.serialization.date()),
-        state: AttemptState.optional(),
-        destinationId: core.serialization.property("destination_id", core.serialization.string().optional()),
     });
 
 export declare namespace EventAttempt {
@@ -42,6 +40,7 @@ export declare namespace EventAttempt {
         id: string;
         team_id: string;
         event_id: string;
+        destination_id: string;
         response_status?: number | null;
         attempt_number?: number | null;
         trigger?: AttemptTrigger.Raw | null;
@@ -58,7 +57,5 @@ export declare namespace EventAttempt {
         response_latency?: number | null;
         updated_at: string;
         created_at: string;
-        state?: AttemptState.Raw | null;
-        destination_id?: string | null;
     }
 }

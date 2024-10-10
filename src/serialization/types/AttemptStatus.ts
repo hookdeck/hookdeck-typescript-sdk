@@ -7,8 +7,8 @@ import * as Hookdeck from "../../api/index";
 import * as core from "../../core";
 
 export const AttemptStatus: core.serialization.Schema<serializers.AttemptStatus.Raw, Hookdeck.AttemptStatus> =
-    core.serialization.enum_(["QUEUED", "FAILED", "SUCCESSFUL", "HOLD"]);
+    core.serialization.enum_(["FAILED", "SUCCESSFUL"]);
 
 export declare namespace AttemptStatus {
-    type Raw = "QUEUED" | "FAILED" | "SUCCESSFUL" | "HOLD";
+    type Raw = "FAILED" | "SUCCESSFUL";
 }

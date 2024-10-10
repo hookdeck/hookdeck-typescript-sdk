@@ -16,10 +16,10 @@ export interface ConnectionCreateRequestDestination {
     url?: string;
     /** Path for the CLI destination */
     cliPath?: string;
-    /** Period to rate limit attempts */
-    rateLimitPeriod?: Hookdeck.ConnectionCreateRequestDestinationRateLimitPeriod;
-    /** Limit event attempts to receive per period */
+    /** Limit of events to receive per period. Refered as Delivery Rate limit in the dashboard and documentation. */
     rateLimit?: number;
+    /** Period to rate limit events by. Refered as Delivery Rate period in the dashboard and documentation. */
+    rateLimitPeriod?: Hookdeck.ConnectionCreateRequestDestinationRateLimitPeriod;
     httpMethod?: Hookdeck.DestinationHttpMethod;
     authMethod?: Hookdeck.DestinationAuthMethodConfig;
     pathForwardingDisabled?: boolean;

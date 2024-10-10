@@ -18,7 +18,7 @@ export interface Source {
     teamId: string;
     /** A unique URL that must be supplied to your webhook's provider */
     url: string;
-    verification?: Hookdeck.SourceVerification;
+    verification?: Hookdeck.VerificationConfig;
     allowedHttpMethods?: Hookdeck.SourceAllowedHttpMethod | undefined;
     customResponse?: Hookdeck.SourceCustomResponse;
     /** Date the source was disabled */

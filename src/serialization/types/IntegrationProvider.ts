@@ -70,6 +70,7 @@ export const IntegrationProvider: core.serialization.Schema<
     "RAZORPAY",
     "MAILCHIMP",
     "PADDLE",
+    "PAYPAL",
 ]);
 
 export declare namespace IntegrationProvider {
@@ -133,5 +134,6 @@ export declare namespace IntegrationProvider {
         | "SLACK"
         | "RAZORPAY"
         | "MAILCHIMP"
-        | "PADDLE";
+        | "PADDLE"
+        | "PAYPAL";
 }

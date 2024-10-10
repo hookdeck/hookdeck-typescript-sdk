@@ -6,11 +6,11 @@ import * as Hookdeck from "../index";
 
 export interface IgnoredEvent {
     id: string;
+    /** ID of the project */
     teamId: string;
     webhookId: string;
     cause: Hookdeck.IgnoredEventCause;
     requestId: string;
     meta?: Hookdeck.IgnoredEventMeta;
-    updatedAt: Date;
     createdAt: Date;
 }

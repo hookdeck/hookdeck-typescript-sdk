@@ -3,7 +3,7 @@
  */
 
 /**
- * Period to rate limit attempts
+ * Period to rate limit events by. Refered as Delivery Rate period in the dashboard and documentation.
  */
 export type ConnectionCreateRequestDestinationRateLimitPeriod = "second" | "minute" | "hour" | "concurrent";
 

@@ -5,18 +5,51 @@
 import * as serializers from "../index";
 import * as Hookdeck from "../../api/index";
 import * as core from "../../core";
-import { Event } from "./Event";
-import { EventAttempt } from "./EventAttempt";
+import { AttemptErrorCodes } from "./AttemptErrorCodes";
+import { EventStatus } from "./EventStatus";
+import { ShortEventData } from "./ShortEventData";
 
 export const RetriedEvent: core.serialization.ObjectSchema<serializers.RetriedEvent.Raw, Hookdeck.RetriedEvent> =
     core.serialization.object({
-        event: Event,
-        attempt: EventAttempt.optional(),
+        id: core.serialization.string(),
+        teamId: core.serialization.property("team_id", core.serialization.string()),
+        webhookId: core.serialization.property("webhook_id", core.serialization.string()),
+        sourceId: core.serialization.property("source_id", core.serialization.string()),
+        destinationId: core.serialization.property("destination_id", core.serialization.string()),
+        eventDataId: core.serialization.property("event_data_id", core.serialization.string()),
+        requestId: core.serialization.property("request_id", core.serialization.string()),
+        attempts: core.serialization.number(),
+        lastAttemptAt: core.serialization.property("last_attempt_at", core.serialization.date().optional()),
+        nextAttemptAt: core.serialization.property("next_attempt_at", core.serialization.date().optional()),
+        responseStatus: core.serialization.property("response_status", core.serialization.number().optional()),
+        errorCode: core.serialization.property("error_code", AttemptErrorCodes.optional()),
+        status: EventStatus,
+        successfulAt: core.serialization.property("successful_at", core.serialization.date().optional()),
+        cliId: core.serialization.property("cli_id", core.serialization.string().optional()),
+        updatedAt: core.serialization.property("updated_at", core.serialization.date()),
+        createdAt: core.serialization.property("created_at", core.serialization.date()),
+        data: ShortEventData.optional(),
     });
 
 export declare namespace RetriedEvent {
     interface Raw {
-        event: Event.Raw;
-        attempt?: EventAttempt.Raw | null;
+        id: string;
+        team_id: string;
+        webhook_id: string;
+        source_id: string;
+        destination_id: string;
+        event_data_id: string;
+        request_id: string;
+        attempts: number;
+        last_attempt_at?: string | null;
+        next_attempt_at?: string | null;
+        response_status?: number | null;
+        error_code?: AttemptErrorCodes.Raw | null;
+        status: EventStatus.Raw;
+        successful_at?: string | null;
+        cli_id?: string | null;
+        updated_at: string;
+        created_at: string;
+        data?: ShortEventData.Raw | null;
     }
 }

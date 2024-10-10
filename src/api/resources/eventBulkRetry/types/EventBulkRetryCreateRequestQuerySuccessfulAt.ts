@@ -7,6 +7,4 @@ import * as Hookdeck from "../../../index";
 /**
  * Filter by `successful_at` date using a date operator
  */
-export type EventBulkRetryCreateRequestQuerySuccessfulAt =
-    | Date
-    | Hookdeck.EventBulkRetryCreateRequestQuerySuccessfulAtAny;
+export type EventBulkRetryCreateRequestQuerySuccessfulAt = Date | Hookdeck.Operators;
