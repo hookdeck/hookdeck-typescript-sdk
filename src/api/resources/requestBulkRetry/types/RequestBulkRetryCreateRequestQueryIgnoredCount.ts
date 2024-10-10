@@ -7,7 +7,4 @@ import * as Hookdeck from "../../../index";
 /**
  * Filter by count of ignored events
  */
-export type RequestBulkRetryCreateRequestQueryIgnoredCount =
-    | number
-    | Hookdeck.RequestBulkRetryCreateRequestQueryIgnoredCountAll
-    | number[];
+export type RequestBulkRetryCreateRequestQueryIgnoredCount = number | Hookdeck.Operators | number[];

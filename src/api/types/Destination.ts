@@ -21,7 +21,7 @@ export interface Destination {
     url?: string;
     /** Path for the CLI destination */
     cliPath?: string;
-    /** Limit delivery rate of event attempts to receive per period. */
+    /** Limit of events to receive per period. Refered as Delivery Rate limit in the dashboard and documentation. */
     rateLimit?: number;
     rateLimitPeriod?: Hookdeck.DestinationRateLimitPeriod;
     httpMethod?: Hookdeck.DestinationHttpMethod;

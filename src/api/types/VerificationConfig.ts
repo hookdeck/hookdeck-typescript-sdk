@@ -67,7 +67,8 @@ export type VerificationConfig =
     | Hookdeck.VerificationConfig.Slack
     | Hookdeck.VerificationConfig.Razorpay
     | Hookdeck.VerificationConfig.Mailchimp
-    | Hookdeck.VerificationConfig.Paddle;
+    | Hookdeck.VerificationConfig.Paddle
+    | Hookdeck.VerificationConfig.Paypal;
 
 export declare namespace VerificationConfig {
     interface Hmac extends Hookdeck.VerificationHmac {
@@ -308,5 +309,9 @@ export declare namespace VerificationConfig {
 
     interface Paddle extends Hookdeck.VerificationPaddle {
         type: "paddle";
+    }
+
+    interface Paypal extends Hookdeck.VerificationPaypal {
+        type: "paypal";
     }
 }

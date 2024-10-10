@@ -7,10 +7,12 @@ import * as Hookdeck from "../index";
 export interface EventAttempt {
     /** Attempt ID */
     id: string;
-    /** Team ID */
+    /** ID of the project */
     teamId: string;
     /** Event ID */
     eventId: string;
+    /** Destination ID */
+    destinationId: string;
     /** Attempt's HTTP response code */
     responseStatus?: number;
     /** Sequential number of attempts (up to and including this one) made for the associated event */
@@ -39,6 +41,4 @@ export interface EventAttempt {
     updatedAt: Date;
     /** Date the attempt was created */
     createdAt: Date;
-    state?: Hookdeck.AttemptState;
-    destinationId?: string;
 }

@@ -5,30 +5,16 @@
 import * as serializers from "../index";
 import * as Hookdeck from "../../api/index";
 import * as core from "../../core";
-import { VerificationShopifyConfigsRateLimitPeriod } from "./VerificationShopifyConfigsRateLimitPeriod";
 
 export const VerificationShopifyConfigs: core.serialization.ObjectSchema<
     serializers.VerificationShopifyConfigs.Raw,
     Hookdeck.VerificationShopifyConfigs
 > = core.serialization.object({
     webhookSecretKey: core.serialization.property("webhook_secret_key", core.serialization.string()),
-    rateLimitPeriod: core.serialization.property(
-        "rate_limit_period",
-        VerificationShopifyConfigsRateLimitPeriod.optional()
-    ),
-    rateLimit: core.serialization.property("rate_limit", core.serialization.number().optional()),
-    apiKey: core.serialization.property("api_key", core.serialization.string().optional()),
-    apiSecret: core.serialization.property("api_secret", core.serialization.string().optional()),
-    shop: core.serialization.string().optional(),
 });
 
 export declare namespace VerificationShopifyConfigs {
     interface Raw {
         webhook_secret_key: string;
-        rate_limit_period?: VerificationShopifyConfigsRateLimitPeriod.Raw | null;
-        rate_limit?: number | null;
-        api_key?: string | null;
-        api_secret?: string | null;
-        shop?: string | null;
     }
 }

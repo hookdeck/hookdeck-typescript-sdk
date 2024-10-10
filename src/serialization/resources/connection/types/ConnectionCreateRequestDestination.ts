@@ -17,11 +17,11 @@ export const ConnectionCreateRequestDestination: core.serialization.ObjectSchema
     description: core.serialization.string().optional(),
     url: core.serialization.string().optional(),
     cliPath: core.serialization.property("cli_path", core.serialization.string().optional()),
+    rateLimit: core.serialization.property("rate_limit", core.serialization.number().optional()),
     rateLimitPeriod: core.serialization.property(
         "rate_limit_period",
         ConnectionCreateRequestDestinationRateLimitPeriod.optional()
     ),
-    rateLimit: core.serialization.property("rate_limit", core.serialization.number().optional()),
     httpMethod: core.serialization.property("http_method", DestinationHttpMethod.optional()),
     authMethod: core.serialization.property("auth_method", DestinationAuthMethodConfig.optional()),
     pathForwardingDisabled: core.serialization.property(
@@ -36,8 +36,8 @@ export declare namespace ConnectionCreateRequestDestination {
         description?: string | null;
         url?: string | null;
         cli_path?: string | null;
-        rate_limit_period?: ConnectionCreateRequestDestinationRateLimitPeriod.Raw | null;
         rate_limit?: number | null;
+        rate_limit_period?: ConnectionCreateRequestDestinationRateLimitPeriod.Raw | null;
         http_method?: DestinationHttpMethod.Raw | null;
         auth_method?: DestinationAuthMethodConfig.Raw | null;
         path_forwarding_disabled?: boolean | null;

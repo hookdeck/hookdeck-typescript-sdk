@@ -65,6 +65,7 @@ import { VerificationSlack } from "./VerificationSlack";
 import { VerificationRazorpay } from "./VerificationRazorpay";
 import { VerificationMailchimp } from "./VerificationMailchimp";
 import { VerificationPaddle } from "./VerificationPaddle";
+import { VerificationPaypal } from "./VerificationPaypal";
 
 export const VerificationConfig: core.serialization.Schema<
     serializers.VerificationConfig.Raw,
@@ -131,6 +132,7 @@ export const VerificationConfig: core.serialization.Schema<
         razorpay: VerificationRazorpay,
         mailchimp: VerificationMailchimp,
         paddle: VerificationPaddle,
+        paypal: VerificationPaypal,
     })
     .transform<Hookdeck.VerificationConfig>({
         transform: (value) => value,
@@ -198,7 +200,8 @@ export declare namespace VerificationConfig {
         | VerificationConfig.Slack
         | VerificationConfig.Razorpay
         | VerificationConfig.Mailchimp
-        | VerificationConfig.Paddle;
+        | VerificationConfig.Paddle
+        | VerificationConfig.Paypal;
 
     interface Hmac extends VerificationHmac.Raw {
         type: "hmac";
@@ -438,5 +441,9 @@ export declare namespace VerificationConfig {
 
     interface Paddle extends VerificationPaddle.Raw {
         type: "paddle";
+    }
+
+    interface Paypal extends VerificationPaypal.Raw {
+        type: "paypal";
     }
 }

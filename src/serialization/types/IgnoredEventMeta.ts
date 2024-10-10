@@ -7,6 +7,7 @@ import * as Hookdeck from "../../api/index";
 import * as core from "../../core";
 import { FilteredMeta } from "./FilteredMeta";
 import { TransformationFailedMeta } from "./TransformationFailedMeta";
+import { FilteredMetaItem } from "./FilteredMetaItem";
 
 export const IgnoredEventMeta: core.serialization.Schema<serializers.IgnoredEventMeta.Raw, Hookdeck.IgnoredEventMeta> =
     core.serialization.undiscriminatedUnion([FilteredMeta, TransformationFailedMeta]);

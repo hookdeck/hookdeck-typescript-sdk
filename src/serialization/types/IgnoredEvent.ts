@@ -16,7 +16,6 @@ export const IgnoredEvent: core.serialization.ObjectSchema<serializers.IgnoredEv
         cause: IgnoredEventCause,
         requestId: core.serialization.property("request_id", core.serialization.string()),
         meta: IgnoredEventMeta.optional(),
-        updatedAt: core.serialization.property("updated_at", core.serialization.date()),
         createdAt: core.serialization.property("created_at", core.serialization.date()),
     });
 
@@ -28,7 +27,6 @@ export declare namespace IgnoredEvent {
         cause: IgnoredEventCause.Raw;
         request_id: string;
         meta?: IgnoredEventMeta.Raw | null;
-        updated_at: string;
         created_at: string;
     }
 }

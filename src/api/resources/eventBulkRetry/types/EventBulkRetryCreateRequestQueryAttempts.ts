@@ -7,4 +7,4 @@ import * as Hookdeck from "../../../index";
 /**
  * Filter by number of attempts
  */
-export type EventBulkRetryCreateRequestQueryAttempts = number | Hookdeck.EventBulkRetryCreateRequestQueryAttemptsAll;
+export type EventBulkRetryCreateRequestQueryAttempts = number | Hookdeck.Operators;

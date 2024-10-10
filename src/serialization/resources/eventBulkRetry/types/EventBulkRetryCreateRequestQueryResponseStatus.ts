@@ -5,17 +5,17 @@
 import * as serializers from "../../../index";
 import * as Hookdeck from "../../../../api/index";
 import * as core from "../../../../core";
-import { EventBulkRetryCreateRequestQueryResponseStatusAll } from "./EventBulkRetryCreateRequestQueryResponseStatusAll";
+import { Operators } from "../../../types/Operators";
 
 export const EventBulkRetryCreateRequestQueryResponseStatus: core.serialization.Schema<
     serializers.EventBulkRetryCreateRequestQueryResponseStatus.Raw,
     Hookdeck.EventBulkRetryCreateRequestQueryResponseStatus
 > = core.serialization.undiscriminatedUnion([
     core.serialization.number(),
-    EventBulkRetryCreateRequestQueryResponseStatusAll,
+    Operators,
     core.serialization.list(core.serialization.number()),
 ]);
 
 export declare namespace EventBulkRetryCreateRequestQueryResponseStatus {
-    type Raw = number | EventBulkRetryCreateRequestQueryResponseStatusAll.Raw | number[];
+    type Raw = number | Operators.Raw | number[];
 }

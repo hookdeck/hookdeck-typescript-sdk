@@ -10,4 +10,8 @@ export interface DestinationAuthMethodAwsSignatureConfig {
     accessKeyId: string;
     /** AWS secret access key */
     secretAccessKey: string;
+    /** AWS region */
+    region?: string;
+    /** AWS service */
+    service?: string;
 }

@@ -5,16 +5,13 @@
 import * as serializers from "../../../index";
 import * as Hookdeck from "../../../../api/index";
 import * as core from "../../../../core";
-import { EventBulkRetryCreateRequestQuerySuccessfulAtAny } from "./EventBulkRetryCreateRequestQuerySuccessfulAtAny";
+import { Operators } from "../../../types/Operators";
 
 export const EventBulkRetryCreateRequestQuerySuccessfulAt: core.serialization.Schema<
     serializers.EventBulkRetryCreateRequestQuerySuccessfulAt.Raw,
     Hookdeck.EventBulkRetryCreateRequestQuerySuccessfulAt
-> = core.serialization.undiscriminatedUnion([
-    core.serialization.date(),
-    EventBulkRetryCreateRequestQuerySuccessfulAtAny,
-]);
+> = core.serialization.undiscriminatedUnion([core.serialization.date(), Operators]);
 
 export declare namespace EventBulkRetryCreateRequestQuerySuccessfulAt {
-    type Raw = string | EventBulkRetryCreateRequestQuerySuccessfulAtAny.Raw;
+    type Raw = string | Operators.Raw;
 }

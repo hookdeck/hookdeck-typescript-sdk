@@ -3,7 +3,7 @@
  */
 
 export const HookdeckEnvironment = {
-    Default: "https://api.hookdeck.com/2024-03-01",
+    Default: "https://api.hookdeck.com/2024-09-01",
 } as const;
 
 export type HookdeckEnvironment = typeof HookdeckEnvironment.Default;

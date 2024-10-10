@@ -7,7 +7,4 @@ import * as Hookdeck from "../../../index";
 /**
  * Filter by HTTP response status code
  */
-export type EventBulkRetryCreateRequestQueryResponseStatus =
-    | number
-    | Hookdeck.EventBulkRetryCreateRequestQueryResponseStatusAll
-    | number[];
+export type EventBulkRetryCreateRequestQueryResponseStatus = number | Hookdeck.Operators | number[];

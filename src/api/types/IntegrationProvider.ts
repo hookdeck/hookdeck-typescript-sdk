@@ -62,7 +62,8 @@ export type IntegrationProvider =
     | "SLACK"
     | "RAZORPAY"
     | "MAILCHIMP"
-    | "PADDLE";
+    | "PADDLE"
+    | "PAYPAL";
 
 export const IntegrationProvider = {
     Hmac: "HMAC",
@@ -125,4 +126,5 @@ export const IntegrationProvider = {
     Razorpay: "RAZORPAY",
     Mailchimp: "MAILCHIMP",
     Paddle: "PADDLE",
+    Paypal: "PAYPAL",
 } as const;

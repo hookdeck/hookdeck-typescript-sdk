@@ -17,8 +17,11 @@ export declare namespace CustomDomain {
     }
 
     interface RequestOptions {
+        /** The maximum time to wait for a response in seconds. */
         timeoutInSeconds?: number;
+        /** The number of times to retry the request. Defaults to 2. */
         maxRetries?: number;
+        /** A hook to abort the request. */
         abortSignal?: AbortSignal;
     }
 }
@@ -32,7 +35,7 @@ export class CustomDomain {
      * @param {CustomDomain.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
-     *     await hookdeck.customDomain.list()
+     *     await client.customDomain.list()
      */
     public async list(requestOptions?: CustomDomain.RequestOptions): Promise<Hookdeck.ListCustomDomainSchema> {
         const _response = await (this._options.fetcher ?? core.fetcher)({
@@ -45,17 +48,19 @@ export class CustomDomain {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.4.0",
+                "X-Fern-SDK-Version": "0.5.0",
+                "User-Agent": "@hookdeck/sdk/0.5.0",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
             contentType: "application/json",
+            requestType: "json",
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
             abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
-            return await serializers.ListCustomDomainSchema.parseOrThrow(_response.body, {
+            return serializers.ListCustomDomainSchema.parseOrThrow(_response.body, {
                 unrecognizedObjectKeys: "passthrough",
                 allowUnrecognizedUnionMembers: true,
                 allowUnrecognizedEnumValues: true,
@@ -93,7 +98,7 @@ export class CustomDomain {
      * @param {CustomDomain.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
-     *     await hookdeck.customDomain.create({
+     *     await client.customDomain.create({
      *         hostname: "hostname"
      *     })
      */
@@ -111,18 +116,20 @@ export class CustomDomain {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.4.0",
+                "X-Fern-SDK-Version": "0.5.0",
+                "User-Agent": "@hookdeck/sdk/0.5.0",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
             contentType: "application/json",
-            body: await serializers.AddCustomHostname.jsonOrThrow(request, { unrecognizedObjectKeys: "strip" }),
+            requestType: "json",
+            body: serializers.AddCustomHostname.jsonOrThrow(request, { unrecognizedObjectKeys: "strip" }),
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
             abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
-            return await serializers.AddCustomHostname.parseOrThrow(_response.body, {
+            return serializers.AddCustomHostname.parseOrThrow(_response.body, {
                 unrecognizedObjectKeys: "passthrough",
                 allowUnrecognizedUnionMembers: true,
                 allowUnrecognizedEnumValues: true,
@@ -160,7 +167,7 @@ export class CustomDomain {
      * @param {CustomDomain.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
-     *     await hookdeck.customDomain.delete("domain_id")
+     *     await client.customDomain.delete("domain_id")
      */
     public async delete(
         domainId: string,
@@ -176,17 +183,19 @@ export class CustomDomain {
                 Authorization: await this._getAuthorizationHeader(),
                 "X-Fern-Language": "JavaScript",
                 "X-Fern-SDK-Name": "@hookdeck/sdk",
-                "X-Fern-SDK-Version": "0.4.0",
+                "X-Fern-SDK-Version": "0.5.0",
+                "User-Agent": "@hookdeck/sdk/0.5.0",
                 "X-Fern-Runtime": core.RUNTIME.type,
                 "X-Fern-Runtime-Version": core.RUNTIME.version,
             },
             contentType: "application/json",
+            requestType: "json",
             timeoutMs: requestOptions?.timeoutInSeconds != null ? requestOptions.timeoutInSeconds * 1000 : 60000,
             maxRetries: requestOptions?.maxRetries,
             abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
-            return await serializers.DeleteCustomDomainSchema.parseOrThrow(_response.body, {
+            return serializers.DeleteCustomDomainSchema.parseOrThrow(_response.body, {
                 unrecognizedObjectKeys: "passthrough",
                 allowUnrecognizedUnionMembers: true,
                 allowUnrecognizedEnumValues: true,

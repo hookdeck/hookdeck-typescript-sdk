@@ -7,7 +7,4 @@ import * as Hookdeck from "../../../index";
 /**
  * Filter by count of events
  */
-export type RequestBulkRetryCreateRequestQueryEventsCount =
-    | number
-    | Hookdeck.RequestBulkRetryCreateRequestQueryEventsCountAll
-    | number[];
+export type RequestBulkRetryCreateRequestQueryEventsCount = number | Hookdeck.Operators | number[];

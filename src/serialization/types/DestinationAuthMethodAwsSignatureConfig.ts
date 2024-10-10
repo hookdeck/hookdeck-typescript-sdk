@@ -12,11 +12,15 @@ export const DestinationAuthMethodAwsSignatureConfig: core.serialization.ObjectS
 > = core.serialization.object({
     accessKeyId: core.serialization.property("access_key_id", core.serialization.string()),
     secretAccessKey: core.serialization.property("secret_access_key", core.serialization.string()),
+    region: core.serialization.string().optional(),
+    service: core.serialization.string().optional(),
 });
 
 export declare namespace DestinationAuthMethodAwsSignatureConfig {
     interface Raw {
         access_key_id: string;
         secret_access_key: string;
+        region?: string | null;
+        service?: string | null;
     }
 }

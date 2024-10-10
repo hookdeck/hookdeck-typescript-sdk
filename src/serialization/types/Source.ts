@@ -5,7 +5,7 @@
 import * as serializers from "../index";
 import * as Hookdeck from "../../api/index";
 import * as core from "../../core";
-import { SourceVerification } from "./SourceVerification";
+import { VerificationConfig } from "./VerificationConfig";
 import { SourceAllowedHttpMethod } from "./SourceAllowedHttpMethod";
 import { SourceCustomResponse } from "./SourceCustomResponse";
 import { SourceAllowedHttpMethodItem } from "./SourceAllowedHttpMethodItem";
@@ -17,7 +17,7 @@ export const Source: core.serialization.ObjectSchema<serializers.Source.Raw, Hoo
         description: core.serialization.string().optional(),
         teamId: core.serialization.property("team_id", core.serialization.string()),
         url: core.serialization.string(),
-        verification: SourceVerification.optional(),
+        verification: VerificationConfig.optional(),
         allowedHttpMethods: core.serialization.property("allowed_http_methods", SourceAllowedHttpMethod.optional()),
         customResponse: core.serialization.property("custom_response", SourceCustomResponse.optional()),
         disabledAt: core.serialization.property("disabled_at", core.serialization.date().optional()),
@@ -32,7 +32,7 @@ export declare namespace Source {
         description?: string | null;
         team_id: string;
         url: string;
-        verification?: SourceVerification.Raw | null;
+        verification?: VerificationConfig.Raw | null;
         allowed_http_methods?: (SourceAllowedHttpMethod.Raw | undefined) | null;
         custom_response?: SourceCustomResponse.Raw | null;
         disabled_at?: string | null;
